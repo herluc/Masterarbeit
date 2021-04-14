@@ -1,0 +1,5 @@
+\babel@toc {english}{}
+\contentsline {chapter}{\numberline {1}Chapter 1}{5}{chapter.4}% 
+\contentsline {chapter}{\numberline {2}Chapter 2}{6}{chapter.5}% 
+\contentsline {chapter}{\numberline {3}Chapter 3}{7}{chapter.6}% 
+\contentsline {section}{\numberline {3.1}Section 1}{7}{section.7}% 

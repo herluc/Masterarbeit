@@ -22,21 +22,22 @@ from bisect import bisect_left
 
 
 # Define the exponentiated quadratic kernel
-def exponentiated_quadratic(xa, xb):
+def exponentiated_quadratic(xa, xb, lf, sigf):
     """Exponentiated quadratic  with σ=1"""
     # L2 distance (Squared Euclidian)
-    sq_norm = -0.5 * scipy.spatial.distance.cdist(xa, xb, 'sqeuclidean')
-    return np.exp(sq_norm)
-
+    sq_norm = -0.5 * scipy.spatial.distance.cdist(xa, xb, 'sqeuclidean') * (1/lf**2)
+    return sigf**2 * np.exp(sq_norm)
+dom_a = 0.0
+dom_b = 1.0
 
 # Sample from the Gaussian process distribution
 nb_of_samples = 100  # Number of points in each function
 number_of_functions = 42  # Number of functions to sample
 # Independent variable samples
-X = np.expand_dims(np.linspace(-4, 4, nb_of_samples), 1)
+X = np.expand_dims(np.linspace(dom_a, dom_b, nb_of_samples), 1)
 print(X)
 print(len(X))
-Σ = exponentiated_quadratic(X, X)  # Kernel of data points
+Σ = exponentiated_quadratic(X, X, 0.4, 0.1)  # Kernel of data points
 
 # Draw samples from the prior at our data points.
 # Assume a mean of 0 for simplicity
@@ -57,9 +58,9 @@ ys2 = np.random.multivariate_normal(
 
 pars = [0.3, -0.2] # polynomial parameters
 mean = np.transpose(0 + X*pars[0] + X**2 * pars[1])[0]
-mean = 6.0*np.ones(nb_of_samples)
+mean = 1.0*np.ones(nb_of_samples)
 def draw_FEM_samples(x_vals):
-	Σ = exponentiated_quadratic(x_vals, x_vals)  # Kernel of data points
+	Σ = exponentiated_quadratic(x_vals, x_vals, 0.4, 0.1)  # Kernel of data points
 	discrete_f = np.random.multivariate_normal(
    		mean = mean , cov=Σ,
     	size=1)
@@ -156,8 +157,7 @@ def take_closest2(xlist, myNumber):
 #mesh = UnitSquareMesh(32, 32)
 
 ne = 100 #number of elements
-dom_a = -4.0
-dom_b = 4.0
+
 #f_vals = np.ones(ne)
 #f_vals = f_vals *(-6.0)
 h_vec = np.linspace(dom_a,dom_b,ne)
@@ -181,6 +181,17 @@ xvecTest = []
 solution = []
 for i in range(number_of_functions):
 
+
+	#class MyExpression0(UserExpression):
+	#	def eval(self, value, x):
+	#		pos = take_closest(h_vec,x[0])
+	#		value[0] = f_vals[pos]
+	#		xvecTest.append(x[0])
+	#	def value_shape(self):
+	#		return ()
+
+
+
 	# Define Dirichlet boundary (x = 0 or x = 1)
 	def boundary(x):
 		return x[0] < (dom_a + DOLFIN_EPS) or x[0] > dom_b - DOLFIN_EPS
@@ -201,15 +212,7 @@ for i in range(number_of_functions):
 	print(len(coordinates))
 	print('f_vals')
 	print(len(f_vals))
-	f_vals = ys2[i] # numpy approach
-
-	class MyExpression0(UserExpression):
-		def eval(self, value, x):
-			pos = take_closest(h_vec,x[0])
-			value[0] = f_vals[pos]
-			xvecTest.append(x[0])
-		def value_shape(self):
-			return ()
+	#f_vals = ys2[i] # numpy approach
 
 
 	class DoGP(UserExpression):
@@ -218,9 +221,8 @@ for i in range(number_of_functions):
 			value[0] = f_vals[collisions1st] # f is constant in a cell. therefore there are 100 cells and 100 values for f.
 		def value_shape(self):
 			return ()
-	#f = MyExpression0()
-	f = DoGP()
 
+	f = DoGP()
 
 	#f = Expression("-6.0 * x[0]", degree=2)
 	a = dot(grad(u), grad(v))*dx
@@ -248,7 +250,7 @@ v = TestFunction(V)
 #f = Constant(mean)
 
 
-f = Expression("6.0", degree=0)
+f = Expression("1.0", degree=0)
 a = dot(grad(u), grad(v))*dx
 L = f*v*dx
 
@@ -271,14 +273,10 @@ plt.plot(dofs_x, meancurve, linestyle='-', color = 'black', lw = 4.0)
 plt.xlabel('$x$', fontsize=13)
 plt.ylabel('$u$', fontsize=13)
 plt.title(('solution'))
-plt.xlim([-4, 4])
+plt.xlim([dom_a, dom_b])
 
 plt.show()
 
 #plot(u)
 #plot(mesh)
 #plt.show()
-
-
-
-
