@@ -1,15 +1,22 @@
 \documentclass[%
   a4paper,oneside,%
-  arial,
+  %arial,
   11pt,% <10pt, 9pt>
-  %smallchapters,
+  smallchapters,
   %style=screen,
   %sender=bottom,
   green,% <orange, green, violet>
   rgb, <cmyk>
   %mono
   ,]{tubsbook}
+  
+\usepackage{listings}  % for code stuff
+\usepackage{bm} 
+ 
+\renewcommand{\familydefault}{\sfdefault}
 \usepackage[utf8]{inputenc}
+\RequirePackage{scrlfile}
+\ReplacePackage{scrpage2}{scrlayer-scrpage}
 
 \usepackage[ngerman,english]{babel}
 
@@ -17,9 +24,10 @@
 \definecolor{InAGreen}{RGB}{172,193,58}
 
 % Titelseiten-Elemente
-\title{Beispieltitel}
+\title{A Statistical Approach for the Fusion of Data and
+Finite Element Analysis in Vibroacoustics}
 \subtitle{Untertitel}
-\author{Max Mustermann}
+\author{Lucas Hermann}
 %\logo{Institut fuer Lorem Ipsum}
 \logo{\includegraphics{InA-Logo-rgb.pdf}}
 \titleabstract{\lipsum[2]}
@@ -44,7 +52,7 @@
 \includepdf[pages=-]{./Deckblatt/2099_StA_Name_Deckblatt.pdf}
 
 \chapter*{Declaration}
-Hiermit versichere ich, <Vorname> <Nachname>, durch meine Unterschrift, dass ich die
+Hiermit versichere ich, Lucas Hermann, durch meine Unterschrift, dass ich die
 vorliegende Masterarbeit mit dem Titel ``<<Titel>>'' selbständig und ohne Benutzung
 anderer als der angegebenen Hilfsmittel angefertigt habe. Alle Stellen, die wörtlich oder sinn-
 gemäß aus veröffentlichten oder unveröffentlichten Schriften entnommen sind, habe ich als
@@ -64,7 +72,7 @@ Braunschweig, \today
 \vspace{2cm}
 \hspace{2cm}\rule{5cm}{1pt}
 
-\hspace{2cm}\small{Vorname Nachname} 
+\hspace{2cm}\small{Lucas Hermann} 
 
 \chapter*{Abstract}
 \lipsum[1]
@@ -72,7 +80,7 @@ Braunschweig, \today
 \tableofcontents
 
 
-\chapter{Chapter 1}
+\chapter{Introduction}
 
 \textcolor{tubsSecondary}{Dies ist ein Text in \texttt{tubsSecondary}.}
 \textcolor{tubsViolet}{Dies ist ein Text in \texttt{tubsViolet}.}
@@ -90,11 +98,88 @@ Braunschweig, \today
   \item Aufzählungspunkt Drei
 \end{itemize}
 
-\chapter{Chapter 2}
+\chapter{Theoretical Background}
+
+\section{The Classical Finite Element Method}
+
+\section{Bayesian Inference}
+$posterior = \frac{likelihood x prior}{marginal likelihood}$ (Rasmussen p.9)
+
+
+\section{Gaussian Process Regression}
+Gaussian Processes are a class of Bayesian non-parametric models. Non-parametric doesn't mean that there are no parameters involved but rather that there is an infinite number of them. Every realization of a Gaussian process doesn't yield a scalar or vector but a function. One can think of a Gaussian Process as a collection of infinitely many normally distributed random variables, i.e. a generalization of a Gaussian distribution: A vector with infinitely many entries is basically a function. By picking out a finite set of those random variables when discretizing e.g. on an FEM mesh, one obtains a multivariate distribution which is determined by a mean and a covariance matrix. [Rasmussen p.2] Hence, the GP assigns a confidence band to a function where a usual parametric regression wouldn't.
+
+-Regression in general
+-differences of a GP regression to e.g. a polynomial regression: every point is assgined an uncertainty
+
+-Herleitung der Kovarianzmatrix, evtl. auch für das standard linear regression modell
+
+
+\subsection{Prior before observation}
+
+\subsection{Posterior after observation}
+
+\section{The Statistical Finite Element Method}
+The differential equation is treated from a Bayesian viewpoint: all parameters are random variables. For dependent parameters not a single distribution but a Gaussian Process is applied. Therefore prior to solving the FEM linear system, the parameter $GP f(x)$ is sampled. That sample is evaluated for each cell in the FEM mesh which makes it necessary to assemble the system matrix with that in mind.
+
+
+\chapter{1D Example and Application in Vibroacoustics}
+
+\section{Simple 1D example}
+\paragraph{Choice of PDE}
+The Poisson equation 
+%%
+\begin{equation}
+- \nabla \cdot \mu(x) \nabla u(x) = f(x)
+\label{eqn:Poisson}
+\end{equation}
+%%
+is chosen as the governing equation. It is an elliptic partial differential equation (PDE). In this work it is used as a simple 1D example to illustrate how the statistical FEM and especially the Gaussian Process Regression works.
+The most standard form of it does not, contrary to this example, include $\mu(x) \in \mathbb{R}^+$ which is the diffusion coefficient dependent on the spatial variable $x$. The right-hand side consists of the source term $f(x)\in \mathbb{R}$. Both $\mu (x)$ and $f(x)$ are the free parameters in this case. The equation is solved for the unknown  $u(x)$ in the domain $\Omega = (0,1)$ with the boundary condition $u(x) = 0$ on $x=0$ and $x=1$.
+%
+For a first example there holds $\mu(x)=1$. $f(x)$ is modeled as a Gaussian Process [Cirak]
+%
+\begin{equation}
+f(\bm{x}) \sim \mathcal{GP} \left( \bar{f}(\bm{x}), c_f(\bm{x},\bm{x}')\right) \;.
+\end{equation}
+%
+\paragraph{Construction of the GP}
+The mean function of the GP is set to $\bar{f}(x) = 1.0$. For the covariance function at first a squared exponential kernel 
+%
+\begin{equation}
+c_f(\bm{x},\bm{x}') =    \sigma_{f}^2 \exp \left(-  \frac{\left \| \bm{x}-{\bm{x}}' \right \|^2}{2l_{f}^2} \right )       
+\label{eqn:sqEx_f}
+\end{equation}
+%
+is used with the standard deviation $\sigma_{f} = 0.1$ and the length scale $l_{f} = 0.4$.
+In Python the kernel is directly implemented as a function which takes two lists and the parameters as input variables [Murphy]:
+\begin{lstlisting}[language=Python]
+def squared_exponential(xa, xb, lf, sigf):
+    sq_norm = -0.5 * scipy.spatial.distance.cdist(xa, xb, 'sqeuclidean') \
+    	* (1/lf**2)
+    return sigf**2 * np.exp(sq_norm) .
+\end{lstlisting}
+\label{lst:sqEx}
+%
+Here, the parameters are fixed but in a later example a method on how to infer the optimum position for these will be studied.
+
+Having prepared the mean function and the kernel, which can be considered the prior in a GP regression setting, a sample of the GP can be drawn. For this points have to be chosen on which the kernel is evaluated. These are the test points and, according to [Cirak], correspond to the center of the FEM cells. This implies that there are as many test points as FEM cells and therefore the coordinates of the FEM mesh can directly be used to compute the covariance matrix. For that (\ref{eqn:sqEx_f}) is evaluated at $\bm{x} = \bm{x}'$ with $\bm{x}$ the vector of test points. 
+
+A GP has the property that if you sample it at a finite number of points it yields a multivariate Gaussian distribution $\mathcal{N}(\bar{\bm{f}},\bm{C_f})$ with $\bar{\bm{f}}$ the mean vector and $\bm{C_f}$ the covariance matrix while still describing the underlying continuous sample.
+According to [Rasmussen] sampling from a multivariate Gaussian distribution works as follows: To obtain $n$ samples from the prior, at first $n$ samples of a standard normal distribution, also called Gaussian white noise, $e \sim \mathcal{N}(0,1)$ have to be drawn. Computing the Cholesky decomposition of the covariance matrix $\bm{C_f} = LL^T$, which can also be thought of as taking the square root of a matrix, yields the lower triangular matrix $L$. Samples can now easily be drawn from $\bm{f} = \bar{\bm{f}} + Le$ which is a multivariate Gaussian distribution with a mean $\bm{f}$ and a covariance $\bm{C_f}$.
+
+Sample: Normal distribution times std dev. GP with n points is basically a multivariate gaussian with n dimensions. therefore we need the std dev. for a univariate gaussian thats . 
+
+
+
+\section{1D Vibroacoustics Example}
+Helmholtz Equation. Looks similar to the Poisson equation but the right side differs. It's the eigenvalue problem for the laplace operator.
 
 \lipsum[2-5] %\cite{campolina}
 
-\chapter{Chapter 3}
+
+
+\chapter{Results and Discussion}
 
 \lipsum[1-3] %\cite{Langer2019}
 

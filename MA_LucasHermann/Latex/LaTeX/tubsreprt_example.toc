@@ -1,5 +1,16 @@
 \babel@toc {english}{}
-\contentsline {chapter}{\numberline {1}Chapter 1}{5}{chapter.4}% 
-\contentsline {chapter}{\numberline {2}Chapter 2}{6}{chapter.5}% 
-\contentsline {chapter}{\numberline {3}Chapter 3}{7}{chapter.6}% 
-\contentsline {section}{\numberline {3.1}Section 1}{7}{section.7}% 
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.4}%
+\contentsline {chapter}{\numberline {2}Theoretical Background}{6}{chapter.5}%
+\contentsline {section}{\numberline {2.1}The Classical Finite Element Method}{6}{section.6}%
+\contentsline {section}{\numberline {2.2}Bayesian Inference}{6}{section.7}%
+\contentsline {section}{\numberline {2.3}Gaussian Process Regression}{6}{section.8}%
+\contentsline {subsection}{\numberline {2.3.1}Prior before observation}{6}{subsection.9}%
+\contentsline {subsection}{\numberline {2.3.2}Posterior after observation}{6}{subsection.10}%
+\contentsline {section}{\numberline {2.4}The Statistical Finite Element Method}{6}{section.11}%
+\contentsline {chapter}{\numberline {3}1D Example and Application in Vibroacoustics}{7}{chapter.12}%
+\contentsline {section}{\numberline {3.1}Simple 1D example}{7}{section.13}%
+\contentsline {paragraph}{\nonumberline Choice of PDE}{7}{section*.14}%
+\contentsline {paragraph}{\nonumberline Construction of the GP}{7}{section*.17}%
+\contentsline {section}{\numberline {3.2}1D Vibroacoustics Example}{8}{section.24}%
+\contentsline {chapter}{\numberline {4}Results and Discussion}{9}{chapter.25}%
+\contentsline {section}{\numberline {4.1}Section 1}{9}{section.26}%

@@ -1,64 +1,54 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6930 64-bit) (preloaded format=pdflatex 2019.3.8)  31 AUG 2020 09:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.28)  15 APR 2021 15:13
 entering extended mode
-**./2099_StA_Name_Deckblatt.tex
-(2099_StA_Name_Deckblatt.tex
-LaTeX2e <2018-12-01>
-("C:\Program Files (x86)\tubslatex\tex/latex\tubs\tubsartcl.cls"
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**2099_StA_Name_Deckblatt.tex
+(./2099_StA_Name_Deckblatt.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-04-06>
+(/home/lucashermann/texmf/tex/latex/tubs/tubsartcl.cls
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/koma-script\scrlfile.sty"
-Package: scrlfile 2018/12/30 v3.26a KOMA-Script package (loading files)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2020/04/19 v3.30 KOMA-Script package (loading files)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/etoolbox\etoolbox.sty"
-Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count80
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count167
 )
-Document Class: tubsartcl 2015/04/20 v1.1.0-r1313 tubslatex document class (scr
-artcl)
-("C:\Program Files\MiKTeX 2.9\tex/latex/xkeyval\xkeyval.sty"
+Document Class: tubsartcl 2020/11/30 v1.3.4-r149 tubslatex document class (scra
+rtcl)
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/xkeyval\xkeyval.tex"
-("C:\Program Files\MiKTeX 2.9\tex/generic/xkeyval\xkvutils.tex"
-\XKV@toks=\toks14
-\XKV@tempa@toks=\toks15
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks15
+\XKV@tempa@toks=\toks16
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/xkeyval\keyval.tex"))
-\XKV@depth=\count81
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count168
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/koma-script\scrartcl.cls"
-Document Class: scrartcl 2018/12/30 v3.26a KOMA-Script document class (article)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrartcl.cls
+Document Class: scrartcl 2020/04/19 v3.30 KOMA-Script document class (article)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2020/04/19 v3.30 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/koma-script\scrkbase.sty"
-Package: scrkbase 2018/12/30 v3.26a KOMA-Script package (KOMA-Script-dependent 
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2020/04/19 v3.30 KOMA-Script package (KOMA-Script-independent 
 basics and keyval usage)
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/koma-script\scrbase.sty"
-Package: scrbase 2018/12/30 v3.26a KOMA-Script package (KOMA-Script-independent
- basics and keyval usage)
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/koma-script\tocbasic.sty"
-Package: tocbasic 2018/12/30 v3.26a KOMA-Script package (handling toc-files)
-\scr@dte@tocline@numberwidth=\skip41
-\scr@dte@tocline@numbox=\box27
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2020/04/19 v3.30 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip47
+\scr@dte@tocline@numbox=\box45
 )
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `toc' on input line 134.
-Package scrartcl Info: You've used standard option `11pt'.
-(scrartcl)             This is correct!
-(scrartcl)             Internally I'm using `fontsize=11pt'.
-(scrartcl)             If you'd like to set the option with \KOMAoptions,
-(scrartcl)             you'd have to use `fontsize=11pt' there
-(scrartcl)             instead of `11pt', too.
-Package scrartcl Info: You've used standard option `11pt'.
-(scrartcl)             This is correct!
-(scrartcl)             Internally I'm using `fontsize=11pt'.
-(scrartcl)             If you'd like to set the option with \KOMAoptions,
-(scrartcl)             you'd have to use `fontsize=11pt' there
-(scrartcl)             instead of `11pt', too.
+(tocbasic)             for `toc' on input line 135.
 Package scrartcl Info: You've used standard option `12pt'.
 (scrartcl)             This is correct!
 (scrartcl)             Internally I'm using `fontsize=12pt'.
@@ -66,107 +56,106 @@ Package scrartcl Info: You've used standard option `12pt'.
 (scrartcl)             you'd have to use `fontsize=12pt' there
 (scrartcl)             instead of `12pt', too.
 Class scrartcl Info: File `size12.clo' used to setup font sizes on input line 2
-144.
+212.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\size12.clo"
-File: size12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/koma-script\typearea.sty"
-Package: typearea 2018/12/30 v3.26a KOMA-Script package (type area)
-\ta@bcor=\skip42
-\ta@div=\count82
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/typearea.sty
+Package: typearea 2020/04/19 v3.30 KOMA-Script package (type area)
+\ta@bcor=\skip48
+\ta@div=\count169
 Package typearea Info: You've used standard option `a4paper'.
 (typearea)             This is correct!
 (typearea)             Internally I'm using `paper=a4'.
 (typearea)             If you'd like to set the option with \KOMAoptions,
 (typearea)             you'd have to use `paper=a4' there
 (typearea)             instead of `a4paper', too.
-\ta@hblk=\skip43
-\ta@vblk=\skip44
-\ta@temp=\skip45
-\footheight=\skip46
-
-DIV calculation for typearea with good linewidth.
+\ta@hblk=\skip49
+\ta@vblk=\skip50
+\ta@temp=\skip51
+\footheight=\skip52
 Package typearea Info: These are the values describing the layout:
-(typearea)             DIV  = 9
+(typearea)             DIV  = 12
 (typearea)             BCOR = 0.0pt
 (typearea)             \paperwidth      = 597.50793pt
-(typearea)              \textwidth      = 398.33862pt
-(typearea)              DIV departure   = 0%
-(typearea)              \evensidemargin = 27.31467pt
-(typearea)              \oddsidemargin  = 27.31467pt
+(typearea)              \textwidth      = 448.13095pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 2.4185pt
+(typearea)              \oddsidemargin  = 2.4185pt
 (typearea)             \paperheight     = 845.04694pt
-(typearea)              \textheight     = 577.5pt
-(typearea)              \topmargin      = -18.25089pt
+(typearea)              \textheight     = 635.5pt
+(typearea)              \topmargin      = -41.72441pt
 (typearea)              \headheight     = 18.125pt
 (typearea)              \headsep        = 21.75pt
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 50.75pt
 (typearea)              \baselineskip   = 14.5pt
-(typearea)              on input line 1714.
+(typearea)              on input line 1738.
 )
-\c@part=\count83
-\c@section=\count84
-\c@subsection=\count85
-\c@subsubsection=\count86
-\c@paragraph=\count87
-\c@subparagraph=\count88
-\scr@dte@section@maxnumwidth=\skip47
+\c@part=\count170
+\c@section=\count171
+\c@subsection=\count172
+\c@subsubsection=\count173
+\c@paragraph=\count174
+\c@subparagraph=\count175
+\scr@dte@section@maxnumwidth=\skip53
 Class scrartcl Info: using compatibility default `runin=bysign'
-(scrartcl)           for `\section on input line 4443.
+(scrartcl)           for `\section on input line 4761.
 Class scrartcl Info: using compatibility default `afterindent=bysign'
-(scrartcl)           for `\section on input line 4443.
-\scr@dte@part@maxnumwidth=\skip48
+(scrartcl)           for `\section on input line 4761.
+\scr@dte@part@maxnumwidth=\skip54
 Class scrartcl Info: using compatibility default `afterindent=false'
-(scrartcl)           for `\part on input line 4451.
-\scr@dte@subsection@maxnumwidth=\skip49
+(scrartcl)           for `\part on input line 4769.
+\scr@dte@subsection@maxnumwidth=\skip55
 Class scrartcl Info: using compatibility default `runin=bysign'
-(scrartcl)           for `\subsection on input line 4461.
+(scrartcl)           for `\subsection on input line 4779.
 Class scrartcl Info: using compatibility default `afterindent=bysign'
-(scrartcl)           for `\subsection on input line 4461.
-\scr@dte@subsubsection@maxnumwidth=\skip50
+(scrartcl)           for `\subsection on input line 4779.
+\scr@dte@subsubsection@maxnumwidth=\skip56
 Class scrartcl Info: using compatibility default `runin=bysign'
-(scrartcl)           for `\subsubsection on input line 4471.
+(scrartcl)           for `\subsubsection on input line 4789.
 Class scrartcl Info: using compatibility default `afterindent=bysign'
-(scrartcl)           for `\subsubsection on input line 4471.
-\scr@dte@paragraph@maxnumwidth=\skip51
+(scrartcl)           for `\subsubsection on input line 4789.
+\scr@dte@paragraph@maxnumwidth=\skip57
 Class scrartcl Info: using compatibility default `runin=bysign'
-(scrartcl)           for `\paragraph on input line 4481.
+(scrartcl)           for `\paragraph on input line 4799.
 Class scrartcl Info: using compatibility default `afterindent=bysign'
-(scrartcl)           for `\paragraph on input line 4481.
-\scr@dte@subparagraph@maxnumwidth=\skip52
+(scrartcl)           for `\paragraph on input line 4799.
+\scr@dte@subparagraph@maxnumwidth=\skip58
 Class scrartcl Info: using compatibility default `runin=bysign'
-(scrartcl)           for `\subparagraph on input line 4491.
+(scrartcl)           for `\subparagraph on input line 4809.
 Class scrartcl Info: using compatibility default `afterindent=bysign'
-(scrartcl)           for `\subparagraph on input line 4491.
-\abovecaptionskip=\skip53
-\belowcaptionskip=\skip54
-\c@pti@nb@sid@b@x=\box28
+(scrartcl)           for `\subparagraph on input line 4809.
+\abovecaptionskip=\skip59
+\belowcaptionskip=\skip60
+\c@pti@nb@sid@b@x=\box46
 Package tocbasic Info: omitting babel extension for `lof'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 5735.
-\scr@dte@figure@maxnumwidth=\skip55
-\c@figure=\count89
+(tocbasic)             for `lof' on input line 6040.
+\scr@dte@figure@maxnumwidth=\skip61
+\c@figure=\count176
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 5747.
-\scr@dte@table@maxnumwidth=\skip56
-\c@table=\count90
-Class scrartcl Info: Redefining `\numberline' on input line 5911.
-\bibindent=\dimen102
-) ("C:\Program Files (x86)\tubslatex\tex/latex\tubs\tubscolors.sty"
-Package: tubscolors 2015/04/20 v1.1.0-r1313 tubslatex, file v0.6 Farbschema der
- TU-Braunschweig
+(tocbasic)             for `lot' on input line 6052.
+\scr@dte@table@maxnumwidth=\skip62
+\c@table=\count177
+Class scrartcl Info: Redefining `\numberline' on input line 6216.
+\bibindent=\dimen134
+)
+(/home/lucashermann/texmf/tex/latex/tubs/tubscolors.sty
+Package: tubscolors 2020/11/30 v1.3.4-r149 tubslatex, file v0.6 Farbschema der 
+TU-Braunschweig
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
@@ -179,244 +168,237 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/forloop\forloop.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/forloop/forloop.sty
 Package: forloop 2006/09/18 v3.0 For Loops for LaTeX
 )
-\c@perc=\count91
-\cshowwidth=\skip57
+\c@perc=\count178
+\cshowwidth=\skip63
 )
-("C:\Program Files (x86)\tubslatex\tex/latex\tubs\tubstypearea.sty"
-Package: tubstypearea 2015/04/20 v1.1.0-r1313 tubslatex
+(/home/lucashermann/texmf/tex/latex/tubs/tubstypearea.sty
+Package: tubstypearea 2020/11/30 v1.3.4-r149 tubslatex
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\calc.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count92
-\calc@Bcount=\count93
-\calc@Adimen=\dimen103
-\calc@Bdimen=\dimen104
-\calc@Askip=\skip58
-\calc@Bskip=\skip59
+\calc@Acount=\count179
+\calc@Bcount=\count180
+\calc@Adimen=\dimen135
+\calc@Bdimen=\dimen136
+\calc@Askip=\skip64
+\calc@Bskip=\skip65
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count94
-\calc@Cskip=\skip60
+\calc@Ccount=\count181
+\calc@Cskip=\skip66
 )
-\tubspage@bcor=\skip61
-\tubsborderwidth=\skip62
-\tubspage@module@padding=\skip63
-\tubssenderheight=\skip64
-\tubspage@headheight=\skip65
-\tubscommunicationheight=\skip66
-\tubspage@contentwidth=\skip67
-\c@tubspage@vsegments=\count95
-\c@tubspage@gausssum=\count96
-\tubscolumnsep=\skip68
-\tubsgaussbaseheight=\skip69
-\tubscolumnwidth=\skip70
+\tubspage@bcor=\skip67
+\tubsborderwidth=\skip68
+\tubspage@module@padding=\skip69
+\tubssenderheight=\skip70
+\tubspage@headheight=\skip71
+\tubscommunicationheight=\skip72
+\tubspage@contentwidth=\skip73
+\c@tubspage@vsegments=\count182
+\c@tubspage@gausssum=\count183
+\tubscolumnsep=\skip74
+\tubsgaussbaseheight=\skip75
+\tubscolumnwidth=\skip76
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.sty"
-Package: geometry 2018/04/16 v5.8 Page Geometry
+(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifpdf.sty"
-Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count184
+\Gm@cntv=\count185
+\c@Gm@tempcnt=\count186
+\Gm@bindingoffset=\dimen137
+\Gm@wd@mp=\dimen138
+\Gm@odd@mp=\dimen139
+\Gm@even@mp=\dimen140
+\Gm@layoutwidth=\dimen141
+\Gm@layoutheight=\dimen142
+\Gm@layouthoffset=\dimen143
+\Gm@layoutvoffset=\dimen144
+\Gm@dimlist=\toks17
 )
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifvtex.sty"
-Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
+\c@tmp@calc=\count187
 )
-("C:\Program Files\MiKTeX 2.9\tex/generic/ifxetex\ifxetex.sty"
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
-\Gm@cnth=\count97
-\Gm@cntv=\count98
-\c@Gm@tempcnt=\count99
-\Gm@bindingoffset=\dimen105
-\Gm@wd@mp=\dimen106
-\Gm@odd@mp=\dimen107
-\Gm@even@mp=\dimen108
-\Gm@layoutwidth=\dimen109
-\Gm@layoutheight=\dimen110
-\Gm@layouthoffset=\dimen111
-\Gm@layoutvoffset=\dimen112
-\Gm@dimlist=\toks16
+(/home/lucashermann/texmf/tex/latex/tubs/tubslogo.sty
+Package: tubslogo 2020/11/30 v1.3.4-r149 tubslatex, file v1.2 CD-Logo der TU Br
+aunschweig
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg"))
-\c@tmp@calc=\count100
-)
-("C:\Program Files (x86)\tubslatex\tex/latex\tubs\tubslogo.sty"
-Package: tubslogo 2015/04/20 v1.1.0-r1313 tubslatex, file v1.2 CD-Logo der TU B
-raunschweig
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 105.
 )
-\Gin@req@height=\dimen113
-\Gin@req@width=\dimen114
+\Gin@req@height=\dimen145
+\Gin@req@width=\dimen146
 )
-\tubslogo@width=\skip71
-\tubslogoBaseWidth=\skip72
-\tubslogoBaseHeight=\skip73
-\tubslogoWidth=\skip74
-\tubslogoHeight=\skip75
+\tubslogo@width=\skip77
+\tubslogoBaseWidth=\skip78
+\tubslogoBaseHeight=\skip79
+\tubslogoWidth=\skip80
+\tubslogoHeight=\skip81
 )
-("C:\Program Files (x86)\tubslatex\tex/latex\tubs\tubsstyle.sty"
-Package: tubsstyle 2015/04/20 v1.1.0-r1313 tubslatex, file v0.1 Hintergrund-Dar
-stellung f\unhbox \voidb@x \bgroup \let \unhbox \voidb@x \setbox \@tempboxa \hb
-ox {u\global \mathchardef \accent@spacefactor \spacefactor }\accent 127 u\egrou
-p \spacefactor \accent@spacefactor r tubslatex
+(/home/lucashermann/texmf/tex/latex/tubs/tubsstyle.sty
+Package: tubsstyle 2020/11/30 v1.3.4-r149 tubslatex, file v0.1 Hintergrund-Dars
+tellung für tubslatex
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/eso-pic\eso-pic.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/eso-pic\eso-pic.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\atbegshi.sty"
-Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\infwarerr.sty"
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ltxcmds.sty"
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
 )))
-("C:\Program Files (x86)\tubslatex\tex/latex\tubs\tubsbox.sty"
-("C:\Program Files (x86)\tubslatex\tex/latex\tubs\tubsdebug.sty")
-("C:\Program Files\MiKTeX 2.9\tex/latex/textpos\textpos.sty"
-Package: textpos 2016/06/07 v1.8
+(/home/lucashermann/texmf/tex/latex/tubs/tubsbox.sty
+(/home/lucashermann/texmf/tex/latex/tubs/tubsdebug.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/textpos/textpos.sty
+Package: textpos 2019/04/15 v1.9.1
 
-Package: textpos 2016/06/07 1.8, absolute positioning of text on the page
-("C:\Program Files\MiKTeX 2.9\tex/latex/ms\everyshi.sty"
+Package: textpos 2019/04/15 1.9.1, absolute positioning of text on the page
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 )
-\TP@textbox=\box29
-\TP@holdbox=\box30
-\TPHorizModule=\dimen115
-\TPVertModule=\dimen116
-\TP@margin=\dimen117
-\TP@absmargin=\dimen118
+\TP@textbox=\box47
+\TP@holdbox=\box48
+\TPHorizModule=\dimen147
+\TPVertModule=\dimen148
+\TP@margin=\dimen149
+\TP@absmargin=\dimen150
 
 Grid set 16 x 16 = 37.34424pt x 52.81541pt
-\TPboxrulesize=\dimen119
-\TP@ox=\dimen120
-\TP@oy=\dimen121
-\TP@tbargs=\toks17
-\TP@prevdepth=\dimen122
+\TPboxrulesize=\dimen151
+\TP@ox=\dimen152
+\TP@oy=\dimen153
+\TP@tbargs=\toks18
+\TP@prevdepth=\dimen154
 TextBlockOrigin set to 0pt x 0pt
 )
-\tubs@gb@toppadding=\skip76
-\tubs@gb@bottompadding=\skip77
-\tubs@gb@leftpadding=\skip78
-\tubs@gb@rightpadding=\skip79
-\tubs@gb@storebox=\box31
-\c@tubs@gb@lastelement=\count101
-\c@tubs@gb@calcypos=\count102
-\c@tubs@gb@calcheight=\count103
-\tubs@sb@storebox=\box32
-\tubs@sb@bgimagebox=\box33
-\c@tubs@sb@elementcount=\count104
-\c@tubs@sb@xcount=\count105
-\tubs@sb@xfreespace=\skip80
-\tubs@sb@xlength=\skip81
-\c@tubs@cnt=\count106
-\c@tubs@sb@current@col=\count107
-\c@tubs@sb@current@row=\count108
-\c@tubs@sb@current@subrow=\count109
-\modulewidth=\skip82
-\moduleheight=\skip83
-\@box@tmp=\dimen123
-\tubs@sb@box@xpos=\skip84
-\tubs@sb@box@ypos=\skip85
-\tubs@sb@box@rowheight=\skip86
-\tubs@sb@box@splitrow=\skip87
-\tubs@sb@padding=\skip88
+\tubs@gb@toppadding=\skip82
+\tubs@gb@bottompadding=\skip83
+\tubs@gb@leftpadding=\skip84
+\tubs@gb@rightpadding=\skip85
+\tubs@gb@storebox=\box49
+\c@tubs@gb@lastelement=\count188
+\c@tubs@gb@calcypos=\count189
+\c@tubs@gb@calcheight=\count190
+\tubs@sb@storebox=\box50
+\tubs@sb@bgimagebox=\box51
+\c@tubs@sb@elementcount=\count191
+\c@tubs@sb@xcount=\count192
+\tubs@sb@xfreespace=\skip86
+\tubs@sb@xlength=\skip87
+\c@tubs@cnt=\count193
+\c@tubs@sb@current@col=\count194
+\c@tubs@sb@current@row=\count195
+\c@tubs@sb@current@subrow=\count196
+\modulewidth=\skip88
+\moduleheight=\skip89
+\@box@tmp=\dimen155
+\tubs@sb@box@xpos=\skip90
+\tubs@sb@box@ypos=\skip91
+\tubs@sb@box@rowheight=\skip92
+\tubs@sb@box@splitrow=\skip93
+\tubs@sb@padding=\skip94
 )
-\tmp@posx=\skip89
-\tmp@posy=\skip90
-\c@tmp@calc@bgpos=\count110
-\c@tmpb@calc@bgpos=\count111
-\@image@xorig=\skip91
-\@image@xcalc=\skip92
-\@image@yorig=\skip93
-\@image@ycalc=\skip94
-\c@tubs@yseg@cnt=\count112
-) ("C:\Program Files (x86)\tubslatex\tex/latex\tubs\nexus.sty"
-Package: nexus 2015/04/20 v1.1.0-r1313 tubslatex Nexus font
+\tmp@posx=\skip95
+\tmp@posy=\skip96
+\c@tmp@calc@bgpos=\count197
+\c@tmpb@calc@bgpos=\count198
+\@image@xorig=\skip97
+\@image@xcalc=\skip98
+\@image@yorig=\skip99
+\@image@ycalc=\skip100
+\c@tubs@yseg@cnt=\count199
+) (/home/lucashermann/texmf/tex/latex/tubs/nexus.sty
+Package: nexus 2020/11/30 v1.3.4-r149 tubslatex Nexus font
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/arial\uarial.sty"
+(/home/lucashermann/texmf/tex/latex/ua1/uarial.sty
 Package: uarial 2006/03/21 1.0 (WaS)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/eulervm\eulervm.sty"
+(/usr/share/texlive/texmf-dist/tex/latex/eulervm/eulervm.sty
 Package: eulervm 2005/01/11 v4.0 (WaS)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\fontenc.sty"
-Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\t1enc.def"
-File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
-)))
-("C:\Program Files\MiKTeX 2.9\tex/latex/koma-script\scrpage2.sty"
-Package: scrpage2 2018/12/30 v3.26a KOMA-Script package (page head and foot)
-
-
-Package scrpage2 Warning: usage of obsolete package!
-(scrpage2)                Package `scrpage2' is obsolete.
-(scrpage2)                You should not longer use package `scrpage2'.
-(scrpage2)                You should replace usage of package `scrpage2'
-(scrpage2)                by `scrlayer-scrpage' on input line 52.
-
-LaTeX Info: Redefining \pagemark on input line 180.
-)
-\@tubs@headheight=\dimen124
-\@tubs@headheight=\dimen125
- ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\letltxmacro.sty"
-Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\inputenc.sty"
-Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks18
-\inpenc@posthook=\toks19
-)
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.sty"
-Package: babel 2018/11/13 3.27 The Babel package
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
+Package: scrlayer-scrpage 2020/04/19 v3.30 KOMA-Script package (end user interf
+ace for scrlayer)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\switch.def"
-File: switch.def 2018/11/13 3.27 Babel switching mechanism
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlayer.sty
+Package: scrlayer 2020/04/19 v3.30 KOMA-Script package (defining layers and pag
+e styles)
+Package scrlayer Info: Using already defined \footheight
+(scrlayer)             hoping, that this is a length and
+(scrlayer)             not only a macro on input line 109.
+Package scrlayer Info: patching LaTeX kernel macro \pagestyle on input line 210
+6.
 )
-*************************************
-* Local config file bblopts.cfg used
-*
-("C:\Program Files\MiKTeX 2.9\tex/latex/arabi\bblopts.cfg"
-File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
- babel
+Package scrlayer-scrpage Info: Makeing stand-alone element `pagehead' from
+(scrlayer-scrpage)             alias to `pageheadfoot' on input line 1244.
+Package scrlayer-scrpage Info: deactivating warning for font element
+(scrlayer-scrpage)             `pagefoot' on input line 1271.
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/babel-german\ngerman.ldf"
+Package scrlayer-scrpage Info: auto-selection of `pagestyleset=KOMA-Script'.
+
+1: section
+1: subsection
+\@tubs@headheight=\dimen156
+\@tubs@headheight=\dimen157
+(/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2020/03/22 3.42 The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2020/03/22 3.42 Babel switching mechanism
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-german/ngerman.ldf
 Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthogra
 phy)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/babel-german\ngermanb.ldf"
+(/usr/share/texlive/texmf-dist/tex/generic/babel-german/ngermanb.ldf
 Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogr
 aphy)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\babel.def"
-File: babel.def 2018/11/13 3.27 Babel common definitions
-\babel@savecnt=\count113
-\U@D=\dimen126
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2020/03/22 3.42 Babel common definitions
+\babel@savecnt=\count266
+\U@D=\dimen158
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/babel\txtbabel.def")
-\bbl@dirlevel=\count114
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count267
 )
 Package babel Info: Making " an active character on input line 121.
 )))
@@ -428,83 +410,73 @@ Class scrartcl Warning: Usage of package `parskip' together
 (scrartcl)              Nevertheless, using requested
 (scrartcl)              package `parskip' on input line 5.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/parskip\parskip.sty"
-Package: parskip 2019-01-16 v2.0c non-zero parskip adjustments
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2020-01-22 v2.0d non-zero parskip adjustments
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\kvoptions.sty"
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\kvsetkeys.sty"
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\etexcmds.sty"
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ifluatex.sty"
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-))))
+(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
 Couldn't patch \@startsection
-) (2099_StA_Name_Deckblatt.aux)
+) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count268
+\l__pdf_internal_box=\box52
+)
+
+LaTeX Warning: Unused global option(s):
+    [DIV=1].
+
+(./2099_StA_Name_Deckblatt.aux)
 \openout1 = `2099_StA_Name_Deckblatt.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Try loading font information for T1+ua1 on input line 11.
+LaTeX Font Info:    Trying to load font information for T1+ua1 on input line 11
+.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/arial\t1ua1.fd"
+(/home/lucashermann/texmf/tex/latex/ua1/t1ua1.fd
 File: t1ua1.fd 2006/03/21 Fontinst v1.928 font definitions for T1/ua1.
 )
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
 (Font)              scaled to size 11.39996pt on input line 11.
 
-("C:\Program Files\MiKTeX 2.9\tex/context/base\supp-pdf.mkii"
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count115
-\scratchdimen=\dimen127
-\scratchbox=\box34
-\nofMPsegments=\count116
-\nofMParguments=\count117
-\everyMPshowfont=\toks20
-\MPscratchCnt=\count118
-\MPscratchDim=\dimen128
-\MPnumerator=\count119
-\makeMPintoPDFobject=\count120
-\everyMPtoPDFconversion=\toks21
-) ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
-Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\grfext.sty"
-Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\kvdefinekeys.sty"
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-))
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
+\scratchcounter=\count269
+\scratchdimen=\dimen159
+\scratchbox=\box53
+\nofMPsegments=\count270
+\nofMParguments=\count271
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count272
+\MPscratchDim=\dimen160
+\MPnumerator=\count273
+\makeMPintoPDFobject=\count274
+\everyMPtoPDFconversion=\toks22
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-38.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 456.
-)
+85.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -526,8 +498,8 @@ G,.JBIG2,.JB2,.eps]
 * \headheight=68.28664pt
 * \headsep=34.14328pt
 * \topskip=12.0pt
-* \footskip=50.75pt
-* \marginparwidth=66.38977pt
+* \footskip=0.0pt
+* \marginparwidth=49.79233pt
 * \marginparsep=12.8401pt
 * \columnsep=14.22636pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
@@ -540,113 +512,515 @@ G,.JBIG2,.JB2,.eps]
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box35
+\AtBeginShipoutBox=\box54
 ABD: EveryShipout initializing macros
-\big@size=\dimen129
+\big@size=\dimen161
 
 TextBlockOrigin set to \tubsborderwidth +\tubspage@bcor  x \tubssenderheight 
-\tubs@restore@parskip=\dimen130
-\tubs@restore@parindent=\dimen131
-LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <12> not available
-(Font)              Font shape `T1/ua1/b/n' tried instead on input line 17.
+\tubs@restore@parskip=\dimen162
+\tubs@restore@parindent=\dimen163
 LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 11.39996pt on input line 17.
-LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ua1/b/n' tried instead on input line 17.
+(Font)              scaled to size 11.39996pt on input line 18.
 LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 23.63593pt on input line 17.
-\temp@=\dimen132
-\temp@b=\dimen133
+(Font)              scaled to size 23.63593pt on input line 18.
+\temp@=\dimen164
+\temp@b=\dimen165
 TextBlockOrigin set to \tubsborderwidth +\tubspage@bcor  x \tubssenderheight 
-\tubs@restore@parskip=\dimen134
-\tubs@restore@parindent=\dimen135
-\temp@=\dimen136
-\temp@b=\dimen137
+\tubs@restore@parskip=\dimen166
+\tubs@restore@parindent=\dimen167
+\temp@=\dimen168
+\temp@b=\dimen169
 
-Underfull \hbox (badness 10000) detected at line 23
+Underfull \hbox (badness 10000) detected at line 24
 | []| 
  []
 
 TextBlockOrigin set to \tubsborderwidth +\tubspage@bcor  x \tubssenderheight 
-\tubs@restore@parskip=\dimen138
-\tubs@restore@parindent=\dimen139
+\tubs@restore@parskip=\dimen170
+\tubs@restore@parindent=\dimen171
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 13.67995pt on input line 24.
-LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ua1/b/n' tried instead on input line 26.
+(Font)              scaled to size 13.67995pt on input line 25.
 LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 13.67995pt on input line 26.
-LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/ua1/b/n' tried instead on input line 26.
+(Font)              scaled to size 13.67995pt on input line 27.
 LaTeX Font Info:    Font shape `T1/ua1/b/n' will be
-(Font)              scaled to size 16.41594pt on input line 26.
+(Font)              scaled to size 16.41594pt on input line 27.
 LaTeX Font Info:    Font shape `T1/ua1/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 31.
-\temp@=\dimen140
-\temp@b=\dimen141
+(Font)              scaled to size 10.40245pt on input line 32.
+\temp@=\dimen172
+\temp@b=\dimen173
 TextBlockOrigin set to \tubsborderwidth +\tubspage@bcor  x \tubssenderheight 
-\tubs@restore@parskip=\dimen142
-\tubs@restore@parindent=\dimen143
-\temp@=\dimen144
-\temp@b=\dimen145
+\tubs@restore@parskip=\dimen174
+\tubs@restore@parindent=\dimen175
+\temp@=\dimen176
+\temp@b=\dimen177
 <TUBraunschweig_RGB.pdf, id=1, 199.1691pt x 73.97737pt>
 File: TUBraunschweig_RGB.pdf Graphic file (type pdf)
 <use TUBraunschweig_RGB.pdf>
-Package pdftex.def Info: TUBraunschweig_RGB.pdf  used on input line 39.
+Package pdftex.def Info: TUBraunschweig_RGB.pdf  used on input line 43.
 (pdftex.def)             Requested size: 199.16928pt x 73.98167pt.
-\tmp@logoheight=\dimen146
+\tmp@logoheight=\dimen178
 <../InA-Logo-rgb.pdf, id=2, 228.96039pt x 98.63048pt>
 File: ../InA-Logo-rgb.pdf Graphic file (type pdf)
 <use ../InA-Logo-rgb.pdf>
-Package pdftex.def Info: ../InA-Logo-rgb.pdf  used on input line 39.
+Package pdftex.def Info: ../InA-Logo-rgb.pdf  used on input line 43.
 (pdftex.def)             Requested size: 158.52783pt x 68.28986pt.
 File: TUBraunschweig_RGB.pdf Graphic file (type pdf)
 <use TUBraunschweig_RGB.pdf>
-Package pdftex.def Info: TUBraunschweig_RGB.pdf  used on input line 39.
+Package pdftex.def Info: TUBraunschweig_RGB.pdf  used on input line 43.
 (pdftex.def)             Requested size: 199.16928pt x 73.98167pt.
-\tmp@logoheight=\dimen147
+\tmp@logoheight=\dimen179
 File: ../InA-Logo-rgb.pdf Graphic file (type pdf)
 <use ../InA-Logo-rgb.pdf>
-Package pdftex.def Info: ../InA-Logo-rgb.pdf  used on input line 39.
+Package pdftex.def Info: ../InA-Logo-rgb.pdf  used on input line 43.
 (pdftex.def)             Requested size: 158.52783pt x 68.28986pt.
 File: TUBraunschweig_RGB.pdf Graphic file (type pdf)
 <use TUBraunschweig_RGB.pdf>
-Package pdftex.def Info: TUBraunschweig_RGB.pdf  used on input line 39.
+Package pdftex.def Info: TUBraunschweig_RGB.pdf  used on input line 43.
 (pdftex.def)             Requested size: 199.16928pt x 73.98167pt.
-\tmp@logoheight=\dimen148
+\tmp@logoheight=\dimen180
 File: ../InA-Logo-rgb.pdf Graphic file (type pdf)
 <use ../InA-Logo-rgb.pdf>
-Package pdftex.def Info: ../InA-Logo-rgb.pdf  used on input line 39.
+Package pdftex.def Info: ../InA-Logo-rgb.pdf  used on input line 43.
 (pdftex.def)             Requested size: 158.52783pt x 68.28986pt.
 File: TUBraunschweig_RGB.pdf Graphic file (type pdf)
 <use TUBraunschweig_RGB.pdf>
-Package pdftex.def Info: TUBraunschweig_RGB.pdf  used on input line 39.
+Package pdftex.def Info: TUBraunschweig_RGB.pdf  used on input line 43.
 (pdftex.def)             Requested size: 199.16928pt x 73.98167pt.
-\tmp@logoheight=\dimen149
+\tmp@logoheight=\dimen181
 File: ../InA-Logo-rgb.pdf Graphic file (type pdf)
 <use ../InA-Logo-rgb.pdf>
-Package pdftex.def Info: ../InA-Logo-rgb.pdf  used on input line 39.
+Package pdftex.def Info: ../InA-Logo-rgb.pdf  used on input line 43.
 (pdftex.def)             Requested size: 158.52783pt x 68.28986pt.
 [1
 
 
-{C:/Users/sreekumar/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Prog
-ram Files (x86)/tubslatex/tex/latex/tubs/logos/TUBraunschweig_RGB.pdf> <../InA-
-Logo-rgb.pdf>] (2099_StA_Name_Deckblatt.aux) ) 
+{/home/lucashermann/.texlive2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pagd8z' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pagdo8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pagk8z' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pagko8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pbkd8z' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pbkdi8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pbkl8z' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pbkli8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pcrb8u' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pcrbo8u' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pcrr8u' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pcrro8u' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvb8z' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvbn8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvbo8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvbon8z' already ex
+ists, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvr8z' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvrn8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvro8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvron8z' already ex
+ists, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pncb8z' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pncbi8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pncr8z' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pncri8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pplb8z' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pplbi8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pplr8z' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pplri8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `ptmb8z' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `ptmbi8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `ptmr8z' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `ptmri8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `pzcmi8z' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `UniClass[letter]':
+ font file present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvb8y' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvb8yn' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvbo8y' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvbo8yn' already ex
+ists, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvr8y' already exis
+ts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvr8yn' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvro8y' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `phvro8yn' already ex
+ists, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rpxpplb' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rpxpplbi' already ex
+ists, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): invalid entry for `rpxpplbo': SlantFont
+/ExtendFont can be used only with embedded Type1 fonts
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rpxpplr' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rpxpplri' already ex
+ists, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): invalid entry for `rpxpplro': SlantFont
+/ExtendFont can be used only with embedded Type1 fonts
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtcxbsl': font fil
+e present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtcxbsso': font fi
+le present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtcxsl': font file
+ present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtcxsssl': font fi
+le present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxbsl': font file
+ present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxbsssl': font fi
+le present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxphvb': font fil
+e present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rtxphvb' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxphvbo': font fi
+le present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rtxphvbo' already ex
+ists, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxphvr': font fil
+e present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rtxphvr' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxphvro': font fi
+le present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rtxphvro' already ex
+ists, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxptmb': font fil
+e present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rtxptmb' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxptmbi': font fi
+le present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rtxptmbi' already ex
+ists, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxptmbo': font fi
+le present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rtxptmbo' already ex
+ists, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxptmr': font fil
+e present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rtxptmr' already exi
+sts, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxptmri': font fi
+le present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rtxptmri' already ex
+ists, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxptmro': font fi
+le present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): fontmap entry for `rtxptmro' already ex
+ists, duplicates ignored
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxsl': font file 
+present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `rtxsssl': font fil
+e present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `t1xbttsl': font fi
+le present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `t1xttsl': font fil
+e present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `tcxbttsl': font fi
+le present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `tcxttsl': font fil
+e present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `txbttsl': font fil
+e present but not included, will be treated as font file not present
+
+
+pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
+ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `txttsl': font file
+ present but not included, will be treated as font file not present
+} </home/lucashermann/texmf/tex/latex/tubs/logos/TUBraunschweig_RGB.pdf> <../In
+A-Logo-rgb.pdf>] (./2099_StA_Name_Deckblatt.aux) ) 
 Here is how much of TeX's memory you used:
- 7962 strings out of 492942
- 132913 string characters out of 3135385
- 340864 words of memory out of 3000000
- 11714 multiletter control sequences out of 15000+200000
- 43483 words of font info for 28 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 54i,13n,73p,9159b,634s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/font
-s/enc/dvips/base/8r.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1b
-8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/arial/ua1r8a.pfb>
-Output written on 2099_StA_Name_Deckblatt.pdf (1 page, 42040 bytes).
+ 10244 strings out of 480623
+ 215267 string characters out of 5906692
+ 606405 words of memory out of 5000000
+ 26006 multiletter control sequences out of 15000+600000
+ 572181 words of font info for 38 fonts, out of 8000000 for 9000
+ 1137 hyphenation exceptions out of 8191
+ 57i,13n,81p,10173b,676s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dis
+t/fonts/enc/dvips/base/8r.enc}</home/lucashermann/texmf/fonts/type1/urw/arial/u
+a1b8a.pfb></home/lucashermann/texmf/fonts/type1/urw/arial/ua1r8a.pfb>
+Output written on 2099_StA_Name_Deckblatt.pdf (1 page, 42687 bytes).
 PDF statistics:
- 20 PDF objects out of 1000 (max. 8388607)
+ 22 PDF objects out of 1000 (max. 8388607)
+ 14 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

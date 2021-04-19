@@ -1,0 +1,40 @@
+\documentclass[a4paper,12pt,arial, rgb]{tubsartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{color, parskip}
+\defbglayout[sender=top,pages=all]{newlayout}{%
+\showtubslogo[left]
+%das Institutslogo - hier möglicherweise einen neuen Pfad eingeben
+\showlogo{\includegraphics{../InA-Logo-rgb}}}
+\definecolor{InAGreen}{RGB}{171, 193, 59} 
+%los gehts...
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%% Deckblatt einer studentischen Arbeit ohne Bild %%%%%%%%%%%%%%%%%%%
+\begin{gausspage}
+\usebglayout{newlayout}
+\begin{segment}[c,bgcolor=tubsWhite]{2}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% hier kommt ein Titel: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headline{Title}
+\end{segment}
+\begin{segment}[c,bgcolor=tubsWhite]{2}	
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Segment für ein optionales Bild %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% wenn Bild gewünscht, dann in Zeile 19 "bgcolor=tubsWhite" gegen
+	% "bgimage = <<pfad zum Bild>>" ersetzen.
+\end{segment}
+\begin{segment}[c,bgcolor=InAGreen,fgcolor=tubsWhite]{3}					\large \noindent
+%%%%%%%%%%%%%%%%%%%%%%%%%%% und hier kommen Daten zur Arbeit %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{\textcolor{tubsWhite}{Studienarbeit}} 	
+\textbf{<Vorname Nachname>}
+
+Matr.-Nr.: <Matrikulation Nr.>
+
+{\small
+June 2020	
+}
+\end{segment}
+\begin{segment}[innerpadding=vnone,bgcolor=tubsGreen,%
+	fgcolor=tubsWhite]{1} \vskip-3pt \large%
+\textbf{Erstprüferin:} Prof. Dr.-Ing. Sabine C. Langer
+\end{segment}
+\end{gausspage}
+\end{document}
