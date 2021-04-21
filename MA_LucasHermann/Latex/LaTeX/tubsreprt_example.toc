@@ -7,10 +7,12 @@
 \contentsline {subsection}{\numberline {2.3.1}Prior before observation}{6}{subsection.9}%
 \contentsline {subsection}{\numberline {2.3.2}Posterior after observation}{6}{subsection.10}%
 \contentsline {section}{\numberline {2.4}The Statistical Finite Element Method}{6}{section.11}%
-\contentsline {chapter}{\numberline {3}1D Example and Application in Vibroacoustics}{7}{chapter.12}%
-\contentsline {section}{\numberline {3.1}Simple 1D example}{7}{section.13}%
-\contentsline {paragraph}{\nonumberline Choice of PDE}{7}{section*.14}%
-\contentsline {paragraph}{\nonumberline Construction of the GP}{7}{section*.17}%
-\contentsline {section}{\numberline {3.2}1D Vibroacoustics Example}{8}{section.24}%
-\contentsline {chapter}{\numberline {4}Results and Discussion}{9}{chapter.25}%
-\contentsline {section}{\numberline {4.1}Section 1}{9}{section.26}%
+\contentsline {subsection}{\numberline {2.4.1}Probabilistic FEM Prior}{6}{subsection.12}%
+\contentsline {subsection}{\numberline {2.4.2}Inference of the Posterior Density}{7}{subsection.13}%
+\contentsline {chapter}{\numberline {3}1D Example and Application in Vibroacoustics}{8}{chapter.18}%
+\contentsline {section}{\numberline {3.1}Simple 1D example}{8}{section.19}%
+\contentsline {paragraph}{\nonumberline Choice of PDE}{8}{section*.20}%
+\contentsline {paragraph}{\nonumberline Construction of the GP}{8}{section*.23}%
+\contentsline {section}{\numberline {3.2}1D Vibroacoustics Example}{9}{section.30}%
+\contentsline {chapter}{\numberline {4}Results and Discussion}{10}{chapter.31}%
+\contentsline {section}{\numberline {4.1}Section 1}{10}{section.32}%

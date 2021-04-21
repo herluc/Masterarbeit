@@ -122,6 +122,44 @@ Gaussian Processes are a class of Bayesian non-parametric models. Non-parametric
 \section{The Statistical Finite Element Method}
 The differential equation is treated from a Bayesian viewpoint: all parameters are random variables. For dependent parameters not a single distribution but a Gaussian Process is applied. Therefore prior to solving the FEM linear system, the parameter $GP f(x)$ is sampled. That sample is evaluated for each cell in the FEM mesh which makes it necessary to assemble the system matrix with that in mind.
 
+\subsection{Probabilistic FEM Prior}
+The prior before observation is obtained by computing the FEM response $u_h$ of the PDE given all parameters. The random parameters are modeled as GPs. Thereby result a mean $\bar{u_h}$ and a covariance matrix $C_u$. For this being the prior, the GP hyperparameters are chosen deterministically. The covariance matrix is obtained by calculating $C_u = A^{-1} C_{par} A^{-T}$ with $A$ the FEM system matrix and $C_{par}$ the covariance matrix of the respective random parameter's GP. The mean can easily be determined by calculating the deterministic mean of the FEM by using only the GP's mean.
+The resulting response $u_h$ is, since it is discretized and not continuous, a multivariate Gaussian distribution.
+%
+To check convergence of the FEM model, it can be compared to the exact analytically determined system response $u$. 
+%
+It is assumed that there is a difference between the exact and the calculated FEM response to the true system response. That difference ought to be reduced by updating the prior with observations.
+
+
+\subsection{Inference of the Posterior Density}
+To infer the posterior density, observed data is necessary. These can be obtained by either actually measuring a physical process or by generating synthetic data which allows developing and improving the statFEM model already before having to set up an experiment and take real measurements beforehand.
+%
+Sampling from a synthetic source or from the real physical response yields the observation vector
+%
+\begin{equation}
+\bm{y} = {z} + {e}
+\end{equation}
+%
+with $z$ the real response and $e$ the measurement error which is also a part of $\bm{y}$ for the synthetic observations. It can be seen that the model mismatch error $\bm{d}$ is, as opposed to eq. (), not part of the equation because it is only part of the FEM modeling error. 
+%
+The data is observed on multiple measurement  points $n_y$ throughout the domain. It can be chosen if the data is assumed to be deterministic or to be random. For the deterministic case only one value is measured for each measurement point. In the random case many measurements are taken per point what leads to a probability distribution for each point.
+%
+Now, Bayes' rule can be applied to update the prior with the observations.
+The result of this operation is
+%
+\begin{equation}
+p(u|y) = \mathcal{N}(\bar{u_{|y}}, C_{u|y})
+\end{equation}
+%
+with
+%
+\begin{equation}
+\bar{u_{|y}} = C_{u|y} \left(   \rho P^T  (C_d + C_e)^{-1}  y  +  C_u^{-1}  \bar{u}   \right)
+\end{equation}
+and
+\begin{equation}
+C_{u|y} = \left(      \rho^2  P^T   (C_d + C_e)^{-1}  P  +  C_u^{-1}    \right)^{-1}
+\end{equation}
 
 \chapter{1D Example and Application in Vibroacoustics}
 
@@ -165,12 +203,12 @@ Here, the parameters are fixed but in a later example a method on how to infer t
 
 Having prepared the mean function and the kernel, which can be considered the prior in a GP regression setting, a sample of the GP can be drawn. For this points have to be chosen on which the kernel is evaluated. These are the test points and, according to [Cirak], correspond to the center of the FEM cells. This implies that there are as many test points as FEM cells and therefore the coordinates of the FEM mesh can directly be used to compute the covariance matrix. For that (\ref{eqn:sqEx_f}) is evaluated at $\bm{x} = \bm{x}'$ with $\bm{x}$ the vector of test points. 
 
-A GP has the property that if you sample it at a finite number of points it yields a multivariate Gaussian distribution $\mathcal{N}(\bar{\bm{f}},\bm{C_f})$ with $\bar{\bm{f}}$ the mean vector and $\bm{C_f}$ the covariance matrix while still describing the underlying continuous sample.
+A GP has the marginalization property: if you sample it at a finite number of points it yields a multivariate Gaussian distribution $\mathcal{N}(\bar{\bm{f}},\bm{C_f})$ with $\bar{\bm{f}}$ the mean vector and $\bm{C_f}$ the covariance matrix while still describing the underlying continuous sample.
 According to [Rasmussen] sampling from a multivariate Gaussian distribution works as follows: To obtain $n$ samples from the prior, at first $n$ samples of a standard normal distribution, also called Gaussian white noise, $e \sim \mathcal{N}(0,1)$ have to be drawn. Computing the Cholesky decomposition of the covariance matrix $\bm{C_f} = LL^T$, which can also be thought of as taking the square root of a matrix, yields the lower triangular matrix $L$. Samples can now easily be drawn from $\bm{f} = \bar{\bm{f}} + Le$ which is a multivariate Gaussian distribution with a mean $\bm{f}$ and a covariance $\bm{C_f}$.
 
 Sample: Normal distribution times std dev. GP with n points is basically a multivariate gaussian with n dimensions. therefore we need the std dev. for a univariate gaussian thats . 
 
-
+For the observations made in a later step it is assumed that there is some measurement noise. This is modeled as an added variance $\sigma_{n}^2$ on the diagonal of the prior covariance matrix. An additional effect of this added noise is the improved numerical stability of the covariance matrix which is important for computing the Cholesky decomposition.
 
 \section{1D Vibroacoustics Example}
 Helmholtz Equation. Looks similar to the Poisson equation but the right side differs. It's the eigenvalue problem for the laplace operator.
