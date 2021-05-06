@@ -122,6 +122,8 @@ Gaussian Processes are a class of Bayesian non-parametric models. Non-parametric
 \section{The Statistical Finite Element Method}
 The differential equation is treated from a Bayesian viewpoint: all parameters are random variables. For dependent parameters not a single distribution but a Gaussian Process is applied. Therefore prior to solving the FEM linear system, the parameter $GP f(x)$ is sampled. That sample is evaluated for each cell in the FEM mesh which makes it necessary to assemble the system matrix with that in mind.
 
+\subsection{Modeling parameters of the PDE}
+
 \subsection{Probabilistic FEM Prior}
 The prior before observation is obtained by computing the FEM response $u_h$ of the PDE given all parameters. The random parameters are modeled as GPs. Thereby result a mean $\bar{u_h}$ and a covariance matrix $C_u$. For this being the prior, the GP hyperparameters are chosen deterministically. The covariance matrix is obtained by calculating $C_u = A^{-1} C_{par} A^{-T}$ with $A$ the FEM system matrix and $C_{par}$ the covariance matrix of the respective random parameter's GP. The mean can easily be determined by calculating the deterministic mean of the FEM by using only the GP's mean.
 The resulting response $u_h$ is, since it is discretized and not continuous, a multivariate Gaussian distribution.
@@ -129,6 +131,91 @@ The resulting response $u_h$ is, since it is discretized and not continuous, a m
 To check convergence of the FEM model, it can be compared to the exact analytically determined system response $u$. 
 %
 It is assumed that there is a difference between the exact and the calculated FEM response to the true system response. That difference ought to be reduced by updating the prior with observations.
+
+
+\subsection{Modeling Measurement Data}
+Measuring data always involves a measurement error: One can never measure any physical quantity without some measurement noise. Therefore, the so-called statistical generating model (Cirak) for a vector of $n_y$ measurements $\bm{y} \in \mathbb{R}^{n_y}$, 
+%
+\begin{equation}
+\bm{y} = \bm{z} + \bm{e} = \rho \bm{P} \bm{u} + \bm{d} + \bm{e} \; ,
+\end{equation}
+%
+consists of response of the true underlying process $\bm{z} \in \mathbb{R}^{n_y}$ at the measurement points and the measurement noise $\bm{e} \in \mathbb{R}^{n_y}$. The true process $\bm{z}$ can further be expressed as a combination of the used model $\bm{u} \in \mathbb{R}^{n_u}$, which tries to describe the true process, and a model discrepancy error $d$ which accounts for the model not being a completely accurate representation of the true physics. The model is scaled using the scaling parameter $\rho \in \mathbb{R}$. It can be evaluated at $n_u$ points which are determined by the FEM mesh but only its evaluations at the measurement points are taken into account by using the projection matrix $\bm{P} \in \mathbb{R}^{n_y \times n_u}$.
+%
+$e$ is modeled as a multivariate Gaussian 
+%
+\begin{equation}
+\bm{e} \sim p(\bm{e}) = \mathcal{N}(\bm{0}, \bm{C_e})
+\end{equation}
+with zero mean and the covariance matrix $\bm{C_e} = \sigma_e^2 \bm{I}$ which adds the measurement noise to each entry of $\bm{z}$.
+%
+The model discrepancy error is, in order to account for a possibly complex behavior, modeled as a GP
+\begin{equation}
+\bm{d} \sim p(\bm{d} | \sigma_d, l_d) = \mathcal{N}(\bm{0},\bm{C_d})
+\end{equation}
+which $\sigma_d, l_d$ the unknown parameters of a squared exponential kernel function. Evaluating it at the measurement positions, the GP is represented by a multivariate Gaussian with a covariance matrix $\bm{C_d} \in \mathbb{R}^{n_y \times n_y}$.
+
+The projection matrix $P$ is constructed by evaluating all FEM ansatz functions of the mesh at the $n_y$ measurement positions. The result is a sparse matrix with most entries zero and only those entries non zero that correspond to the ansatz functions $\Phi_i(\bm{\bm{x}})$ associated with the finite element in which the measurement positions lie.
+This computation for linear ansatz functions can easily be implemented in Python using Fenics:
+
+\begin{lstlisting}[language=Python]
+def getP(self,y_points):
+	ny = len(y_points)
+	P = np.zeros((ny, self.ne+1), dtype = float) #with ne the number of elements
+	for j,point in enumerate(y_points):
+		x = np.array([point])
+		x_point = Point(x)
+		bbt = self.mesh.bounding_box_tree()
+		cell_id = bbt.compute_first_entity_collision(x_point)
+		cell = Cell(self.mesh, cell_id)
+		coordinate_dofs = cell.get_vertex_coordinates()
+		values = np.ones(1, dtype=float)
+		for i in range(self.el.space_dimension()): 
+			phi_x = self.el.evaluate_basis(np.array(i),x 
+				,np.array(coordinate_dofs),cell.orientation())
+			P[j,cell_id+i] = phi_x
+	self.Pu = np.dot(P,self.U_mean)
+	return P
+\end{lstlisting}
+\label{lst:getP}
+
+
+
+\subsection{Estimation of Hyperparameters}
+Below it was already stated that the hyperparameters for computing the model discrepancy covariance matrix $\bm{C_d}$ are not known. The scaling factor $\rho$ is not known, as well. The measurement data can be used to estimate these parameters, collected in the hyperparameter vector $\bm{w}$, with Bayes' rule 
+%
+\begin{equation}
+p(w|y) = \frac{P(y|w) p(w)}{\int P(y|w) p(w) dw}
+\end{equation}
+%
+where the denominator, which only serves as a normalization constant, can be dropped if only a point estimate of the hyperparameters is needed. This approach is indeed non-bayesian because no probability density of the hyperparameters is computed. For multiple measurements $y_i$ with a total number of $n_o$ there holds 
+\begin{equation}
+P(Y|w) = \prod_{i=1}^{n_o} p(\bm{y_i}) \; 
+\end{equation}
+which replaces $P(y|w)$.
+If no prior knowledge of the parameters is available, it is possible to use an uninformative prior $p(w) = 1$.
+The equation then basically states that $p(w|Y) \propto P(Y|w)$ which means that maximizing  $P(Y|w)$, i.e. the likelihood to measure $Y$ given a set of hyperparameters, yields the optimal vector of hyperparameters for the given data. 
+The marginal likelihood $P(y|w)$, marginal because ?!?!?!, can be expressed as 
+\begin{equation}
+p(y|w) = \mathcal{N}(\rho \bm{P}\bar{u}, \bm{C_d}+\bm{C_e} + \rho^2 \bm{P} \bm{C_u} \bm{P}^T)
+\end{equation}
+because, as stated above, all components of the statistical generating model are Gaussian.
+The equation for the corresponding PDF reads
+\begin{equation}
+p(y|w) = \frac{1}{(2 \pi)^{n/2} |K|^{1/2} } \exp \left(   -\frac{1}{2} (y - \rho \bm{P}\bar{u})^T \bm{K}^{-1} (y - \rho \bm{P}\bar{u})   \right)
+\end{equation}
+with
+\begin{equation}
+K = \bm{C_d}+\bm{C_e} + \rho^2 \bm{P} \bm{C_u} \bm{P}^T \; .
+\end{equation}
+%
+To make further calculations easier the exponential function can be removed by taking the negative $\log$ of the function (Rasmussen):
+\begin{equation}
+- \log p(y|w) = \frac{n}{2} \log(2 \pi) + \frac{1}{2} \log |\bm{K}| + \frac{1}{2}(\rho \bm{P}\bar{u} - y)^T \bm{K}^{-1} (\rho \bm{P}\bar{u} - y) 
+\label{eqn:neglog}
+\end{equation}
+Because of taking the negative $\log$, (\ref{eqn:neglog}) now needs to be minimized instead of maximized. 
+
 
 
 \subsection{Inference of the Posterior Density}

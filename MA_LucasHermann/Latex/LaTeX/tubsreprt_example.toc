@@ -7,12 +7,15 @@
 \contentsline {subsection}{\numberline {2.3.1}Prior before observation}{6}{subsection.9}%
 \contentsline {subsection}{\numberline {2.3.2}Posterior after observation}{6}{subsection.10}%
 \contentsline {section}{\numberline {2.4}The Statistical Finite Element Method}{6}{section.11}%
-\contentsline {subsection}{\numberline {2.4.1}Probabilistic FEM Prior}{6}{subsection.12}%
-\contentsline {subsection}{\numberline {2.4.2}Inference of the Posterior Density}{7}{subsection.13}%
-\contentsline {chapter}{\numberline {3}1D Example and Application in Vibroacoustics}{8}{chapter.18}%
-\contentsline {section}{\numberline {3.1}Simple 1D example}{8}{section.19}%
-\contentsline {paragraph}{\nonumberline Choice of PDE}{8}{section*.20}%
-\contentsline {paragraph}{\nonumberline Construction of the GP}{8}{section*.23}%
-\contentsline {section}{\numberline {3.2}1D Vibroacoustics Example}{9}{section.30}%
-\contentsline {chapter}{\numberline {4}Results and Discussion}{10}{chapter.31}%
-\contentsline {section}{\numberline {4.1}Section 1}{10}{section.32}%
+\contentsline {subsection}{\numberline {2.4.1}Modeling parameters of the PDE}{6}{subsection.12}%
+\contentsline {subsection}{\numberline {2.4.2}Probabilistic FEM Prior}{6}{subsection.13}%
+\contentsline {subsection}{\numberline {2.4.3}Modeling Measurement Data}{7}{subsection.14}%
+\contentsline {subsection}{\numberline {2.4.4}Estimation of Hyperparameters}{8}{subsection.36}%
+\contentsline {subsection}{\numberline {2.4.5}Inference of the Posterior Density}{8}{subsection.43}%
+\contentsline {chapter}{\numberline {3}1D Example and Application in Vibroacoustics}{10}{chapter.48}%
+\contentsline {section}{\numberline {3.1}Simple 1D example}{10}{section.49}%
+\contentsline {paragraph}{\nonumberline Choice of PDE}{10}{section*.50}%
+\contentsline {paragraph}{\nonumberline Construction of the GP}{10}{section*.53}%
+\contentsline {section}{\numberline {3.2}1D Vibroacoustics Example}{11}{section.60}%
+\contentsline {chapter}{\numberline {4}Results and Discussion}{12}{chapter.61}%
+\contentsline {section}{\numberline {4.1}Section 1}{12}{section.62}%
