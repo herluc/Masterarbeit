@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.28)  6 MAY 2021 21:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2021.1.28)  15 MAY 2021 00:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -567,10 +567,69 @@ Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 209.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip102
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks20
+\ex@=\dimen162
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+LaTeX Info: Redefining \boldsymbol on input line 28.
+\pmbraise@=\dimen163
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count275
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count276
+\leftroot@=\count277
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count278
+\DOTSCASE@=\count279
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+\big@size=\dimen164
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count280
+\c@MaxMatrixCols=\count281
+\dotsspace@=\muskip16
+\c@parentequation=\count282
+\dspbrk@lvl=\count283
+\tag@help=\toks21
+\row@=\count284
+\column@=\count285
+\maxfields@=\count286
+\andhelp@=\toks22
+\eqnshift@=\dimen165
+\alignsep@=\dimen166
+\tagshift@=\dimen167
+\tagwidth@=\dimen168
+\totwidth@=\dimen169
+\lineht@=\dimen170
+\@envbody=\toks23
+\multlinegap=\skip103
+\multlinetaggap=\skip104
+\mathdisplay@stack=\toks24
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
-\inpenc@prehook=\toks20
-\inpenc@posthook=\toks21
+\inpenc@prehook=\toks25
+\inpenc@posthook=\toks26
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2020/03/22 3.42 The Babel package
@@ -588,12 +647,12 @@ aphy)
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/03/22 3.42 Babel common definitions
-\babel@savecnt=\count275
-\U@D=\dimen162
+\babel@savecnt=\count287
+\U@D=\dimen171
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count276
+\bbl@dirlevel=\count288
 )
 Package babel Info: Making " an active character on input line 121.
 ))
@@ -612,15 +671,15 @@ Package: expl3 2020-04-06 L3 programming layer (loader)
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count277
-\l__pdf_internal_box=\box54
+\l__kernel_color_stack_int=\count289
+\l__pdf_internal_box=\box56
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2020-03-06 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count278
-\g__xparse_grabber_int=\count279
-\l__xparse_m_args_int=\count280
-\l__xparse_v_nesting_int=\count281
+\l__xparse_current_arg_int=\count290
+\g__xparse_grabber_int=\count291
+\l__xparse_m_args_int=\count292
+\l__xparse_v_nesting_int=\count293
 )
 Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 
@@ -629,18 +688,18 @@ File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
-\AM@pagewidth=\dimen163
-\AM@pageheight=\dimen164
+\AM@pagewidth=\dimen172
+\AM@pageheight=\dimen173
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
 )
-\AM@pagebox=\box55
-\AM@global@opts=\toks22
-\AM@pagecnt=\count282
-\AM@toc@title=\toks23
-\c@AM@survey=\count283
-\AM@templatesizebox=\box56
+\AM@pagebox=\box57
+\AM@global@opts=\toks27
+\AM@pagecnt=\count294
+\AM@toc@title=\toks28
+\c@AM@survey=\count295
+\AM@templatesizebox=\box58
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
@@ -670,9 +729,9 @@ Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
-\@linkdim=\dimen165
-\Hy@linkcounter=\count284
-\Hy@pagecounter=\count285
+\@linkdim=\dimen174
+\Hy@linkcounter=\count296
+\Hy@pagecounter=\count297
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
@@ -685,7 +744,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count286
+\Hy@SavedSpaceFactor=\count298
 Package hyperref Info: Option `colorlinks' set `true' on input line 4421.
 Package hyperref Info: Option `pdfpagelabels' set `true' on input line 4421.
 Package hyperref Info: Option `bookmarksopen' set `true' on input line 4421.
@@ -700,14 +759,14 @@ Package hyperref Info: Plain pages OFF on input line 4562.
 Package hyperref Info: Backreferencing OFF on input line 4567.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4800.
-\c@Hy@tempcnt=\count287
+\c@Hy@tempcnt=\count299
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip16
+\Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5159.
-\XeTeXLinkMargin=\dimen166
+\XeTeXLinkMargin=\dimen175
 
 (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -716,9 +775,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count288
-\Field@Width=\dimen167
-\Fld@charsize=\dimen168
+\Fld@menulength=\count300
+\Field@Width=\dimen176
+\Fld@charsize=\dimen177
 Package hyperref Info: Hyper figures OFF on input line 6430.
 Package hyperref Info: Link nesting OFF on input line 6435.
 Package hyperref Info: Hyper index ON on input line 6438.
@@ -728,9 +787,9 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6455.
 Package hyperref Info: PDF/A mode OFF on input line 6460.
 LaTeX Info: Redefining \ref on input line 6500.
 LaTeX Info: Redefining \pageref on input line 6504.
-\Hy@abspage=\count289
-\c@Item=\count290
-\c@Hfootnote=\count291
+\Hy@abspage=\count301
+\c@Item=\count302
+\c@Hfootnote=\count303
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -740,8 +799,8 @@ File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
 (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
 Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
 )
-\Fld@listcount=\count292
-\c@bookmark@seq@number=\count293
+\Fld@listcount=\count304
+\c@bookmark@seq@number=\count305
 
 (/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -752,7 +811,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip102
+\Hy@SectionHShift=\skip105
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty
 Package: hypcap 2016/05/16 v1.12 Adjusting the anchors of captions (HO)
@@ -764,53 +823,53 @@ LaTeX Warning: Unused global option(s):
 (./tubsreprt_example.aux)
 \openout1 = `tubsreprt_example.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 48.
-LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 4
-8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 113.
+LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 1
+13.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ly1/ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
 LaTeX Font Info:    Trying to load font information for LY1+NexusProSans on inp
-ut line 48.
+ut line 113.
 
 (/home/lucashermann/texmf/tex/latex/tubs/LY1NexusProSans.fd
 File: LY1NexusProSans.fd Fontshop NexusProSans font definitions
 )
-Package scrbase Info: activating english \contentsname on input line 48.
-Package scrbase Info: activating english \listfigurename on input line 48.
-Package scrbase Info: activating english \listtablename on input line 48.
+Package scrbase Info: activating english \contentsname on input line 113.
+Package scrbase Info: activating english \listfigurename on input line 113.
+Package scrbase Info: activating english \listtablename on input line 113.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count294
-\scratchdimen=\dimen169
-\scratchbox=\box57
-\nofMPsegments=\count295
-\nofMParguments=\count296
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count297
-\MPscratchDim=\dimen170
-\MPnumerator=\count298
-\makeMPintoPDFobject=\count299
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count306
+\scratchdimen=\dimen178
+\scratchbox=\box59
+\nofMPsegments=\count307
+\nofMParguments=\count308
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count309
+\MPscratchDim=\dimen179
+\MPnumerator=\count310
+\makeMPintoPDFobject=\count311
+\everyMPtoPDFconversion=\toks30
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 
@@ -863,10 +922,9 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\AtBeginShipoutBox=\box58
+\AtBeginShipoutBox=\box60
 ABD: EveryShipout initializing macros
-\big@size=\dimen171
-\c@lstlisting=\count300
+\c@lstlisting=\count312
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
@@ -876,7 +934,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-Package hyperref Info: Link coloring ON on input line 48.
+Package hyperref Info: Link coloring ON on input line 113.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -887,11 +945,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count301
+\c@section@level=\count313
 )
-LaTeX Info: Redefining \ref on input line 48.
-LaTeX Info: Redefining \pageref on input line 48.
-LaTeX Info: Redefining \nameref on input line 48.
+LaTeX Info: Redefining \ref on input line 113.
+LaTeX Info: Redefining \pageref on input line 113.
+LaTeX Info: Redefining \nameref on input line 113.
 
 (./tubsreprt_example.out) (./tubsreprt_example.out)
 \@outlinefile=\write3
@@ -904,7 +962,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 48.
+(scrbook)           before \begin{document} on input line 113.
 
 (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
@@ -914,45 +972,45 @@ File: bkm-pdftex.def 2019/12/03 v1.28 bookmark driver for pdfTeX (HO)
 Package auxhook Info: \AddLineBeginMainAux comes a little late,
 (auxhook)             because the main .aux file is already opened on input lin
 e 168.
-\BKM@id=\count302
+\BKM@id=\count314
 ))
 <./Deckblatt/2099_StA_Name_Deckblatt.pdf, id=4, 597.50829pt x 845.0471pt>
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf  used on input
- line 52.
+ line 117.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf  used on input
- line 52.
+ line 117.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 <./Deckblatt/2099_StA_Name_Deckblatt.pdf, id=7, page=1, 597.50829pt x 845.0471p
 t>
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf, page 1>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf , page1 used o
-n input line 52.
+n input line 117.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf, page 1>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf , page1 used o
-n input line 52.
+n input line 117.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf, page 1>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf , page1 used o
-n input line 52.
+n input line 117.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf, page 1>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf , page1 used o
-n input line 52.
+n input line 117.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf, page 1>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf , page1 used o
-n input line 52.
+n input line 117.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [1
 
@@ -1368,31 +1426,31 @@ pdfTeX warning: /usr/bin/pdflatex (file /home/lucashermann/.texlive2020/texmf-v
 ar/fonts/map/pdftex/updmap/pdftex.map): ambiguous entry for `txttsl': font file
  present but not included, will be treated as font file not present
 }>]
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 7
-7.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 1
+42.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
-77.
+142.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
-77.
+142.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
-77.
+142.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
-77.
+142.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
@@ -1434,7 +1492,7 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              deprecated \float@addtolist interface.
 
 LaTeX Font Info:    Trying to load font information for LY1+txtt on input line 
-85.
+150.
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ly1txtt.fd
 File: tytxtt.fd 2000/12/15 v3.1
 ) [5
@@ -1442,59 +1500,78 @@ File: tytxtt.fd 2000/12/15 v3.1
 
 ]
 chapter 2.
-[6
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) [6
 
 
 ]
+<pics/MCerrorConv.pdf, id=99, 397.78694pt x 271.19795pt>
+File: pics/MCerrorConv.pdf Graphic file (type pdf)
+<use pics/MCerrorConv.pdf>
+Package pdftex.def Info: pics/MCerrorConv.pdf  used on input line 247.
+(pdftex.def)             Requested size: 284.52756pt x 193.98367pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 LaTeX Font Info:    Trying to load font information for U+fplmbb on input line 
-137.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+255.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-Overfull \hbox (40.22514pt too wide) in paragraph at lines 164--165
+) [7]
+Overfull \hbox (40.22514pt too wide) in paragraph at lines 282--283
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
 
  []
 
 
-Overfull \hbox (4.22478pt too wide) in paragraph at lines 175--176
+Overfull \hbox (4.22478pt too wide) in paragraph at lines 293--294
 [][][][][][][][][][][][][][][] 
  []
 
-[7] [8] [9]
+[8 <./pics/MCerrorConv.pdf>] [9]
+Overfull \hbox (128.10927pt too wide) in paragraph at lines 359--360
+[]\LY1/NexusProSans/m/n/10 The de-ter-mi-nant of any tri-an-gu-lar ma-trix is d
+e-fined as the prod-uct of its di-ag-o-nal en-tries [http://www.math.lsa.umich.
+edu/ hochster/419/det.html].
+ []
+
+[10] [11]
 chapter 3.
-[10
-
-
-] [11]
-chapter 4.
 [12
 
 
 ] [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 329.
- [14
+chapter 4.
+[14
+
+
+] [15]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 502.
+ [16
 
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 329.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 502.
  (./tubsreprt_example.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 329.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 329.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 502.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 502.
 Package rerunfilecheck Info: File `tubsreprt_example.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 17850 strings out of 480623
- 339948 string characters out of 5906692
- 1029380 words of memory out of 5000000
- 33292 multiletter control sequences out of 15000+600000
- 639924 words of font info for 140 fonts, out of 8000000 for 9000
+ 18574 strings out of 480623
+ 348790 string characters out of 5906692
+ 1070868 words of memory out of 5000000
+ 33953 multiletter control sequences out of 15000+600000
+ 654098 words of font info for 148 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
- 61i,23n,113p,10140b,1278s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,23n,113p,10140b,2038s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/lucashermann/texmf/fonts/enc/dvips/Fontshop/a_molob5.enc}{/usr/share/t
 exlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/home/lucashermann/texmf/fonts/e
 nc/dvips/Fontshop/a_hsis74.enc}{/home/lucashermann/texmf/fonts/enc/dvips/Fontsh
@@ -1503,20 +1580,26 @@ op/a_blklr2.enc}{/home/lucashermann/texmf/fonts/enc/dvips/Fontshop/a_cbf6z5.enc
 hermann/texmf/fonts/type1/Nexus/NexusSansPro-Italic.pfb></home/lucashermann/tex
 mf/fonts/type1/Nexus/NexusSansPro-Regular.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ma
-thpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fp
-lmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></home/lucas
-hermann/texmf/fonts/type1/urw/arial/ua1b8a.pfb></home/lucashermann/texmf/fonts/
-type1/urw/arial/ua1r8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palat
-ino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplbi8a.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on tubsreprt_example.pdf (14 pages, 200644 bytes).
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/mathpazo/fplmbb.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/mathpazo/fplmri.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/txfonts/t1xtt.pfb></home/lucashermann/texmf/fonts/type1/urw/arial/ua1b
+8a.pfb></home/lucashermann/texmf/fonts/type1/urw/arial/ua1r8a.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/p
+alatino/uplri8a.pfb>
+Output written on tubsreprt_example.pdf (16 pages, 437213 bytes).
 PDF statistics:
- 320 PDF objects out of 1000 (max. 8388607)
- 279 compressed objects within 3 object streams
- 81 named destinations out of 1000 (max. 500000)
- 165 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 429 PDF objects out of 1000 (max. 8388607)
+ 378 compressed objects within 4 object streams
+ 122 named destinations out of 1000 (max. 500000)
+ 170 words of extra memory for PDF output out of 10000 (max. 10000000)
 

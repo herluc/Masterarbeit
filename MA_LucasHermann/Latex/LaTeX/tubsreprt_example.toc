@@ -9,13 +9,17 @@
 \contentsline {section}{\numberline {2.4}The Statistical Finite Element Method}{6}{section.11}%
 \contentsline {subsection}{\numberline {2.4.1}Modeling parameters of the PDE}{6}{subsection.12}%
 \contentsline {subsection}{\numberline {2.4.2}Probabilistic FEM Prior}{6}{subsection.13}%
-\contentsline {subsection}{\numberline {2.4.3}Modeling Measurement Data}{7}{subsection.14}%
-\contentsline {subsection}{\numberline {2.4.4}Estimation of Hyperparameters}{8}{subsection.36}%
-\contentsline {subsection}{\numberline {2.4.5}Inference of the Posterior Density}{8}{subsection.43}%
-\contentsline {chapter}{\numberline {3}1D Example and Application in Vibroacoustics}{10}{chapter.48}%
-\contentsline {section}{\numberline {3.1}Simple 1D example}{10}{section.49}%
-\contentsline {paragraph}{\nonumberline Choice of PDE}{10}{section*.50}%
-\contentsline {paragraph}{\nonumberline Construction of the GP}{10}{section*.53}%
-\contentsline {section}{\numberline {3.2}1D Vibroacoustics Example}{11}{section.60}%
-\contentsline {chapter}{\numberline {4}Results and Discussion}{12}{chapter.61}%
-\contentsline {section}{\numberline {4.1}Section 1}{12}{section.62}%
+\contentsline {subsection}{\numberline {2.4.3}Modeling Measurement Data}{7}{subsection.41}%
+\contentsline {subsection}{\numberline {2.4.4}Estimation of Hyperparameters}{9}{subsection.63}%
+\contentsline {paragraph}{\nonumberline Cholesky Decompositon}{9}{section*.70}%
+\contentsline {subsubsection}{\nonumberline Minimization of the Negative log-Likelihood}{10}{section*.79}%
+\contentsline {paragraph}{\nonumberline MCMC}{10}{section*.80}%
+\contentsline {paragraph}{\nonumberline L-BGFS}{10}{section*.81}%
+\contentsline {subsection}{\numberline {2.4.5}Inference of the Posterior Density}{10}{subsection.82}%
+\contentsline {chapter}{\numberline {3}1D Example and Application in Vibroacoustics}{12}{chapter.87}%
+\contentsline {section}{\numberline {3.1}Simple 1D example}{12}{section.88}%
+\contentsline {paragraph}{\nonumberline Choice of PDE}{12}{section*.89}%
+\contentsline {paragraph}{\nonumberline Construction of the GP}{12}{section*.92}%
+\contentsline {section}{\numberline {3.2}1D Vibroacoustics Example}{13}{section.99}%
+\contentsline {chapter}{\numberline {4}Results and Discussion}{14}{chapter.100}%
+\contentsline {section}{\numberline {4.1}Section 1}{14}{section.101}%

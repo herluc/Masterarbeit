@@ -11,7 +11,72 @@
   ,]{tubsbook}
   
 \usepackage{listings}  % for code stuff
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+	language=Python,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    morekeywords={self},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+
+\newcommand\pythonstyle{\lstset{
+	language=Python,
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    morekeywords={self},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}}
+
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+
+
+
+%lstset{style=mystyle}
+
 \usepackage{bm} 
+\usepackage{amsmath}
  
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage[utf8]{inputenc}
@@ -130,7 +195,60 @@ The resulting response $u_h$ is, since it is discretized and not continuous, a m
 %
 To check convergence of the FEM model, it can be compared to the exact analytically determined system response $u$. 
 %
-It is assumed that there is a difference between the exact and the calculated FEM response to the true system response. That difference ought to be reduced by updating the prior with observations.
+It is assumed that there is a difference between the exact and the calculated FEM response to the true system response. That difference will be reduced by updating the prior with observations.
+%
+With the basic FEM code set up for a random source term and a deterministic diffusion coefficient, $\bar{u}$ can be obtained by calling
+\begin{python}
+def get_U_mean(self):
+	u_mean = Function(self.V)
+	U_mean = u_mean.vector()
+	#print(self.mean)
+	#print(self.mean[1])
+	b_mean = assemble(f_mean*self.v*dx) 
+	self.bc.apply(b_mean)
+	solstd,A = self.doFEM()  # solstd is unused here.
+	solve(A,U_mean,b_mean)
+	self.U_mean = U_mean
+	return U_mean .
+\end{python}
+\label{lst:get_u_mean}
+$C_u$ can be obtained by calling
+\begin{lstlisting}[language=Python]
+def get_C_u(self):
+	C_f = self.get_C_f()
+	solstd,A = self.doFEM()
+	ident = np.identity(len(self.coordinates))
+	self.bc.apply(A)
+	A = A.array()
+	A_inv = np.linalg.solve(A,ident)
+	thresh = 1e-16
+	C_u = np.dot( np.dot(A_inv,C_f), np.transpose(A_inv))
+	C_u = C_u + 1e-16*(self.sigf**2)*ident
+	c_u = np.transpose(self.integratedTestF) * C_u * self.integratedTestF
+
+	return C_u .
+\end{lstlisting}
+\label{lst:get_C_u}
+For numerical reasons a small nugget is added to the diagonal of $C_u$. This does not significantly change the result but allows using the Cholesky decomposition.
+With $\bar{u}$ and $C_u$ at hand the prior GP is defined as $u \sim \mathcal{GP}(\bar{u},C_u)$. To check if the covariance matrix is correct, a MC approximation $\bar{u}_{MC}$ of the mean can be computed by evaluating the GP $n_{MC}$ times and taking the average. As visible in Figure \ref{fig:u_mean_conv}, the error of $\bar{u}_{MC}$ converges to zero with a slope of 2 on a logarithmic scale. Therefore, $C_u$ indeed has a mean of $\bar{u}$.
+
+Code for calculating u
+direct calculation
+MC approximation from GP samples
+-error bands
+
+Code for calulating Cu
+direct calucaltion
+MC approximation
+error bands
+
+
+\begin{figure}[h]
+\includegraphics[width=10cm]{pics/MCerrorConv.pdf}
+\centering
+\caption{Convergence of the error norm for the FEM prior mean}
+\end{figure}
+\label{fig:u_mean_conv}
 
 
 \subsection{Modeling Measurement Data}
@@ -214,8 +332,59 @@ To make further calculations easier the exponential function can be removed by t
 - \log p(y|w) = \frac{n}{2} \log(2 \pi) + \frac{1}{2} \log |\bm{K}| + \frac{1}{2}(\rho \bm{P}\bar{u} - y)^T \bm{K}^{-1} (\rho \bm{P}\bar{u} - y) 
 \label{eqn:neglog}
 \end{equation}
+This also improves numerical stability because products of possibly very small factors can become smaller than machine accuracy. The log replaces products with sums.
 Because of taking the negative $\log$, (\ref{eqn:neglog}) now needs to be minimized instead of maximized. 
 
+\paragraph{Cholesky Decompositon}
+[Gentle 1998 p.93-95]
+For numerical stability reasons $\bm{K}^{-1}$ should not be calculated directly. Instead, the linear system is solved. Additionally, if $K$ is symmetric and positive-semidefinite, computing the lower triangular matrix using the Cholesky decomposition 
+\begin{equation}
+K = LL^T
+\end{equation}
+makes the calculation quicker and yields the also needed determinant of $K$ as a by-product. 
+A generic linear system is defined as $A x = b$. It is solved for $x$, so the inverse of $A$ is needed. In this case for (\ref{eqn:neglog}) there holds $A=K$ and $b = y$, since the inverse of $K$ is meant to be found. Defining $x = K^{-1}y$ there holds
+\begin{equation}
+K \times K^{-1} \times y = y
+\end{equation}
+%
+With $L$ the lower triangular matrix of $K$ obtained by 
+\begin{lstlisting}[language=Python]
+L = scipy.linalg.cho_factor(K)
+\end{lstlisting}
+the linear system can now be solved for $x = K^{-1}y$ with
+\begin{lstlisting}[language=Python]
+K_inv_y = scipy.linalg.cho_solve(L, y) .
+\end{lstlisting}
+
+The determinant of any triangular matrix is defined as the product of its diagonal entries [http://www.math.lsa.umich.edu/~hochster/419/det.html]. Therefore the lower triangular matrix $L$ can be used to efficiently calculate the determinant of $K$. There holds
+\begin{equation}
+det K = det L det L^T = det L ^2
+\end{equation}
+and therefore
+\begin{equation}
+det K = \left(    \prod_{i=1}^{n_y}  L_{i,i}  \right)^2
+\label{eqn:CholDet}
+\end{equation}
+
+Since in (\ref{eqn:neglog}) the $\log$ likelihood is used, (\ref{eqn:CholDet}) can be simplified to a sum:
+
+\begin{align*}
+\log{det K} &= \log{det L}^2 \\
+&= 2 \sum_{i=0}^{n_y} \log{L_{i,i}}
+\end{align*}
+
+\subsubsection{Minimization of the Negative log-Likelihood}
+The best possible set of hyperparameters $\bm{w}$ for (\ref{eqn:neglog}) to be as small as possible has to be found. That can be achieved by using a gradient based optimizer or by sampling the parameter space with, e.g., a MCMC approach.
+\paragraph{MCMC}
+Markov Chain Monte Carlo (MCMC) is a very efficient sampling method. Just as standard MC, it can be used to draw samples from a given distribution. The advantage of MCMC is now that an algorithm finds a relatively small set of samples which is able to describe the distribution very accurately. The result is a distribution for the hyperparameters of which e.g. the mean can be deduced. One common algorithm is the metropolis algorithm.
+The metropolis algorithm is a special case of MCMC for a symmetric proposal distribution.
+Metropolis algorithm as code. 
+
+
+
+\paragraph{L-BGFS}
+L-BGFS is a gradient based optimizer. It doesn't deliver a distribution for the hyperparameters but only a point estimate.
+For the optimization with L-BGFS the derivative of (\ref{eqn:neglog}) is needed. It can be computed as follows.
 
 
 \subsection{Inference of the Posterior Density}
@@ -247,6 +416,10 @@ and
 \begin{equation}
 C_{u|y} = \left(      \rho^2  P^T   (C_d + C_e)^{-1}  P  +  C_u^{-1}    \right)^{-1}
 \end{equation}
+
+
+
+
 
 \chapter{1D Example and Application in Vibroacoustics}
 
