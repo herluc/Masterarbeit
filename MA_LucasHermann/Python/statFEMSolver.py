@@ -20,7 +20,7 @@ class solverClass:
 		self.dom_a = 0.0 #domain boundaries
 		self.dom_b = 1.0
 
-		self.ne	= 120 #number of elements
+		self.ne	= 100 #number of elements
 		self.nMC = nMC #number of Monte Carlo points
 
 		self.mesh = IntervalMesh(self.ne,self.dom_a,self.dom_b) #define mesh
@@ -48,6 +48,12 @@ class solverClass:
 
 
 
+	def exponentiated_quadratic_log(self, xa, xb, l, sig):
+		""" expects input parameters as log(par). """
+		return np.exp(2*sig) * np.exp(-0.5 * scipy.spatial.distance.cdist(xa, xb, 'sqeuclidean') * np.exp(-2*l))
+
+
+
 	def draw_FEM_samples(self, x_vals):
 		#print("fem mean f")
 		#print(self.mean)
@@ -56,6 +62,31 @@ class solverClass:
 			mean = self.mean , cov=cov,
 			size=1)
 		return discrete_f
+
+
+
+	def create_fake_data(self, y_points):
+		#parameters:
+		rho = 0.8
+		sig_d = 2e-2
+		l_d = 0.5
+		sig_y = 2.5e-2
+		ny = len(y_points)
+		print(np.shape(y_points))
+		#print(ny)
+		y_points = np.array(y_points)
+		#print(y_points)
+		y1 = (np.sin(np.pi*y_points)/2 * np.sin(7*np.pi*y_points)/20)
+		y2 = np.transpose(np.atleast_2d(np.random.multivariate_normal(mean = np.zeros(ny), cov = self.exponentiated_quadratic(y_points,y_points,l_d,sig_d))))
+		y3 = np.transpose(np.atleast_2d(np.random.normal(scale = sig_y, size = ny)))
+		#print(np.shape(np.transpose(np.atleast_2d(np.array(self.y_values)))))
+		y = y1 +rho *np.transpose(np.atleast_2d(np.array(self.y_values)))
+
+		print(y.flatten())
+		plt.figure(figsize=(6, 4), dpi=100)
+		plt.plot(y_points,y)
+		plt.show()
+		return y.flatten()
 
 
 
@@ -140,8 +171,12 @@ class solverClass:
 		self.integratedTestF = np.array(assemble(Constant(1.0) * self.v * dx).get_local()) #* self.ne
 
 		#print(self.integratedTestF)
-		c_f = self.exponentiated_quadratic(self.coordinates,
-			 self.coordinates, lf=self.lf, sigf=self.sigf)
+		# c_f = self.exponentiated_quadratic(self.coordinates,
+		# 	 self.coordinates, lf=self.lf, sigf=self.sigf)
+
+		c_f = self.exponentiated_quadratic_log(self.coordinates,
+			 self.coordinates, l=np.log(self.lf), sig=np.log(self.sigf))
+
 		C_f = np.zeros((self.ne+1,self.ne+1))
 		#print('coords:')
 		#print(self.coordinates)
@@ -154,11 +189,6 @@ class solverClass:
 
 
 	def get_C_u(self):
-		#integratedTestF = np.array(assemble(Constant(1.) * self.v * dx).get_local())
-		#print(integratedTestF)
-		#c_f = self.exponentiated_quadratic(self.coordinates,
-		#	 self.coordinates, lf=self.lf, sigf=self.sigf)
-		#C_f = (self.integratedTestF) * c_f * (self.integratedTestF)
 		C_f = self.get_C_f()
 		solstd,A = self.doFEM()
 		ident = np.identity(len(self.coordinates))
@@ -167,12 +197,8 @@ class solverClass:
 
 		#A_inv = np.linalg.inv(A)
 		A_inv = np.linalg.solve(A,ident)
-		thresh = 1e-16
-		#ind_smaller_thresh = A_inv < thresh
-		#A_inv[ind_smaller_thresh] = 0
-		#C_u = A_inv * C_f * np.transpose(A_inv)
 		C_u = np.dot( np.dot(A_inv,C_f), np.transpose(A_inv))
-		C_u = C_u + 1e-16*(self.sigf**2)*ident
+		C_u = C_u + 0.00001*(self.sigf**2)*ident
 		c_u = np.transpose(self.integratedTestF) * C_u * self.integratedTestF
 		self.C_u = C_u
 		self.C_uDiag = np.sqrt(np.diagonal(self.C_u))
@@ -207,9 +233,9 @@ class solverClass:
 
 
 	def doMCMC(self,w0):
-		sig_q = 0.005
+		sig_q = 0.002
 		cov = sig_q**2 * np.identity(len(w0))
-		numSamp = 5000
+		numSamp = 500
 		samples = []
 		#w0 =[1,1,1]
 		samples.append(w0)
@@ -219,8 +245,13 @@ class solverClass:
 			#proposal =  samples[i-1] + np.random.normal(loc=0.0, scale = sig_q, size=len(w0))
 			proposal = np.random.multivariate_normal(
 			mean = wi, cov=cov)
-			proposal = abs(proposal)
-			alpha = np.min((0, (self.getLogPost(np.log(proposal) - self.getLogPost(np.log(wi)))  )))
+			#proposal = abs(proposal)
+			# print("prop:")
+			# print(proposal)
+			# print(self.getLogPost(proposal))
+			# print(self.getLogPost(wi))
+			# print(self.getLogPost(proposal)  -  self.getLogPost(wi) )
+			alpha = np.min(     (0.0, self.getLogPost(proposal)  -  self.getLogPost(wi) )  )
 			#print("alpha: ",alpha)
 			u = np.random.uniform(0,1)
 			if min(proposal)>0:
@@ -284,9 +315,10 @@ class solverClass:
 
 
 	def get_C_d(self,y_points,ld, sigd):
-		#ld = 0.00103
-		#sigd = 0.009340
-		C_d = self.exponentiated_quadratic(y_points, y_points, lf=ld, sigf=sigd)
+		#ld = 1e-16
+		#sigd =1e-16
+		#C_d = self.exponentiated_quadratic(y_points, y_points, lf=ld, sigf=sigd)
+		C_d = self.exponentiated_quadratic_log(y_points, y_points, l=ld, sig=sigd)
 		#print('C_d:')
 		#print(C_d)
 		self.C_d = C_d
@@ -305,7 +337,7 @@ class solverClass:
 
 
 	def get_C_e(self,size):
-		sige_square = 2.5e-5
+		sige_square = 2.5e-3
 		C_e = sige_square * np.identity(size)
 		#C_e = np.zeros((size,size))
 		self.C_e = C_e
@@ -323,32 +355,30 @@ class solverClass:
 		y_points = np.transpose(np.atleast_2d(np.array(self.y_points)))
 		y_values = np.array(self.y_values)
 
-		#rho = np.exp(rho)  ##wieso?!
-
+		rho = np.exp(rho)
 		C_u_trans = np.dot(   np.dot(self.P , self.C_u )  ,self.P_T   )
 		#C_u_trans = np.dot(self.P, np.dot(self.C_u,self.P_T))
-
-		K_y = rho * rho *  C_u_trans      + self.get_C_d(y_points = y_points,ld=ld,sigd=sigd)+ self.C_e
+		#print(self.P)
+		#print(self.P_T)
+		K_y = self.get_C_d(y_points = y_points,ld=ld,sigd=sigd)+ self.C_e + rho * rho *  C_u_trans
 		#K_y = rho * rho *  C_u_trans
 
 
-		#K_y_inv = np.linalg.inv(K_y)
+		# K_y_inv = np.linalg.inv(K_y)
+		# ny = len(y_values)
+		# y = rho * self.Pu - y_values
+		# K_y_det = np.linalg.det(K_y)
+		# logpost = 0.5 * np.dot(np.transpose(y), np.dot(K_y_inv , y)  )  +0.5*np.log(K_y_det) + ny/2 * np.log(2* np.pi) #Version Paper
+		# #print(K_y @ np.dot(K_y_inv , y) - y)
+
 		ny = len(y_values)
-		#K_y_L = cho_factor(K_y)[0]
-		#K_y_L_T = np.transpose(K_y_L)
-		#K_y_inv = np.dot(np.linalg.inv(K_y_L_T),np.linalg.inv(K_y_L))
-		#y = rho * self.Pu - y_values
-		#K_y_det = np.linalg.det(K_y)
-		#logpost = 0.5 * np.dot(np.transpose(y), np.dot(K_y_inv , y)  )  +0.5*np.log(K_y_det) + ny/2 * np.log(2* np.pi) #Version Paper
-		#print(K_y @ np.dot(K_y_inv , y) - y)
-
-
 		y = y_values - rho * self.Pu
+
 		L = cho_factor(K_y)
 		K_y_inv_y = cho_solve(L, y)
 		Log_K_y_det = 2 * np.sum(np.log(np.diag(L[0])))
 		logpost2 = 0.5 * (np.dot(np.transpose(y), K_y_inv_y )  +Log_K_y_det + ny * np.log(2* np.pi))#Version Paper
-		print(K_y @ K_y_inv_y - y)
+		#print(K_y @ K_y_inv_y - y)
 
 
 
@@ -370,7 +400,7 @@ class solverClass:
 		K = rho * rho * C_u_trans + self.get_C_d(y_points = y_points,ld=ld,sigd=sigd) + self.C_e
 		K_inv = np.linalg.inv(K)
 		K_det = np.linalg.det(K)
-		#rho = np.exp(rho)  ##wieso?!
+		rho = np.exp(rho)  ##wieso?!
 		y = rho * self.Pu - y_values
 		ny = len(y_values)
 
@@ -396,16 +426,20 @@ class solverClass:
 		y_points = np.transpose(np.atleast_2d(np.array(y_points)))
 		y_values = np.array(y_values)
 		logpostList = []
-		ld_s = np.random.uniform(0.0001,1,1000)
-		sigd_s = np.random.uniform(0.0001,0.5,1000)
-		#rho_s = np.random.uniform(-0.6,3,200000)
-		#rho_s = np.linspace(-0.1,0.5,200000)
-		rho_s = np.linspace(0.8,1.8,1000)
-		rho_s = np.random.uniform(0.6,1.8,1000)
-		#rho_s = np.exp(rho_s)  ##wieso?!
-		#ld_s = np.log(ld_s)
-		#sigd_s = np.log(sigd_s)
 
+		ld_s = np.log(np.logspace(-5,0.05,20000,base=np.exp(1)))
+		sigd_s = np.log(np.logspace(-8,0.05,20000,base=np.exp(1)))
+		rho_s = np.log(np.logspace(-0.8,1,20000,base=np.exp(1)))
+
+		#rho_s = np.log(np.random.uniform(0.5,1.5,10000))
+		#ld_s = np.log(np.random.uniform(1e-16,1,10000))
+		#sigd_s = np.log(np.random.uniform(1e-16,1,10000))
+
+		np.random.shuffle(ld_s)
+		np.random.shuffle(sigd_s)
+		np.random.shuffle(rho_s)
+		print("rho:")
+		print(rho_s)
 		C_u_trans = np.dot(   np.dot(self.P , self.C_u )  ,self.P_T   )
 		#C_u_trans = np.dot(self.P, np.dot(self.C_u,self.P_T))
 		#print("C_u_trans")
@@ -425,33 +459,27 @@ class solverClass:
 		rho_est = rho_s[smallest]
 		sigd_est = sigd_s[smallest]
 		ld_est = ld_s[smallest]
-		plt.figure(figsize=(6, 4), dpi=100)
-
+		#plt.figure(figsize=(6, 4), dpi=100)
+		#plt.plot(rho_s)
 		#plt.contour([sigd_s,rho_s],logpostList)
-		plt.scatter(rho_s,logpostList,label="rho")
-		#plt.scatter(sigd_s,logpostList,label="sig")
+		plt.scatter(np.exp(rho_s),logpostList,label="rho")
+		plt.scatter(np.exp(sigd_s),logpostList,label="sig")
 		#plt.scatter(ld_s,logpostList,label="l")
-		#plt.hist(logpostList,bins=100)
+		#plt.hist(logpostList,bins=140)
 		#plt.yscale('log')
 		plt.show()
 
-		result = scipy.optimize.minimize(fun=self.getLogPost,bounds=((1e-16,None),(1e-16,None),(1e-16,None)),x0=np.array([1,1,1]))
+		result = scipy.optimize.minimize(fun=self.getLogPost,bounds=((1e-16,None),(1e-16,None),(1e-16,None)),x0=np.array([rho_est,sigd_est,ld_est]))
 		print("old result:")
-		print([rho_est,sigd_est,ld_est])
+		print([np.exp(rho_est),np.exp(sigd_est),np.exp(ld_est)])
 		print("optimized result:")
-		print(result)
+		print(result.x)
 
-		#self.getLogPostDeriv(rho_est,sigd_est,ld_est)
-		#self.getLogPost(rho_est,sigd_est,ld_est)
-		#return 1,1e-16,0.5
-		return result.x
-		#return -0.2,0,0
-		#print('MCMC from here on')
-		#print([rho_est,sigd_est,ld_est])
 		#samples = self.doMCMC([rho_est,sigd_est,ld_est])
 		#print('MCMC: ',samples)
-		#return samples
-		#return rho_est,sigd_est,ld_est
+		#return result.x
+
+		return rho_est,sigd_est,ld_est
 
 	def computePosterior(self,y_points,y_values):
 		#y_points = [0.4,0.933333]
@@ -472,12 +500,12 @@ class solverClass:
 		C_d = self.get_C_d(y_points,ld=ld,sigd=sigd)
 		#C_d = 0
 		P_T = np.transpose(P)
-
+		rho = np.exp(rho)
 		C_u_y =   C_u -   np.dot(  np.dot(C_u, P_T)   ,   np.dot( np.linalg.inv(  1/(rho*rho)  * (C_d + C_e)   +  np.dot(P, np.dot(C_u, P_T)   ) ) , np.dot(P,C_u))   )
 		self.C_u_yDiag = np.sqrt(np.diagonal(C_u_y))
 		C_u_inv = np.linalg.inv(C_u)
 		# t0 = time.time()
-		# CdplusCeInv = np.linalg.inv(C_d+C_e)
+		CdplusCeInv = np.linalg.inv(C_d+C_e)
 		# t1 = time.time()
 		# print("numpy inv:")
 		# print(CdplusCeInv)
@@ -485,7 +513,7 @@ class solverClass:
 		# t0 = time.time()
 		CdplusCe_L = np.linalg.cholesky(C_d+C_e)
 		CdplusCe_L_T = np.transpose(CdplusCe_L)
-		CdplusCeInv = np.dot(np.linalg.inv(CdplusCe_L_T),np.linalg.inv(CdplusCe_L))
+		#CdplusCeInv = np.dot(np.linalg.inv(CdplusCe_L_T),np.linalg.inv(CdplusCe_L))
 		# t1 = time.time()
 		# print("cholesky inv:")
 		# print(CdplusCeInv)
@@ -494,8 +522,8 @@ class solverClass:
 		#print(C_u_y)
 		u_mean = self.get_U_mean()
 		#C_u_y = C_u   -   np.dot(C_u, P_T) * np.linalg.inv(  1/(rho*rho)  * (C_d + C_e)   +  np.dot(P, np.dot(C_u, P_T)   ) )  * np.dot(P,C_u)
-		u_mean_y = np.dot(C_u_y,  np.dot( rho*P_T   ,  np.dot( np.linalg.inv(C_d+C_e) , y_values))  +   np.dot(np.linalg.inv(C_u), u_mean ) )
-		u_mean_y = np.dot(C_u_y , (  rho * np.dot(np.dot(P_T  , CdplusCeInv)  , y_values)  + np.dot(C_u_inv , u_mean)  ))
+		#u_mean_y = np.dot(C_u_y,  np.dot( rho*P_T   ,  np.dot( np.linalg.inv(C_d+C_e) , y_values))  +   np.dot(np.linalg.inv(C_u), u_mean ) )
+		u_mean_y = rho * np.dot(C_u_y , (  rho * np.dot(np.dot(P_T  , CdplusCeInv)  , y_values)  + np.dot(C_u_inv , u_mean)  ))
 
 
 		posteriorGP = np.random.multivariate_normal(
@@ -582,44 +610,63 @@ error_mean = U_mean - np.array(muL)
 
 #print(priorSamples[0])
 #print(len(priorSamples[0]))
-n_obs = 9
+n_obs = 6
 idx = np.round(np.linspace(0, len(priorSamples[0])-1, n_obs)).astype(int)
 y_values_prior = [priorSamples[0][i] for i in idx]
-y_points = np.linspace(0.1,0.9,6).tolist()
-y_values=[0.0004920659883738306, 0.17529629477383774, 0.26500738352141456, 0.26730432282836786, 0.17717424922549324, -0.0004905481144322452]
+y_values=[0.02393523,0.04423292, 0.06159137, 0.08335314, 0.09902092, 0.11984335,
+ 0.13244231, 0.14318289, 0.15658694, 0.17112178, 0.1784107,  0.1832616,
+ 0.19096354, 0.19309523, 0.19291609, 0.20442705, 0.20447705, 0.20763928,
+ 0.20639289, 0.20496173, 0.19824301, 0.19479635, 0.19457483, 0.19123965,
+ 0.18479936, 0.17647887, 0.16504261, 0.1598612 , 0.1507061,  0.14170226,
+ 0.12740095, 0.11301528, 0.09990149 ,0.08139896, 0.06955964, 0.05383899,
+ 0.03363033, 0.01623922]
 
-y_values = np.array(y_values)# + noise
+#y_values = np.array(y_values)# + noise
 y_values = y_values_prior[1:-1]
-noise = np.random.normal(0,5e-3,len(y_values))
+noise = np.random.normal(0,2.5e-3,len(y_values))
 y_values = y_values + noise
+
 print('values:')
 print(y_values)
 y_points = [solver.coordinates.tolist()[i] for i in idx][1:-1]
-#print("points:")
-#print(y_points)
-#print('indexes: ',idx)
+
+
+y_values = [0.125,0.2,0.25,0.125]
+y_points = [0.2,0.4,0.6,0.8]
+
+
+
 solver.y_points = y_points
 solver.y_values = y_values
-u_mean_y,posterior_samples = solver.computePosterior(y_points, y_values)
-#errorNormList = solver.getMCErrors()
+#solver.y_values = solver.create_fake_data(solver.y_points)
+u_mean_y,posterior_samples = solver.computePosterior(solver.y_points, solver.y_values)
+print("u_mean_y:")
+print(u_mean_y)
 error_var = np.square(np.array(solver.C_u_yDiag)) - np.square(np.array(sigL))
 
 
-plt.figure(figsize=(6, 4), dpi=100)
+
+
+
+
+
+
+
+f = plt.figure(figsize=(6, 4), dpi=100)
 plt.plot(solver.coordinates, np.transpose(U_mean), linestyle='-', color = 'black',lw = 1.0,label='Mean analyt.')
 #plt.plot(solver.coordinates, np.transpose(U_mean_verbose), linestyle='-.', color = 'red',lw = 1.0)
 #plt.plot(solver.coordinates, np.transpose(priorSamples[10:390]), linestyle='-',lw = 0.4,color='black', alpha=0.35)
 #plt.plot(np.transpose(solver.coordinates)[0], np.array(muL), linestyle='-.',color = 'black',lw = 3.0, label='Mean MC')
-plt.plot(np.transpose(solver.coordinates)[0], error_var, linestyle='-.',color = 'green',lw = 2.0, label='Mean error')
+#plt.plot(np.transpose(solver.coordinates)[0], error_var, linestyle='-.',color = 'green',lw = 2.0, label='Mean error')
 plt.plot(solver.coordinates, np.transpose(posterior_samples[10:150]), linestyle='-',lw = 0.2,color='black', alpha=0.4)
-plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)-2*solver.C_u_yDiag, linestyle='-.',color = 'black',lw = 2.0,label='2sig')
-plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)+2*solver.C_u_yDiag, linestyle='-.',color = 'black',lw = 2.0)
+plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)-2*solver.C_u_yDiag, linestyle='-.',color = 'green',lw = 1.0,label='2sig')
+plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)+2*solver.C_u_yDiag, linestyle='-.',color = 'green',lw = 1.0)
 
-plt.plot(solver.coordinates, np.transpose(u_mean_y), linestyle='-', color = 'red',lw = 2.0,label='Posterior mean')
-plt.scatter(y_points, y_values,label='observations')
+plt.plot(solver.coordinates, np.transpose(u_mean_y), linestyle='-', color = 'green',lw = 2.0,label='Posterior mean')
+plt.scatter(solver.y_points, solver.y_values,label='observations')
 
-plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)-2*np.array(sigL), linestyle='-',color = 'red',lw = 3.0,label='2sig MC')
-plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)+2*np.array(sigL), linestyle='-',color = 'red',lw = 3.0)
+plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)-2*np.array(sigL), linestyle='-',color = 'red',lw = 1.0,label='2sig MC')
+plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)+2*np.array(sigL), linestyle='-',color = 'red',lw = 1.0)
 
 plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)-2*solver.C_uDiag, linestyle='-.',color = 'black',lw = 2.0,label='2sig')
 plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)+2*solver.C_uDiag, linestyle='-.',color = 'black',lw = 2.0)
@@ -629,6 +676,7 @@ plt.legend()
 plt.xlim([solver.dom_a, solver.dom_b])
 plt.grid()
 plt.show()
+f.savefig("Result.pdf", bbox_inches='tight')
 #solver.estimateHyperpar(y_points, y_values)
 
 

@@ -213,7 +213,7 @@ def get_U_mean(self):
 \end{python}
 \label{lst:get_u_mean}
 $C_u$ can be obtained by calling
-\begin{lstlisting}[language=Python]
+\begin{python}
 def get_C_u(self):
 	C_f = self.get_C_f()
 	solstd,A = self.doFEM()
@@ -225,12 +225,21 @@ def get_C_u(self):
 	C_u = np.dot( np.dot(A_inv,C_f), np.transpose(A_inv))
 	C_u = C_u + 1e-16*(self.sigf**2)*ident
 	c_u = np.transpose(self.integratedTestF) * C_u * self.integratedTestF
-
 	return C_u .
-\end{lstlisting}
+\end{python}
 \label{lst:get_C_u}
 For numerical reasons a small nugget is added to the diagonal of $C_u$. This does not significantly change the result but allows using the Cholesky decomposition.
 With $\bar{u}$ and $C_u$ at hand the prior GP is defined as $u \sim \mathcal{GP}(\bar{u},C_u)$. To check if the covariance matrix is correct, a MC approximation $\bar{u}_{MC}$ of the mean can be computed by evaluating the GP $n_{MC}$ times and taking the average. As visible in Figure \ref{fig:u_mean_conv}, the error of $\bar{u}_{MC}$ converges to zero with a slope of 2 on a logarithmic scale. Therefore, $C_u$ indeed has a mean of $\bar{u}$.
+The MC samples can be drawn via
+\begin{python}
+def samplePrior(self):
+	U_mean = self.get_U_mean()
+	C_u = self.get_C_u()
+	priorGP = np.random.multivariate_normal(
+		mean = U_mean, cov=C_u,
+		size=self.nMC)
+	return priorGP
+\end{python}
 
 Code for calculating u
 direct calculation
@@ -276,7 +285,7 @@ which $\sigma_d, l_d$ the unknown parameters of a squared exponential kernel fun
 The projection matrix $P$ is constructed by evaluating all FEM ansatz functions of the mesh at the $n_y$ measurement positions. The result is a sparse matrix with most entries zero and only those entries non zero that correspond to the ansatz functions $\Phi_i(\bm{\bm{x}})$ associated with the finite element in which the measurement positions lie.
 This computation for linear ansatz functions can easily be implemented in Python using Fenics:
 
-\begin{lstlisting}[language=Python]
+\begin{python}
 def getP(self,y_points):
 	ny = len(y_points)
 	P = np.zeros((ny, self.ne+1), dtype = float) #with ne the number of elements
@@ -294,7 +303,7 @@ def getP(self,y_points):
 			P[j,cell_id+i] = phi_x
 	self.Pu = np.dot(P,self.U_mean)
 	return P
-\end{lstlisting}
+\end{python}
 \label{lst:getP}
 
 

@@ -1,25 +1,25 @@
 \babel@toc {english}{}
-\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.4}%
-\contentsline {chapter}{\numberline {2}Theoretical Background}{6}{chapter.5}%
-\contentsline {section}{\numberline {2.1}The Classical Finite Element Method}{6}{section.6}%
-\contentsline {section}{\numberline {2.2}Bayesian Inference}{6}{section.7}%
-\contentsline {section}{\numberline {2.3}Gaussian Process Regression}{6}{section.8}%
-\contentsline {subsection}{\numberline {2.3.1}Prior before observation}{6}{subsection.9}%
-\contentsline {subsection}{\numberline {2.3.2}Posterior after observation}{6}{subsection.10}%
-\contentsline {section}{\numberline {2.4}The Statistical Finite Element Method}{6}{section.11}%
-\contentsline {subsection}{\numberline {2.4.1}Modeling parameters of the PDE}{6}{subsection.12}%
-\contentsline {subsection}{\numberline {2.4.2}Probabilistic FEM Prior}{6}{subsection.13}%
-\contentsline {subsection}{\numberline {2.4.3}Modeling Measurement Data}{7}{subsection.41}%
-\contentsline {subsection}{\numberline {2.4.4}Estimation of Hyperparameters}{9}{subsection.63}%
-\contentsline {paragraph}{\nonumberline Cholesky Decompositon}{9}{section*.70}%
-\contentsline {subsubsection}{\nonumberline Minimization of the Negative log-Likelihood}{10}{section*.79}%
-\contentsline {paragraph}{\nonumberline MCMC}{10}{section*.80}%
-\contentsline {paragraph}{\nonumberline L-BGFS}{10}{section*.81}%
-\contentsline {subsection}{\numberline {2.4.5}Inference of the Posterior Density}{10}{subsection.82}%
-\contentsline {chapter}{\numberline {3}1D Example and Application in Vibroacoustics}{12}{chapter.87}%
-\contentsline {section}{\numberline {3.1}Simple 1D example}{12}{section.88}%
-\contentsline {paragraph}{\nonumberline Choice of PDE}{12}{section*.89}%
-\contentsline {paragraph}{\nonumberline Construction of the GP}{12}{section*.92}%
-\contentsline {section}{\numberline {3.2}1D Vibroacoustics Example}{13}{section.99}%
-\contentsline {chapter}{\numberline {4}Results and Discussion}{14}{chapter.100}%
-\contentsline {section}{\numberline {4.1}Section 1}{14}{section.101}%
+\contentsline {chapter}{\numberline {1}Introduction}{5}{chapter.4}
+\contentsline {chapter}{\numberline {2}Theoretical Background}{6}{chapter.5}
+\contentsline {section}{\numberline {2.1}The Classical Finite Element Method}{6}{section.6}
+\contentsline {section}{\numberline {2.2}Bayesian Inference}{6}{section.7}
+\contentsline {section}{\numberline {2.3}Gaussian Process Regression}{6}{section.8}
+\contentsline {subsection}{\numberline {2.3.1}Prior before observation}{6}{subsection.9}
+\contentsline {subsection}{\numberline {2.3.2}Posterior after observation}{6}{subsection.10}
+\contentsline {section}{\numberline {2.4}The Statistical Finite Element Method}{6}{section.11}
+\contentsline {subsection}{\numberline {2.4.1}Modeling parameters of the PDE}{6}{subsection.12}
+\contentsline {subsection}{\numberline {2.4.2}Probabilistic FEM Prior}{6}{subsection.13}
+\contentsline {subsection}{\numberline {2.4.3}Modeling Measurement Data}{7}{subsection.48}
+\contentsline {subsection}{\numberline {2.4.4}Estimation of Hyperparameters}{9}{subsection.70}
+\contentsline {paragraph}{\nonumberline Cholesky Decompositon}{9}{section*.77}
+\contentsline {subsubsection}{\nonumberline Minimization of the Negative log-Likelihood}{10}{section*.86}
+\contentsline {paragraph}{\nonumberline MCMC}{10}{section*.87}
+\contentsline {paragraph}{\nonumberline L-BGFS}{10}{section*.88}
+\contentsline {subsection}{\numberline {2.4.5}Inference of the Posterior Density}{10}{subsection.89}
+\contentsline {chapter}{\numberline {3}1D Example and Application in Vibroacoustics}{12}{chapter.94}
+\contentsline {section}{\numberline {3.1}Simple 1D example}{12}{section.95}
+\contentsline {paragraph}{\nonumberline Choice of PDE}{12}{section*.96}
+\contentsline {paragraph}{\nonumberline Construction of the GP}{12}{section*.99}
+\contentsline {section}{\numberline {3.2}1D Vibroacoustics Example}{13}{section.106}
+\contentsline {chapter}{\numberline {4}Results and Discussion}{14}{chapter.107}
+\contentsline {section}{\numberline {4.1}Section 1}{14}{section.108}
