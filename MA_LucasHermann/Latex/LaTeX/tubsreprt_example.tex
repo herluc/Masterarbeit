@@ -11,6 +11,8 @@
   ,]{tubsbook}
   
 \usepackage{listings}  % for code stuff
+\usepackage{minted}
+
 \usepackage{xcolor}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -163,56 +165,239 @@ Braunschweig, \today
   \item Aufzählungspunkt Drei
 \end{itemize}
 
-\chapter{Theoretical Background}
 
-\section{The Classical Finite Element Method}
 
-\section{Bayesian Inference}
+\chapter{Acoustics in the Frequency Domain}
+Helmholtzgleichung herleiten und Bestandteile erklären. Freie Parameter beschreiben. Bezug auf Vibroakustik. Erklären, wo Unsicherheiten liegen und warum sich UQ und insbesodnere statFEM hier lohnt.
+An acoustic field is represented by the wave equation. It returns the acoustical pressure at a point in space X for a certain frequency and time.
+The Helmholtz equation describes the wave equation in a time-independent manner.  
+
+
+\chapter{The Classical Finite Element Method}
+
+\chapter{Probability Theroy and Bayesian Inference}
 $posterior = \frac{likelihood x prior}{marginal likelihood}$ (Rasmussen p.9)
 
 
-\section{Gaussian Process Regression}
+\chapter{Gaussian Process Regression}
+The following closely follows [Rasmussen].
 Gaussian Processes are a class of Bayesian non-parametric models. Non-parametric doesn't mean that there are no parameters involved but rather that there is an infinite number of them. Every realization of a Gaussian process doesn't yield a scalar or vector but a function. One can think of a Gaussian Process as a collection of infinitely many normally distributed random variables, i.e. a generalization of a Gaussian distribution: A vector with infinitely many entries is basically a function. By picking out a finite set of those random variables when discretizing e.g. on an FEM mesh, one obtains a multivariate distribution which is determined by a mean and a covariance matrix. [Rasmussen p.2] Hence, the GP assigns a confidence band to a function where a usual parametric regression wouldn't.
+
+A GP is described by its mean function and the covariance function, also called kernel.
+
+MArginalization Property: It means that out of a multivariate Gaussian the single variables can directly be taken out of the mean vector and the covariance matrix. E.g. for a point on the axis describved by the GP, a single value can be picked out. A univariate Gaussian comes out by simply using the mean vectors value at that point and the i,i th index of the covariance matrix. This means that the underlying distributions for single variables do not change if a GP is used to describe an arbitrary set of variables [p13].
+
+
+
 
 -Regression in general
 -differences of a GP regression to e.g. a polynomial regression: every point is assgined an uncertainty
 
+-a distribution over functions
+
 -Herleitung der Kovarianzmatrix, evtl. auch für das standard linear regression modell
 
+-parameter variations
 
-\subsection{Prior before observation}
+\section{Kernel Functions}
+p14:
 
-\subsection{Posterior after observation}
+If a kernel function is evaluated at a finite number of points, one gets a covariance matrix. This can be used as tthe covariance of a Gaussian vector from which samples can be drawn. The values of each entry are a function over the input points of the kernel function.
 
-\section{The Statistical Finite Element Method}
-The differential equation is treated from a Bayesian viewpoint: all parameters are random variables. For dependent parameters not a single distribution but a Gaussian Process is applied. Therefore prior to solving the FEM linear system, the parameter $GP f(x)$ is sampled. That sample is evaluated for each cell in the FEM mesh which makes it necessary to assemble the system matrix with that in mind.
+p79: in a covariance function all the assumptions of the function to be modeled are contained. The kernel defines or rather assesses how near or similar a value of one point is to the one of another. A training point which is close to a test point therefore gives information on how the value at the test point should be.
 
-\subsection{Modeling parameters of the PDE}
+A covariance function has to be positive semidefinite, i.e. all eigenvalues are greater or equal zero.
 
-\subsection{Probabilistic FEM Prior}
-The prior before observation is obtained by computing the FEM response $u_h$ of the PDE given all parameters. The random parameters are modeled as GPs. Thereby result a mean $\bar{u_h}$ and a covariance matrix $C_u$. For this being the prior, the GP hyperparameters are chosen deterministically. The covariance matrix is obtained by calculating $C_u = A^{-1} C_{par} A^{-T}$ with $A$ the FEM system matrix and $C_{par}$ the covariance matrix of the respective random parameter's GP. The mean can easily be determined by calculating the deterministic mean of the FEM by using only the GP's mean.
-The resulting response $u_h$ is, since it is discretized and not continuous, a multivariate Gaussian distribution.
+\paragraph{stationary kernels}: a function of $x-x'$. Stationary because it doesnt matter what value $x$ and $x_prime$ have as a starting value, the difference is always the same. Example: $1100mm -1000mm = 100 mm, 100100mm-100000mm = 100mm$
+
+squared exponential erklären. infinitely differentiable, is stationary.
+
+p80: A radial basis function is a function which is !only! a function of $r=x-x'$ and whioch is therefore isotropic, i.e. there are no rigid motions. r is like a radius so these functions are called radial basis functions.
+
+Covariance matrices always have to be symmetric, i.e. $k(x-x') = k(x'-x)$, since everything else wouldnt make sense
+
+The so-called Gram matrix is the function containing $x-x'$ evaluated at a set of points $x_i$. if the function is a covariance funtion, the gram matrix is called covariance matrix.
+
+[Code von Murphy]
+\begin{python}
+def squared_exponential(xa, xb, lf, sigf):
+    sq_norm = -0.5 * scipy.spatial.distance.cdist(xa, xb, 'sqeuclidean') \
+    	* (1/lf**2)
+    return sigf**2 * np.exp(sq_norm) .
+\end{python}
+\label{lst:sqEx}
+
+\paragraph{positive definiteness}: A covariance function has to be positive semidefinite, i.e. all eigenvalues are greater or equal zero. A covariance matrix K is positive semidefinite when $Q(v) = v^T K v \geq 0$. Q is the quadratic form. A kernel function is positive semidefinite, if it only outputs matrices which are positive semidefinite.
+
+
+\paragraph{characteristic length scale}: can be thought of as the number of "upcrossings" in the interval, i.e. the number of crossings of the x axis. can be calculated with eq 4.3. rasmussen. the more upcrossings, the shorter the length scale.
+
+matern kernel
+
+hyperparameters
+
+hyperparameter learning
+
+marginal likelihood: integral of the likelihood times the prior
+marginal means marginalization over the function values so these dont appear in the equation anymore. in this case it's marginalizing over the test points X so those dont appear anymore.
+
+
+\section{Prior before observation}
+explain, how a sample from the multivariate gaussian canbe drawn (A2 Rasmussen).
+
+
+
+
+\section{Posterior after observation}
+p16:
+The prior is conditioned on the observations. It would also be possible, abut computationally demanding, to sample many many functions out of the GP and only take those which go through the training points.
+
+explain conditioning
+
+
+
+\chapter{The Statistical Finite Element Method}
+
+
+\paragraph{The Statistical Generating Model}
+Measuring data always involves a measurement error: One can never measure any physical quantity without some measurement noise. Therefore, the so-called statistical generating model (Cirak) for a vector of $n_y$ measurements $\bm{y} \in \mathbb{R}^{n_y}$, 
 %
-To check convergence of the FEM model, it can be compared to the exact analytically determined system response $u$. 
+\begin{equation}
+\bm{y} = \bm{z} + \bm{e} = \rho \bm{P} \bm{u} + \bm{d} + \bm{e} \; ,
+\end{equation}
 %
-It is assumed that there is a difference between the exact and the calculated FEM response to the true system response. That difference will be reduced by updating the prior with observations.
+consists of response of the true underlying process $\bm{z} \in \mathbb{R}^{n_y}$ at the measurement points and the measurement noise $\bm{e} \in \mathbb{R}^{n_y}$. The true process $\bm{z}$ can further be expressed as a combination of the used model $\bm{u} \in \mathbb{R}^{n_u}$, which tries to describe the true process, and a model discrepancy error $d$ which accounts for the model not being a completely accurate representation of the true physics. The model is scaled using the scaling parameter $\rho \in \mathbb{R}$. It can be evaluated at $n_u$ points which are determined by the FEM mesh but only its evaluations at the measurement points are taken into account by using the projection matrix $\bm{P} \in \mathbb{R}^{n_y \times n_u}$.
 %
-With the basic FEM code set up for a random source term and a deterministic diffusion coefficient, $\bar{u}$ can be obtained by calling
+$e$ is modeled as a multivariate Gaussian 
+%
+\begin{equation}
+\bm{e} \sim p(\bm{e}) = \mathcal{N}(\bm{0}, \bm{C_e})
+\end{equation}
+with zero mean and the covariance matrix $\bm{C_e} = \sigma_e^2 \bm{I}$ which adds the measurement noise to each entry of $\bm{z}$.
+%
+The model discrepancy error is, in order to account for a possibly complex behavior, modeled as a GP
+\begin{equation}
+\bm{d} \sim p(\bm{d} | \sigma_d, l_d) = \mathcal{N}(\bm{0},\bm{C_d})
+\end{equation}
+which $\sigma_d, l_d$ the unknown parameters of a squared exponential kernel function. Evaluating it at the measurement positions, the GP is represented by a multivariate Gaussian with a covariance matrix $\bm{C_d} \in \mathbb{R}^{n_y \times n_y}$.
+
+
+
+
+\paragraph{Basic statFEM procedure}
+statFEM can basically be broken down into three major steps[Cirak, abstract]. The first one is applying Bayesian inversion to the FEM part of the solution. The prior GP is constructed and evaluated before data is introduced. Equations are derived which incorporate the data in order to compute a posterior density for the FEM solution GP. The equations for that solution are dependent on certain hyperparameters. These are estimated in the second step: For each of the hyperparameters a posterior density is calculated using a prior and the marginal likelihood. The third and last step is in principle finding a proper mesh size which is able to describe data the best. This last step may appear rather unimportant since usually in FEM the consensus is that a finer mesh leads to a more accurate result. However, it will be demonstrated that the optimum element size strongly depends on the value of certain hyperparameters estimated in step 2 and that there is a correlation between relatively inaccurate statFEM results and a too small element size.
+
+\section{Step 1: Posterior of the FEM Forward Model}
+
+\paragraph{Assembling the FEM System Matrix}
+The FEM assembly and solving is handled by Fenics. To compute the system matrix and to later solve for the vector of unknowns, the PDE has to be defined in a variational formulation as a boundary value problem.
+At first, the FEM solver is initiated by defining the domain, the wished number of elements and the kind of elements to be used. In this example, a 1 dimensional mesh with Lagrange basis functions is used.
+\begin{python}
+def __init__(self, nMC = 200):
+	self.dom_a = 0.0 #domain boundaries
+	self.dom_b = 1.0
+	self.ne	= 100 #number of elements
+	self.mesh = IntervalMesh(self.ne,self.dom_a,self.dom_b) #define mesh
+	self.bbt = self.mesh.bounding_box_tree()
+	self.coordinates = self.mesh.coordinates() # vertices vector
+	self.V = FunctionSpace(self.mesh, "Lagrange", 1) # Function space
+\end{python}
+The variational formulation for the chosen PDE consists of a linear form $L$ and a bilinear form $a$. These need to be specified individually for Fenics. The boundary condition is set to $u_0 = 0.0$ for both boundaries in the 1D mesh. The system matrix $A$ can be returned by calling \mintinline{python}{A = assemble(a)}. The boundary conditions are applied to $A$ after assambly.
+
+\begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+bgcolor=backcolour,
+fontsize=\footnotesize,
+linenos
+]
+{python}
+def doFEM(self):
+	# Define Dirichlet boundary (x = 0 or x = 1)
+	def boundary(x):
+		return x[0] < (self.dom_a + DOLFIN_EPS) or x[0] > self.dom_b - DOLFIN_EPS
+	# Define boundary condition
+	u0 = Constant(0.0)
+	self.bc = DirichletBC(self.V, u0, boundary)
+	# Define variational problem
+	self.u = TrialFunction(self.V)
+	self.v = TestFunction(self.V)
+	# find index of cell which contains point.
+	class DoGP(UserExpression):
+		def eval(self, value, x):
+			collisions1st = bbt.compute_first_entity_collision(Point(x[0])) 
+			value[0] = f_vals[collisions1st] # f is constant in a cell.
+		def value_shape(self):
+			return ()
+	f_vals = self.draw_FEM_samples(coordinates)
+	f_vals = f_vals[0]
+	f = DoGP()
+	
+	a = dot(grad(self.u), grad(self.v))*dx #variational Problem
+	L = f*self.v*dx
+
+	A = assemble(a)
+	b = assemble(L)
+	self.bc.apply(A, b)
+	
+	U = self.u.vector()
+	solve(A, U, b)
+	return U, A
+
+\end{minted}
+
+
+\paragraph{Generate and sample from source term GP}
+The differential equation is treated from a Bayesian viewpoint: all parameters are random variables. For dependent parameters, such as a source term $f(x)$ dependent on the spatial coordinate, not a single distribution but a Gaussian Process is applied. Therefore prior to solving the FEM linear system, the parameter $ \mathcal{GP} ( \bar{f},C_f)$ is sampled. That sample is evaluated for each cell in the FEM mesh which makes it necessary to assemble the system matrix with that in mind.
+
+$\bar{f}$ is found by 
+\subparagraph{solve for $C_f$}
+
+
+\paragraph{Generate and sample from the diffusion coefficient GP}
+If the diffusion coefficient $\kappa$ is assumed to be a random variable and dependent on $x$, it can be modeled as a GP as well and there holds
+\begin{equation}
+\kappa \sim \mathcal{GP}(\bar{\kappa},C_{\kappa})
+\end{equation}
+
+\paragraph{Computing the FEM Prior}
+Having the GPs for the input parameters defined, the FEM system of equations can be solved. With the input parameters defined as a GP, also the FEM solution is going to be a GP. Therefore, 
+\begin{equation}
+u \sim \mathcal{GP}(\bar{u}, C_u)
+\end{equation}
+is to be calculated. Expressed in terms of the FEM system matrix, there holds
+\begin{equation}
+\bm{u} = \bm{A}^{-1}\bm{f}
+\end{equation}
+Because of discretizing, the multivariate Gaussian
+\begin{equation}
+\bm{u} \sim p(u) = \mathcal{N} \left( A^{-1} \bar{f}, A^{-1} C_f A^{-T}  \right)
+\label{eqn:u_GP_disc}
+\end{equation}
+arises.
+As visible in (\ref{eqn:u_GP_disc}), there holds for $\bar{u}$
+\begin{equation}
+\bar{u} = A^{-1} \bar{f} \; ,
+\end{equation}
+which can be computed using Python by calling
 \begin{python}
 def get_U_mean(self):
 	u_mean = Function(self.V)
 	U_mean = u_mean.vector()
-	#print(self.mean)
-	#print(self.mean[1])
 	b_mean = assemble(f_mean*self.v*dx) 
 	self.bc.apply(b_mean)
 	solstd,A = self.doFEM()  # solstd is unused here.
 	solve(A,U_mean,b_mean)
-	self.U_mean = U_mean
 	return U_mean .
 \end{python}
 \label{lst:get_u_mean}
-$C_u$ can be obtained by calling
+$C_u$ is obtained by calculating
+\begin{equation}
+A^{-1} C_f A^{-T} \; .
+\end{equation}
+In Python code there holds
 \begin{python}
 def get_C_u(self):
 	C_f = self.get_C_f()
@@ -228,6 +413,88 @@ def get_C_u(self):
 	return C_u .
 \end{python}
 \label{lst:get_C_u}
+With $\bar{u}$ and $C_u$ the GP for the prior is completely defined. 
+\subparagraph{find Prior mean and variance}
+
+
+\paragraph{The Projection Matrix $P$}
+The projection matrix $P$ is constructed by evaluating all FEM ansatz functions of the mesh at the $n_y$ measurement positions. The result is a sparse matrix with most entries zero and only those entries non zero that correspond to the ansatz functions $\Phi_i(\bm{\bm{x}})$ associated with the finite element in which the measurement positions lie.
+This computation for linear ansatz functions can easily be implemented in Python using Fenics:
+
+\begin{python}
+def getP(self,y_points):
+	ny = len(y_points)
+	P = np.zeros((ny, self.ne+1), dtype = float) #with ne the number of elements
+	for j,point in enumerate(y_points):
+		x = np.array([point])
+		x_point = Point(x)
+		bbt = self.mesh.bounding_box_tree()
+		cell_id = bbt.compute_first_entity_collision(x_point)
+		cell = Cell(self.mesh, cell_id)
+		coordinate_dofs = cell.get_vertex_coordinates()
+		values = np.ones(1, dtype=float)
+		for i in range(self.el.space_dimension()): 
+			phi_x = self.el.evaluate_basis(np.array(i),x 
+				,np.array(coordinate_dofs),cell.orientation())
+			P[j,cell_id+i] = phi_x
+	self.Pu = np.dot(P,self.U_mean)
+	return P
+\end{python}
+\label{lst:getP}
+\paragraph{calculate $C_e$}
+\paragraph{derive marginal likelihood}
+\paragraph{estimate Hyperparameters for $C_d$ and scaling factor}
+\paragraph{calculate $C_d$}
+
+\subsection{Inference of the Posterior Density}
+To infer the posterior density, observed data is necessary. These can be obtained by either actually measuring a physical process or by generating synthetic data which allows developing and improving the statFEM model already before having to set up an experiment and take real measurements beforehand.
+%
+Sampling from a synthetic source or from the real physical response yields the observation vector
+%
+\begin{equation}
+\bm{y} = {z} + {e}
+\end{equation}
+%
+with $z$ the real response and $e$ the measurement error which is also a part of $\bm{y}$ for the synthetic observations. It can be seen that the model mismatch error $\bm{d}$ is, as opposed to eq. (), not part of the equation because it is only part of the FEM modeling error. 
+%
+The data is observed on multiple measurement  points $n_y$ throughout the domain. It can be chosen if the data is assumed to be deterministic or to be random. For the deterministic case only one value is measured for each measurement point. In the random case many measurements are taken per point what leads to a probability distribution for each point.
+%
+Now, Bayes' rule can be applied to update the prior with the observations.
+The result of this operation is
+%
+\begin{equation}
+p(u|y) = \mathcal{N}(\bar{u_{|y}}, C_{u|y})
+\end{equation}
+%
+with
+%
+\begin{equation}
+\bar{u_{|y}} = C_{u|y} \left(   \rho P^T  (C_d + C_e)^{-1}  y  +  C_u^{-1}  \bar{u}   \right)
+\end{equation}
+and
+\begin{equation}
+C_{u|y} = \left(      \rho^2  P^T   (C_d + C_e)^{-1}  P  +  C_u^{-1}    \right)^{-1}
+\end{equation}
+
+
+\subsection{find Posterior mean and variance}
+
+
+\subsection{Modeling Parameters of the PDE}
+
+\subsection{Probabilistic FEM Prior}
+The prior before observation is obtained by computing the FEM response $u_h$ of the PDE given all parameters. The random parameters are modeled as GPs. Thereby result a mean $\bar{u_h}$ and a covariance matrix $C_u$. For this being the prior, the GP hyperparameters are chosen deterministically. The covariance matrix is obtained by calculating $C_u = A^{-1} C_{par} A^{-T}$ with $A$ the FEM system matrix and $C_{par}$ the covariance matrix of the respective random parameter's GP. The mean can easily be determined by calculating the deterministic mean of the FEM by using only the GP's mean.
+The resulting response $u_h$ is, since it is discretized and not continuous, a multivariate Gaussian distribution.
+%
+To check convergence of the FEM model, it can be compared to the exact analytically determined system response $u$. 
+%
+It is assumed that there is a difference between the exact and the calculated FEM response to the true system response. That difference will be reduced by updating the prior with observations.
+%
+With the basic FEM code set up for a random source term and a deterministic diffusion coefficient, $\bar{u}$ can be obtained by calling
+
+
+$C_u$ can be obtained by calling
+
 For numerical reasons a small nugget is added to the diagonal of $C_u$. This does not significantly change the result but allows using the Cholesky decomposition.
 With $\bar{u}$ and $C_u$ at hand the prior GP is defined as $u \sim \mathcal{GP}(\bar{u},C_u)$. To check if the covariance matrix is correct, a MC approximation $\bar{u}_{MC}$ of the mean can be computed by evaluating the GP $n_{MC}$ times and taking the average. As visible in Figure \ref{fig:u_mean_conv}, the error of $\bar{u}_{MC}$ converges to zero with a slope of 2 on a logarithmic scale. Therefore, $C_u$ indeed has a mean of $\bar{u}$.
 The MC samples can be drawn via
@@ -260,62 +527,16 @@ error bands
 \label{fig:u_mean_conv}
 
 
-\subsection{Modeling Measurement Data}
-Measuring data always involves a measurement error: One can never measure any physical quantity without some measurement noise. Therefore, the so-called statistical generating model (Cirak) for a vector of $n_y$ measurements $\bm{y} \in \mathbb{R}^{n_y}$, 
-%
-\begin{equation}
-\bm{y} = \bm{z} + \bm{e} = \rho \bm{P} \bm{u} + \bm{d} + \bm{e} \; ,
-\end{equation}
-%
-consists of response of the true underlying process $\bm{z} \in \mathbb{R}^{n_y}$ at the measurement points and the measurement noise $\bm{e} \in \mathbb{R}^{n_y}$. The true process $\bm{z}$ can further be expressed as a combination of the used model $\bm{u} \in \mathbb{R}^{n_u}$, which tries to describe the true process, and a model discrepancy error $d$ which accounts for the model not being a completely accurate representation of the true physics. The model is scaled using the scaling parameter $\rho \in \mathbb{R}$. It can be evaluated at $n_u$ points which are determined by the FEM mesh but only its evaluations at the measurement points are taken into account by using the projection matrix $\bm{P} \in \mathbb{R}^{n_y \times n_u}$.
-%
-$e$ is modeled as a multivariate Gaussian 
-%
-\begin{equation}
-\bm{e} \sim p(\bm{e}) = \mathcal{N}(\bm{0}, \bm{C_e})
-\end{equation}
-with zero mean and the covariance matrix $\bm{C_e} = \sigma_e^2 \bm{I}$ which adds the measurement noise to each entry of $\bm{z}$.
-%
-The model discrepancy error is, in order to account for a possibly complex behavior, modeled as a GP
-\begin{equation}
-\bm{d} \sim p(\bm{d} | \sigma_d, l_d) = \mathcal{N}(\bm{0},\bm{C_d})
-\end{equation}
-which $\sigma_d, l_d$ the unknown parameters of a squared exponential kernel function. Evaluating it at the measurement positions, the GP is represented by a multivariate Gaussian with a covariance matrix $\bm{C_d} \in \mathbb{R}^{n_y \times n_y}$.
 
-The projection matrix $P$ is constructed by evaluating all FEM ansatz functions of the mesh at the $n_y$ measurement positions. The result is a sparse matrix with most entries zero and only those entries non zero that correspond to the ansatz functions $\Phi_i(\bm{\bm{x}})$ associated with the finite element in which the measurement positions lie.
-This computation for linear ansatz functions can easily be implemented in Python using Fenics:
+\section{Step 2: Estimation of Hyperparameters }
 
-\begin{python}
-def getP(self,y_points):
-	ny = len(y_points)
-	P = np.zeros((ny, self.ne+1), dtype = float) #with ne the number of elements
-	for j,point in enumerate(y_points):
-		x = np.array([point])
-		x_point = Point(x)
-		bbt = self.mesh.bounding_box_tree()
-		cell_id = bbt.compute_first_entity_collision(x_point)
-		cell = Cell(self.mesh, cell_id)
-		coordinate_dofs = cell.get_vertex_coordinates()
-		values = np.ones(1, dtype=float)
-		for i in range(self.el.space_dimension()): 
-			phi_x = self.el.evaluate_basis(np.array(i),x 
-				,np.array(coordinate_dofs),cell.orientation())
-			P[j,cell_id+i] = phi_x
-	self.Pu = np.dot(P,self.U_mean)
-	return P
-\end{python}
-\label{lst:getP}
-
-
-
-\subsection{Estimation of Hyperparameters}
 Below it was already stated that the hyperparameters for computing the model discrepancy covariance matrix $\bm{C_d}$ are not known. The scaling factor $\rho$ is not known, as well. The measurement data can be used to estimate these parameters, collected in the hyperparameter vector $\bm{w}$, with Bayes' rule 
 %
 \begin{equation}
 p(w|y) = \frac{P(y|w) p(w)}{\int P(y|w) p(w) dw}
 \end{equation}
 %
-where the denominator, which only serves as a normalization constant, can be dropped if only a point estimate of the hyperparameters is needed. This approach is indeed non-bayesian because no probability density of the hyperparameters is computed. For multiple measurements $y_i$ with a total number of $n_o$ there holds 
+where the denominator, which only serves as a normalization constant, can be dropped if only a point estimate of the hyperparameters is needed. This approach is indeed non-bayesian because no probability density of the hyperparameters is computed. For multiple measurements $y_i$ with a total number of $n_o$ there holds, because it is assumed that individual measurements are independent [Rasmussen p.9],
 \begin{equation}
 P(Y|w) = \prod_{i=1}^{n_o} p(\bm{y_i}) \; 
 \end{equation}
@@ -382,7 +603,7 @@ Since in (\ref{eqn:neglog}) the $\log$ likelihood is used, (\ref{eqn:CholDet}) c
 &= 2 \sum_{i=0}^{n_y} \log{L_{i,i}}
 \end{align*}
 
-\subsubsection{Minimization of the Negative log-Likelihood}
+\subsection{Minimization of the Negative log-Likelihood}
 The best possible set of hyperparameters $\bm{w}$ for (\ref{eqn:neglog}) to be as small as possible has to be found. That can be achieved by using a gradient based optimizer or by sampling the parameter space with, e.g., a MCMC approach.
 \paragraph{MCMC}
 Markov Chain Monte Carlo (MCMC) is a very efficient sampling method. Just as standard MC, it can be used to draw samples from a given distribution. The advantage of MCMC is now that an algorithm finds a relatively small set of samples which is able to describe the distribution very accurately. The result is a distribution for the hyperparameters of which e.g. the mean can be deduced. One common algorithm is the metropolis algorithm.
@@ -396,41 +617,13 @@ L-BGFS is a gradient based optimizer. It doesn't deliver a distribution for the 
 For the optimization with L-BGFS the derivative of (\ref{eqn:neglog}) is needed. It can be computed as follows.
 
 
-\subsection{Inference of the Posterior Density}
-To infer the posterior density, observed data is necessary. These can be obtained by either actually measuring a physical process or by generating synthetic data which allows developing and improving the statFEM model already before having to set up an experiment and take real measurements beforehand.
-%
-Sampling from a synthetic source or from the real physical response yields the observation vector
-%
-\begin{equation}
-\bm{y} = {z} + {e}
-\end{equation}
-%
-with $z$ the real response and $e$ the measurement error which is also a part of $\bm{y}$ for the synthetic observations. It can be seen that the model mismatch error $\bm{d}$ is, as opposed to eq. (), not part of the equation because it is only part of the FEM modeling error. 
-%
-The data is observed on multiple measurement  points $n_y$ throughout the domain. It can be chosen if the data is assumed to be deterministic or to be random. For the deterministic case only one value is measured for each measurement point. In the random case many measurements are taken per point what leads to a probability distribution for each point.
-%
-Now, Bayes' rule can be applied to update the prior with the observations.
-The result of this operation is
-%
-\begin{equation}
-p(u|y) = \mathcal{N}(\bar{u_{|y}}, C_{u|y})
-\end{equation}
-%
-with
-%
-\begin{equation}
-\bar{u_{|y}} = C_{u|y} \left(   \rho P^T  (C_d + C_e)^{-1}  y  +  C_u^{-1}  \bar{u}   \right)
-\end{equation}
-and
-\begin{equation}
-C_{u|y} = \left(      \rho^2  P^T   (C_d + C_e)^{-1}  P  +  C_u^{-1}    \right)^{-1}
-\end{equation}
 
 
 
+\section{Step 3: Estimating the Optimum Mesh Parameters}
 
 
-\chapter{1D Example and Application in Vibroacoustics}
+\chapter{Application of statFEM in Vibroacoustics}
 
 \section{Simple 1D example}
 \paragraph{Choice of PDE}
@@ -460,13 +653,7 @@ c_f(\bm{x},\bm{x}') =    \sigma_{f}^2 \exp \left(-  \frac{\left \| \bm{x}-{\bm{x
 %
 is used with the standard deviation $\sigma_{f} = 0.1$ and the length scale $l_{f} = 0.4$.
 In Python the kernel is directly implemented as a function which takes two lists and the parameters as input variables [Murphy]:
-\begin{lstlisting}[language=Python]
-def squared_exponential(xa, xb, lf, sigf):
-    sq_norm = -0.5 * scipy.spatial.distance.cdist(xa, xb, 'sqeuclidean') \
-    	* (1/lf**2)
-    return sigf**2 * np.exp(sq_norm) .
-\end{lstlisting}
-\label{lst:sqEx}
+
 %
 Here, the parameters are fixed but in a later example a method on how to infer the optimum position for these will be studied.
 
@@ -486,7 +673,7 @@ Helmholtz Equation. Looks similar to the Poisson equation but the right side dif
 
 
 
-\chapter{Results and Discussion}
+\chapter{Conclusion and Discussion}
 
 \lipsum[1-3] %\cite{Langer2019}
 

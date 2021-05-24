@@ -65,22 +65,22 @@ class solverClass:
 
 
 
-	def create_fake_data(self, y_points):
+	def create_fake_data(self, y_points,y_values):
 		#parameters:
 		rho = 0.8
 		sig_d = 2e-2
 		l_d = 0.5
-		sig_y = 2.5e-2
+		sig_y = 5e-3
 		ny = len(y_points)
 		print(np.shape(y_points))
 		#print(ny)
 		y_points = np.array(y_points)
 		#print(y_points)
-		y1 = (np.sin(np.pi*y_points)/2 * np.sin(7*np.pi*y_points)/20)
+		y1 = (np.sin(np.pi*y_points)/3 * np.sin(7*np.pi*y_points)/40)
 		y2 = np.transpose(np.atleast_2d(np.random.multivariate_normal(mean = np.zeros(ny), cov = self.exponentiated_quadratic(y_points,y_points,l_d,sig_d))))
 		y3 = np.transpose(np.atleast_2d(np.random.normal(scale = sig_y, size = ny)))
 		#print(np.shape(np.transpose(np.atleast_2d(np.array(self.y_values)))))
-		y = y1 +rho *np.transpose(np.atleast_2d(np.array(self.y_values)))
+		y = y1 +rho *np.transpose(np.atleast_2d(np.array(y_values)))
 
 		print(y.flatten())
 		plt.figure(figsize=(6, 4), dpi=100)
@@ -167,10 +167,11 @@ class solverClass:
 
 	def get_C_f(self):
 		#integratedTestF = np.array(assemble(Constant(1.) * self.v * dx).get_local()) #* self.ne
-		#self.integratedTestF = np.array(assemble(Constant(self.mean[1]) * self.v * dx).get_local()) #* self.ne
+		self.integratedTestF = np.array(assemble(Constant(self.mean[1]) * self.v * dx).get_local()) #* self.ne
+
 		self.integratedTestF = np.array(assemble(Constant(1.0) * self.v * dx).get_local()) #* self.ne
 
-		#print(self.integratedTestF)
+		print(self.integratedTestF)
 		# c_f = self.exponentiated_quadratic(self.coordinates,
 		# 	 self.coordinates, lf=self.lf, sigf=self.sigf)
 
@@ -183,7 +184,7 @@ class solverClass:
 		for i in range(self.ne+1):
 			for j in range(self.ne+1):
 				C_f[i,j] = self.integratedTestF[i] * c_f[i,j] * self.integratedTestF[j]
-
+		#self.bc.apply(C_f)
 		return C_f
 
 
@@ -195,13 +196,15 @@ class solverClass:
 		self.bc.apply(A)
 		A = A.array()
 
-		#A_inv = np.linalg.inv(A)
-		A_inv = np.linalg.solve(A,ident)
+		A_inv = np.linalg.inv(A)
+		#A_inv = np.linalg.solve(A,ident)
 		C_u = np.dot( np.dot(A_inv,C_f), np.transpose(A_inv))
+		self.C_uDiag = np.sqrt(np.diagonal(C_u))
+
 		C_u = C_u + 0.00001*(self.sigf**2)*ident
 		c_u = np.transpose(self.integratedTestF) * C_u * self.integratedTestF
 		self.C_u = C_u
-		self.C_uDiag = np.sqrt(np.diagonal(self.C_u))
+		#self.C_uDiag = np.sqrt(np.diagonal(self.C_u))
 
 		return C_u
 		#return c_u
@@ -337,7 +340,7 @@ class solverClass:
 
 
 	def get_C_e(self,size):
-		sige_square = 2.5e-3
+		sige_square = 2.5e-5
 		C_e = sige_square * np.identity(size)
 		#C_e = np.zeros((size,size))
 		self.C_e = C_e
@@ -389,6 +392,35 @@ class solverClass:
 		return logpost2
 
 
+	def getLogPostMultiple(self,params):
+		rho = params[0]
+		sigd = params[1]
+		ld = params[2]
+		y_valuesList=self.yVectors
+		y_points = np.transpose(np.atleast_2d(np.array(self.y_points)))
+		logpost = 0
+		rho = np.exp(rho)
+		C_u_trans = np.dot(   np.dot(self.P , self.C_u )  ,self.P_T   )
+
+		K_y = self.get_C_d(y_points = y_points,ld=ld,sigd=sigd)+ self.C_e + rho * rho *  C_u_trans
+		L = cho_factor(K_y)
+		for i,obs in enumerate(y_valuesList):
+			y_values = np.array(obs)
+
+			ny = len(y_values)
+			y = y_values - rho * self.Pu
+
+			K_y_inv_y = cho_solve(L, y)
+			Log_K_y_det = 2 * np.sum(np.log(np.diag(L[0])))
+			logpost2 = 0.5 * (np.dot(np.transpose(y), K_y_inv_y )  +Log_K_y_det + ny * np.log(2* np.pi))#Version Paper
+			logpost = logpost + logpost2
+			#print(i)
+
+
+		return logpost
+
+
+
 	def getLogPostDeriv(self,params):
 		rho = params[0]
 		sigd = params[1]
@@ -427,9 +459,9 @@ class solverClass:
 		y_values = np.array(y_values)
 		logpostList = []
 
-		ld_s = np.log(np.logspace(-5,0.05,20000,base=np.exp(1)))
-		sigd_s = np.log(np.logspace(-8,0.05,20000,base=np.exp(1)))
-		rho_s = np.log(np.logspace(-0.8,1,20000,base=np.exp(1)))
+		ld_s = np.log(np.logspace(-5,0.05,5000,base=np.exp(1)))
+		sigd_s = np.log(np.logspace(-8,0.05,5000,base=np.exp(1)))
+		rho_s = np.log(np.logspace(-0.8,1,5000,base=np.exp(1)))
 
 		#rho_s = np.log(np.random.uniform(0.5,1.5,10000))
 		#ld_s = np.log(np.random.uniform(1e-16,1,10000))
@@ -446,7 +478,7 @@ class solverClass:
 		#print(C_u_trans)
 
 		for i,ld in enumerate(rho_s):
-			logpostList.append(self.getLogPost([rho_s[i],sigd_s[i],ld_s[i]]))
+			logpostList.append(self.getLogPostMultiple([rho_s[i],sigd_s[i],ld_s[i]]))
 
 		n_logP = len(logpostList)
 		logPmean = np.sum(np.array(logpostList)) / n_logP
@@ -469,7 +501,7 @@ class solverClass:
 		#plt.yscale('log')
 		plt.show()
 
-		result = scipy.optimize.minimize(fun=self.getLogPost,bounds=((1e-16,None),(1e-16,None),(1e-16,None)),x0=np.array([rho_est,sigd_est,ld_est]))
+		result = scipy.optimize.minimize(fun=self.getLogPost,method='L-BFGS-B',bounds=((0.4,None),(1e-16,None),(1e-16,None)),x0=np.array([rho_est,sigd_est,ld_est]))
 		print("old result:")
 		print([np.exp(rho_est),np.exp(sigd_est),np.exp(ld_est)])
 		print("optimized result:")
@@ -480,6 +512,9 @@ class solverClass:
 		#return result.x
 
 		return rho_est,sigd_est,ld_est
+		#return rho_est,sigd_est,0.2
+
+
 
 	def computePosterior(self,y_points,y_values):
 		#y_points = [0.4,0.933333]
@@ -530,6 +565,58 @@ class solverClass:
 			mean = u_mean_y, cov=C_u_y,
 			size=self.nMC)
 		return u_mean_y,posteriorGP
+
+
+
+
+	def computePosteriorMultipleY(self,y_points,y_values):
+		""" here, y_values is a vector of different measurement sets. """
+
+		C_e = self.get_C_e(len(y_points))
+		P = self.getP(y_points)
+		self.C_e = C_e
+		pars = self.estimateHyperpar(y_points,self.yVectors)
+		rho=pars[0]
+		sigd = pars[1]
+		ld = pars[2]
+
+		y_points = np.transpose(np.atleast_2d(np.array(y_points)))
+		y_values = np.array(y_values)
+
+		#print("summed values:")
+		sum_y = np.sum(y_values,axis=0)
+		print("ysum:_")
+		print(sum_y)
+		#print(np.shape(self.y_values))
+		print(np.shape(sum_y))
+
+		C_u = self.get_C_u()
+		C_u_inv = np.linalg.inv(C_u)
+		C_d = self.get_C_d(y_points,ld=ld,sigd=sigd)
+
+		P_T = np.transpose(P)
+		rho = np.exp(rho)
+		CdplusCeInv = np.linalg.inv(C_d+C_e)
+		C_u_y = np.linalg.inv(    rho*rho * self.no * np.dot(P_T ,  np.dot(CdplusCeInv, P)) + C_u_inv )
+		self.C_u_yDiag = np.sqrt(np.diagonal(C_u_y))
+
+
+
+
+		CdplusCe_L = np.linalg.cholesky(C_d+C_e)
+		CdplusCe_L_T = np.transpose(CdplusCe_L)
+
+		u_mean = self.get_U_mean()
+		u_mean_y = rho * np.dot(C_u_y , (  rho * np.dot(np.dot(P_T  , CdplusCeInv)  , np.transpose(sum_y))  + np.dot(C_u_inv , u_mean)  ))
+
+
+		posteriorGP = np.random.multivariate_normal(
+			mean = u_mean_y, cov=C_u_y,
+			size=self.nMC)
+		return u_mean_y,posteriorGP
+
+
+
 
 
 	def getMCErrors(self):
@@ -610,7 +697,7 @@ error_mean = U_mean - np.array(muL)
 
 #print(priorSamples[0])
 #print(len(priorSamples[0]))
-n_obs = 6
+n_obs = 4+2
 idx = np.round(np.linspace(0, len(priorSamples[0])-1, n_obs)).astype(int)
 y_values_prior = [priorSamples[0][i] for i in idx]
 y_values=[0.02393523,0.04423292, 0.06159137, 0.08335314, 0.09902092, 0.11984335,
@@ -623,23 +710,34 @@ y_values=[0.02393523,0.04423292, 0.06159137, 0.08335314, 0.09902092, 0.11984335,
 
 #y_values = np.array(y_values)# + noise
 y_values = y_values_prior[1:-1]
-noise = np.random.normal(0,2.5e-3,len(y_values))
-y_values = y_values + noise
+#noise = np.random.normal(0,1e-2,len(y_values))
+#y_values = y_values + noise
 
 print('values:')
 print(y_values)
 y_points = [solver.coordinates.tolist()[i] for i in idx][1:-1]
 
 
-y_values = [0.125,0.2,0.25,0.125]
-y_points = [0.2,0.4,0.6,0.8]
+#y_values = [0.125,0.26,0.28,0.31,0.30,0.31,0.28,0.225,0.125]
+#y_points = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 
+y_values = solver.create_fake_data(y_points,y_values)
+###### multiple observations
+y_values_list = []
+solver.no = 100
+for i in range(solver.no):
+	noise = np.random.normal(0,5e-3,len(y_values))
+	y_values_list.append(y_values + noise)
+solver.yVectors = y_values_list
+
+############################
 
 
 solver.y_points = y_points
 solver.y_values = y_values
 #solver.y_values = solver.create_fake_data(solver.y_points)
-u_mean_y,posterior_samples = solver.computePosterior(solver.y_points, solver.y_values)
+# u_mean_y,posterior_samples = solver.computePosterior(solver.y_points, solver.y_values)
+u_mean_y,posterior_samples = solver.computePosteriorMultipleY(solver.y_points, y_values_list)
 print("u_mean_y:")
 print(u_mean_y)
 error_var = np.square(np.array(solver.C_u_yDiag)) - np.square(np.array(sigL))
@@ -658,12 +756,14 @@ plt.plot(solver.coordinates, np.transpose(U_mean), linestyle='-', color = 'black
 #plt.plot(solver.coordinates, np.transpose(priorSamples[10:390]), linestyle='-',lw = 0.4,color='black', alpha=0.35)
 #plt.plot(np.transpose(solver.coordinates)[0], np.array(muL), linestyle='-.',color = 'black',lw = 3.0, label='Mean MC')
 #plt.plot(np.transpose(solver.coordinates)[0], error_var, linestyle='-.',color = 'green',lw = 2.0, label='Mean error')
-plt.plot(solver.coordinates, np.transpose(posterior_samples[10:150]), linestyle='-',lw = 0.2,color='black', alpha=0.4)
+#plt.plot(solver.coordinates, np.transpose(posterior_samples[10:150]), linestyle='-',lw = 0.2,color='black', alpha=0.4)
 plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)-2*solver.C_u_yDiag, linestyle='-.',color = 'green',lw = 1.0,label='2sig')
 plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)+2*solver.C_u_yDiag, linestyle='-.',color = 'green',lw = 1.0)
 
 plt.plot(solver.coordinates, np.transpose(u_mean_y), linestyle='-', color = 'green',lw = 2.0,label='Posterior mean')
-plt.scatter(solver.y_points, solver.y_values,label='observations')
+#plt.scatter(solver.y_points, solver.y_values,label='observations')
+for obs in y_values_list:
+	plt.scatter(solver.y_points, obs,s=2.5, color = 'black',alpha=0.4)
 
 plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)-2*np.array(sigL), linestyle='-',color = 'red',lw = 1.0,label='2sig MC')
 plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)+2*np.array(sigL), linestyle='-',color = 'red',lw = 1.0)
@@ -675,7 +775,7 @@ plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)+2*solver.C_uDiag, li
 plt.legend()
 plt.xlim([solver.dom_a, solver.dom_b])
 plt.grid()
-plt.show()
+#plt.show()
 f.savefig("Result.pdf", bbox_inches='tight')
 #solver.estimateHyperpar(y_points, y_values)
 
