@@ -10,6 +10,9 @@
   %mono
   ,]{tubsbook}
   
+\usepackage{siunitx}
+\sisetup{load-configurations = abbreviations}  
+  
 \usepackage{listings}  % for code stuff
 \usepackage{minted}
 
@@ -174,6 +177,18 @@ The Helmholtz equation describes the wave equation in a time-independent manner.
 
 \section{Wave Equation and Helmholtz Equation}
 Explain the differences and derive the helmholtz equation. explain that it tepresents the eigenfunctions.
+For the Helmholtz equation there holds
+\begin{equation}
+\nabla^2 p + k^2 p = -Q(x)
+\label{eqn:Helmholtz}
+\end{equation}
+with $p [\SI{}{\pascal}]$ the pressure field, $Q$ the source term and $k$ the wave number. $k$ is defined a\begin{equation}
+k = \frac{\omega}{c_0} = \frac{2 \pi f}{c_0}
+\end{equation}
+with $\omega$[\SI{}{\radian}] the angular frequency, $f$[\SI{}{\per\s}] the frequency and $c_0[\SI{}{\metre\per\s}]$ the speed of sound in the considered medium.
+(\ref{eqn:Helmholtz}) is solved as a boundary value problem.
+\paragraph{Boundary Conditions}
+
 
 \section{Weak Formulation and Discretisation}
 Explain what the weak form is and why we need it. 
@@ -181,8 +196,34 @@ Derive the weak form, completely with integration by parts etc. explain all part
 
 explain what a bilinear and a linear form is!
 
-\paragraph{Gaussscher Integralsatz / Divergenztheorem}
+
+Eq. (\ref{eqn:Helmholtz}) is considered a \emph{strong}	formulation. In order to be able to set up the FEM, the PDE needs to be in the \emph{weak} form. Among other possibilities, the weak form can be derived using the Weighted Residuals Method.
+\paragraph{The Weigthed Residuals Method}
+The strong formulation (PDE) is multiplied with a so-called test function $v$ and integrated over the domain $\Omega$:
+\begin{equation}
+\int_{\Omega} \nabla^2 pv \,\mathrm{d}\Omega + \int_{\Omega} k^2 pv \,\mathrm{d}\Omega = 0
+\end{equation}
+In order to lower the degree of derivation, integration by parts is executed:
+\begin{equation}
+-\int_{\Omega} \nabla p \cdot \nabla v \,\mathrm{d}\Omega + \int_{\Omega} \nabla^2 p \cdot v \,\mathrm{d}\Omega+ \int_{\Omega} k^2 pv \,\mathrm{d}\Omega = 0
+\label{eqn:IntByParts}
+\end{equation}
+The now still present second derivative can be eliminated by using the divergence theorem.
+
+\paragraph{Divergence Theorem}
 explain what the divergence theorem is and apply it to the  weak form. explain the analogy with the container which is filled over the domain boundary.
+For the divergence theorem, also called Gauss's theorem, there holds in general:
+\begin{equation}
+\int_{V}  \nabla F \,\mathrm{d}v = \oint_A F \cdot \vec{n} \,\mathrm{d}a
+\end{equation}
+It describes that all of the sources and sinks inside a domain (which generate divergence) must be equal to the amount of flux over the boundary of that domain.
+For (\ref{eqn:IntByParts}) it yields
+\begin{equation}
+-\int_{\Omega} \nabla p \cdot \nabla v \,\mathrm{d}\Omega + \oint_{\Gamma} \nabla p \cdot v \,\mathrm{d}\Gamma+ \int_{\Omega} k^2 pv \,\mathrm{d}\Omega = 0
+\end{equation}
+with the boundary of the domain $\Gamma$.
+
+
 
 
 \chapter{The Classical Finite Element Method}
