@@ -2,8 +2,8 @@ import sys
 from fenics import *
 import matplotlib
 import matplotlib.pyplot as plt
-#plt.rc('text', usetex=True)
-#plt.rc('text.latex', preamble=r'\usepackage{amsmath}')
+plt.rc('text', usetex=True)
+plt.rc('text.latex', preamble=r'\usepackage{amsmath}\usepackage[utf8]{inputenc}')
 import time
 import seaborn as sns
 import numpy as np
@@ -20,7 +20,7 @@ class solverClass:
 		self.dom_a = 0.0 #domain boundaries
 		self.dom_b = 1.0
 
-		self.ne	= 80 #number of elements
+		self.ne	= 60 #number of elements
 		self.nMC = nMC #number of Monte Carlo points
 
 		self.mesh = IntervalMesh(self.ne,self.dom_a,self.dom_b) #define mesh
@@ -51,6 +51,13 @@ class solverClass:
 	def exponentiated_quadratic_log(self, xa, xb, l, sig):
 		""" expects input parameters as log(par). """
 		return np.exp(2*sig) * np.exp(-0.5 * scipy.spatial.distance.cdist(xa, xb, 'sqeuclidean') * np.exp(-2*l))
+
+	def matern_log(self, xa, xb, l, sig):
+		""" expects input parameters as log(par). """
+		r = scipy.spatial.distance.cdist(xa, xb, 'euclidean')
+		return np.exp(2*sig) * np.exp(-1 * scipy.spatial.distance.cdist(xa, xb, 'euclidean') * np.exp(-1*l)) #nu = 1/2
+		#return np.exp(2*sig) * ((1 + np.sqrt(3) * r *np.exp(-1*l)) *  np.exp(-1 * np.sqrt(3) * r * np.exp(-1*l))   ) # nu = 3/2
+		#return np.exp(2*sig) * ((1 + np.sqrt(5) * r *np.exp(-1*l) +  5*r*r/3*np.exp(-1*l)*np.exp(-1*l)  ) *  np.exp(-1 * np.sqrt(5) * r * np.exp(-1*l))   ) # nu = 5/2
 
 
 
@@ -178,6 +185,9 @@ class solverClass:
 		c_f = self.exponentiated_quadratic_log(self.coordinates,
 			 self.coordinates, l=np.log(self.lf), sig=np.log(self.sigf))
 
+		c_f = self.matern_log(self.coordinates,
+			 self.coordinates, l=np.log(self.lf), sig=np.log(self.sigf))
+		self.c_f = c_f
 		C_f = np.zeros((self.ne+1,self.ne+1))
 		#print('coords:')
 		#print(self.coordinates)
@@ -185,6 +195,10 @@ class solverClass:
 			for j in range(self.ne+1):
 				C_f[i,j] = self.integratedTestF[i] * c_f[i,j] * self.integratedTestF[j]
 		#self.bc.apply(C_f)
+
+
+
+
 		return C_f
 
 
@@ -201,7 +215,7 @@ class solverClass:
 		C_u = np.dot( np.dot(A_inv,C_f), np.transpose(A_inv))
 		self.C_uDiag = np.sqrt(np.diagonal(C_u))
 		condBefore = np.linalg.cond(C_u)
-		C_u = C_u + 1e-12*(self.sigf**2)*ident
+		C_u = C_u + 1e-10*(self.sigf**2)*ident
 		condAfter = np.linalg.cond(C_u)
 		c_u = np.transpose(self.integratedTestF) * C_u * self.integratedTestF
 		self.C_u = C_u
@@ -222,6 +236,27 @@ class solverClass:
 			size=self.nMC)
 
 		return priorGP
+
+
+	def samplef(self):
+		f_mean = (np.pi)**2*(1/5)*np.ones(self.ne+1)
+		fGP = np.random.multivariate_normal(
+			mean = f_mean, cov=self.c_f,
+			size=10)
+		f = plt.figure(figsize=(6, 4), dpi=100)
+		plt.plot(self.coordinates, np.transpose(f_mean), linestyle='-', color = 'black',lw = 1.0)
+		#plt.plot(solver.coordinates, np.transpose(U_mean_verbose), linestyle='-.', color = 'red',lw = 1.0)
+		plt.plot(self.coordinates, np.transpose(fGP), linestyle='-',lw = 0.4)
+		C_fDiag = np.sqrt(np.diagonal(self.c_f))
+		plt.plot(np.transpose(solver.coordinates)[0], np.transpose(f_mean)-1.96*C_fDiag, linestyle='-.',color = 'green',lw = 1.0,label='2sig')
+		plt.plot(np.transpose(solver.coordinates)[0], np.transpose(f_mean)+1.96*C_fDiag, linestyle='-.',color = 'green',lw = 1.0)
+		plt.ylabel("$f(x)$")
+		plt.xlabel("$x$")
+		plt.grid()
+		#plt.legend()
+		f.savefig("matern1_2_f_sampled.pdf", bbox_inches='tight')
+		#f.savefig("sqex_f_sampled.pdf", bbox_inches='tight')
+		plt.show()
 
 
 	def doMC(self,samples):
@@ -325,6 +360,7 @@ class solverClass:
 		#sigd =1e-16
 		#C_d = self.exponentiated_quadratic(y_points, y_points, lf=ld, sigf=sigd)
 		C_d = self.exponentiated_quadratic_log(y_points, y_points, l=ld, sig=sigd)
+		C_d = self.matern_log(y_points, y_points, l=ld, sig=sigd)
 		#print('C_d:')
 		#print(C_d)
 		self.C_d = C_d
@@ -706,7 +742,7 @@ error_mean = U_mean - np.array(muL)
 
 #print(priorSamples[0])
 #print(len(priorSamples[0]))
-n_obs = 6+2
+n_obs = 5+2
 idx = np.round(np.linspace(0, len(priorSamples[0])-1, n_obs)).astype(int)
 y_values_prior = [priorSamples[0][i] for i in idx]
 y_values=[0.02393523,0.04423292, 0.06159137, 0.08335314, 0.09902092, 0.11984335,
@@ -729,13 +765,13 @@ y_points = [solver.coordinates.tolist()[i] for i in idx][1:-1]
 
 y_values = [0.125,0.26,0.28,0.31,0.30,0.31,0.28,0.225,0.125]
 y_points = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
-y_values = y_values[5:]
-y_points = y_points[5:]
+#y_values = y_values[5:]
+#y_points = y_points[5:]
 
 #y_values = solver.create_fake_data(y_points,y_values)
 ###### multiple observations
 y_values_list = []
-solver.no = 20
+solver.no = 100
 for i in range(solver.no):
 	noise = np.random.normal(0,2.5e-3,len(y_values))
 	y_values_list.append(y_values + noise)
@@ -747,8 +783,8 @@ solver.yVectors = y_values_list
 solver.y_points = y_points
 solver.y_values = y_values
 #solver.y_values = solver.create_fake_data(solver.y_points)
-u_mean_y,posterior_samples = solver.computePosterior(solver.y_points, solver.y_values)
-#u_mean_y,posterior_samples = solver.computePosteriorMultipleY(solver.y_points, y_values_list)
+#u_mean_y,posterior_samples = solver.computePosterior(solver.y_points, solver.y_values)
+u_mean_y,posterior_samples = solver.computePosteriorMultipleY(solver.y_points, y_values_list)
 print("u_mean_y:")
 print(u_mean_y)
 error_var = np.square(np.array(solver.C_u_yDiag)) - np.square(np.array(sigL))
@@ -772,9 +808,9 @@ plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)-1.96*solver
 plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)+1.96*solver.C_u_yDiag, linestyle='-.',color = 'green',lw = 1.0)
 
 plt.plot(solver.coordinates, np.transpose(u_mean_y), linestyle='-', color = 'green',lw = 2.0,label='Posterior mean')
-plt.scatter(solver.y_points, solver.y_values,label='observations')
-#for obs in y_values_list:
-#	plt.scatter(solver.y_points, obs,s=2.5, color = 'black',alpha=0.4)
+#plt.scatter(solver.y_points, solver.y_values,label='observations')
+for obs in y_values_list:
+	plt.scatter(solver.y_points, obs,s=2.5, color = 'black',alpha=0.4)
 
 plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)-1.96*np.array(sigL), linestyle='-',color = 'red',lw = 1.0,label='2sig MC')
 plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)+1.96*np.array(sigL), linestyle='-',color = 'red',lw = 1.0)
@@ -789,7 +825,7 @@ plt.grid()
 #plt.show()
 f.savefig("Result.pdf", bbox_inches='tight')
 #solver.estimateHyperpar(y_points, y_values)
-
+solver.samplef()
 
 #plt.pause(0.01) # Pause for interval seconds.
 #input("hit[enter] to end.")

@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{C\PYGZus{}u\PYGZus{}sig} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{diagonal}\PYG{p}{(}\PYG{n}{C\PYGZus{}u}\PYG{p}{))}
+\end{Verbatim}

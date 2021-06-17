@@ -1,0 +1,6 @@
+\begin{bmatrix}
+\textcolor[rgb]{0.49,0.83,0.13}{A_{0,0}^{( 0)}} & \textcolor[rgb]{0.49,0.83,0.13}{A}\textcolor[rgb]{0.49,0.83,0.13}{_{0,1}^{( 0)}} & 0 & 0\\
+\textcolor[rgb]{0.49,0.83,0.13}{A}\textcolor[rgb]{0.49,0.83,0.13}{_{1,0}^{( 0)}} & \textcolor[rgb]{0.49,0.83,0.13}{A}\textcolor[rgb]{0.49,0.83,0.13}{_{1,1}^{( 0)}}\textcolor[rgb]{0,0,0}{+}\textcolor[rgb]{0.49,0.83,0.13}{\ }\textcolor[rgb]{0.82,0.01,0.11}{A_{0,0}^{( 1)}} & \textcolor[rgb]{0.82,0.01,0.11}{A}\textcolor[rgb]{0.82,0.01,0.11}{_{0,1}^{( 1)}} & 0\\
+0 & \textcolor[rgb]{0.82,0.01,0.11}{A}\textcolor[rgb]{0.82,0.01,0.11}{_{1,0}^{( 1)}} & \textcolor[rgb]{0.82,0.01,0.11}{A}\textcolor[rgb]{0.82,0.01,0.11}{_{1,1}^{( 1)} \ }\textcolor[rgb]{0,0,0}{+}\textcolor[rgb]{0.29,0.56,0.89}{A_{0,0}^{( 2)}} & \textcolor[rgb]{0.29,0.56,0.89}{A}\textcolor[rgb]{0.29,0.56,0.89}{_{0,1}^{( 2)}}\\
+0 & 0 & \textcolor[rgb]{0.29,0.56,0.89}{A}\textcolor[rgb]{0.29,0.56,0.89}{_{1,0}^{( 2)}} & \textcolor[rgb]{0.29,0.56,0.89}{A}\textcolor[rgb]{0.29,0.56,0.89}{_{1,1}^{( 2)}}
+\end{bmatrix} \ \ 

@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{get\PYGZus{}C\PYGZus{}e}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,}\PYG{n}{size}\PYG{p}{):}
+	\PYG{n}{sige\PYGZus{}square} \PYG{o}{=} \PYG{l+m+mf}{2.5e\PYGZhy{}5}
+	\PYG{n}{C\PYGZus{}e} \PYG{o}{=} \PYG{n}{sige\PYGZus{}square} \PYG{o}{*} \PYG{n}{np}\PYG{o}{.}\PYG{n}{identity}\PYG{p}{(}\PYG{n}{size}\PYG{p}{)}
+	\PYG{k}{return} \PYG{n}{C\PYGZus{}e}
+\end{Verbatim}
