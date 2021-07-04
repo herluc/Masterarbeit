@@ -24,14 +24,6 @@
 
 \usepackage{bbm} %for probability notation
 
-
-\usepackage{tikz}
-\usepackage{tikzit}
-\input{MA.tikzstyles}
-\newcommand{\rn}[2]{%% "rn": "remember node"
-	\tikz[remember picture,baseline=(#1.base)]\node [inner sep=0] (#1)  {$#2$};%
-}
-
 \usepackage{xcolor}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -186,19 +178,19 @@ Braunschweig, \today
 
 
 \chapter{FEM Solution of the Helmholtz Equation}
-An acoustic field is represented in time domain by the wave equation. It returns the acoustical pressure at a point in space $x$ for a time variable $t$.
-The Helmholtz equation describes the wave equation in a time-independent manner, i.e. in frequency domain. It has a dependency on the frequency, so the goal is to solve the Helmholtz equation for a range of frequencies in order to obtain a frequency response plot which gives insight on the modal behaviour of the system.
+An acoustic field is represented by the wave equation. It returns the acoustical pressure at a point in space $x$ for a certain frequency and time.
+The Helmholtz equation describes the wave equation in a time-independent manner. It has a dependency on the frequency, so the goal is to solve the Helmholtz equation for a range of frequencies in order to obtain a frequency response plot which gives insight on the modal behaviour of the system.
 
 \section{Wave Equation and Helmholtz Equation}
-In a typical vibroacoustic problem, for example an interior structural acoustic coupling problem \cite{atalla2015}, there are usually two coupled domains: At first, there is some kind of solid medium which emits sound. The movement of that solid can be described within the field of elastodynamics using for instance (a) Bernoulli or Timoshenko beam theory for 1D beam-like structures, (b) Kirchhoff or Reissner-Mindlin plate theory for 2D plate-like structures. The focus of this thesis is another: As soon as the sound is emitted from the solid, the wave equation is used to describe the motions of sound waves through an acoustic medium such as air. 
+In vibroacoustics there are usually two coupled domains: At first, there is some kind of solid medium which emits sound. The movement of that solid can be described within the field of elastodynamics using the Bernoulli or Timoshenko beam theory in 1D or, for the 2D case of plates, Kirchhoff or Reissner Mindlin plate theory. The focus of this thesis is another: As soon as the sound is emitted from the solid, the wave equation is used to describe the motions of sound waves through a liquid or gas, such as air. 
 The following closely follows \cite{larson2013} and \cite{moser2005}.
-The behaviour of a gas in a domain $\Omega$ can be described using the density $\rho$, the pressure $p$ and the velocity $v$. By changing the velocity or pressure locally by e.g. a speaker or a vibrating plate, this change is propageted through the medium. One can think of the gas as a system of infinitesimally small spring-mass systems. Deflecting one spring yields a deflection of the adjacent spring, or gas volume, but time-delayed due to the gas's inertia. That leads to a wave propagating through the medium. 
+The behaviour of a gas in a domain $\Omega$ can be described using the density $\rho$, the pressure $p$ and the velocity $v$. By changing the velocity or pressure locally by e.g. a speaker or a vibrating plate, this change is propageted through the medium: One can think of the gas as a system of infinitesimally small spring-mass systems. Deflecting one spring yields a deflection of the adjacent spring, or gas volume, but time-delayed due to the gas's inertia. That leads to a wave propagating through the medium. 
 Newton's second law states that mass times accelaration equals force. If a gas volume is accelerated in one direction, that leads to a force on the neighbouring particle \cite{moser2005}.
 %
 \begin{equation}
 m \dot{v} = S  \left[  p(x) -p(x + \Delta x)  \right] 
 \end{equation}
-with $m$ the mass of the gas volume, $S$ the surface of the contact area of the two volumes  and $\Delta x$ the length of a gas volume in the direction of motion. Considering $m = \Delta x S \rho$ there holds
+with $m$ the mass of the gas volume, $S$ the surface the two volume's contact area and $\Delta x$ the length of a gas volume in the direction of motion. Considering $m = \Delta x S \rho$ there holds
 \begin{equation}
 \rho \dot{v} = - \frac{p(x) -p(x + \Delta x)}{\Delta x} \; .
 \label{eqn:waveEqDeriv1}
@@ -208,23 +200,23 @@ Assuming interaction between infinitessimaly small gas particles and therefore t
 \rho \dot{v} = - \nabla p \;.
 \label{eqn:Tragheitsges}
 \end{equation}
-$\nabla$ is the nabla operator $\left( \pdv{}{x_1},\pdv{}{x_2},...,\pdv{}{x_n} \right)$ which consists of the partial derivatives of the used coordinates. For cartesian coordinates, applied as a product to a quantity, it describes the gradient of the quantity, i.e.
+$\nabla$ is the nabla operator $\left( \pdv{}{x_1},\pdv{}{x_2},...,\pdv{}{x_n} \right)$ which consits of the partial derivatives of the used coordinates. For cartesian coordinates, applied as a product to a quantity, it describes the gradient of the quantity, i.e.
 \begin{equation}
 \nabla p = \mathrm{grad}p = \left( \pdv{p}{x},\pdv{p}{y},\pdv{p}{z} \right) \;.
 \end{equation}
 
 
-If a volume is expanded, the pressure of the contained gas drops and vice versa. Therefore a change of volume is proportional to a negative change of pressure. An expanding volume is also represented by the divergence of the velocity \cite{larson2013}. Imagine quickly pulling a piston out of an airtight cylinder: The air particles will move in the direction of the piston movement while the volume expands and the pressure drops. Hence, there holds
+If a volume is expanded, the pressure of the contained gas drops and vice versa. Therefore a change of volume is proportinal to a negative change of pressure. An expanding volume is also represented by the divergence of the velocity \cite{larson2013}. Imagine quickly pulling a piston out of an airtight cylinder: The air particles will move in the direction of the piston movement while the volume expands and the pressure drops. Hence, there holds
 \begin{equation}
 \dot{p} = -k \nabla u
 \label{eqn:Constit}
 \end{equation}
 with $k$ a proportionality constant dependent on the medium.
-Differentiating (\ref{eqn:Constit}) with respect to $t$ yields 
+Differentiating (\ref{eqn:Constit}) after $t$ yields 
 \begin{equation}
 \ddot{p} = -k \nabla \dot{u} \;.
 \end{equation}
-Inserting \ref{eqn:Tragheitsges} and considering $c^2 = k/\rho$ there holds for the acoustic wave equation
+Inserting \ref{eqn:Tragheitsges} and considering $c^2 = k/\rho$ there holds for the acoustic Wave equation
 \begin{equation}
 \ddot{p} = c^2 \nabla^2 p 
 \label{eqn:WaveEq}
@@ -255,12 +247,9 @@ With $\omega$[\SI{}{\radian}] the angular frequency, $f$[\SI{}{\per\s}] the freq
 \begin{equation}
 k = \frac{\omega}{c_0} = \frac{2 \pi f}{c_0} \;.
 \end{equation}
-(\ref{eqn:Helmholtz}) is solved as a boundary value problem which means that the behavior of the system has to be described beforehand for the boundaries of the calculation domain. That is done using boundary conditions.
-
-
-
+(\ref{eqn:Helmholtz}) is solved as a boundary value problem.
 \section{Boundary Conditions}
-The following closely follows \cite{atalla2015}. There are three different types of boundary conditions: Dirichlet, Neumann and Robin type. Neumann boundary conditions are also called natural boundary conditions because these automatically arise in the equation while deriving the weak form of the problem. Dirichlet boundary conditions, on the other hand, don't. They are called essential boundary conditions and have to be applied by hand after deriving the weak form and building the linear system of equations.
+The following closely follows \cite{atalla2015}.
 \paragraph{Dirichlet}
 The Dirichlet boundary condition for the Helmholtz equation is simply a prescribed pressure $\bar{p}(x)$ at the $\Gamma_D$ part of the boundary:
 \begin{equation}
@@ -280,16 +269,14 @@ The Robin or impedance boundary condition at $\Gamma_R$ reads
 \begin{equation}
 \dv{p(x)}{n} + ik \beta p(x) = 0 \quad \forall x \in \Gamma_R
 \end{equation}
-with $\beta$ the specific normalized acoustic admittance. The Robin boundary condition is also called impedance boundary conditions because an acoustic impedance can be simulated what leads to e.g. partially reflecting walls.
-
-Figure \ref{fig:BCEx} shows an example on how boundary conditions could be applied on a 2D domain. $\Gamma_{N0}$ boundary conditions are the mentioned natural boundary conditions which don't have to be applied explicitly. Still, a Neummann boundary condition $\Gamma_{N}$ can be imposed onto the system which behaves differently. 
-Figure \ref{fig:BCTh} shows the setting chosen in this thesis: All walls are reflecting and on the left side of the domain a Neumann boundary conditon is imposed which is used to model the previously mentioned sound source. 
+with $\beta$ the specific normalized acoustic admittance.
+Figure \ref{fig:BCEx} shows an example on where boundary conditions could be applied on a 2D domain. Figure \ref{fig:BCTh} shows the setting chosen in this thesis.
 
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{pics/BCsExample}
-\caption{Two dimensional representation of various boundary conditions. In this example, the left side is a Neumann boundary, the upper and lower boundaries are totally reflecting and the right side consists of an impedance BC and a Dirichlet BC.}
+\caption{Boundary Conditions of diffrent type can be arranged on the boundary. In this example, the left side is a Neumann boundary, the upper and lower boundaries are totally reflecting and the right side consists of an impedance BC and a Dirichlet BC.}
 \label{fig:BCEx}
 \end{center}
 \end{figure}
@@ -345,9 +332,9 @@ a = inner(nabla_grad(self.u), nabla_grad(self.v))*dx - self.k**2 * inner(self.u,
 L = (self.v*g)*ds(0) # 0 is the chosen boundary marker
 \end{minted}
 
-Having the problem defined mathematically, the equations can now be prepared for being solved by FEM.
 
-\section{Weak Formulation and Discretization}
+
+\section{Weak Formulation and Discretisation}
 Explain what the weak form is and why we need it. 
 Derive the weak form, completely with integration by parts etc. explain all parts of it and what they represent.
 
@@ -388,32 +375,21 @@ self.bcDir.apply(A, b)
 \section{The Classical Finite Element Method}
 
 
-The Finite Element Method (FEM) is a procedure which makes it simple to approximately solve Partial Differential Equations (PDEs) which would be very hard or even impossible to solve analytically. As the name suggests, the calculation domain is split into $n_e$ individual elements on which the PDE is approximated using so-called ansatz functions. The process of dividing the domain in $n_e$ elements is called discretization. The polynomial degree of the ansatz functions and the number of elements determine the accuracy of the approximation. In order to set up the FEM, the PDE needs to be in the so-called variational, or "weak", formulation. 
-After discretization of the domain and deriving the weak formulation, the PDE can be approximated on the individual elements. Assembling the element matrices yields a global system of equations which can, after boundary conditions are applied, be solved for the unknown vector.
+The Finite Element Method (FEM) is a procedure which makes it simple to approximately solve partial differential equations (PDEs) which would be very hard or even impossible to solve analytically. As the name suggests, the calculation domain is split into $n_e$ individual elements on which the PDE is approximated using so-called Ansatz functions. The process of dividing the domain in $n_e$ elements is called discretization. The polynomial degree of the Ansatz functions and the number of elements determine the accuracy of the approximation. In order to set up the FEM, the PDE needs to be in the so-called variational, or "weak", formulation. 
+After discretization of the domain and deriving the weak formulation, it can be approximated on the individual elements. Assembling the element matrices yields a global system of equations which can, after boundary conditions are applied, be solved for the unknown vector.
 
 
 \subsection{Integral and Weak Formulation}
-- Explain Vector spaces
-- Test function: needs to obey the dirichlet conditions
-
-
-The Helmholtz equation is the so-called governing equation for the problem considered in this thesis. The governing equation is given in the strong form and is usually of higher order. This property makes it hard to solve the equation, both analytically and numerically. For being able to apply the FEM, the order of the PDE has to be lowered. That is archieved by first bringing the equation in the weak, or also called variational, formulation.
-One way to derive the weak formulation of the governing equation is the method of weighted residuals. 
+The Helmholtz Equation is the so-called governing equation for the problem considered in this thesis. The governing equation is given in the strong form and is usually of higher order. This property makes it hard to solve the equation, both analytically and numerically. For being able to apply the FEM, the order of the PDE has to be lowered. That is archieved by first bringing the equation in the weak, or also variational, formulation.
+Bringing the governing equation in the weak form can be accomplished using the Method of Weighted Residuals. 
 \paragraph{The Weigthed Residuals Method}
-The residual $R$ is the difference between approximation and exact solution. The exact solution is usually not known. Therefore the residual is formed by inserting the approximation of the solution into the PDE. The result is non-zero and a measure for the quality of the approximation \cite{langtangen2019}. To increase the quality, the residual has to be minimized. 
-An FEM approximation, see \ref{chap:ApproxFem} for details, uses FEM basis functions which are weighted with some factors $c_j$. The goal is finding the factors which minimize $R$. The seeked approximated solution vector to the Helmholtz equation $\bm{p}$ is part of a space $V$ which is spanned by the FEM basis functions $\varphi_i$. Demanding the scalar product of the residual and a test function $v$ to be zero
-\begin{equation}
-(R,v) = 0, \quad \forall v \in V \;,
-\end{equation}
-i.e. demanding that they are orthogonal, can be used to minimize $R$. $V$ can be spanned by the FEM basis functions as well. Nevertheless, it doesn't necessarily need to be defined in the same space as $\bm{p}$. Using the same space would be called the Galerkin method. Applying the Weighted Residuals Method to the Helmholtz equation is executed as follows.
-At first the strong formulation (PDE) is multiplied with the test function $v$ and integrated over the domain $\Omega$ to get the so-called integral formulation:
+At first the strong formulation (PDE) is multiplied with a so-called test function $v$ and integrated over the domain $\Omega$ to get the so-called integral formulation:
 \begin{equation}
 \int_{\Omega} v \nabla^2 p \,\mathrm{d}\Omega + \int_{\Omega} k^2 pv \,\mathrm{d}\Omega = 0
 \label{eqn:IntForm}
 \end{equation}
 %
-
-The approximated function within an element, here it is $p$, is called the trial function. It is part of a constrained space of trial functions or termed as the trial space. The test function $v$ is also part of a test space. Usually, trial and test spaces are chosen to be the same. Both trial and test spaces have to fulfill the Dirichlet boundary conditions imposed on the PDE.
+The approximated function within an element, here it is $p$, is called the trial function. It is part of a constrained space of trial functions, the trial space. The test function $v$ is also part of a test space. Usually, trial and test spaces are chosen to be the same. Both trial and test spaces have to fulfill the Dirichlet boundary conditions imposed on the PDE.
 The Helmholtz equation and therefore also the now formed integral formulation contain derivatives of second order. However, the FEM works by adjoining individual element functions to a global function. Therefore, the global solution is a piecewise polynomial \cite{langtangen2019} what causes problems when calculating higher-order derivatives because those become discontinuous. In consequence, integration by parts is performed using Green's first identity \cite[pp. 53,54]{atalla2015} on the higher-order terms to get lower order derivatives. It makes use of the divergence theorem, also called Gauss's theorem:
 
 \begin{equation}
@@ -449,7 +425,7 @@ Discretization means that the domain $\Omega$ is split into $n_e$ individual ele
 This holds not only for 1D meshes but for 2D and 3D meshes as well.
 For 1D meshes, such as in Figure \ref{fig:1DDom}, each element has two so-called nodes. This is because between the element boundaries a linear function is spanned which needs two support points to be defined.  In a 2D domain, an element would have 3 nodes, see Figure \ref{fig:2DDom}. Also different shapes of elements, e.g. quaratic elements with 4 nodes, are possible. The collection of nodes is called a mesh. The total number of nodes in a 1D mesh is $n = n_e + 1$, in a 2D mesh it is $n = n_x \times n_y$ with $n_x$ and $n_y$ the number of nodes in each coordinate. The minimum degree of the used function is determined by the weak form: It always needs to be differentiable, therefore a constant approximation function would not work \cite{atalla2015}. 
 
-Figures \ref{fig:1DDom} and \ref{fig:2DDom} illustrate the discretization of a 1D and 2D domain, respectively.  For the 1D domain, the first ansatz functions are sketched: It is visible that for each node there is an ansatz function that yields the value $1$ only at that node and $0$ at all other nodes in the domain.
+Figures \ref{fig:1DDom} and \ref{fig:2DDom} illustrate the discretization of a 1D and 2D domain, respectively.  For the 1D domain, the first ansatz functions are sketched: It is visible that for each node there is an Ansatz function that is $1$ only at that node and $0$ at all other nodes in the domain.
 %
 \begin{figure}[h]
 \begin{center}
@@ -508,9 +484,8 @@ self.mesh = UnitSquareMesh(self.a,self.b) #define mesh
 In this case a unit square is chosen what means that the domain size will be quadratic and of length $1.0$ in every direction. $2$ elements were chosen for every dimension what leads to a mesh looking like \ref{fig:2DDom}. Of course every desired 2D shape can be used as a mesh.
 
 \subsection{Approximation and Building Element Matrices}
-\label{chap:ApproxFem}
-In FEM, the values between nodes within an element are interpolated with basis functions $\varphi_i$. 
-For each degree of freedom in the domain an FEM basis function is defined. By weighing those basis functions, the solution can be approximated with 
+In the FEM, the values between nodes within an element are interpolated with basis functions $\varphi_i$. 
+For each node in the domain an FEM basis function is defined. By weighing those basis functions, the solution can be approximated with 
 \begin{equation}
 p(x_i) = \sum_{j = 1}^n c_j  \varphi_j(x_i) = f(x_i) \; .
 \label{eqn:WeighingFunction}
@@ -572,11 +547,11 @@ The goal is to solve the linear system of equations for the weight factors of th
 %A_{i,j} &= \varphi_j(x_i), \\
 %b_i &= f(x_i) \;.
 %\end{align}
-The calculation is usually done for one element at a time. Thereby arises an element matrix $A^{(e)}$ whose individual entries can be computed as
+The calculation is usually done for one element at a time. Therby arises an element matrix $A^{(e)}$ whose individual entries can be computed as
 \begin{equation}
 A_{r,s}^{(e)} = \int_{\Omega^{(e)}} \nabla \varphi_r \nabla \varphi_s \, \mathrm{d}\Omega^{(e)} - k^2 \int_{\Omega^{(e)}} \varphi_r \varphi_s \, \mathrm{d}\Omega^{(e)}
 \end{equation}
-with $r,s$ the indices of the individual nodes in an element. For 1D linear Lagrange elements, i.e. elements with two nodes each having one degree of freedom per node, a $2\times 2$ matrix results and for 1D quadratic Lagrange elements with three nodes each a $3\times3$ matrix results.
+with $r,s$ the indices of the individual nodes in an element. For 1D linear Lagrange elements, i.e. elements with two nodes each, a $2\times 2$ matrix results and for 1D quadratic Lagrange elements with three nodes each a $3\times3$ matrix results.
 %
 Also the right hand side vector, now called $\bm{b}$, is computed element-wise using
 \begin{equation}
@@ -673,10 +648,9 @@ and for the variance
 \mathbb{V}[X] = \mathbb{E}[(X-\mathbb{E}[X])^2] = \mathbb{E}[X^2] - \mathbb{E}[X]^2 \;.
 \end{equation}
 %
-For the covariance between two random variables $X$ and $Y$ there holds (see \cite[p. 1434]{arens2015})
+For the covariance between two random variables $X$ and $Y$ there holds
 \begin{equation}
 \mathrm{cov}[X,Y] = \mathbb{E}[(X-\mathbb{E}[X])(Y-\mathbb{E}[Y])] = \mathbb{E}[XY] - \mathbb{E}[X] \mathbb{E}[Y]\;.
-\label{eqn:Covariance}
 \end{equation}
 It is clearly visible that $\mathrm{cov}[X,X] = \mathbb{V}[X]$.
 %
@@ -731,7 +705,7 @@ The marginal likelihood (see section \ref{sec:Marg} for more detail) serves as a
 \section{Gaussian Process Regression}
 
 \subsection{Regression}
-"Regression is used to find a function that rerpesents a set of data points as closely as possible" \cite{gortler2019}
+"Regression is used to find a function that represents a set of data points as closely as possible" \cite{gortler2019}
 \cite{gortler2019} "A Gaussian process is a probabilistic method that gives confidence for the predicted function"
 
 "GPs allow us to make predictions about our data incorporating prior knowledge"
@@ -741,14 +715,66 @@ The marginal likelihood (see section \ref{sec:Marg} for more detail) serves as a
 The following closely follows \cite{rasmussen2006}.
 
 
-Gaussian Processes are a class of Bayesian non-parametric models. Non-parametric doesn't mean that there are no parameters involved but rather that there is an infinite number of them. Every realization of a Gaussian process doesn't yield a scalar or vector but a function. One can think of a Gaussian Process as a collection of infinitely many normally distributed random variables, i.e. a generalization of a Gaussian distribution: A vector with infinitely many entries is basically a function. By picking out a finite set of those random variables when discretizing e.g. on an FEM mesh, one obtains a multivariate distribution which is determined by a mean and a covariance matrix. \cite[p. 2]{rasmussen2006} Hence, the GP assigns a confidence band to a function where a usual polynomial regression wouldn't.
+Gaussian Processes are a class of Bayesian non-parametric models. Non-parametric doesn't mean that there are no parameters involved but rather that there is an infinite number of them. Every realization of a Gaussian process doesn't yield a scalar or vector but a function. One can think of a Gaussian Process as a collection of infinitely many normally distributed random variables, i.e. a generalization of a Gaussian distribution: A vector with infinitely many entries is basically a function. By picking out a finite set of those random variables when discretizing e.g. on an FEM mesh, one obtains a multivariate distribution which is determined by a mean and a covariance matrix. \cite[p. 2]{rasmussen2006} Hence, the GP by default assigns a confidence band to a function where a usual polynomial regression wouldn't, at least not directly.
 
 A GP is described by its mean function and the covariance function, also called kernel.
 
+\subsection{Marginalization and Conditioning} 
+\label{sec:Marg}
+Marginalisation means that out of a multivariate Gaussian the single variables can directly be taken out of the mean vector and the covariance matrix. E.g. for a point on the axis describved by the GP, a single value can be picked out. A univariate Gaussian comes out by simply using the mean vectors value at that point and the i,i th index of the covariance matrix. This means that the underlying distributions for single variables do not change if a GP is used to describe an arbitrary set of variables [p13].
+[Visual Exploration]
+From a multivariate, in this case bivariate, Gaussian
+\begin{equation}
+P(X,Y) = \begin{bmatrix}
+           X \\
+           Y
+         \end{bmatrix} \sim \mathcal{N}\left( \begin{bmatrix}
+           \mu_X \\
+           \mu_Y
+         \end{bmatrix}, \begin{bmatrix}
+\Sigma_{XX} & \Sigma_{XY} \\
+\Sigma_{YX} & \Sigma_{YY} 
+\end{bmatrix}  \right)
+\end{equation}
+one single random variable, say $X$, can be marginalized out by simply only looking at the entries corresponding solely to $X$:
+\begin{equation}
+X \sim \mathcal{N}(\mu_X, \Sigma_{XX}) \;.
+\end{equation}
+If the covariance matrix and mean vector are not known, a random variable can be marginaluzed out of an arbitrary distribution by
+\begin{equation}
+p_X(x) = \int_y p_{X,Y}(x,y)\,\mathrm{d}y = \int_y p_{X|Y}(x|y)p_Y(y)\,\mathrm{d}y
+\label{eqn:margi}
+\end{equation}
+which intuitively means that summing the probability for $X$ at every possible $Y$ gives the total probability for $X$ independent of $Y$. 
+
+(\ref{eqn:margi}) already uses the principle of conditioning. The condition operator $|$ yields the probability of one variable under the condition that another variable is true. As an illustration in words one could ask: "What is the probability of event $X$ to happen under the condition, that the event $Y=y$ happens simultaneously?"
+For the mutlivariate Gaussian there holds for the conditioning
+\begin{equation}
+X|Y \sim \mathcal{N}(\mu_X +\Sigma_{XY} \Sigma_{YY}^{-1}(Y-\mu_Y), \Sigma_{XX} - \Sigma_{XY}\Sigma_{YY}^{-1}\Sigma_{YX} ) \;.
+\end{equation}
+%
+Conditioning yields a so-called modified Gaussian distribution which can be imagined as a "cut" through a multivariate Gaussian $P(X,Y)$ at a certain point $y$. A new Gaussian with the dimension reduced by $1$ arises as illustrated in Figure \ref{fig:GaussCut3d}.
+
+%
+%
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{pics/Gaussians3dCut}
+\caption{Cutting, i.e. conditioning, a bivariate Gaussian at the dashed line leads to a new Gaussian with only one dimension.}
+\label{fig:GaussCut3d}
+\end{center}
+\end{figure}
 
 
 
+-Regression in general
+-differences of a GP regression to e.g. a polynomial regression: every point is assgined an uncertainty
 
+-a distribution over functions
+
+-Herleitung der Kovarianzmatrix, evtl. auch für das standard linear regression modell
+
+-parameter variations
 
 \subsection{Gaussian Processes}
 \paragraph{Marginalization and Conditioning} 
@@ -967,7 +993,7 @@ Measuring data always involves a measurement error: One can never measure any ph
 \label{eqn:statGen}
 \end{equation}
 %
-consists of response of the true underlying process $\bm{z} \in \mathbb{R}^{n_y}$ at the measurement points and the measurement noise $\bm{e} \in \mathbb{R}^{n_y}$. The true process $\bm{z}$ can further be expressed as a combination of the used model $\bm{u} \in \mathbb{R}^{n_u}$, which tries to describe the true process, and a model discrepancy error $d$ which accounts for the model not being a completely accurate representation of the true physics. The model is scaled using the scaling parameter $\rho \in \mathbb{R}$. It can be evaluated at $n_u$ points which are determined by the FEM mesh but only its evaluations at the measurement points are taken into account by using the projection matrix $\bm{P} \in \mathbb{R}^{n_y \times n_u}$. $n_u$ is the number of the so-called degrees of freedom of the domain, i.e. the number of nodes on which a solution is approximated.
+consists of response of the true underlying process $\bm{z} \in \mathbb{R}^{n_y}$ at the measurement points and the measurement noise $\bm{e} \in \mathbb{R}^{n_y}$. The true process $\bm{z}$ can further be expressed as a combination of the used model $\bm{u} \in \mathbb{R}^{n_u}$, which tries to describe the true process, and a model discrepancy error $d$ which accounts for the model not being a completely accurate representation of the true physics. The model is scaled using the scaling parameter $\rho \in \mathbb{R}$. It can be evaluated at $n_u$ points which are determined by the FEM mesh but only its evaluations at the measurement points are taken into account by using the projection matrix $\bm{P} \in \mathbb{R}^{n_y \times n_u}$.
 %
 $e$ is modeled as a multivariate Gaussian 
 %
@@ -1084,37 +1110,16 @@ Having the GPs for the input parameters defined, the FEM system of equations can
 \begin{equation}
 u \sim \mathcal{GP}(\bar{u}, C_u)
 \end{equation}
-is to be calculated. Multiplying the FEM system matrix by $\bm{A}^{-1}$ from the left there holds
+is to be calculated. Expressed in terms of the FEM system matrix, there holds
 \begin{equation}
-\bm{u} = \bm{A}^{-1}\bm{f} \;.
+\bm{u} = \bm{A}^{-1}\bm{f}
 \end{equation}
-\cite[p. 1428]{arens2015} states that the expectation operator $\mathbb{E}$ is linear for independent random variables $X_1,X_2,...,X_n$ what means that
+Because of discretizing, the multivariate Gaussian
 \begin{equation}
-\mathbb{E}\left[  \sum_{i=1}^n X_i \right] = \sum_{i=1}^n \mathbb{E}[X_i] \;.
-\end{equation}
-A GP can be described by a set of independent normally distributed random variables. Because of the linearity there holds
-\begin{equation}
-\bar{u} = \mathbb{E}[\bm{A}^{-1} \bm{f}] = \bm{A}^{-1} \mathbb{E}[\bm{f}] = \bm{A}^{-1} \bar{f}
-\end{equation}
-and, acc. to \cite{schon2011, bardsley2018}, making use of the definition of covariance (\ref{eqn:Covariance}),
-\begin{align}
-\begin{split}
-C_u &= \mathbb{E}[(\bm{u}-\bar{u})(\bm{u}-\bar{u})^T] \\
-	&= \mathbb{E}\left[\left((\bm{A}^{-1} \bm{f}) - (\bm{A}^{-1} \bar{f}) \right) \left( (\bm{A}^{-1} \bm{f}) - (\bm{A}^{-1} \bar{f}) \right)^T   \right]\\
-	&= \mathbb{E}\left[  \left( \bm{A}^{-1}(\bm{f}-\bar{f})   \right)  \left( \bm{A}^{-1}(\bm{f}-\bar{f})   \right)^T  \right]\\
-	&= \mathbb{E} \left[    \bm{A}^{-1} ( \bm{f} - \bar{f} ) ( \bm{f} - \bar{f} )^T \bm{A}^{-T}   \right]\\
-	&= \bm{A}^{-1}   \mathbb{E}\left[ (\bm{f}-\bar{f}) (\bm{f}-\bar{f})^T   \right] \bm{A}^{-T} \\
-	&= \bm{A}^{-1} C_f \bm{A}^{-T}  \;.
-\end{split}
-\end{align}
-%	 \\
-%	 \\
-%	
-There fore there holds for the multivariate Gaussian, which describes the new $\bm{u} \sim \mathcal{GP}(\bar{u}, C_u)$
-\begin{equation}
-\bm{u} \sim p(u) = \mathcal{N} \left( A^{-1} \bar{f}, A^{-1} C_f A^{-T}  \right) \;.
+\bm{u} \sim p(u) = \mathcal{N} \left( A^{-1} \bar{f}, A^{-1} C_f A^{-T}  \right)
 \label{eqn:u_GP_disc}
 \end{equation}
+arises.
 As visible in (\ref{eqn:u_GP_disc}), there holds for $\bar{u}$
 \begin{equation}
 \bar{u} = A^{-1} \bar{f} \; ,
@@ -1155,10 +1160,9 @@ With $\bar{u}$ and $C_u$ the GP for the prior is completely defined.
 \paragraph{Find Prior Mean and Variance}
 Once the prior is computed, it can be sampled. The mean is already given but the parameters of the underlying GP are unknown. It is possible to evaluate $C_u$ for the standard deviation with
 \begin{equation}
-\bm{\sigma_u} =  \mathrm{diag}(C_u).
+\bm{\sigma_u} =  \mathrm{diag}(C_u)
 \label{eqn:varCu}
 \end{equation}
-This yields the diagonal entries of the covariance matrix in a vector which now represents the variance at all test points. 
 In Python
 \begin{minted}
 [
@@ -1175,123 +1179,9 @@ C_u_sig = np.sqrt(np.diagonal(C_u))
 solves (\ref{eqn:varCu}).
 
 \paragraph{The Projection Matrix $P$}
-The projection matrix $P \in \mathbb{R}^{n_y \times n_u}$ is constructed by evaluating all $n_u$ FEM ansatz functions of the mesh at the $n_y$ measurement positions $y_i$. For each node there is a corresponding ansatz function which can be evaluated all over the domain. The result is a sparse matrix with most entries zero and only those entries non-zero which correspond to the ansatz functions $\Phi_i(\bm{\bm{x}})$ associated with the finite element in which the measurement positions lie. The matrix is used below to project the matrices resulting from the FEM prior onto the coordinates of the observations. Figure \ref{fig:PIllust} shows how the individual entries of $P$ are created for a 1D problem. Observation points, i.e. the training points, are displayed in red whereas all other points, i.e. test points, are displayed in green. The hat functions are $1$ only at one single node.
-%
-\begin{figure}[h]
-\begin{center}
-
-\begin{tikzpicture}[remember picture,scale=\textwidth/22.0cm,samples=200]
-	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (1) at (7, 0) {};
-		\node [style=none] (2) at (-7, 0) {};
-		\node [style=none] (3) at (-5, 0) {};
-		\node [style=none] (4) at (-3, 0) {};
-		\node [style=none] (5) at (-1, 0) {};
-		\node [style=none] (6) at (1, 0) {};
-		\node [style=none] (8) at (5, 0) {};
-		\node [style=none] (9) at (3, 0) {};
-		\node [style=none] (10) at (-7, 3) {};
-		\node [style=none] (11) at (8, 0) {};
-		\node [style=none] (12) at (7, 0) {};
-		\node [style=none] (13) at (8, 0) {};
-		\node [style=none] (14) at (8, 0) {};
-		\node [style=green] (15) at (-7, 0) {};
-		\node [style=green] (16) at (-5, 0) {};
-		\node [style=green] (17) at (-3, 0) {};
-		\node [style=green] (18) at (-1, 0) {};
-		\node [style=green] (19) at (1, 0) {};
-		\node [style=green] (20) at (3, 0) {};
-		\node [style=green] (21) at (5, 0) {};
-		\node [style=green] (22) at (7, 0) {};
-		\node [style=none] (23) at (8.25, -0.25) {};
-		\node [style=none] (24) at (8.25, 0) {$x$};
-		\node [style=none] (32) at (-7.25, 2) {};
-		\node [style=none] (33) at (-6.75, 2) {};
-		\node [style=none] (34) at (-7.25, 2) {};
-		\node [style=none] (35) at (-7.5, 2) {$1$};
-		\node [style=none] (36) at (-7, 2) {};
-		\node [style=none] (37) at (-5, 2) {};
-		\node [style=none] (38) at (-3, 2) {};
-		\node [style=none] (39) at (-1, 2) {};
-		\node [style=none] (40) at (1, 2) {};
-		\node [style=none] (41) at (3, 2) {};
-		\node [style=none] (42) at (5, 2) {};
-		\node [style=none] (43) at (7, 2) {};
-		\node [style=none] (44) at (-7, -0.5) {$0$};
-		\node [style=none] (45) at (-5, -0.5) {$1$};
-		\node [style=none] (46) at (-3, -0.5) {$2$};
-		\node [style=none] (47) at (-1, -0.5) {$3$};
-		\node [style=none] (48) at (1, -0.5) {$4$};
-		\node [style=none] (49) at (3, -0.5) {$5$};
-		\node [style=none] (50) at (5, -0.5) {$6$};
-		\node [style=none] (51) at (7, -0.5) {$7$};
-		\node [style=none] (52) at (-5, 2.5) {$\varphi_1$};
-		\node [style=none] (53) at (-3, 2.5) {$\varphi_2$};
-		\node [style=none] (54) at (-1, 2.5) {$\varphi_3$};
-		\node [style=none] (55) at (1, 2.5) {$\varphi_4$};
-		\node [style=none] (56) at (3, 2.5) {$\varphi_5$};
-		\node [style=none] (57) at (5, 2.5) {$\varphi_6$};
-		\node [style=none] (58) at (7, 2.5) {$\varphi_7$};
-		\node [style=none] (59) at (-6.5, 2.5) {$\varphi_0$};
-		\node [style=new style 0] (60) at (-5, 0) {};
-		\node [style=new style 0] (61) at (1, 0) {};
-		\node [style=new style 0] (62) at (3, 0) {};
-		\node [style=none] (63) at (-5, -1.25) {$y_0$};
-		\node [style=none] (64) at (1, -1.25) {$y_1$};
-		\node [style=none] (65) at (3, -1.25) {$y_2$};
-	\end{pgfonlayer}
-	\begin{pgfonlayer}{edgelayer}
-		\draw [in=180, out=0] (2.center) to (1.center);
-		\draw [style=arrow] (14.center) to (12.center);
-		\draw [style=arrow, in=90, out=-90] (10.center) to (2.center);
-		\draw [style=line] (15) to (22);
-		\draw [style=line] (32.center) to (33.center);
-		\draw [style=blue line] (36.center) to (16);
-		\draw [style=red line] (15) to (37.center);
-		\draw [style=red line] (37.center) to (17);
-		\draw [style=red line] (17) to (18);
-		\draw [style=red line] (18) to (19);
-		\draw [style=red line] (19) to (20);
-		\draw [style=red line] (20) to (21);
-		\draw [style=red line] (21) to (22);
-		\draw [style=green line] (16) to (38.center);
-		\draw [style=green line] (38.center) to (18);
-		\draw [style=green line] (18) to (19);
-		\draw [style=blue line] (16) to (17);
-		\draw [style=blue line] (17) to (39.center);
-		\draw [style=blue line] (39.center) to (19);
-		\draw [style=red line] (18) to (40.center);
-		\draw [style=red line] (40.center) to (20);
-		\draw [style=green line] (19) to (41.center);
-		\draw [style=green line] (41.center) to (21);
-		\draw [style=blue line] (20) to (42.center);
-		\draw [style=blue line] (42.center) to (22);
-		\draw [style=red line] (21) to (43.center);
-	\end{pgfonlayer}
-\end{tikzpicture}
-
-\begin{equation}
-P =
-\begin{bmatrix}
-0 & \rn{101}{1} & 0 & 0 & 0 & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & \rn{102}{1} & 0 & 0 & 0\\
-0 & 0 & 0 & 0 & 0 & \rn{103}{1} & 0 & 0
-\end{bmatrix}
-\end{equation}
-
-\caption{The matrix $P$ contains the values of the FEM ansatz functions belonging to the nodes on which observations are available. Since linear Lagrange elements yield $1$ at their respective node number and $0$ on all other nodes, $P$ consists of only $1$s and $0$s.}
-\label{fig:PIllust}
-
-
-\begin{tikzpicture}[overlay,remember picture]
-	\draw [->] (3) to [out=-40,in=30] (101);
-	\draw [->] (6) to [out=-50,in=60] (102);
-	\draw [->] (9) to [out=-120,in=60](103);
-\end{tikzpicture}
-\end{center}
-\end{figure}
-%
+The projection matrix $P$ is constructed by evaluating all FEM ansatz functions of the mesh at the $n_y$ measurement positions. The result is a sparse matrix with most entries zero and only those entries non zero that correspond to the ansatz functions $\Phi_i(\bm{\bm{x}})$ associated with the finite element in which the measurement positions lie.
 This computation for linear ansatz functions can easily be implemented in Python using Fenics:
+
 \begin{python}
 def getP(self,y_points):
 	ny = len(y_points)
@@ -1354,14 +1244,14 @@ To infer the posterior density, observed data is necessary. These can be obtaine
 Sampling from a synthetic source or from the real physical response yields the observation vector
 %
 \begin{equation}
-\bm{y} = \bm{z} + \bm{e}
+\bm{y} = {z} + {e}
 \end{equation}
 %
-with $\bm{z}$ the real response and $\bm{e}$ the measurement error which is also a part of $\bm{y}$ for the synthetic observations. It can be seen that the model mismatch error $\bm{d}$ is, as opposed to (\ref{eqn:statGen}), not part of the equation because it is only part of the FEM modeling error. 
+with $z$ the real response and $e$ the measurement error which is also a part of $\bm{y}$ for the synthetic observations. It can be seen that the model mismatch error $\bm{d}$ is, as opposed to eq. (), not part of the equation because it is only part of the FEM modeling error. 
 %
-The data is observed on multiple measurement points $y_i$ throughout the domain. It can be chosen if the data is assumed to be deterministic or to be random. For the deterministic case only one value is measured for each measurement point. In the random case many measurements are taken per point what leads to a probability distribution for each point.
+The data is observed on multiple measurement  points $n_y$ throughout the domain. It can be chosen if the data is assumed to be deterministic or to be random. For the deterministic case only one value is measured for each measurement point. In the random case many measurements are taken per point what leads to a probability distribution for each point.
 %
-Now, Bayes' rule can be applied to update the prior with the observations \cite{girolami2021}: 
+Now, Bayes' rule can be applied to update the prior with the observations: [statFEM]
 
 \begin{equation}
 p(\bm{u}|\bm{y}) = \frac{p(\bm{y}|\bm{u})p(\bm{u})}{p(\bm{y})} \propto p(\bm{y}|\bm{u})p(\bm{u}) \;.
@@ -1399,7 +1289,7 @@ p(\bm{u}|\bm{y}) = \frac{1}{\sqrt{(2\pi)^{n_u} \lvert B \rvert}} \exp( (B^{-1} \
 The result of this operation is
 %
 \begin{equation}
-p(u|y) = \mathcal{N}(\bar{u}_{|y}, C_{u|y})
+p(u|y) = \mathcal{N}(\bar{u_{|y}}, C_{u|y})
 \end{equation}
 %
 with
@@ -1422,7 +1312,7 @@ C_{\bm{u}|\bm{y}} = C_u - C_u P^T (\frac{1}{\rho^2} (C_d + C_e) + P C_u P^T)^{-1
 \subsection{Modeling Parameters of the PDE}
 
 \subsection{Probabilistic FEM Prior}
-The prior before observation is obtained by computing the FEM response $u_h$ of the PDE given all parameters. The random parameters are modeled as GPs. Thereby result a mean $\bar{u}_h$ and a covariance matrix $C_u$. For this being the prior, the hyperparameters for the source term GP are chosen deterministically. The covariance matrix is obtained by calculating $C_u = A^{-1} C_{par} A^{-T}$ with $A$ the FEM system matrix and $C_{par}$ the covariance matrix of the respective random parameter's GP. The mean can easily be determined by calculating the deterministic mean of the FEM by using only the GP's mean.
+The prior before observation is obtained by computing the FEM response $u_h$ of the PDE given all parameters. The random parameters are modeled as GPs. Thereby result a mean $\bar{u_h}$ and a covariance matrix $C_u$. For this being the prior, the GP hyperparameters are chosen deterministically. The covariance matrix is obtained by calculating $C_u = A^{-1} C_{par} A^{-T}$ with $A$ the FEM system matrix and $C_{par}$ the covariance matrix of the respective random parameter's GP. The mean can easily be determined by calculating the deterministic mean of the FEM by using only the GP's mean.
 The resulting response $u_h$ is, since it is discretized and not continuous, a multivariate Gaussian distribution.
 %
 To check convergence of the FEM model, it can be compared to the exact analytically determined system response $u$. 
@@ -1472,33 +1362,33 @@ error bands
 Below it was already stated that the hyperparameters for computing the model discrepancy covariance matrix $\bm{C_d}$ are not known. The scaling factor $\rho$ is not known, as well. The measurement data can be used to estimate these parameters, collected in the hyperparameter vector $\bm{w}$, with Bayes' rule 
 %
 \begin{equation}
-p(\bm{w}|\bm{y}) = \frac{P(\bm{y}|\bm{w}) p(\bm{w})}{\int P(\bm{y}|\bm{w}) p(\bm{w}) \, \mathrm{d}\bm{w}}
+p(w|y) = \frac{P(y|w) p(w)}{\int P(y|w) p(w) dw}
 \end{equation}
 %
 where the denominator, which only serves as a normalization constant, can be dropped if only a point estimate of the hyperparameters is needed. This approach is indeed non-bayesian because no probability density of the hyperparameters is computed. For multiple measurements $y_i$ with a total number of $n_o$ there holds, because it is assumed that individual measurements are independent [Rasmussen p.9],
 \begin{equation}
-P(\bm{Y}|\bm{w}) = \prod_{i=1}^{n_o} p(\bm{y_i}|\bm{w}) \; 
+P(Y|w) = \prod_{i=1}^{n_o} p(\bm{y_i}) \; 
 \end{equation}
-which replaces $P(\bm{y}|\bm{w})$.
-If no prior knowledge of the parameters is available, it is possible to use an uninformative prior $p(\bm{w}) = 1$.
-The equation then basically states that $p(\bm{w}|Y) \propto P(Y|\bm{w})$ which means that maximizing  $P(\bm{Y}|\bm{w})$, i.e. the likelihood to measure $Y$ given a set of hyperparameters, yields the optimal vector of hyperparameters for the given data. 
-The marginal likelihood $P(\bm{y}|\bm{w})$, marginal because it has been marginalized over the function values $\bm{u}$ as in \ref{sec:Marg}, can be expressed as 
+which replaces $P(y|w)$.
+If no prior knowledge of the parameters is available, it is possible to use an uninformative prior $p(w) = 1$.
+The equation then basically states that $p(w|Y) \propto P(Y|w)$ which means that maximizing  $P(Y|w)$, i.e. the likelihood to measure $Y$ given a set of hyperparameters, yields the optimal vector of hyperparameters for the given data. 
+The marginal likelihood $P(y|w)$, marginal because ?!?!?!, can be expressed as 
 \begin{equation}
-p(\bm{y}|\bm{w}) = \mathcal{N}(\rho \bm{P}\bar{u}, \bm{C_d}+\bm{C_e} + \rho^2 \bm{P} \bm{C_u} \bm{P}^T)
+p(y|w) = \mathcal{N}(\rho \bm{P}\bar{u}, \bm{C_d}+\bm{C_e} + \rho^2 \bm{P} \bm{C_u} \bm{P}^T)
 \end{equation}
 because, as stated above, all components of the statistical generating model are Gaussian.
 The equation for the corresponding PDF reads
 \begin{equation}
-p(\bm{y}|\bm{w}) = \frac{1}{(2 \pi)^{n/2} |\bm{K}|^{1/2} } \exp \left(   -\frac{1}{2} (\bm{y} - \rho \bm{P}\bar{u})^T \bm{K}^{-1} (y - \rho \bm{P}\bar{u})   \right)
+p(y|w) = \frac{1}{(2 \pi)^{n/2} |K|^{1/2} } \exp \left(   -\frac{1}{2} (y - \rho \bm{P}\bar{u})^T \bm{K}^{-1} (y - \rho \bm{P}\bar{u})   \right)
 \end{equation}
 with
 \begin{equation}
-\bm{K} = \bm{C_d}+\bm{C_e} + \rho^2 \bm{P} \bm{C_u} \bm{P}^T \; .
+K = \bm{C_d}+\bm{C_e} + \rho^2 \bm{P} \bm{C_u} \bm{P}^T \; .
 \end{equation}
 %
 To make further calculations easier the exponential function can be removed by taking the negative $\log$ of the function (Rasmussen):
 \begin{equation}
-- \log p(\bm{y}|\bm{w}) = \frac{n}{2} \log(2 \pi) + \frac{1}{2} \log |\bm{K}| + \frac{1}{2}(\rho \bm{P}\bar{u} - \bm{y})^T \bm{K}^{-1} (\rho \bm{P}\bar{u} - \bm{y}) 
+- \log p(y|w) = \frac{n}{2} \log(2 \pi) + \frac{1}{2} \log |\bm{K}| + \frac{1}{2}(\rho \bm{P}\bar{u} - y)^T \bm{K}^{-1} (\rho \bm{P}\bar{u} - y) 
 \label{eqn:neglog}
 \end{equation}
 This also improves numerical stability because products of possibly very small factors can become smaller than machine accuracy. The log replaces products with sums.
@@ -1506,39 +1396,39 @@ Because of taking the negative $\log$, (\ref{eqn:neglog}) now needs to be minimi
 
 \paragraph{Cholesky Decompositon}
 \cite[p.93-95]{chambers1998}
-For numerical stability reasons $\bm{K}^{-1}$ should not be calculated directly. Instead, the linear system is solved. Additionally, if $\bm{K}$ is symmetric and positive-semidefinite, computing the lower triangular matrix using the Cholesky decomposition 
+For numerical stability reasons $\bm{K}^{-1}$ should not be calculated directly. Instead, the linear system is solved. Additionally, if $K$ is symmetric and positive-semidefinite, computing the lower triangular matrix using the Cholesky decomposition 
 \begin{equation}
-\bm{K} = \bm{L}\bm{L}^T
+K = LL^T
 \end{equation}
-makes the calculation quicker and yields the also needed determinant of $\bm{K}$ as a by-product. 
-A generic linear system is defined as $A x = b$. It is solved for $x$, so the inverse of $A$ is needed. In this case for (\ref{eqn:neglog}) there holds $A=\bm{K}$ and $b = y$, since the inverse of $\bm{K}$ is meant to be found. Defining $x = \bm{K}^{-1}y$ there holds
+makes the calculation quicker and yields the also needed determinant of $K$ as a by-product. 
+A generic linear system is defined as $A x = b$. It is solved for $x$, so the inverse of $A$ is needed. In this case for (\ref{eqn:neglog}) there holds $A=K$ and $b = y$, since the inverse of $K$ is meant to be found. Defining $x = K^{-1}y$ there holds
 \begin{equation}
-\bm{K} \bm{K}^{-1}  y = y
+K \times K^{-1} \times y = y
 \end{equation}
 %
-With $\bm{L}$ the lower triangular matrix of $\bm{K}$ obtained by 
+With $L$ the lower triangular matrix of $K$ obtained by 
 \begin{lstlisting}[language=Python]
 L = scipy.linalg.cho_factor(K)
 \end{lstlisting}
-the linear system can now be solved for $x = \bm{L}y$ with
+the linear system can now be solved for $x = K^{-1}y$ with
 \begin{lstlisting}[language=Python]
 K_inv_y = scipy.linalg.cho_solve(L, y) .
 \end{lstlisting}
 
-The determinant of any triangular matrix is defined as the product of its diagonal entries \cite{tomaskovic-moore}. Therefore the lower triangular matrix $\bm{L}$ can be used to efficiently calculate the determinant of $\bm{K}$. There holds
+The determinant of any triangular matrix is defined as the product of its diagonal entries [http://www.math.lsa.umich.edu/~hochster/419/det.html]. Therefore the lower triangular matrix $L$ can be used to efficiently calculate the determinant of $K$. There holds
 \begin{equation}
-\mathrm{det} \bm{K} = \mathrm{det} \bm{L} \mathrm{det} \bm{L}^T = \mathrm{det} \bm{L} ^2
+det K = det L det L^T = det L ^2
 \end{equation}
 and therefore
 \begin{equation}
-\mathrm{det} \bm{K} = \left(    \prod_{i=1}^{n_y}  \bm{L}_{i,i}  \right)^2
+det K = \left(    \prod_{i=1}^{n_y}  L_{i,i}  \right)^2
 \label{eqn:CholDet}
 \end{equation}
 
 Since in (\ref{eqn:neglog}) the $\log$ likelihood is used, (\ref{eqn:CholDet}) can be simplified to a sum:
 
 \begin{align*}
-\log{\mathrm{det} K} &= \log{\mathrm{det} L}^2 \\
+\log{det K} &= \log{det L}^2 \\
 &= 2 \sum_{i=0}^{n_y} \log{L_{i,i}}
 \end{align*}
 
@@ -1559,7 +1449,7 @@ For the optimization with L-BGFS the derivative of (\ref{eqn:neglog}) is needed.
 
 
 
-\subsection{Step 3: Estimating the Optimum Mesh Parameters}
+\section{Step 3: Estimating the Optimum Mesh Parameters}
 
 
 \chapter{Application of statFEM in Vibroacoustics}

@@ -1,48 +1,18 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
-The top-level auxiliary file: tubsreprt_example.aux
-The style file: ieeetr.bst
-I found no \citation commands---while reading file tubsreprt_example.aux
-I found no \bibdata command---while reading file tubsreprt_example.aux
-You've used 0 entries,
-            1876 wiz_defined-function locations,
-            476 strings with 3484 characters,
-and the built_in function-call counts, 20 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 9
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 1
-int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 1
-purify$ -- 0
-quote$ -- 0
-skip$ -- 1
-stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There were 2 error messages)
+[0] Config.pm:302> INFO - This is Biber 2.9
+[0] Config.pm:305> INFO - Logfile is 'tubsreprt_example.blg'
+[28] biber:313> INFO - === Do Jul  1, 2021, 17:37:26
+[47] Biber.pm:371> INFO - Reading 'tubsreprt_example.bcf'
+[109] Biber.pm:857> INFO - Found 19 citekeys in bib section 0
+[123] Biber.pm:3981> INFO - Processing section 0
+[134] Biber.pm:4154> INFO - Looking for bibtex format file 'Library.bib' for section 0
+[135] bibtex.pm:1468> INFO - LaTeX decoding ...
+[169] bibtex.pm:1294> INFO - Found BibTeX data source 'Library.bib'
+[191] Utils.pm:169> WARN - ISBN '978-3-642-33286-9 978-3-642-33287-6' in entry 'larson2013' is invalid - run biber with '--validate_datamodel' for details.
+[221] Utils.pm:169> WARN - ISBN '978-3-319-52461-0 978-3-319-52462-7' in entry 'langtangen2016' is invalid - run biber with '--validate_datamodel' for details.
+[308] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[308] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[308] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[308] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[323] bbl.pm:617> INFO - Writing 'tubsreprt_example.bbl' with encoding 'UTF-8'
+[330] bbl.pm:720> INFO - Output to tubsreprt_example.bbl
+[331] Biber.pm:110> INFO - WARNINGS: 2

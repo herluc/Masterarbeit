@@ -20,7 +20,7 @@ class solverClass:
 		self.dom_a = 0.0 #domain boundaries
 		self.dom_b = 1.0
 
-		self.ne	= 60 #number of elements
+		self.ne	= 30 #number of elements
 		self.nMC = nMC #number of Monte Carlo points
 
 		self.mesh = IntervalMesh(self.ne,self.dom_a,self.dom_b) #define mesh
@@ -292,7 +292,7 @@ class solverClass:
 			# print(self.getLogPost(proposal))
 			# print(self.getLogPost(wi))
 			# print(self.getLogPost(proposal)  -  self.getLogPost(wi) )
-			alpha = np.min(     (0.0, self.getLogPost(proposal)  -  self.getLogPost(wi) )  )
+			alpha = np.min(     (0.0, self.getLogPostMultiple(proposal)  -  self.getLogPostMultiple(wi) )  )
 			#print("alpha: ",alpha)
 			u = np.random.uniform(0,1)
 			if min(proposal)>0:
@@ -308,14 +308,14 @@ class solverClass:
 
 		quarter = int(len(samples)/4)
 		mean = np.mean(samples[quarter:],axis=0)
-		plt.figure(figsize=(6, 4), dpi=100)
-		plt.plot(np.transpose(samples)[0],label=['rho','sig',"l"])
+		#plt.figure(figsize=(6, 4), dpi=100)
+		#plt.plot(np.transpose(samples)[0],label=['rho','sig',"l"])
 		#plt.yscale('log')
 		#plt.xscale('log')
 
 		#plt.hist(np.transpose(samples),bins=30)
-		plt.grid()
-		plt.legend()
+#		plt.grid()
+	#	plt.legend()
 
 
 		#print("mean:")
@@ -498,9 +498,13 @@ class solverClass:
 		y_values = np.array(y_values)
 		logpostList = []
 
-		ld_s = np.log(np.logspace(-5,0.05,5000,base=np.exp(1)))
-		sigd_s = np.log(np.logspace(-8,0.05,5000,base=np.exp(1)))
+		ld_s = np.log(np.logspace(-5,0.0001,5000,base=np.exp(1)))
+		sigd_s = np.log(np.logspace(-8,0.8,5000,base=np.exp(1)))
 		rho_s = np.log(np.logspace(-0.8,1,5000,base=np.exp(1)))
+		#print("l,sig,rho:")
+		#print(ld_s)
+		#print(sigd_s)
+		#print(rho_s)
 
 		#rho_s = np.log(np.random.uniform(0.5,1.5,10000))
 		#ld_s = np.log(np.random.uniform(1e-16,1,10000))
@@ -524,30 +528,33 @@ class solverClass:
 		#print("logPmean:",logPmean)
 		index_mean = (np.abs(logpostList - logPmean)).argmin()
 		smallest = np.argmin(np.array(logpostList))
-		#print(smallest)
-		#print("rho,sig,l")
-		#print(rho_s[smallest],sigd_s[smallest],ld_s[smallest])
+		print(smallest)
+		print("rho,sig,l")
+		print(np.exp(rho_s[smallest]),np.exp(sigd_s[smallest]),np.exp(ld_s[smallest]))
 		rho_est = rho_s[smallest]
 		sigd_est = sigd_s[smallest]
 		ld_est = ld_s[smallest]
-		#plt.figure(figsize=(6, 4), dpi=100)
+
+		plt.figure(figsize=(6, 4), dpi=100)
 		#plt.plot(rho_s)
 		#plt.contour([sigd_s,rho_s],logpostList)
-		plt.scatter(np.exp(rho_s),logpostList,label="rho")
-		plt.scatter(np.exp(sigd_s),logpostList,label="sig")
+		plt.scatter(np.exp(rho_s),logpostList,label="rho",alpha= 0.3)
+		plt.scatter(np.exp(sigd_s),logpostList,label="sig",alpha= 0.3)
+		plt.scatter(np.exp(ld_s),logpostList,label="l",alpha= 0.3)
+		plt.legend()
 		#plt.scatter(ld_s,logpostList,label="l")
 		#plt.hist(logpostList,bins=140)
 		#plt.yscale('log')
-		#plt.show()
+		plt.show()
 
-		result = scipy.optimize.minimize(fun=self.getLogPost,method='L-BFGS-B',bounds=((0.4,None),(1e-16,None),(1e-16,None)),x0=np.array([rho_est,sigd_est,ld_est]))
-		print("old result:")
-		print([np.exp(rho_est),np.exp(sigd_est),np.exp(ld_est)])
-		print("optimized result:")
-		print(result.x)
+		#result = scipy.optimize.minimize(fun=self.getLogPost,method='L-BFGS-B',bounds=((0.4,None),(1e-16,None),(1e-16,None)),x0=np.array([rho_est,sigd_est,ld_est]))
+		#print("old result:")
+		#print([np.exp(rho_est),np.exp(sigd_est),np.exp(ld_est)])
+		#print("optimized result:")
+		#print(result.x)
 
-		#samples = self.doMCMC([rho_est,sigd_est,ld_est])
-		#print('MCMC: ',samples)
+		samples = self.doMCMC([rho_est,sigd_est,ld_est])
+		print('MCMC: ',samples)
 		#return result.x
 
 		return rho_est,sigd_est,ld_est
@@ -763,15 +770,26 @@ print(y_values)
 y_points = [solver.coordinates.tolist()[i] for i in idx][1:-1]
 
 
-y_values = [0.125,0.26,0.28,0.31,0.30,0.31,0.28,0.225,0.125]
-y_points = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+#y_values = [0.125,0.26,0.28,0.31,0.30,0.31,0.28,0.225,0.125]
+#y_points = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+#y_values = [x+0.3 for x in y_values]
+#y_points = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+
+#y_values = [0.12,0.26,0.28,0.34,0.30,0.34,0.24,0.225,0.15]
+#y_points = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+#y_values = [x-0.1 for x in y_values]
+
+#y_values = [0.12,0.28,0.30,0.24,0.15]
+#y_points = [0.1,0.3,0.5,0.7,0.9]
+#y_values = [x-0.1 for x in y_values]
+
 #y_values = y_values[5:]
 #y_points = y_points[5:]
 
 #y_values = solver.create_fake_data(y_points,y_values)
 ###### multiple observations
 y_values_list = []
-solver.no = 100
+solver.no = 2
 for i in range(solver.no):
 	noise = np.random.normal(0,2.5e-3,len(y_values))
 	y_values_list.append(y_values + noise)
@@ -798,27 +816,30 @@ error_var = np.square(np.array(solver.C_u_yDiag)) - np.square(np.array(sigL))
 
 
 f = plt.figure(figsize=(6, 4), dpi=100)
-plt.plot(solver.coordinates, np.transpose(U_mean), linestyle='-', color = 'black',lw = 1.0,label='Mean analyt.')
+plt.plot(solver.coordinates, np.transpose(U_mean), linestyle='-', color = 'black',lw = 1.0,label='FEM mean')
+plt.fill_between(np.transpose(solver.coordinates)[0], np.array(muL)+1.96*solver.C_uDiag, np.array(muL)-1.96*solver.C_uDiag,color = 'blue',alpha=0.3,label='$2\sigma$ FEM')
+
 #plt.plot(solver.coordinates, np.transpose(U_mean_verbose), linestyle='-.', color = 'red',lw = 1.0)
 #plt.plot(solver.coordinates, np.transpose(priorSamples[10:390]), linestyle='-',lw = 0.4,color='black', alpha=0.35)
 #plt.plot(np.transpose(solver.coordinates)[0], np.array(muL), linestyle='-.',color = 'black',lw = 3.0, label='Mean MC')
 #plt.plot(np.transpose(solver.coordinates)[0], error_var, linestyle='-.',color = 'green',lw = 2.0, label='Mean error')
 #plt.plot(solver.coordinates, np.transpose(posterior_samples[10:150]), linestyle='-',lw = 0.2,color='black', alpha=0.4)
-plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)-1.96*solver.C_u_yDiag, linestyle='-.',color = 'green',lw = 1.0,label='2sig')
-plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)+1.96*solver.C_u_yDiag, linestyle='-.',color = 'green',lw = 1.0)
+#plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)-1.96*solver.C_u_yDiag, linestyle='-.',color = 'green',lw = 1.0,label='2sig')
+#plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)+1.96*solver.C_u_yDiag, linestyle='-.',color = 'green',lw = 1.0)
+plt.fill_between(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)+1.96*solver.C_u_yDiag, np.transpose(u_mean_y)-1.96*solver.C_u_yDiag,color = 'green',alpha=0.3,label='$2\sigma$ Posterior')
+
 
 plt.plot(solver.coordinates, np.transpose(u_mean_y), linestyle='-', color = 'green',lw = 2.0,label='Posterior mean')
 #plt.scatter(solver.y_points, solver.y_values,label='observations')
 for obs in y_values_list:
 	plt.scatter(solver.y_points, obs,s=2.5, color = 'black',alpha=0.4)
 
-plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)-1.96*np.array(sigL), linestyle='-',color = 'red',lw = 1.0,label='2sig MC')
-plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)+1.96*np.array(sigL), linestyle='-',color = 'red',lw = 1.0)
+#plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)-1.96*np.array(sigL), linestyle='-',color = 'red',lw = 1.0,label='2sig MC')
+#plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)+1.96*np.array(sigL), linestyle='-',color = 'red',lw = 1.0)
 
-plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)-1.96*solver.C_uDiag, linestyle='-.',color = 'black',lw = 2.0,label='2sig')
-plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)+1.96*solver.C_uDiag, linestyle='-.',color = 'black',lw = 2.0)
+#plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)-1.96*solver.C_uDiag, linestyle='-.',color = 'black',lw = 2.0,label='$2\sigma$ confidence band')
+#plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)+1.96*solver.C_uDiag, linestyle='-.',color = 'black',lw = 2.0)
 
-#plt.fill_between((solver.coordinates)[0], np.array(muL)-np.array(DeltaL), np.array(muL)+np.array(DeltaL),color = 'blue',label='2sig')
 plt.legend()
 plt.xlim([solver.dom_a, solver.dom_b])
 plt.grid()

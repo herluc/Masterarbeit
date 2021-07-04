@@ -19,14 +19,14 @@
 	\PYG{n}{f\PYGZus{}vals} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{draw\PYGZus{}FEM\PYGZus{}samples}\PYG{p}{(}\PYG{n}{coordinates}\PYG{p}{)}
 	\PYG{n}{f\PYGZus{}vals} \PYG{o}{=} \PYG{n}{f\PYGZus{}vals}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
 	\PYG{n}{f} \PYG{o}{=} \PYG{n}{DoGP}\PYG{p}{()}
-
+	
 	\PYG{n}{a} \PYG{o}{=} \PYG{n}{dot}\PYG{p}{(}\PYG{n}{grad}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{u}\PYG{p}{),} \PYG{n}{grad}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{v}\PYG{p}{))}\PYG{o}{*}\PYG{n}{dx} \PYG{c+c1}{\PYGZsh{}variational Problem}
 	\PYG{n}{L} \PYG{o}{=} \PYG{n}{f}\PYG{o}{*}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{v}\PYG{o}{*}\PYG{n}{dx}
 
 	\PYG{n}{A} \PYG{o}{=} \PYG{n}{assemble}\PYG{p}{(}\PYG{n}{a}\PYG{p}{)}
 	\PYG{n}{b} \PYG{o}{=} \PYG{n}{assemble}\PYG{p}{(}\PYG{n}{L}\PYG{p}{)}
 	\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{bc}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)}
-
+	
 	\PYG{n}{U} \PYG{o}{=} \PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{u}\PYG{o}{.}\PYG{n}{vector}\PYG{p}{()}
 	\PYG{n}{solve}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{U}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)}
 	\PYG{k}{return} \PYG{n}{U}\PYG{p}{,} \PYG{n}{A}
