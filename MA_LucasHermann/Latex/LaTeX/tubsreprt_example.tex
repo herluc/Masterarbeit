@@ -1635,13 +1635,35 @@ Helmholtz Equation. Looks similar to the Poisson equation but the right side dif
 
 Figure \ref{fig:FEMGP} shows, how the FEM prior is formed. On the left face of the domain, the source term GP is applied. The mean and confidence bands are visible in red. Exciting the domain with the source leads to an uncertain FEM solution in the 2D domain. at $y_c = 0.7$, an arbitrary value, the domain is cut and the mean and error bands for that position are displayed in green. Clearly, uncertainty in the source leads to uncertainty in the FEM prior.
 \begin{figure}[h]
-\includegraphics[width=0.7\textwidth]{pics/SolutionCustom2D.pdf}
+\includegraphics[width=0.8\textwidth]{pics/SolutionCustom2D.pdf}
 \centering
-\caption{The source GP, the mean prior and, at the cut $y=y_c$, the prior FEM GP.}
+\caption{The source GP, the mean prior and, at the cut $y=y_c$, the prior FEM GP for 222Hz.}
 \end{figure}
 \label{fig:FEMGP}
 
-\lipsum[2-5] %\cite{campolina}
+
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{pics/VarField.pdf}
+\centering
+\caption{The variance of the FEM prior for $222Hz$ at all points in the 2D space. Regions with high and low variance are clearly visible.}
+\end{figure}
+\label{fig:FEMGP}
+
+
+\begin{figure}[h]
+\includegraphics[width=0.8\textwidth]{/home/lucas/Documents/Masterarbeit/git/statfem/MA_LucasHermann/Python/SolutionCustom320Hz.pdf}
+\centering
+\caption{The source GP, the mean prior and, at the cut $y=y_c$, the prior FEM GP for 320Hz.}
+\end{figure}
+\label{fig:FEMGP}
+
+
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{/home/lucas/Documents/Masterarbeit/git/statfem/MA_LucasHermann/Python/VarField320Hz.pdf}
+\centering
+\caption{The variance of the FEM prior for $320Hz$ at all points in the 2D space. Regions with high and low variance are clearly visible.}
+\end{figure}
+\label{fig:FEMGP}
 
 
 

@@ -7,6 +7,8 @@ plt.rc('text', usetex=True)
 plt.rc('text.latex', preamble=r'\usepackage{amsmath}\usepackage[utf8]{inputenc}')
 from matplotlib import cm
 from mpl_toolkits.mplot3d import Axes3D
+import shift
+import align
 import numpy as np
 import scipy
 from scipy.stats import norm
@@ -15,6 +17,9 @@ from scipy.linalg import cho_factor, cho_solve
 import scitools as st
 
 import scitools.BoxField
+
+import pickle
+PIK = "pickle.dat"
 #
 
 class Params:
@@ -31,12 +36,12 @@ class solverClass:
 		#print(Params.dom_b)
 		#self.ne	= 5 #number of elements
 		#self.mesh = IntervalMesh(self.ne,self.dom_a,self.dom_b) #define mesh
-		self.a,self.b = 30,30
+		self.a,self.b = 20,20
 		self.mesh = UnitSquareMesh(self.a,self.b) #define mesh
 		self.V = FunctionSpace(self.mesh, "Lagrange", 1) # Function space
 
 		self.rho = 1.2
-		self.f =222
+		self.f =320
 		c = 340
 		self.omega = 2* np.pi * self.f
 		self.k = self.omega / c
@@ -44,18 +49,52 @@ class solverClass:
 		self.g = self.rho * self.omega**2
 		#self.g = rho * omega**2 * dis*np.sin(25*x[1])
 
-		self.factor = 4
+		self.factor = 2
 		factor = self.factor
 		class MyExpression0(UserExpression):
 			def eval(self, value, x):
 				value[0] = 0.00001 *np.sin(factor*x[1]) #with sine
 				#value[0] = 1 #without sine
 			def value_shape(self):
+				return ()	
+
+		class MyExpression1(UserExpression):
+			def eval(self, value, x):
+
+
+				val = 20 *np.sin(factor*np.pi*x[1])
+				val = 0.00001 *np.sin(2*np.pi*x[1]) + 0.000005 *np.sin(4*np.pi*x[1])
+				if x[0] >(1.0-1e-8):
+					value[0] = val
+					#value[0] = 0.0001
+				else:
+					value[0] = 0.0
+
+
+				#value[0] = 0.00001 *np.sin(factor*x[1]) #with sine
+				#value[0] = 1 #without sine
+			def value_shape(self):
 				return ()
-		self.f0 = MyExpression0()
+		self.f0 = MyExpression1()
+		self.f1 = MyExpression1()
 		self.fArray = []
 		self.f_bar_list= []
 		self.solArray = []
+
+		phi = np.zeros((self.a+1,self.b+1))
+		phi[:,-1] = 1
+		phi_vector = phi.reshape((self.a+1)*(self.b+1))
+		psi = Function(self.V)
+		psi.vector()[:] = phi_vector[vertex_to_dof_map(self.V)]
+		print(psi.vector().get_local())
+		self.fmeanGP = psi
+
+		
+		self.UMeanOutput=[]
+		self.UCutOutput = []
+		self.UCutVarOutput=[]
+		self.PriorOutput = []
+		self.PriorVarOutput=[]
 
 
 	def exponentiated_quadratic_log(self, xa, xb, l, sig):
@@ -88,15 +127,16 @@ class solverClass:
 		g = self.rho * self.omega**2 #* self.d_mean
 		b_mean = assemble(self.v*g*f0*self.ds(sb)) # because for the mean, f = 1. (1 * v * dx)
 		f_bar_plot = assemble(self.v*f0*self.ds(sb))
-		print("f_bar: links")
-		f_bar = [x for x in b_mean.get_local() if x!=0.0]
-		self.f_bar = f_bar
-		#print(f_bar)
-		#print(len(f_bar))
-		#plt.figure
-		#plt.plot(f_bar)
-		#plt.title("f_bar")
-		#plt.show()
+
+		# print("f_bar: links")
+		# f_bar = [x for x in b_mean.get_local() if x!=0.0]
+		# self.f_bar = f_bar
+		# print(f_bar)
+		# print(len(f_bar))
+		# plt.figure
+		# plt.plot(f_bar)
+		# plt.title("$f_bar$")
+		# plt.show()
 
 		# self.f_bar_list.append(f_bar)
 		self.b_mean = b_mean
@@ -110,6 +150,7 @@ class solverClass:
 		start = (0.0,0.7)
 		x,umeanval,y_fixed,snapped = u_box.gridline(start, direction = X)
 		self.U_mean_cut = umeanval
+
 
 		#u = Function(self.V)
 		#u.vector().set_local(U_mean.tolist()[0])
@@ -125,6 +166,7 @@ class solverClass:
 
 	def get_C_u(self):
 		C_f = self.get_C_f()
+		
 		A = self.A
 		#ident = np.identity(len(self.coordinates))
 		ident = np.identity(len(self.V.tabulate_dof_coordinates()))
@@ -141,11 +183,12 @@ class solverClass:
 		self.C_u = C_u
 		print("Cond:")
 		print(condBefore,condAfter)
-		#self.C_uDiag = np.sqrt(np.diagonal(self.C_u))
+		self.C_uDiag = np.sqrt(np.diagonal(self.C_u))
 
 		#C_f = C_f + 1e-10*ident
 		#print("C_u:")
 		#print(C_u)
+		#########################################
 
 		discrete_u = np.random.multivariate_normal(
 			mean = self.U_mean , cov=C_u,
@@ -154,12 +197,8 @@ class solverClass:
 		u = Function(self.V)
 		u.vector().set_local(discrete_u.tolist()[0])
 
-		# c = plot(u,title="Prior solution")
-		# plt.title("prior sample")
-		# plt.colorbar(c)
-		#
-		# plt.show()
-
+		u_sig = Function(self.V)
+		u_sig.vector().set_local(self.C_uDiag.tolist())
 
 
 		X = 0; Y = 1; Z = 0
@@ -167,6 +206,15 @@ class solverClass:
 		start = (0.0,0.7)
 		x,uval,y_fixed,snapped = u_box.gridline(start, direction = X)
 		self.x_cut = x
+
+		#cut for diagonal:
+		sig_cut = Function(self.V)
+		sig_cut.vector()[:] = self.C_uDiag[vertex_to_dof_map(self.V)]
+		X = 0; Y = 1; Z = 0
+		u_sig_box = st.BoxField.dolfin_function2BoxField(u_sig,self.mesh,(self.a,self.b),uniform_mesh=True)
+		start = (0.0,0.7)
+		x,uvalsig,y_fixed,snapped = u_sig_box.gridline(start, direction = X)
+		self.sig_cut = uvalsig
 		#plt.figure()
 		#plt.plot(x,uval)
 		#plt.title("Prior sample cut")
@@ -174,10 +222,25 @@ class solverClass:
 
 		self.solArray.append(uval)
 
+		# plt.figure()
+		# plt.plot(x,uval)
+		# plt.title("Prior sample cut")
+		fig = plt.figure()
+		c=plot(u_sig)
+		plt.colorbar(c)
+		plt.xlabel('$x$')
+		plt.ylabel('$y$')
+		
+		fig.savefig("VarField.pdf", bbox_inches='tight')
+		plt.close(fig)
+		# plt.figure()
+		# plt.plot(x,uvalsig)
+		# plt.title("sig Prior sample cut")
+
+		# plt.show()
 
 
-
-		print("Cu Diag shape:")
+		print("Cu Diag shape:")	
 		print(np.shape(self.C_uDiag))
 		CuDiag = Function(self.V)
 		CuDiag.vector().set_local(self.C_uDiag.tolist())
@@ -186,7 +249,7 @@ class solverClass:
 		start = (0.0,0.7)
 		x,CuDiagval,y_fixed,snapped = u_box.gridline(start, direction = X)
 		self.C_uDiag = CuDiagval
-
+######################################
 		return C_u
 		#return c_u
 
@@ -195,22 +258,26 @@ class solverClass:
 		ds = self.ds
 		sb = self.SourceBoundary
 		self.integratedTestF = np.array(assemble(Constant(1.0) * self.v * ds(sb)).get_local()) #* self.ne
-		#print("intTestF:")
-		#print(self.integratedTestF)
+		
+		print("intTestF:")
+		print(self.integratedTestF)
+		print(np.shape(self.integratedTestF))
 		y_list = np.expand_dims(np.linspace(0, 1, self.b+1), 1)
 		x_list = np.expand_dims(np.linspace(0, 1, self.a+1), 1)
 
-		c_f = self.exponentiated_quadratic_log(self.dof_coordinates, self.dof_coordinates, l=np.log(0.3), sig=np.log(12))
-		c_f = self.matern_log(self.dof_coordinates, self.dof_coordinates, l=np.log(0.3), sig=np.log(5))
-		self.c_f = c_f
-		#print("c_f:")
-		#print(np.shape(c_f))
+		c_f = self.exponentiated_quadratic_log(self.dof_coordinates, self.dof_coordinates, l=np.log(0.3), sig=np.log(5))
+		c_f = self.matern_log(self.dof_coordinates, self.dof_coordinates, l=np.log(0.8), sig=np.log(5))
+		self.c_f = c_f 
+		print("c_f:")
+		print(c_f)
 		C_f = np.zeros(((self.a+1)*(self.b+1),(self.a+1)*(self.b+1)))
 		#print('coords:')
 		#print(self.coordinates)
 		for i in range((self.a+1)*(self.b+1)):
 			for j in range((self.a+1)*(self.b+1)):
 				C_f[i,j] = self.integratedTestF[i] * c_f[i,j] * self.integratedTestF[j]
+		print("C_f:")
+		print(C_f)
 		#self.bc.apply(C_f)
 		#print("C_f:")
 		#print(C_f)
@@ -239,6 +306,7 @@ class solverClass:
 		X = 0; Y = 1; Z = 0
 		u_box = st.BoxField.dolfin_function2BoxField(u,self.mesh,(self.a,self.b),uniform_mesh=True)
 		start = (1.0,0.0)
+		#start = (0.0,0.0)
 		x,uval,y_fixed,snapped = u_box.gridline(start, direction = Y)
 
 		self.fArray.append(uval)
@@ -280,9 +348,14 @@ class solverClass:
 	def samplef(self,n):
 		flist=[]
 		f_mean = self.b_mean.get_local()
+		f_mean=self.fmeanGP.vector().get_local()
+		f_mean_fenicsObj = interpolate(self.f1,self.V)
+		f_mean = f_mean_fenicsObj.vector().get_local()*self.g
+		#print("f_mean:")
+		#print(f_mean)
 		C_fDiag = np.sqrt(np.diagonal(self.C_f))
 		fGP = np.random.multivariate_normal(
-			mean = f_mean, cov=self.C_f,
+			mean = f_mean, cov=self.c_f,
 			size=n)
 
 		for i in range(n):
@@ -305,6 +378,9 @@ class solverClass:
 		# plt.title("fGP")
 		# plt.show()
 
+
+
+
 		fig2 = plt.figure()
 		fvalList = []
 		for f in flist:
@@ -314,11 +390,15 @@ class solverClass:
 			x,fval,y_fixed,snapped = f_box.gridline(start, direction = Y)
 			fvalList.append(fval)
 			#plt.plot(x,fval)
-
+		
+		X = 0; Y = 1; Z = 0
+		f_box_mean = st.BoxField.dolfin_function2BoxField(f_mean_fenicsObj,self.mesh,(self.a,self.b),uniform_mesh=True)
+		start = (1.0,0.0)
+		x,fvalMean,y_fixed,snapped = f_box_mean.gridline(start, direction = Y)
 		# self.fArray.append(uval)
 		# self.x_f = x
-		print("fval:")
-		print(np.shape(fvalList))
+		print("fvalMean:")
+		print(fvalMean)
 		fvalListTrans = np.transpose(fvalList)
 		print(np.shape(fvalListTrans[0]))
 		sigL = []
@@ -334,12 +414,14 @@ class solverClass:
 		self.sourceVariance=sigL
 		for sample in fvalList[0:10]:
 			plt.plot(x,sample)
-		plt.plot(x, muL, color = 'black',lw = 2.0,label='2sig')
-		plt.plot(x, muL-1.96*np.array(sigL), linestyle='-.',color = 'black',lw = 2.0,label='2sig')
-		plt.plot(x, muL+1.96*np.array(sigL), linestyle='-.',color = 'black',lw = 2.0,label='2sig')
+		#plt.plot(x, muL, color = 'black',lw = 2.0,label='2sig')
+		plt.plot(x, fvalMean, color = 'black',lw = 2.0,label='2sig')
+
+		plt.plot(x, fvalMean-1.96*np.array(sigL), linestyle='-.',color = 'black',lw = 2.0,label='2sig')
+		plt.plot(x, fvalMean+1.96*np.array(sigL), linestyle='-.',color = 'black',lw = 2.0,label='2sig')
 		plt.title("fGP cut")
 		fig2.savefig("fGPCut.pdf", bbox_inches='tight')
-		plt.show()
+		#plt.show()
 
 
 	def doMC(self,samples):
@@ -442,15 +524,18 @@ class solverClass:
 		gdim = self.mesh.geometry().dim()
 		dofmap = self.V.dofmap()
 		dofs = dofmap.dofs()
-	#	print(self.dof_coordinates)
+		print("dofCords:")
+		print(self.dof_coordinates)
+		#print(np.random.shuffle(self.dof_coordinates))
+		# dof_x = self.V.tabulate_dof_coordinates().reshape((-1, gdim))
+		# x = dof_x[:,0]
+		# indices = np.where(np.logical_and(x > 0.26, x < 0.34))[0]
+		# xs = dof_x[indices]
+		# vals = U[indices]
+		# maxval = np.max(vals)
+		# vals/=3*maxval
 
-		dof_x = self.V.tabulate_dof_coordinates().reshape((-1, gdim))
-		x = dof_x[:,0]
-		indices = np.where(np.logical_and(x > 0.26, x < 0.34))[0]
-		xs = dof_x[indices]
-		vals = U[indices]
-		maxval = np.max(vals)
-		vals/=3*maxval
+		
 		#for x, v in zip(xs, vals):
 		#	print(x, v)
 
@@ -506,17 +591,22 @@ class solverClass:
 
 		mean = np.zeros((self.a+1,self.b+1))
 
-		print("mean array:")
-		print(np.shape(mean))
+		#print("mean array:")
+		#print(np.shape(mean))
 		for i in range((self.a+1)*(self.b+1)):
-			print(X[i],Y[i])
+		#	print(X[i],Y[i])
 			a,b = int(self.a*X[i]),int(self.b*Y[i])
 			mean[a,b] = Z[i]
 
 		x=np.linspace(0,1,self.a+1)
 		y=np.linspace(0,1,self.b+1)
 		Z = mean
-		fig4 = plt.figure(figsize=(5,4), dpi=100)
+		self.UMeanOutput.append(Z)
+		self.UCutOutput.append(self.U_mean_cut)
+		self.PriorOutput.append(self.SourceMean)
+		self.UCutVarOutput.append(self.sig_cut)
+		self.PriorVarOutput.append(self.sourceVariance)
+		fig4 = plt.figure(figsize=(5.5,4), dpi=100)
 		#ax = fig4.gca(projection='3d')
 		ax = fig4.gca()
 
@@ -530,37 +620,57 @@ class solverClass:
 		print(self.U_mean_cut)
 		print(np.shape(self.U_mean_cut))
 		cset2 = ax.contourf(x, y, np.transpose(Z), 100,cmap=cm.cividis)
-		ax.plot(0.3*np.array(self.SourceMean),y,color="red", label="Source")
-		plt.fill_betweenx(y, 0.3*((np.array(self.SourceMean) + 1.96*np.array(self.sourceVariance))),
-				0.3*((np.array(self.SourceMean) - 1.96*np.array(self.sourceVariance))), color='red', alpha=0.15)
+	#	ax.plot(0.3*np.array(self.SourceMean),y,color="red", label="Source")
+	#	plt.fill_betweenx(y, 0.3*((np.array(self.SourceMean) + 1.96*np.array(self.sourceVariance))),
+	#			0.3*((np.array(self.SourceMean) - 1.96*np.array(self.sourceVariance))), color='red', alpha=0.15)
 
 		ax.plot(x,0.7*np.ones(self.a+1),color="black",linestyle="--")
 
-	#	ax.plot(x,0.7*np.ones(self.a+1),np.array(self.U_mean_cut) + 1.96*np.array(sigL),color="green")
+	#	ax.plot(x,0.7*np.ones(self.a+1),np	.array(self.U_mean_cut) + 1.96*np.array(sigL),color="green")
 	#	ax.plot(x,0.7*np.ones(self.a+1),np.array(self.U_mean_cut) - 1.96*np.array(sigL),color="green")
 
 		#ax.set_zlim(0,0.08)
 		#ax.set_ylim(0,4)
 		ax.set_xlabel('$x$')
 		ax.set_ylabel('$y$')
+		ax.set_xticks(np.linspace(0,1,6))
 		#ax.set_zlabel("$z$")
 		#ax.view_init(24,-70)
+		cbar = fig4.colorbar(cset2, ax=ax,  pad=0.14)
 
 		ax2 = ax.twinx()
 		ax2.plot(x,np.array(self.U_mean_cut),color="green", label="Pressure at y = 0.7")
-		ax2.fill_between(x, (np.array(self.U_mean_cut) + 1.96*np.array(sigL)), (np.array(self.U_mean_cut) - 1.96*np.array(sigL)), color='green', alpha=0.15)
+		ax2.fill_between(x, (np.array(self.U_mean_cut) + 1.96*np.array(self.sig_cut)), (np.array(self.U_mean_cut) - 1.96*np.array(self.sig_cut)), color='green', alpha=0.15)
+		ax2.plot(x,(np.array(self.U_mean_cut) + 1.96*np.array(sigL)),color='green', ls = "--",label="MC simulation")
+		ax2.plot(x,(np.array(self.U_mean_cut) - 1.96*np.array(sigL)),color='green', ls = "--")
+		#ax2.fill_between(x, (np.array(self.U_mean_cut) + 1.96*np.array(self.sig_cut)), (np.array(self.U_mean_cut) - 1.96*np.array(self.sig_cut)), color='green', alpha=0.15)
 		ax.set_xlim(-0.25,1)
 		ax.set_ylim(0,1)
-		ax2.set_ylim(-18,8)
-		ax2.set_ylabel("$y$",color='green')
+		#ax2.set_ylim(-120,80)
+		ax2.set_ylabel("Pressure at $y_c$",color='green', loc="top")
 		ax2.tick_params(axis='y',labelcolor='green')
+		ax2.set_ylim(-32,18)
+		ax2.set_yticks(np.linspace(-15,15,4))
+
+		ax3 = ax.twiny()
+		ax3.plot(0.3*np.array(self.SourceMean),y,color="red", label="Source")
+		ax3.fill_betweenx(y, 0.3*((np.array(self.SourceMean) + 1.96*np.array(self.sourceVariance))),
+			0.3*((np.array(self.SourceMean) - 1.96*np.array(self.sourceVariance))), color='red', alpha=0.15)
+		ax3.set_xlabel(r"$\rho \omega^2 \bar{U}$",color='red', loc="left")
+		ax3.tick_params(axis='x',labelcolor='red')
+		ax3.set_xticks(np.linspace(-10,10,3))
+		ax3.set_xlim(-14,30)
 	#	ax.set_zlim(-15,15)
 		#ax.set_zticks(np.linspace(0,0.15,5))
 		fig4.legend(loc="upper right",bbox_to_anchor=(1,1),bbox_transform=ax.transAxes)
 		#plt.gca().set_aspect("equal")
 		plt.tight_layout()
+		align.xaxes(ax,0,ax3,0,0.2)
 		fig4.savefig("SolutionCustom.pdf", bbox_inches='tight')
-		plt.show()
+
+		
+
+	#	plt.show()
 
 solver = solverClass()
 #solver.getDispGP()
@@ -568,7 +678,7 @@ solver.doFEM()
 
 
 
-for i in range(50):
+for i in range(2):
 	solver.get_U_mean()
 	solver.get_C_u()
 
@@ -600,8 +710,40 @@ plt.figure()
 for f in solver.fArray:#
 	plt.plot(f)
 plt.title("Forcing GP")
-plt.show()
+#plt.show()
 
 solver.samplef(500)
 
 solver.plotSolution()
+
+
+for f in np.linspace(50,500,20):
+	solver.f = f
+	c = 340
+	solver.omega = 2* np.pi * solver.f
+	solver.k = solver.omega / c
+	#self.d_mean = 0.0000000001#0.05
+	solver.g = solver.rho * solver.omega**2
+	solver.doFEM()
+	for i in range(2):
+		solver.get_U_mean()
+		solver.get_C_u()
+	solArrayTrans = np.transpose(solver.solArray)
+	sigL = []
+	muL = []
+	DeltaL = []
+	print("solArrayTrans:")
+	print(np.shape(solArrayTrans))
+	for point in solArrayTrans:
+		mu, sig, Delta = solver.doMC(point)
+		sigL.append(sig)
+		muL.append(mu)
+		DeltaL.append(Delta)#
+
+	solver.samplef(500)
+
+	solver.plotSolution()
+
+DataOutput = [solver.UMeanOutput,solver.UCutOutput,solver.UCutVarOutput,solver.PriorOutput,solver.PriorVarOutput]
+with open(PIK, "wb") as f:
+    pickle.dump(DataOutput, f)
