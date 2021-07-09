@@ -1633,39 +1633,53 @@ Helmholtz Equation. Looks similar to the Poisson equation but the right side dif
 \subsection{FEM prior}
 
 
-Figure \ref{fig:FEMGP} shows, how the FEM prior is formed. On the left face of the domain, the source term GP is applied. The mean and confidence bands are visible in red. Exciting the domain with the source leads to an uncertain FEM solution in the 2D domain. at $y_c = 0.7$, an arbitrary value, the domain is cut and the mean and error bands for that position are displayed in green. Clearly, uncertainty in the source leads to uncertainty in the FEM prior.
+Figure \ref{fig:FEMGP} shows, how the FEM prior is formed. On the left face of the domain, the source term GP is applied. The mean and confidence bands are visible in red. Exciting the domain with the source leads to an uncertain FEM solution in the 2D domain. At $y_c = 0.7$, an arbitrary value, the domain is cut and the mean and error bands for that position are displayed in green. Clearly, uncertainty in the source leads to uncertainty in the FEM prior. A MC simulation for the variance converges to the calculated variance.
 \begin{figure}[h]
 \includegraphics[width=0.8\textwidth]{pics/SolutionCustom2D.pdf}
 \centering
 \caption{The source GP, the mean prior and, at the cut $y=y_c$, the prior FEM GP for 222Hz.}
 \end{figure}
 \label{fig:FEMGP}
-
-
+Figure \ref{fig:varFieldPrior} shows the FEM prior variance for every point in the 2D solution space for $222Hz$. It is visible that the variance in some regeions is higher than in others. The regions of low variance correlate with the troughs of the mode shape.
+%
 \begin{figure}[h]
 \includegraphics[width=0.7\textwidth]{pics/VarField.pdf}
 \centering
 \caption{The variance of the FEM prior for $222Hz$ at all points in the 2D space. Regions with high and low variance are clearly visible.}
 \end{figure}
-\label{fig:FEMGP}
-
-
+\label{fig:varFieldPrior}
+%
+Figure \ref{fig:FEMGP320} shows again an overviewe for the FEM prior, but for $320 Hz$. 
+%
 \begin{figure}[h]
 \includegraphics[width=0.8\textwidth]{/home/lucas/Documents/Masterarbeit/git/statfem/MA_LucasHermann/Python/SolutionCustom320Hz.pdf}
 \centering
 \caption{The source GP, the mean prior and, at the cut $y=y_c$, the prior FEM GP for 320Hz.}
 \end{figure}
-\label{fig:FEMGP}
-
-
+\label{fig:FEMGP320}
+%
+In Figure \ref{fig:varFieldPrior320} it is visible that the variance pattern changed to a periodic one.
 \begin{figure}[h]
 \includegraphics[width=0.7\textwidth]{/home/lucas/Documents/Masterarbeit/git/statfem/MA_LucasHermann/Python/VarField320Hz.pdf}
 \centering
 \caption{The variance of the FEM prior for $320Hz$ at all points in the 2D space. Regions with high and low variance are clearly visible.}
 \end{figure}
-\label{fig:FEMGP}
-
-
+\label{fig:varFieldPrior320}
+%
+If instead of a sinusoidal source a flat one is chosen, the solution changes significantly, see Figure \ref{fig:FEMGPFlat320}. Certain mode shapes can be excited more strongly by using a corresponding boundary function.
+\begin{figure}[h]
+\includegraphics[width=0.8\textwidth]{/home/lucas/Documents/Masterarbeit/git/statfem/MA_LucasHermann/Python/SolutionCustomFlatSource320.pdf}
+\centering
+\caption{The source GP, the mean prior and, at the cut $y=y_c$, the prior FEM GP for 320Hz.}
+\end{figure}
+\label{fig:FEMGPFlat320}
+The variance field, on the other hand, does not change significantly, see Figure \ref{fig:varFieldPriorFlat320}
+\begin{figure}[h]
+\includegraphics[width=0.7\textwidth]{/home/lucas/Documents/Masterarbeit/git/statfem/MA_LucasHermann/Python/VarFieldFlatSource320.pdf}
+\centering
+\caption{The variance of the FEM prior for $320Hz$ at all points in the 2D space. Regions with high and low variance are clearly visible.}
+\end{figure}
+\label{fig:varFieldPriorFlat320}
 
 \chapter{Conclusion and Discussion}
 

@@ -731,7 +731,7 @@ class solverClass:
 
 
 
-solver = solverClass(nMC=2000)
+solver = solverClass(nMC=10)
 U,A = solver.doFEM()
 U_mean = solver.get_U_mean()
 priorSamples = solver.samplePrior()

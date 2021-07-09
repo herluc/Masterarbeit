@@ -64,5 +64,5 @@
 \contentsline {subsection}{\numberline {3.1.1}Posterior}{34}{subsection.237}
 \contentsline {section}{\numberline {3.2}1D Vibroacoustics Example}{34}{section.240}
 \contentsline {subsection}{\numberline {3.2.1}FEM prior}{34}{subsection.241}
-\contentsline {chapter}{\numberline {4}Conclusion and Discussion}{38}{chapter.246}
-\contentsline {section}{\numberline {4.1}Section 1}{38}{section.247}
+\contentsline {chapter}{\numberline {4}Conclusion and Discussion}{39}{chapter.248}
+\contentsline {section}{\numberline {4.1}Section 1}{39}{section.249}
