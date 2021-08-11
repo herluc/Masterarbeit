@@ -19,6 +19,37 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{atalla2015}{book}{}
+      \name{author}{2}{}{%
+        {{hash=89f545f7c44cb2119c6438eccd834357}{%
+           family={Atalla},
+           familyi={A\bibinitperiod},
+           given={Noureddine},
+           giveni={N\bibinitperiod}}}%
+        {{hash=0f1922f598d4553277a4d500c3ec5d31}{%
+           family={Sgard},
+           familyi={S\bibinitperiod},
+           given={Franck},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe0dc69997acd87706856b593486fd30}
+      \strng{fullhash}{fe0dc69997acd87706856b593486fd30}
+      \strng{bibnamehash}{fe0dc69997acd87706856b593486fd30}
+      \strng{authorbibnamehash}{fe0dc69997acd87706856b593486fd30}
+      \strng{authornamehash}{fe0dc69997acd87706856b593486fd30}
+      \strng{authorfullhash}{fe0dc69997acd87706856b593486fd30}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Finite Element and Boundary Methods in Structural Acoustics and Vibration provides a unique and in-depth presentation of the finite element method (FEM) and the boundary element method (BEM) in structural acoustics and vibrations. It illustrates the principles using a logical and progressive methodology which leads to a thorough understanding of their physical and mathematical principles and their implementation to solve a wide range of problems in structural acoustics and vibration.}
+      \field{annotation}{OCLC: 911263399}
+      \field{isbn}{978-1-4665-9287-2}
+      \field{langid}{english}
+      \field{title}{Finite Element and Boundary Methods in Structural Acoustics and Vibration}
+      \field{year}{2015}
+      \field{dateera}{ce}
+    \endentry
     \entry{larson2013}{book}{}
       \name{author}{2}{}{%
         {{hash=132c5680e44e4bc421da52dba6f7548e}{%
@@ -44,8 +75,8 @@
       \strng{authorbibnamehash}{9745ed3942d815fa13a64d6fad957b9f}
       \strng{authornamehash}{9745ed3942d815fa13a64d6fad957b9f}
       \strng{authorfullhash}{9745ed3942d815fa13a64d6fad957b9f}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Introducing the finite element method as a general computational method for solving partial differential equations approximately, this book goes on to cover important applications including diffusion and transport phenomena, solid and fluid mechanics and more.--}
@@ -83,8 +114,8 @@
       \strng{authorbibnamehash}{b618872562545020d973d975915d0c7c}
       \strng{authornamehash}{b618872562545020d973d975915d0c7c}
       \strng{authorfullhash}{b618872562545020d973d975915d0c7c}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Diese schon klassische Einführung ist in der Stoffauswahl und im Aufbau einzigartig und bewährt, ihre Themenauswahl widmet sich der Ingenieurausbildung. Vor allem wird Wert auf die wichtigsten Maßnahmen zur Beruhigung der Akustischen Umwelt gelegt. Alle Kapitel haben direkt und indirekt die Frage zum Gegenstand, wie die Lautstärke in den praktisch wichtigsten akustischen Umgebungen (in Gebäuden und im Freien) verringert werden kann. Den so genannten Maßnahmenkapiteln werden die Medienkapitel vorangestellt, die das erforderliche Grundlagenwissen über die Natur von Schall und Schwingungen vermitteln. Gegenüber der Vorauflage hat der Umfang um ein Fünftel zugenommen. Hervorzuheben ist ein neues Kapitel zu den Grundfragen und Tatsachen der "aktiven Lärmbekämpfung". Folgendes wurden u.a. zudem ergänzt:- die Betrachtung der Wellenausbreitung wurde auf bewegte Medien ausgedehnt- bei der Schallabsorption wird auch der schräge Schalleinfall diskutiert- die Hinweise auf die Normung wurden aktualisiert- am Ende jeden Kapitels wurde eine kurze und prägnante Zusammenfassung der wesentlichen Sachverhalte aufgenommen. TOC:Wahrnehmung von Schall.- Grundbegriffe der Wellenausbreitung .- Schallausbreitung und Schallabstrahlung.- Körperschall.- Elastische Isolation.- Schallabsorption.- Grundlagen der Raumakustik.- Schalldämmung.- Schalldämpfer.- Beugung.- Elektroakustische Wandler für Luftschall.- Grundlagen der aktiven Lärmbekämpfung. - Anhang A: Rechnen mit Pegeln.- Anhang B: Komplexe Zeiger.- Sachverzeichnis}
@@ -121,8 +152,8 @@
       \strng{authorbibnamehash}{fbf80a6ad28ff33b316d00a7ea2f849d}
       \strng{authornamehash}{fbf80a6ad28ff33b316d00a7ea2f849d}
       \strng{authorfullhash}{fbf80a6ad28ff33b316d00a7ea2f849d}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{OCLC: 961399364}
@@ -177,8 +208,8 @@
       \strng{authorbibnamehash}{08fa4bea99ebad3e2c60e7d4b607253c}
       \strng{authornamehash}{3146b78898babeb8569f1d89b47e630d}
       \strng{authorfullhash}{08fa4bea99ebad3e2c60e7d4b607253c}
-      \field{sortinit}{6}
-      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Dieses vierfarbige Lehrbuch bietet in einem Band ein lebendiges Bild der „gesamten“ Mathematik für Anwender. Angehende Ingenieure und Naturwissenschaftler finden hier die wichtigen Konzepte und Begriffe ausführlich und mit vielen Beispielen erklärt. Im Mittelpunkt stehen das Verständnis der Zusammenhänge und die Beherrschung der Rechentechniken.~~ Herausragende Merkmale sind: durchgängig vierfarbiges Layout mit mehr als 1500 Abbildungen prägnant formulierte Kerngedanken bilden die Abschnittsüberschriften Selbsttests in kurzen Abständen ermöglichen Lernkontrolle während des Lesens farbige Merkkästen heben das Wichtigste hervor mehr als 100 Anwendungsboxen erläutern Themen wie „Geometrie hinter dem GPS“, „Pageranking bei Google“ oder „harmonischer Oszillator“ Vertiefungsboxen geben einen Ausblick auf weiterführende Themen Zusammenfassungen zu jedem Kapitel sowie Übersichtsboxen mehr als 750 Verständnisfragen, Rechenaufgaben und Anwendungsprobleme ~Inhaltlich spannt sich der Bogen von elementaren Grundlagen über die Analysis einer Veränderlichen, der linearen Algebra, der Analysis mehrer Veränderlicher bis hin zu fortgeschrittenen Themen der Analysis, die für die Anwendung besonders wichtig sind, wie partielle Differenzialgleichungen, Fourierreihen und Laplacetransformationen. Numerische Konzepte sind integraler Bestandteil der Kapitel. Der Wahrscheinlichkeitsrechnung und Statistik ist einer der sechs Teile des Buchs gewidmet. ~Auf der Website zum Buch (Matheweb) finden Sie Bonusmaterialien zu zahlreichen Kapiteln Hinweise, Lösungswege und Ergebnisse zu allen Aufgaben Zusatzmaterialien wie Maple-Worksheets zu verschiedenen Themen des Buchs~~ die Möglichkeit, zu den Kapiteln Fragen zu stellen Das Buch wird allen Anwendern der Mathematik vom Beginn des~Studiums über höhere Semester bis in die Berufspraxis hinein ein langjähriger verlässlicher Begleiter sein. Für die 3. Auflage ist es vollständig durchgesehen~und in Details ergä nzt und didaktisch weiter verbessert worden. Stimmen zur 1. Auflage „Ein Lehrbuch, das Maßstäbe setzt!“~ Prof. Dr. Bernd Simeon, TU Kaiserslautern „Endlich ein deutschsprachiges Mathematikbuch, das so richtig Spaß macht.“ Prof. Dr. Martin Pohl, Hochschule Regensburg „Ein komplett neues und einmaliges Konzept: optisch und didaktisch geschrieben mit der Anschaulichkeit eines Schulbuches; mathematisch jedoch immer exakt und auch anspruchsvolle Themen erfassend. Meine Kollege}
@@ -192,37 +223,6 @@
       \verb{file}
       \verb /home/lucas/Zotero/storage/G8HDQKZW/Arens et al. - 2015 - Mathematik.pdf
       \endverb
-    \endentry
-    \entry{atalla2015}{book}{}
-      \name{author}{2}{}{%
-        {{hash=89f545f7c44cb2119c6438eccd834357}{%
-           family={Atalla},
-           familyi={A\bibinitperiod},
-           given={Noureddine},
-           giveni={N\bibinitperiod}}}%
-        {{hash=0f1922f598d4553277a4d500c3ec5d31}{%
-           family={Sgard},
-           familyi={S\bibinitperiod},
-           given={Franck},
-           giveni={F\bibinitperiod}}}%
-      }
-      \strng{namehash}{fe0dc69997acd87706856b593486fd30}
-      \strng{fullhash}{fe0dc69997acd87706856b593486fd30}
-      \strng{bibnamehash}{fe0dc69997acd87706856b593486fd30}
-      \strng{authorbibnamehash}{fe0dc69997acd87706856b593486fd30}
-      \strng{authornamehash}{fe0dc69997acd87706856b593486fd30}
-      \strng{authorfullhash}{fe0dc69997acd87706856b593486fd30}
-      \field{sortinit}{7}
-      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Finite Element and Boundary Methods in Structural Acoustics and Vibration provides a unique and in-depth presentation of the finite element method (FEM) and the boundary element method (BEM) in structural acoustics and vibrations. It illustrates the principles using a logical and progressive methodology which leads to a thorough understanding of their physical and mathematical principles and their implementation to solve a wide range of problems in structural acoustics and vibration.}
-      \field{annotation}{OCLC: 911263399}
-      \field{isbn}{978-1-4665-9287-2}
-      \field{langid}{english}
-      \field{title}{Finite Element and Boundary Methods in Structural Acoustics and Vibration}
-      \field{year}{2015}
-      \field{dateera}{ce}
     \endentry
     \entry{langtangen2016}{book}{}
       \name{author}{2}{}{%
@@ -249,8 +249,8 @@
       \strng{authorbibnamehash}{5a0bb39407afaacebcd711f7ab8b187c}
       \strng{authornamehash}{5a0bb39407afaacebcd711f7ab8b187c}
       \strng{authorfullhash}{5a0bb39407afaacebcd711f7ab8b187c}
-      \field{sortinit}{8}
-      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-3-319-52461-0 978-3-319-52462-7}
@@ -291,8 +291,8 @@
       \strng{authorbibnamehash}{02e9c4fc2a4c3399077565a5ba737ca0}
       \strng{authornamehash}{02e9c4fc2a4c3399077565a5ba737ca0}
       \strng{authorfullhash}{02e9c4fc2a4c3399077565a5ba737ca0}
-      \field{sortinit}{9}
-      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This textbook teaches finite element methods from a computational point of view. It focuses on how to develop flexible computer programs with Python, a programming language in which a combination of symbolic and numerical tools is used to achieve an explicit and practical derivation of finite element algorithms. The finite element library FEniCS is used throughout the book, but the content is provided in sufficient detail to ensure that students with less mathematical background or mixed programming-language experience will equally benefit. All program examples are available on the Internet}
@@ -302,6 +302,39 @@
       \field{title}{Introduction to {{Numerical Methods}} for {{Variational Problems}}}
       \field{year}{2019}
       \field{dateera}{ce}
+    \endentry
+    \entry{murphy2012}{book}{}
+      \name{author}{1}{}{%
+        {{hash=57a45a819d1ea44f0e40dfcdeeaa4140}{%
+           family={Murphy},
+           familyi={M\bibinitperiod},
+           given={Kevin\bibnamedelima P.},
+           giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{57a45a819d1ea44f0e40dfcdeeaa4140}
+      \strng{fullhash}{57a45a819d1ea44f0e40dfcdeeaa4140}
+      \strng{bibnamehash}{57a45a819d1ea44f0e40dfcdeeaa4140}
+      \strng{authorbibnamehash}{57a45a819d1ea44f0e40dfcdeeaa4140}
+      \strng{authornamehash}{57a45a819d1ea44f0e40dfcdeeaa4140}
+      \strng{authorfullhash}{57a45a819d1ea44f0e40dfcdeeaa4140}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{isbn}{978-0-262-01802-9}
+      \field{pagetotal}{1067}
+      \field{series}{Adaptive Computation and Machine Learning Series}
+      \field{shorttitle}{Machine Learning}
+      \field{title}{Machine Learning: A Probabilistic Perspective}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \keyw{Machine learning,Probabilities}
     \endentry
     \entry{gortler2019}{article}{}
       \name{author}{3}{}{%
@@ -395,6 +428,55 @@
       \field{dateera}{ce}
       \keyw{Data processing,Gaussian processes,Machine learning,Mathematical models}
     \endentry
+    \entry{damianou2021}{software}{}
+      \name{author}{1}{}{%
+        {{hash=2aff45b384b41b5aa7b77885bc07d25a}{%
+           family={Damianou},
+           familyi={D\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {University of Sheffield}%
+      }
+      \strng{namehash}{2aff45b384b41b5aa7b77885bc07d25a}
+      \strng{fullhash}{2aff45b384b41b5aa7b77885bc07d25a}
+      \strng{bibnamehash}{2aff45b384b41b5aa7b77885bc07d25a}
+      \strng{authorbibnamehash}{2aff45b384b41b5aa7b77885bc07d25a}
+      \strng{authornamehash}{2aff45b384b41b5aa7b77885bc07d25a}
+      \strng{authorfullhash}{2aff45b384b41b5aa7b77885bc07d25a}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{21}
+      \field{hour}{11}
+      \field{minute}{7}
+      \field{month}{6}
+      \field{origday}{28}
+      \field{orighour}{17}
+      \field{origminute}{24}
+      \field{origmonth}{1}
+      \field{origsecond}{42}
+      \field{origtimezone}{Z}
+      \field{origyear}{2016}
+      \field{second}{41}
+      \field{timezone}{Z}
+      \field{title}{Gaussian Process Lecture}
+      \field{urlday}{11}
+      \field{urlmonth}{8}
+      \field{urlyear}{2021}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{origdateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/adamian/adamian.github.io/blob/1074c865911e2f83f29c52043f254c08446b4755/talks/Brown2016.ipynb
+      \endverb
+      \verb{url}
+      \verb https://github.com/adamian/adamian.github.io/blob/1074c865911e2f83f29c52043f254c08446b4755/talks/Brown2016.ipynb
+      \endverb
+    \endentry
     \entry{stein1999}{book}{}
       \name{author}{1}{}{%
         {{hash=56fe4c00272b09dee790211156ab6e51}{%
@@ -409,8 +491,8 @@
       \strng{authorbibnamehash}{56fe4c00272b09dee790211156ab6e51}
       \strng{authornamehash}{56fe4c00272b09dee790211156ab6e51}
       \strng{authorfullhash}{56fe4c00272b09dee790211156ab6e51}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{OCLC: 1184292315}
@@ -450,8 +532,8 @@
       \strng{authorbibnamehash}{444b4ea25da6b76c52ac64c48c66dda8}
       \strng{authornamehash}{444b4ea25da6b76c52ac64c48c66dda8}
       \strng{authorfullhash}{444b4ea25da6b76c52ac64c48c66dda8}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{OCLC: 1066182402}
@@ -496,8 +578,8 @@
       \strng{editorbibnamehash}{860693f51af0612f208d2fda5a0016f1}
       \strng{editornamehash}{860693f51af0612f208d2fda5a0016f1}
       \strng{editorfullhash}{860693f51af0612f208d2fda5a0016f1}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{editor}
       \field{labeltitlesource}{shorttitle}
       \field{annotation}{OCLC: 935935300}
@@ -540,8 +622,8 @@
       \strng{authorbibnamehash}{bd1d6d2fee3f5a3175aed1cf062765be}
       \strng{authornamehash}{fe1e35754cbf25ec990e2bb11678cf09}
       \strng{authorfullhash}{bd1d6d2fee3f5a3175aed1cf062765be}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{00457825}
@@ -591,8 +673,8 @@
       \strng{authorbibnamehash}{f5436a00a2b1d0e9805ccf0be12e3a3c}
       \strng{authornamehash}{f5436a00a2b1d0e9805ccf0be12e3a3c}
       \strng{authorfullhash}{f5436a00a2b1d0e9805ccf0be12e3a3c}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{13697412}
@@ -641,8 +723,8 @@
       \strng{authorbibnamehash}{66c49c02f2f916d08564ad707643f84b}
       \strng{authornamehash}{66c49c02f2f916d08564ad707643f84b}
       \strng{authorfullhash}{66c49c02f2f916d08564ad707643f84b}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In these note we provide some important properties of the multivariate Gaussian, which are important building blocks for more sophisticated probabilistic models. We also illustrate how these properties can be used to derive the Kalman filter.}
@@ -686,8 +768,8 @@
       \strng{authorbibnamehash}{83fb9e1b9aa3c1a1618dfa5318df9dda}
       \strng{authornamehash}{83fb9e1b9aa3c1a1618dfa5318df9dda}
       \strng{authorfullhash}{83fb9e1b9aa3c1a1618dfa5318df9dda}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1-61197-538-3}
@@ -712,8 +794,8 @@
       \strng{authorbibnamehash}{8c0f239159f7e4088a9308bac98f346b}
       \strng{authornamehash}{8c0f239159f7e4088a9308bac98f346b}
       \strng{authorfullhash}{8c0f239159f7e4088a9308bac98f346b}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0895-4798, 1095-7162}
@@ -775,8 +857,8 @@
       \strng{authorbibnamehash}{eba1d650c5daa8c852f905688c8c5a78}
       \strng{authornamehash}{eba1d650c5daa8c852f905688c8c5a78}
       \strng{authorfullhash}{eba1d650c5daa8c852f905688c8c5a78}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{OCLC: 958560716}
@@ -798,8 +880,8 @@
       \strng{authorbibnamehash}{3ec96b7aa80c956fbd61c6f08fb3e9aa}
       \strng{authornamehash}{3ec96b7aa80c956fbd61c6f08fb3e9aa}
       \strng{authorfullhash}{3ec96b7aa80c956fbd61c6f08fb3e9aa}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Math 240 — {{Calculus III}}}

@@ -1,0 +1,108 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-7.5, 0) {};
+		\node [style=none] (1) at (15, 0) {};
+		\node [style=none] (4) at (-5.25, 0.25) {};
+		\node [style=none] (5) at (-5.25, -0.25) {};
+		\node [style=none] (6) at (-2.5, 0.25) {};
+		\node [style=none] (7) at (-2.5, -0.25) {};
+		\node [style=none] (8) at (0.25, 0.25) {};
+		\node [style=none] (9) at (0.25, -0.25) {};
+		\node [style=none] (10) at (3, 0.25) {};
+		\node [style=none] (11) at (3, -0.25) {};
+		\node [style=none] (12) at (5.75, 0.25) {};
+		\node [style=none] (13) at (5.75, -0.25) {};
+		\node [style=none] (14) at (8.5, 0.25) {};
+		\node [style=none] (15) at (8.5, -0.25) {};
+		\node [style=none] (16) at (11.25, 0.25) {};
+		\node [style=none] (17) at (11.25, -0.25) {};
+		\node [style=none] (19) at (11.25, -1) {Oct};
+		\node [style=none] (20) at (8.5, -1) {Sept};
+		\node [style=none] (21) at (5.75, -1) {Aug};
+		\node [style=none] (22) at (3, -1) {Jul};
+		\node [style=none] (23) at (0.25, -1) {Jun};
+		\node [style=none] (24) at (-2.5, -1) {May};
+		\node [style=none] (25) at (-5.25, -1) {Apr};
+		\node [style=none] (26) at (-5.25, 0.25) {};
+		\node [style=none] (27) at (-2.25, 0.25) {};
+		\node [style=none] (29) at (-2.75, 1.75) {};
+		\node [style=none] (30) at (-2.75, 2) {understand};
+		\node [style=none] (31) at (-2.75, 1.25) {the basics};
+		\node [style=none] (32) at (-2.25, -2) {};
+		\node [style=none] (34) at (2.25, -2) {};
+		\node [style=none] (35) at (-1, -2.25) {};
+		\node [style=none] (36) at (0, -2.25) {1D proof};
+		\node [style=none] (37) at (0, -3) {of concept};
+		\node [style=none] (38) at (1, 0.25) {};
+		\node [style=none] (39) at (6.75, 0.5) {};
+		\node [style=none] (40) at (4, 1.75) {};
+		\node [style=none] (41) at (4, 2) {Helmholtz};
+		\node [style=none] (42) at (4, 1.25) {solver};
+		\node [style=none] (43) at (4, -1.75) {};
+		\node [style=none] (44) at (11.75, -1.75) {};
+		\node [style=none] (46) at (8.75, -2.5) {documentation};
+		\node [style=none] (47) at (10, 2.75) {Uncertainty in};
+		\node [style=none] (48) at (10, 2.25) {other parameters?};
+		\node [style=none] (49) at (9.75, 1.25) {};
+		\node [style=none] (50) at (10, 1.25) {different Kernel?};
+		\node [style=none] (51) at (9.5, 0.75) {};
+		\node [style=none] (53) at (9.25, 0.75) {};
+		\node [style=none] (54) at (13, 0.75) {};
+		\node [style=none] (55) at (13, 3.5) {};
+		\node [style=none] (56) at (6.75, 3.5) {};
+		\node [style=none] (57) at (6.75, 0.75) {};
+		\node [style=none] (62) at (2.25, -4) {};
+		\node [style=none] (63) at (-2.75, -3.5) {};
+		\node [style=none] (64) at (2.5, -3.5) {};
+		\node [style=none] (65) at (2.5, -1.75) {};
+		\node [style=none] (66) at (-2.75, -1.75) {};
+		\node [style=none] (70) at (-5, 0.75) {};
+		\node [style=none] (71) at (-0.75, 0.75) {};
+		\node [style=none] (72) at (-0.75, 2.5) {};
+		\node [style=none] (73) at (-5, 2.5) {};
+		\node [style=none] (74) at (1.25, 0.75) {};
+		\node [style=none] (75) at (6.75, 0.75) {};
+		\node [style=none] (76) at (6.75, 2.5) {};
+		\node [style=none] (77) at (1.25, 2.5) {};
+		\node [style=none] (78) at (5.75, -3.5) {};
+		\node [style=none] (79) at (11.5, -3.5) {};
+		\node [style=none] (80) at (11.5, -1.75) {};
+		\node [style=none] (81) at (5.75, -1.75) {};
+		\node [style=none] (82) at (5.25, 2.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow] (1.center) to (0.center);
+		\draw [style=line] (4.center) to (5.center);
+		\draw [style=line] (6.center) to (7.center);
+		\draw [style=line] (8.center) to (9.center);
+		\draw [style=line] (10.center) to (11.center);
+		\draw [style=line] (12.center) to (13.center);
+		\draw [style=line] (14.center) to (15.center);
+		\draw [style=line] (16.center) to (17.center);
+		\draw [style=new edge style 0] (57.center)
+			 to (54.center)
+			 to [in=0, out=0, looseness=0.50] (55.center)
+			 to (56.center)
+			 to [bend left=15] cycle;
+		\draw [style=box] (66.center)
+			 to [in=75, out=-75, looseness=1.25] (63.center)
+			 to (64.center)
+			 to [in=0, out=0, looseness=1.25] (65.center)
+			 to [in=0, out=540] cycle;
+		\draw [style=box] (73.center)
+			 to [bend left=15, looseness=1.25] (70.center)
+			 to (71.center)
+			 to [in=0, out=0] (72.center)
+			 to cycle;
+		\draw [style=box] (76.center)
+			 to (77.center)
+			 to [bend left] (74.center)
+			 to (75.center)
+			 to [in=0, out=0] cycle;
+		\draw [style=box] (79.center)
+			 to [in=0, out=0, looseness=1.25] (80.center)
+			 to [in=360, out=180] (81.center)
+			 to [bend left=15] (78.center)
+			 to cycle;
+	\end{pgfonlayer}
+\end{tikzpicture}

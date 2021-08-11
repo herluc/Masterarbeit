@@ -15,20 +15,22 @@
 \BOOKMARK [1][]{section.73}{2.2 Gaussian Process Regression}{chapter.61}% 15
 \BOOKMARK [2][]{subsection.74}{2.2.1 Regression}{section.73}% 16
 \BOOKMARK [2][]{subsection.75}{2.2.2 Gaussian Processes}{section.73}% 17
-\BOOKMARK [2][]{subsection.82}{2.2.3 Kernel Functions}{section.73}% 18
-\BOOKMARK [2][]{subsection.104}{2.2.4 Prior and Posterior}{section.73}% 19
-\BOOKMARK [1][]{section.109}{2.3 The Statistical Finite Element Method}{chapter.61}% 20
-\BOOKMARK [2][]{subsection.115}{2.3.1 Step 1: Posterior of the FEM Forward Model}{section.109}% 21
-\BOOKMARK [2][]{subsection.185}{2.3.2 Inference of the Posterior Density}{section.109}% 22
-\BOOKMARK [2][]{subsection.198}{2.3.3 find Posterior mean and variance}{section.109}% 23
-\BOOKMARK [2][]{subsection.199}{2.3.4 Modeling Parameters of the PDE}{section.109}% 24
-\BOOKMARK [2][]{subsection.200}{2.3.5 Probabilistic FEM Prior}{section.109}% 25
-\BOOKMARK [2][]{subsection.210}{2.3.6 Step 2: Estimation of Hyperparameters}{section.109}% 26
-\BOOKMARK [2][]{subsection.229}{2.3.7 Step 3: Estimating the Optimum Mesh Parameters}{section.109}% 27
-\BOOKMARK [0][]{chapter.230}{3 Application of statFEM in Vibroacoustics}{}% 28
-\BOOKMARK [1][]{section.231}{3.1 Simple 1D example}{chapter.230}% 29
-\BOOKMARK [2][]{subsection.237}{3.1.1 Posterior}{section.231}% 30
-\BOOKMARK [1][]{section.240}{3.2 1D Vibroacoustics Example}{chapter.230}% 31
-\BOOKMARK [2][]{subsection.241}{3.2.1 FEM prior}{section.240}% 32
-\BOOKMARK [0][]{chapter.248}{4 Conclusion and Discussion}{}% 33
-\BOOKMARK [1][]{section.249}{4.1 Section 1}{chapter.248}% 34
+\BOOKMARK [2][]{subsection.84}{2.2.3 Kernel Functions}{section.73}% 18
+\BOOKMARK [2][]{subsection.105}{2.2.4 Prior and Posterior}{section.73}% 19
+\BOOKMARK [1][]{section.110}{2.3 The Statistical Finite Element Method}{chapter.61}% 20
+\BOOKMARK [2][]{subsection.116}{2.3.1 Step 1: Posterior of the FEM Forward Model}{section.110}% 21
+\BOOKMARK [2][]{subsection.186}{2.3.2 Inference of the Posterior Density}{section.110}% 22
+\BOOKMARK [2][]{subsection.199}{2.3.3 find Posterior mean and variance}{section.110}% 23
+\BOOKMARK [2][]{subsection.200}{2.3.4 Modeling Parameters of the PDE}{section.110}% 24
+\BOOKMARK [2][]{subsection.201}{2.3.5 Probabilistic FEM Prior}{section.110}% 25
+\BOOKMARK [2][]{subsection.211}{2.3.6 Step 2: Estimation of Hyperparameters}{section.110}% 26
+\BOOKMARK [2][]{subsection.230}{2.3.7 Step 3: Estimating the Optimum Mesh Parameters}{section.110}% 27
+\BOOKMARK [0][]{chapter.231}{3 Application of statFEM in Vibroacoustics}{}% 28
+\BOOKMARK [1][]{section.232}{3.1 Simple 1D example}{chapter.231}% 29
+\BOOKMARK [2][]{subsection.238}{3.1.1 FEM Prior}{section.232}% 30
+\BOOKMARK [2][]{subsection.240}{3.1.2 Posterior}{section.232}% 31
+\BOOKMARK [1][]{section.246}{3.2 2D Vibroacoustics Example}{chapter.231}% 32
+\BOOKMARK [2][]{subsection.247}{3.2.1 FEM prior}{section.246}% 33
+\BOOKMARK [2][]{subsection.254}{3.2.2 Posterior}{section.246}% 34
+\BOOKMARK [0][]{chapter.264}{4 Conclusion and Discussion}{}% 35
+\BOOKMARK [1][]{section.265}{4.1 Section 1}{chapter.264}% 36

@@ -4,6 +4,7 @@ from matplotlib import cm
 plt.rc('text', usetex=True)
 plt.rc('text.latex', preamble=r'\usepackage{amsmath}\usepackage[utf8]{inputenc}')
 from mpl_toolkits.mplot3d import Axes3D
+from scipy import stats, random
 
 # Our 2-dimensional distribution will be over variables X and Y
 N = 60
@@ -16,11 +17,17 @@ X, Y = np.meshgrid(X, Y)
 # Mean vector and covariance matrix
 mu = np.array([0., 2.])
 Sigma = np.array([[ 1. , -0.7], [-0.7,  1.5]])
+mu = np.array([0., 0])
+Sigma = np.array([[ 1 , 0.05], [0.05,  1]])
 
 # Pack X and Y into a single 3-dimensional array
 pos = np.empty(X.shape + (2,))
 pos[:, :, 0] = X
 pos[:, :, 1] = Y
+
+prop_cycle = plt.rcParams['axes.prop_cycle']
+colors = prop_cycle.by_key()['color']
+print(colors)
 
 def multivariate_gaussian(pos, mu, Sigma):
     """Return the multivariate Gaussian distribution on array pos.
@@ -37,11 +44,128 @@ def multivariate_gaussian(pos, mu, Sigma):
     # This einsum call calculates (x-mu)T.Sigma-1.(x-mu) in a vectorized
     # way across all the input variables.
     fac = np.einsum('...k,kl,...l->...', pos-mu, Sigma_inv, pos-mu)
+    N_s = 10
+
+
+    f=plt.figure(figsize=(8,6))
+
+    ax1 = plt.subplot(2,2,1)
+    samples = np.zeros((N_s,n))
+    t = np.array(range(1,n+1))
+    mu = np.array([0., 0])
+    Sigma = np.array([[ 1 , 0.05], [0.05,  1]])
+    for i in np.arange(N_s):
+        samples[i,:] = np.random.multivariate_normal(mean = mu, cov = Sigma)
+        plt.plot(t,samples[i,:],'-o',ms=5,color=colors[i])
+    plt.gca().set_title('Weak correlation')
+    plt.xlabel('dimension')
+    plt.ylabel('sampled value')
+    plt.grid()
+    plt.ylim(-2,2)
+
+
+    ax2 = plt.subplot(2,2,3)
+    x= samples[:,0]
+    y = samples[:,1]
+    X,Y = np.meshgrid(np.linspace(x.min()-1,x.max()+1,100), np.linspace(y.min()-1,y.max()+1,100))
+    rv = stats.multivariate_normal(mean = mu, cov = Sigma)
+    Z = rv.pdf(np.dstack((X,Y)))
+    cset = ax2.contour(X, Y, Z,cmap=cm.cividis)
+    for i in np.arange(N_s):
+        #samples[i,:] = np.random.multivariate_normal(mean = mu, cov = Sigma)
+        plt.plot(samples[i,0],samples[i,1],'-o',ms=5,color=colors[i])
+    plt.xlabel('dim. 1')
+    plt.ylabel('dim. 2')
+    plt.grid()
+
+    ax3 = plt.subplot(2,2,2)
+    samples = np.zeros((N_s,n))
+    t = np.array(range(1,n+1))
+    mu = np.array([0., 0])
+    Sigma = np.array([[ 1 , 0.95], [0.95,  1]])
+    for i in np.arange(N_s):
+        samples[i,:] = np.random.multivariate_normal(mean = mu, cov = Sigma)
+        plt.plot(t,samples[i,:],'-o',ms=5,color=colors[i])
+    plt.gca().set_title('Strong correlation')
+    plt.ylim(-2,2)
+    plt.xlabel('dimension')
+    plt.ylabel('sampled value')
+    plt.grid()
+
+
+    ax4 = plt.subplot(2,2,4)
+    x= samples[:,0]
+    y = samples[:,1]
+    X,Y = np.meshgrid(np.linspace(x.min()-1,x.max()+1,100), np.linspace(y.min()-1,y.max()+1,100))
+    rv = stats.multivariate_normal(mean = mu, cov = Sigma)
+    Z = rv.pdf(np.dstack((X,Y)))
+    cset = ax4.contour(X, Y, Z,cmap=cm.cividis)
+    for i in np.arange(N_s):
+        #samples[i,:] = np.random.multivariate_normal(mean = mu, cov = Sigma)
+        plt.plot(samples[i,0],samples[i,1],'-o',ms=5,color=colors[i])
+    plt.xlabel('dim. 1')
+    plt.ylabel('dim. 2')
+    plt.show()
+
+
+
+
+    f2=plt.figure(figsize=(8,6))
+
+    ax1 = plt.subplot(1,2,1)
+    mu = np.array([0,0,0,0,0,0])
+    D = mu.shape[0]
+    samples = np.zeros((5,D))
+
+    tmp = np.sort(random.rand(D))[:,None]
+    tmp2 = tmp**np.arange(5)
+    Sigma = 5*np.dot(tmp2,tmp2.T) + 0.005*np.eye(D)
+    for i in np.arange(5):
+        samples[i,:] = np.random.multivariate_normal(mean = mu, cov = Sigma)
+        plt.plot(tmp,samples[i,:],'-o',ms=5,color=colors[i])
+
+    plt.plot(tmp,np.diagonal(Sigma),'-o',ms=5,color='black',alpha=0.5)
+    plt.plot(tmp,-np.diagonal(Sigma),'-o',ms=5,color='black',alpha=0.5)
+    plt.gca().set_title('6 dimensions')
+    plt.grid()
+
+
+
+
+    ax2 = plt.subplot(1,2,2)
+    D=100
+    mu = np.zeros((D,1))[:,0]
+    samples = np.zeros((5,D))
+
+    tmp = np.sort(random.rand(D))[:,None]
+    tmp2 = tmp**np.arange(5)
+    Sigma = 5*np.dot(tmp2,tmp2.T) + 0.00005*np.eye(D)
+    for i in np.arange(5):
+        samples[i,:] = np.random.multivariate_normal(mean = mu, cov = Sigma)
+        plt.plot(tmp,samples[i,:],color=colors[i])
+    plt.plot(tmp,np.diagonal(Sigma),color='black',alpha=0.5,label='Variance')
+    plt.plot(tmp,-np.diagonal(Sigma),color='black',alpha=0.5)
+    plt.gca().set_title('100 dimensions')
+    plt.grid()
+
+
+    plt.show()
+
+
+
+
+
 
     return np.exp(-fac / 2) / N
 
 # The distribution on the variables X, Y packed into pos.
 Z = multivariate_gaussian(pos, mu, Sigma)
+
+quit()
+
+
+print("Z:")
+print(Z)
 
 y0 = 30
 
