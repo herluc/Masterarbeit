@@ -1,0 +1,4 @@
+GPs:
+-Vergleich Regression und GP: Subplot-Figure mit verschiedenen Beispielen (GP, der alles kann und regression die nur eins kann)
+-Joint,Marginalised,conditioned am richtigen Beispiel zeigen: Test- + Trainingpunkte, dann conditioning auf die traingspunkte
+-conditioning erst ohne und dann mit noise beschreiben

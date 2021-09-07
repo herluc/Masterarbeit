@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE Xdmf SYSTEM "Xdmf.dtd" []>
+<Xdmf Version="3.0" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <Domain>
+    <Grid Name="TimeSeries" GridType="Collection" CollectionType="Temporal">
+      <Grid Name="mesh" GridType="Uniform">
+        <Topology NumberOfElements="3200" TopologyType="Triangle" NodesPerElement="3">
+          <DataItem Dimensions="3200 3" NumberType="UInt" Format="HDF">RM_DG_results.h5:/Mesh/0/mesh/topology</DataItem>
+        </Topology>
+        <Geometry GeometryType="XY">
+          <DataItem Dimensions="1681 2" Format="HDF">RM_DG_results.h5:/Mesh/0/mesh/geometry</DataItem>
+        </Geometry>
+        <Time Value="0.000000000000000e+00" />
+        <Attribute Name="Deflection" AttributeType="Scalar" Center="Node">
+          <DataItem Dimensions="1681 1" Format="HDF">RM_DG_results.h5:/VisualisationVector/0</DataItem>
+        </Attribute>
+        <Attribute Name="Rotation" AttributeType="Vector" Center="Node">
+          <DataItem Dimensions="1681 3" Format="HDF">RM_DG_results.h5:/VisualisationVector/1</DataItem>
+        </Attribute>
+      </Grid>
+    </Grid>
+  </Domain>
+</Xdmf>

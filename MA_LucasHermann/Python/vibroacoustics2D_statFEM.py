@@ -4,9 +4,11 @@ from fenics import *
 
 import matplotlib
 import matplotlib.pyplot as plt
+import gif
 plt.rc('text', usetex=True)
 plt.rc('text.latex', preamble=r'\usepackage{amsmath}\usepackage[utf8]{inputenc}')
 from matplotlib import cm
+import matplotlib.ticker as mticker
 from mpl_toolkits.mplot3d import Axes3D
 import shift # shift and align are for plotting multiple axes in MPL while having the same zero.
 import align
@@ -41,7 +43,7 @@ class solverClass:
 
 		self.SourceBoundary = 0 #determines on which boundary part the source is applied. 0 left, 1 right
 
-		self.a,self.b = 2,2
+		self.a,self.b = 24,24
 		self.mesh = UnitSquareMesh(self.a,self.b) #define mesh
 		self.V = FunctionSpace(self.mesh, "Lagrange", 1) # Function space
 
@@ -218,6 +220,7 @@ class solverClass:
 		u_sig.vector().set_local(self.C_uDiag.tolist())
 
 
+
 		X = 0; Y = 1; Z = 0
 		u_box = st.BoxField.dolfin_function2BoxField(u,self.mesh,(self.a,self.b),uniform_mesh=True)
 		start = (0.0,0.7)
@@ -242,17 +245,20 @@ class solverClass:
 		# plt.figure()
 		# plt.plot(x,uval)
 		# plt.title("Prior sample cut")
+
+
+		### plot the variance prior
 		# fig = plt.figure()
 		# c=plot(u_sig)
-
+		# c=plot(u_sig)
 		# plt.colorbar(c)
 		# plt.xlabel('$x$')
 		# plt.ylabel('$y$')
-		# c.set_clim(vmin=0, vmax=2.5)
-
-
+		# #c.set_clim(vmin=0, vmax=2.5)
 		# fig.savefig("VarField.pdf", bbox_inches='tight')
+		# plt.show()
 		# plt.close(fig)
+		#############
 		# plt.figure()
 		# plt.plot(x,uvalsig)
 		# plt.title("sig Prior sample cut")
@@ -388,7 +394,7 @@ class solverClass:
 
 
 
-		#fig2 = plt.figure()
+		#
 		fvalList = []
 		for f in flist:
 			X = 0; Y = 1; Z = 0
@@ -417,16 +423,23 @@ class solverClass:
 			muL.append(mu)
 			DeltaL.append(Delta)#
 		self.sourceVariance=sigL
-		#for sample in fvalList[0:10]:
-		#	plt.plot(x,sample)
-		#plt.plot(x, muL, color = 'black',lw = 2.0,label='2sig')
-		#plt.plot(x, fvalMean, color = 'black',lw = 2.0,label='2sig')
+		fig2 = plt.figure()
+		for sample in fvalList[0:15]:
+			plt.plot(x,sample,color='black',lw = 0.5,alpha=0.5)
+		plt.plot(x, muL, color = 'black',lw = 2.0,label='mean')
+		#plt.plot(x, fvalMean, color = 'black',lw = 2.0,label='2sigFvalMean')
 
-		#plt.plot(x, fvalMean-1.96*np.array(sigL), linestyle='-.',color = 'black',lw = 2.0,label='2sig')
-		#plt.plot(x, fvalMean+1.96*np.array(sigL), linestyle='-.',color = 'black',lw = 2.0,label='2sig')
-		#plt.title("fGP cut")
-		#fig2.savefig("fGPCut.pdf", bbox_inches='tight')
+		#plt.plot(x, muL-1.96*np.array(sigL), linestyle='-.',color = 'black',lw = 2.0,label='2sig')
+		#plt.plot(x, muL+1.96*np.array(sigL), linestyle='-.',color = 'black',lw = 2.0,label='2sig')
+		plt.fill_between(x, muL+1.96*np.array(sigL), muL-1.96*np.array(sigL), color='red', alpha=0.15,label="2 sig")
 
+		plt.title("Neumann Source GP")
+		plt.legend()
+		plt.grid()
+		plt.xlabel('x')
+		plt.ylabel(r'$\bar{U}$')
+		fig2.savefig("fGPCut.pdf", bbox_inches='tight')
+		plt.show()
 
 
 
@@ -714,10 +727,11 @@ class solverClass:
 		y_values = np.array(y_values)
 		logpostList = []
 
-		ld_s = np.log(np.logspace(-3,0.01,2000,base=np.exp(1)))
+		ld_s = np.log(np.logspace(-3,0.01,4000,base=np.exp(1)))
 		#ld_s = np.linspace(0,1,50000)
-		sigd_s = np.log(np.logspace(-5,4,2000,base=np.exp(1)))
-		rho_s = np.log(np.logspace(-4,2,2000,base=np.exp(1)))
+		sigd_s = np.log(np.logspace(-2,3,4000,base=np.exp(1)))
+		rho_s = np.log(np.logspace(-4,0.5,4000,base=np.exp(1)))
+		#rho_s = np.array([0 for x in rho_s])
 		#rho_s = np.log(np.linspace(0.001,1.9,50000))
 		#print("l,sig,rho:")
 		#print(ld_s)
@@ -727,6 +741,43 @@ class solverClass:
 		#rho_s = np.log(np.random.uniform(0.5,1.5,10000))
 		#ld_s = np.log(np.random.uniform(1e-16,1,10000))
 		#sigd_s = np.log(np.random.uniform(1e-16,1,10000))
+
+
+		######################
+		# # for contour plot only:
+		# rho_s_plot = np.array([-0.28 for x in rho_s])
+		# rho_s_plot = np.log(np.logspace(-4,2,50,base=np.exp(1)))
+		# ld_s_plot = np.log(np.logspace(-5,3,10,base=np.exp(1)))
+		# sigd_s_plot = np.log(np.logspace(-5,4,10,base=np.exp(1)))
+		# logpostListPlot = np.zeros((10,10))
+		# logpostListPlot1D = np.zeros(10)
+		# print("sigd_s_plot:")
+		# print(sigd_s_plot)
+		# print(np.exp(sigd_s_plot))
+		# X, Y = np.meshgrid(np.exp(sigd_s_plot), np.exp(ld_s_plot))
+		# for i in range(10):
+		# 	logpostListPlot1D[i] = self.getLogPostMultiple([0,sigd_s_plot[i],-1])
+		# for i in range(10):
+		# 	for j in range(10):
+		# 		logpostListPlot[i,j] = self.getLogPostMultiple([0,sigd_s_plot[i],ld_s_plot[j]])
+		# Z = np.array(logpostListPlot)
+		# fig, ax = plt.subplots()
+		# plt.contourf(np.exp(sigd_s_plot),np.exp(ld_s_plot),Z,levels=50)
+		# #ax3d = fig.add_subplot(1, 1,1, projection='3d')
+		# #ax3d.plot_surface(X,Y, Z,linewidth=0, alpha=0.5, antialiased=True, zorder = 0.5)
+		# plt.colorbar()
+		# #plt.plot(np.exp(sigd_s_plot),logpostListPlot1D)
+		# #ax.clabel(CS, inline=True, fontsize=10)
+		# plt.xlabel('sig')
+		# plt.ylabel('l')
+		# ax.set_yscale('log')
+		# ax.set_xscale('log')
+		# fig.savefig("HyperparField.pdf", bbox_inches='tight')
+
+		#plt.show()
+		##########################
+
+
 
 		np.random.shuffle(ld_s)
 		np.random.shuffle(sigd_s)
@@ -764,6 +815,33 @@ class solverClass:
 		with open("data.txt", "a") as myfile:
 			myfile.write('rho,sig,l: '+str(np.exp(rho_s[smallest]))+','+str(np.exp(sigd_s[smallest]))+','+str(np.exp(ld_s[smallest]))+'\n')
 
+		@gif.frame
+		def plotIt(i):
+			fig = plt.figure()
+			
+			def log_tick_formatter(val, pos=None):
+				return "{:.1e}".format(10**val)
+
+
+			ax = fig.add_subplot(projection='3d')
+			ax.scatter(np.exp(sigd_s), np.exp(ld_s), np.log10(logpostList),s=2,color='black')
+			ax.scatter(np.exp(sigd_s[smallest]),np.exp(ld_s[smallest]),np.log10(logpostList[smallest]),color='red',label='minimum')
+					
+			ax.zaxis.set_major_formatter(mticker.FuncFormatter(log_tick_formatter))
+			ax.view_init(elev=10., azim=i)
+			plt.xlabel('sig')
+			plt.ylabel('l')
+			plt.legend()
+			ax.set_zlabel('neg. log marginal likelihood')
+			plt.show()
+
+		frames = []
+		# for i in range(0,360,1):
+		# 	frame = plotIt(i)
+		# 	frames.append(frame)
+		# gif.save(frames, 'MLL.gif', duration=3.5, unit="s", between="startend")
+		#plotIt(10)
+		
 		# hyperp = plt.figure(999)
 		# #plt.plot(rho_s)
 		# #plt.contour([sigd_s,rho_s],logpostList)
@@ -775,22 +853,71 @@ class solverClass:
 		# #plt.scatter(ld_s,logpostList,label="l")
 		# #plt.hist(logpostList,bins=140)
 		# plt.yscale('log')
-		# plt.show()
+		#plt.show()
 		# plt.close(hyperp)
 
-
-		#result = scipy.optimize.minimize(fun=self.getLogPost,method='L-BFGS-B',bounds=((0.4,None),(1e-16,None),(1e-16,None)),x0=np.array([rho_est,sigd_est,ld_est]))
+		#quit()
+		#result = scipy.optimize.minimize(fun=self.getLogPostMultiple,method='L-BFGS-B',bounds=((0,0),(1e-16,None),(1e-16,None)),x0=np.array([rho_est,sigd_est,ld_est]))
 		#print("old result:")
 		#print([np.exp(rho_est),np.exp(sigd_est),np.exp(ld_est)])
 		#print("optimized result:")
 		#print(result.x)
 
 		#samples = self.doMCMC([rho_est,sigd_est,ld_est])
-		#print('MCMC: ',samples)
+		#print('MCMC: ',np.exp(samples))
 		#return result.x
 
 		return rho_est,sigd_est,ld_est
 		#return rho_est,sigd_est,0.2
+
+	def doMCMC(self,w0):
+		sig_q = 0.002
+		cov = sig_q**2 * np.identity(len(w0))
+		numSamp = 500
+		samples = []
+		#w0 =[1,1,1]
+		samples.append(w0)
+		wi = w0
+
+		for i in list(range(numSamp))[1:]:
+			#proposal =  samples[i-1] + np.random.normal(loc=0.0, scale = sig_q, size=len(w0))
+			proposal = np.random.multivariate_normal(
+			mean = wi, cov=cov)
+			#proposal = abs(proposal)
+			# print("prop:")
+			# print(proposal)
+			# print(self.getLogPost(proposal))
+			# print(self.getLogPost(wi))
+			# print(self.getLogPost(proposal)  -  self.getLogPost(wi) )
+			alpha = np.min(     (0.0, self.getLogPostMultiple(proposal)  -  self.getLogPostMultiple(wi) )  )
+			#print("alpha: ",alpha)
+			u = np.random.uniform(0,1)
+		
+			if np.log(u) < alpha:
+				samples.append(proposal)
+				wi = proposal
+			else:
+				samples.append(wi)
+				wi = wi
+		
+
+		quarter = int(len(samples)/4)
+		mean = np.mean(samples[quarter:],axis=0)
+		plt.figure(figsize=(6, 4), dpi=100)
+		plt.plot(np.transpose(samples)[1],label=['rho','sig',"l"])
+		#plt.yscale('log')
+		#plt.xscale('log')
+		plt.show()
+		#plt.hist(np.transpose(samples),bins=30)
+#		plt.grid()
+	#	#plt.legend()
+
+
+		#print("mean:")
+		#print(mean)
+		return mean#np.array(samples)
+
+
 
 
 
@@ -917,7 +1044,10 @@ class solverClass:
 
 	def addPertubation(self):
 
-		pert = Expression("0.8+0.5*sin(6*pi*(x[0]))",degree=1)
+		#pert = Expression("1+0.8*sin(4*pi*(x[0]))",degree=1)
+		pert = Expression("1+sin(x[0])",degree=1)
+		pert = Expression("1+0.5/pow(exp(1),5*((x[0]-0.5)*(x[0]-0.5) + (x[1]-0.5)*(x[1]-0.5)))",degree=1)
+		#pert = Expression("1.01",degree=1)
 		pertV = project(pert, self.V)
 		#print(pertV.vector().get_local())
 		c=plot(pertV)
@@ -959,6 +1089,7 @@ class solverClass:
 		x=np.linspace(0,1,self.a+1)
 		y=np.linspace(0,1,self.b+1)
 		Z = mean
+		self.Zprior=Z
 		self.UMeanOutput.append(Z)
 		self.UCutOutput.append(self.U_mean_cut)
 		self.PriorOutput.append(self.SourceMean)
@@ -1047,6 +1178,45 @@ class solverClass:
 		# plt.close(figPost)
 
 		#plt.show()
+
+
+
+
+	def sampleDiscrepancy(self):
+		y_list = np.expand_dims(np.linspace(0, 1, self.b), 1) # Vector of poitns in the mesh
+		d_mean = np.zeros((self.a+1)*(self.b+1))
+		cov = self.C_d
+		print("shape:")
+		print(self.C_d.shape())
+		discrete_d = np.random.multivariate_normal(
+			mean = d_mean , cov=cov,
+			size=1)
+		plt.figure()
+		plt.plot(y_list,np.transpose(discrete_d))
+		plt.show()
+
+
+	def getMSE_posterior(self):
+		X,Y,Z = self.x0.vector().get_local(), self.x1.vector().get_local(), self.u_y_mean.vector().get_local()
+
+		mean = np.zeros((self.a+1,self.b+1))
+
+		for i in range((self.a+1)*(self.b+1)):
+			a,b = int(self.a*X[i]),int(self.b*Y[i])
+			mean[a,b] = Z[i]
+
+		x=np.linspace(0,1,self.a+1)
+		y=np.linspace(0,1,self.b+1)
+		Z = mean
+
+		PtListPosterior = []
+		for i,pt in enumerate(self.y_values):
+			PtListPosterior.append(Z[int(self.a*np.transpose(self.y_points)[0][i]),int(self.b*np.transpose(self.y_points)[1][i])]    - pt   )
+
+
+		PosteriorMSE = (np.square(PtListPosterior)).mean()
+		with open("data.txt", "a") as myfile:
+			myfile.write('postMSE:'+str(PosteriorMSE)+'\n')
 
 
 
@@ -1155,6 +1325,68 @@ class solverClass:
 		align.yaxes(ax,0.7,ax2,0.0,0.7)
 		fig4.savefig("SolutionCustomPosterior.pdf", bbox_inches='tight')
 
+
+
+		PtListPrior = []
+		PtListPosterior = []
+		for i,pt in enumerate(self.y_values):
+			PtListPrior.append(self.Zprior[int(self.a*np.transpose(self.y_points)[0][i]),int(self.b*np.transpose(self.y_points)[1][i])]    - pt   )
+			PtListPosterior.append(Z[int(self.a*np.transpose(self.y_points)[0][i]),int(self.b*np.transpose(self.y_points)[1][i])]    - pt   )
+
+		PriorMSE = (np.square(PtListPrior)).mean()
+		PosteriorMSE = (np.square(PtListPosterior)).mean()
+
+
+		@gif.frame
+		def plot3dMSE(deg,mode):
+			fig3d = plt.figure(figsize=plt.figaspect(0.5))
+			ax3d = fig3d.add_subplot(1, 2, 1, projection='3d')
+			#ax3d = fig5.gca(projection='3d')
+			X2,Y2 = np.meshgrid(x,y)
+			ax3d.plot_surface(X2,Y2, np.transpose(self.Zprior),cmap='Blues',linewidth=0, alpha=0.5, antialiased=True, zorder = 0.5) #prior
+			#ax3d.plot_surface(X2,Y2, np.transpose(Z),cmap='Reds',linewidth=0, alpha=0.5, antialiased=True, zorder = 0.5) #posterior
+			ax3d.scatter(np.transpose(self.y_points)[0],np.transpose(self.y_points)[1],self.y_values,color="black")
+			ax3d.text(-0.1,-0.1,0.2, s=r"$MSE:$ "+str(round(PriorMSE,2)),bbox=dict(boxstyle="round",alpha=0.5))
+			ax3d.set_title('FEM prior')
+			ax3d.set_zlim3d([-80,80])
+			if mode == 'pdf':
+				ax3d.view_init(elev=30., azim=-58)
+			else:
+				ax3d.view_init(elev=10., azim=i)
+			#fig3d.savefig("3dTestPrior.pdf", bbox_inches='tight')
+			#plt.show()
+
+			#fig6 = plt.figure(figsize=(5.5,4), dpi=100)
+			ax3d2 = fig3d.add_subplot(1, 2, 2, projection='3d')
+			X2,Y2 = np.meshgrid(x,y)
+			#ax3d.plot_surface(X2,Y2, np.transpose(self.Zprior),cmap='Blues',linewidth=0, alpha=0.5, antialiased=True, zorder = 0.5) #prior
+			ax3d2.plot_surface(X2,Y2, np.transpose(Z),cmap='Reds',linewidth=0, alpha=0.5, antialiased=True, zorder = 0.5) #posterior
+			ax3d2.scatter(np.transpose(self.y_points)[0],np.transpose(self.y_points)[1],self.y_values,color="black")
+			ax3d2.text(-0.1,-0.1,0.2,s=r"$MSE:$ "+str(round(PosteriorMSE,2)),bbox=dict(boxstyle="round",alpha=0.5))
+			ax3d2.set_title('Posterior')
+			ax3d2.set_zlim3d([-80,80])
+			#ax3d2.view_init(elev=10., azim=i)
+			if mode == 'pdf':
+				ax3d2.view_init(elev=30., azim=-58)
+				fig3d.savefig("3dMSE.pdf", bbox_inches='tight')
+			else:
+				ax3d2.view_init(elev=10., azim=i)
+			#
+			#plt.show()
+		plot3dMSE(1,'pdf')
+		frames = []
+		for i in range(0,360,1):
+			frame = plot3dMSE(i,'gif')
+			frames.append(frame)
+		gif.save(frames, '3DMSE_conflict.gif', duration=3.5, unit="s", between="startend")
+
+
+		print("MSE's:")
+		print(PriorMSE)
+		print(PtListPrior)
+		print(PosteriorMSE)
+		print(PtListPosterior)
+
 		# #self.postList = self.postList.reshape((2,2))
 		# cbarPlot = plot(self.postList[0])
 		# figPost = plt.figure()
@@ -1232,16 +1464,37 @@ mean = np.zeros((solver.a+1,solver.b+1))
 
 #X,Y,Z = solver.x0.vector().get_local(), solver.x1.vector().get_local(), solver.U_mean.get_local()
 X,Y,Z = solver.x0.vector().get_local(), solver.x1.vector().get_local(), solver.u_sample.vector().get_local()
-#pertub = solver.addPertubation()
-#X,Y,Z = solver.x0.vector().get_local(), solver.x1.vector().get_local(), (solver.u_sample.vector().get_local() * pertub.vector().get_local()) #WITH PERTUBATION
+pertub = solver.addPertubation()
+X,Y,Z = solver.x0.vector().get_local(), solver.x1.vector().get_local(), (solver.u_sample.vector().get_local() * pertub.vector().get_local()) #WITH PERTUBATION
 for i in range((solver.a+1)*(solver.b+1)):
 	a,b = int(solver.a*X[i]),int(solver.b*Y[i])
 	mean[a,b] = Z[i]
 a_list = np.linspace(0,solver.a,solver.a+1,dtype=int)
 b_list = np.linspace(0,solver.b,solver.b+1,dtype=int)
-#c=plot(solver.u_sample * pertub)
-#plt.colorbar(c)
-#plt.show()
+
+figRescaling = plt.figure()
+
+plt.subplot(1,3,1)
+c=plot(pertub)
+plt.colorbar(c)
+plt.axis('off')
+plt.title("Rescaling pattern")
+
+plt.subplot(1,3,2)
+c=plot(solver.u_sample)
+plt.colorbar(c)
+plt.axis('off')
+plt.title("Prior sample")
+
+plt.subplot(1,3,3)
+c=plot(solver.u_sample * pertub)
+plt.colorbar(c)
+plt.axis('off')
+plt.title("New ground truth to take observations on")
+
+figRescaling.subplots_adjust(bottom=0.1,top=0.9,left=0.1,right=0.8, wspace=0.4,hspace=0.2)
+plt.show()
+
 
 
 #mean = np.transpose(mean)	
@@ -1259,7 +1512,7 @@ sp_i = 0
 for r in range(rows):
 #for r in [30]:
 
-	for i in range(2):
+	for i in range(20):
 		#solver.y_points.append(np.random.random_sample((2,)))
 		#solver.y_values.append(np.random.random_sample()*15)
 		#solver.y_values.append(0)
@@ -1277,11 +1530,11 @@ for r in range(rows):
 			#solver.y_points.append([a_list[newPoint[0]]/solver.a,b_list[newPoint[1]]/solver.b])
 			#solver.y_values.append(mean[a_list[newPoint[0]],b_list[newPoint[1]]])
 			solver.y_points.append([a_list[i1]/solver.a,b_list[i2]/solver.b])
-			solver.y_values.append(mean[a_list[i1],b_list[i2]]*0.75)
+			solver.y_values.append(mean[a_list[i1],b_list[i2]]*2.5)
 		except:
 			print("no varField available!")
 			solver.y_points.append([a_list[i1]/solver.a,b_list[i2]/solver.b])
-			solver.y_values.append(mean[a_list[i1],b_list[i2]]*0.75)
+			solver.y_values.append(mean[a_list[i1],b_list[i2]]*2.5)
 		#solver.y_points.append([a_list[i1]/solver.a,b_list[i2]/solver.b])
 		#solver.y_values.append(mean[a_list[i1],b_list[i2]]*0.75)
 		
@@ -1290,7 +1543,7 @@ for r in range(rows):
 	#solver.y_values.append(0)
 
 	#for i in np.linspace(1,300,columns,dtype=int):
-	for i in [10,100,1000,40,10000][0:columns]:
+	for i in [1,100,1000,40,10000][0:columns]:
 		#add noise:
 		y_values_list = []
 		solver.no = i
@@ -1304,6 +1557,8 @@ for r in range(rows):
 			myfile.write('sensors:'+str(len(solver.y_points))+'obs:'+str(i)+'\n')
 
 		solver.computePosteriorMultipleY(solver.y_points,solver.yVectors)
+		solver.getMSE_posterior()
+
 
 		plt.figure(0)
 		plt.subplot(rows,columns,sp_i+1)
@@ -1386,6 +1641,7 @@ plt.close(figMean)
 
 solver.plotSolution()
 solver.plotSolutionPosterior()
+solver.sampleDiscrepancy()
 
 ## stuff for the interactive jupyter notebooks:
 

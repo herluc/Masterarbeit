@@ -101,7 +101,7 @@ class solverClass:
     def getMeanSquarePress(self):
         bar_p_sq = 0
         for p in self.u.vector().get_local():
-            val = np.sqrt(np.abs(p))
+            val = np.sqrt(np.abs(p*p))
             bar_p_sq+=val
             print(bar_p_sq)
         bar_p_sq = bar_p_sq / len(self.u.vector().get_local())
@@ -232,7 +232,12 @@ for f in FreqRange:
     FRF.append(solver.getMeanSquarePress())
 
 fig = plt.figure()
-plt.plot(FreqRange,FRF)
+plt.plot(FreqRange,FRF,color='black')
+
+plt.grid()
+plt.xlabel('frequency [Hz]')
+plt.ylabel('Mean square pressure [Pa]')
 fig.savefig("Eigenfrequencies.pdf", bbox_inches='tight')
+
 plt.show()
 

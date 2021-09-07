@@ -750,7 +750,7 @@ error_mean = U_mean - np.array(muL)
 
 #print(priorSamples[0])
 #print(len(priorSamples[0]))
-n_obs = 4+2
+n_obs = 9+2
 idx = np.round(np.linspace(0, len(priorSamples[0])-1, n_obs)).astype(int)
 y_values_prior = [priorSamples[0][i] for i in idx]
 y_values=[0.02393523,0.04423292, 0.06159137, 0.08335314, 0.09902092, 0.11984335,
@@ -763,6 +763,8 @@ y_values=[0.02393523,0.04423292, 0.06159137, 0.08335314, 0.09902092, 0.11984335,
 
 #y_values = np.array(y_values)# + noise
 y_values = y_values_prior[1:-1]
+y_values = [x*1.32 for x in y_values]
+
 #noise = np.random.normal(0,1e-2,len(y_values))
 #y_values = y_values + noise
 
@@ -771,10 +773,10 @@ print(y_values)
 y_points = [solver.coordinates.tolist()[i] for i in idx][1:-1]
 
 
-y_values = [0.125,0.26,0.28,0.31,0.30,0.31,0.28,0.225,0.125]
-y_points = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
-#y_values = [x+0.3 for x in y_values]
-y_points = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+#y_values = [0.125,0.26,0.26,0.32,0.30,0.32,0.26,0.225,0.125]
+#y_points = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
+
+
 
 #y_values = [0.12,0.26,0.28,0.34,0.30,0.34,0.24,0.225,0.15]
 #y_points = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
@@ -784,8 +786,8 @@ y_points = [0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9]
 #y_points = [0.1,0.3,0.5,0.7,0.9]
 #y_values = [x-0.1 for x in y_values]
 
-y_values = y_values[5:]
-y_points = y_points[5:]
+#y_values = y_values[5:]
+#y_points = y_points[5:]
 
 #y_values = solver.create_fake_data(y_points,y_values)
 ###### multiple observations
@@ -816,7 +818,7 @@ error_var = np.square(np.array(solver.C_u_yDiag)) - np.square(np.array(sigL))
 
 
 
-f = plt.figure(figsize=(6, 4), dpi=100)
+f = plt.figure(figsize=(4,2.5), dpi=100)
 plt.plot(solver.coordinates, np.transpose(U_mean), linestyle='-', color = 'green',lw = 1.8,label='FEM mean')
 plt.fill_between(np.transpose(solver.coordinates)[0], np.array(muL)+1.96*solver.C_uDiag, np.array(muL)-1.96*solver.C_uDiag,color = 'green',alpha=0.3,label='$2\sigma$ FEM')
 
