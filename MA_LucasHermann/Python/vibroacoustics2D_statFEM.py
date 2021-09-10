@@ -45,8 +45,11 @@ class solverClass:
 
 		self.a,self.b = 24,24
 		self.mesh = UnitSquareMesh(self.a,self.b) #define mesh
+		plt.figure()
+		plt.title("FEM mesh")
+		plot(self.mesh)
 		self.V = FunctionSpace(self.mesh, "Lagrange", 1) # Function space
-
+		plt.show()
 		#parameters for acoustic medium, air:
 		self.rho = 1.2
 		self.f = 500
@@ -57,7 +60,7 @@ class solverClass:
 		self.g = self.rho * self.omega**2 # part of the boundary term for the variational problem. Displacement u is introduced below
 		with open("data.txt", "w") as myfile:
 			myfile.write('freq:'+str(self.f)+'mesh:'+str(self.a)+','+str(self.b)+'\n')
-
+		self.sourceBCendCoord = 0.05
 		factor = Params.factor # fetching from Params class
 		# class MyExpression0(UserExpression):
 		# 	## old class. remove asap
@@ -76,7 +79,7 @@ class solverClass:
 				#if x[0] >(1.0-1e-8):
 				if x[0] <(0.0+1e-8):
 					value[0] = val
-					#value[0] = 0.00001 #overwrite sine using a constant function
+					value[0] = 0.00001 #overwrite sine using a constant function
 				else:
 					value[0] = 0.0 #only the boundary is non-zero. evry other point is zero.
 			def value_shape(self):
@@ -218,7 +221,7 @@ class solverClass:
 
 		u_sig = Function(self.V)
 		u_sig.vector().set_local(self.C_uDiag.tolist())
-
+		self.prior_var = u_sig
 
 
 		X = 0; Y = 1; Z = 0
@@ -247,18 +250,8 @@ class solverClass:
 		# plt.title("Prior sample cut")
 
 
-		### plot the variance prior
-		# fig = plt.figure()
-		# c=plot(u_sig)
-		# c=plot(u_sig)
-		# plt.colorbar(c)
-		# plt.xlabel('$x$')
-		# plt.ylabel('$y$')
-		# #c.set_clim(vmin=0, vmax=2.5)
-		# fig.savefig("VarField.pdf", bbox_inches='tight')
-		# plt.show()
-		# plt.close(fig)
-		#############
+
+
 		# plt.figure()
 		# plt.plot(x,uvalsig)
 		# plt.title("sig Prior sample cut")
@@ -276,6 +269,105 @@ class solverClass:
 ######################################
 		return C_u
 		#return c_u
+
+	
+	@gif.frame
+	def plotSourceBCvariants(self,i):
+		self.sourceBCendCoord = i
+		solver.doFEM()
+		solver.get_U_mean()
+		solver.get_C_u()
+
+		fig = plt.figure(figsize=plt.figaspect(0.5))
+		## plot the mean prior
+		###############################################################
+		meanVar = np.sqrt((np.array(self.u.vector().get_local())**2).sum())
+		plt.subplot(1,2,1)
+		c=plot(self.u)
+		c=plot(self.u)
+		plt.colorbar(c)
+		plt.xlabel('$x$')
+		plt.ylabel('$y$')
+		plt.title('mean, '+r'$bc_l$='+str(i))
+		#c.set_clim(vmin=0, vmax=2.5)
+		plt.text(0.2,0.2, r"$l_2:$ "+str(round(meanVar,2)),bbox=dict(boxstyle="round",alpha=0.5))
+		#fig.savefig("VarField.pdf", bbox_inches='tight')
+		#plt.show()
+		##################################################################
+
+
+		## plot the variance prior
+		###############################################################
+		meanVar = np.sqrt((np.array(self.prior_var.vector().get_local())**2).sum())
+		plt.subplot(1,2,2)
+		c=plot(self.prior_var)
+		c=plot(self.prior_var)
+		plt.colorbar(c)
+		plt.xlabel('$x$')
+		plt.ylabel('$y$')
+		plt.title('variance, '+r'$bc_l$='+str(i))
+		#c.set_clim(vmin=0, vmax=2.5)
+		plt.text(0.2,0.2, r"$l_2:$ "+str(round(meanVar,2)),bbox=dict(boxstyle="round",alpha=0.5))
+		#fig.savefig("VarField.pdf", bbox_inches='tight')
+		#plt.show()
+		##################################################################
+
+
+
+	def plotFreqHelper(self):
+		@gif.frame
+		def plotFreqVariation(i):
+			self.f = i
+			c = 340
+			self.Z = self.rho * c
+			self.omega = 2* np.pi * self.f
+			self.k = self.omega / c # wave number
+			self.g = self.rho * self.omega**2 # part of the boundary term for the variational problem. Displacement u is introduced below
+
+			solver.doFEM()
+			solver.get_U_mean()
+			solver.get_C_u()
+
+			fig = plt.figure(figsize=plt.figaspect(0.5))
+			## plot the mean prior
+			###############################################################
+			meanVar = np.sqrt((np.array(self.u.vector().get_local())**2).sum())
+			plt.subplot(1,2,1)
+			c=plot(self.u)
+			c=plot(self.u)
+			plt.colorbar(c)
+			plt.xlabel('$x$')
+			plt.ylabel('$y$')
+			plt.title('mean, '+r'$freq$='+str(i)+r'$Hz$')
+			#c.set_clim(vmin=0, vmax=2.5)
+			plt.text(0.2,0.2, r"$l_2:$ "+str(round(meanVar,2)),bbox=dict(boxstyle="round",alpha=0.5))
+			#fig.savefig("VarField.pdf", bbox_inches='tight')
+			#plt.show()
+			##################################################################
+
+
+			## plot the variance prior
+			###############################################################
+			meanVar = np.sqrt((np.array(self.prior_var.vector().get_local())**2).sum())
+			plt.subplot(1,2,2)
+			c=plot(self.prior_var)
+			c=plot(self.prior_var)
+			plt.colorbar(c)
+			plt.xlabel('$x$')
+			plt.ylabel('$y$')
+			plt.title('variance, '+r'$freq$='+str(i)+r'$Hz$')
+			#c.set_clim(vmin=0, vmax=2.5)
+			plt.text(0.2,0.2, r"$l_2:$ "+str(round(meanVar,2)),bbox=dict(boxstyle="round",alpha=0.5))
+			#fig.savefig("VarField.pdf", bbox_inches='tight')
+			#plt.show()
+			##################################################################
+		frames = []
+		for i in np.linspace(100,600,100):
+			frame = plotFreqVariation(i)
+			frames.append(frame)
+		#frames = frames + frames.reverse()[1:]
+		gif.save(frames, 'FreqVar.gif', duration=6, unit="s", between="startend")
+
 
 
 	def get_C_f(self):
@@ -400,14 +492,14 @@ class solverClass:
 			X = 0; Y = 1; Z = 0
 			f_box = st.BoxField.dolfin_function2BoxField(f,self.mesh,(self.a,self.b),uniform_mesh=True)
 			start = (0.0,0.0)
-			x,fval,y_fixed,snapped = f_box.gridline(start, direction = Y)
+			x,fval,y_fixed,snapped = f_box.gridline(start, direction = Y,end_coor=(0.0,self.sourceBCendCoord))
 			fvalList.append(fval)
 			#plt.plot(x,fval)
 
 		X = 0; Y = 1; Z = 0
 		f_box_mean = st.BoxField.dolfin_function2BoxField(f_mean_fenicsObj,self.mesh,(self.a,self.b),uniform_mesh=True)
 		start = (0.0,0.0)
-		x,fvalMean,y_fixed,snapped = f_box_mean.gridline(start, direction = Y)
+		x,fvalMean,y_fixed,snapped = f_box_mean.gridline(start, direction = Y,end_coor=(0.0,self.sourceBCendCoord))
 		# self.fArray.append(uval)
 		# self.x_f = x
 
@@ -423,24 +515,27 @@ class solverClass:
 			muL.append(mu)
 			DeltaL.append(Delta)#
 		self.sourceVariance=sigL
-		fig2 = plt.figure()
-		for sample in fvalList[0:15]:
-			plt.plot(x,sample,color='black',lw = 0.5,alpha=0.5)
-		plt.plot(x, muL, color = 'black',lw = 2.0,label='mean')
-		#plt.plot(x, fvalMean, color = 'black',lw = 2.0,label='2sigFvalMean')
 
-		#plt.plot(x, muL-1.96*np.array(sigL), linestyle='-.',color = 'black',lw = 2.0,label='2sig')
-		#plt.plot(x, muL+1.96*np.array(sigL), linestyle='-.',color = 'black',lw = 2.0,label='2sig')
-		plt.fill_between(x, muL+1.96*np.array(sigL), muL-1.96*np.array(sigL), color='red', alpha=0.15,label="2 sig")
+		## plot the Neumann source GP:##################
+		#################################################
+		# fig2 = plt.figure()
+		# for sample in fvalList[0:15]:
+		# 	plt.plot(x,sample,color='black',lw = 0.5,alpha=0.5)
+		# plt.plot(x, muL, color = 'black',lw = 2.0,label='mean')
+		# #plt.plot(x, fvalMean, color = 'black',lw = 2.0,label='2sigFvalMean')
 
-		plt.title("Neumann Source GP")
-		plt.legend()
-		plt.grid()
-		plt.xlabel('x')
-		plt.ylabel(r'$\bar{U}$')
-		fig2.savefig("fGPCut.pdf", bbox_inches='tight')
-		plt.show()
+		# #plt.plot(x, muL-1.96*np.array(sigL), linestyle='-.',color = 'black',lw = 2.0,label='2sig')
+		# #plt.plot(x, muL+1.96*np.array(sigL), linestyle='-.',color = 'black',lw = 2.0,label='2sig')
+		# plt.fill_between(x, muL+1.96*np.array(sigL), muL-1.96*np.array(sigL), color='red', alpha=0.15,label="2 sig")
 
+		# plt.title("Neumann Source GP")
+		# plt.legend()
+		# plt.grid()
+		# plt.xlabel('x')
+		# plt.ylabel(r'$\bar{U}\rho \omega^2$')
+		# fig2.savefig("fGPCut.pdf", bbox_inches='tight')
+		# plt.show()
+	#########################################################################
 
 
 	def doMC(self,samples):
@@ -503,11 +598,12 @@ class solverClass:
 		#print(self.mesh.topology().dim())
 		boundary_markers = MeshFunction("size_t", self.mesh, self.mesh.topology().dim()-1	, 0)
 
+		sourceBCendCoord = self.sourceBCendCoord 
 		tol = 1e-14
 		class BoundaryX_L(SubDomain):
 			self.tol = 1E-14
 			def inside(self, x, on_boundary):
-				return on_boundary and near(x[0], 0, tol)# and (x[1] < 0.3)
+				return on_boundary and near(x[0], 0, tol) and (x[1] < sourceBCendCoord)
 
 		class BoundaryX_R(SubDomain):
 			def inside(self, x, on_boundary):
@@ -608,6 +704,13 @@ class solverClass:
 
 		self.x0 = interpolate(Expression("x[0]",degree=1),self.V)
 		self.x1 = interpolate(Expression("x[1]",degree=1),self.V)
+
+
+
+	def get_z_GP(self):
+		pass
+
+
 
 
 	def get_C_e(self,size):
@@ -1138,9 +1241,10 @@ class solverClass:
 		ax2.set_ylim(-90,64)
 		ax2.set_yticks(np.linspace(-40,40,3))
 
+		y_bc = np.linspace(0,solver.sourceBCendCoord,len(self.SourceMean)) #adjust y for the perhaps not 1.0 in length boundary source
 		ax3 = ax.twiny()
-		ax3.plot(0.3*np.array(self.SourceMean),y,color="red", label="Source")
-		ax3.fill_betweenx(y, 0.3*((np.array(self.SourceMean) + 1.96*np.array(self.sourceVariance))),
+		ax3.plot(0.3*np.array(self.SourceMean),y_bc,color="red", label="Source")
+		ax3.fill_betweenx(y_bc, 0.3*((np.array(self.SourceMean) + 1.96*np.array(self.sourceVariance))),
 			0.3*((np.array(self.SourceMean) - 1.96*np.array(self.sourceVariance))), color='red', alpha=0.15)
 		ax3.set_xlabel(r"$\rho \omega^2 \bar{U}$",color='red', loc="left")
 		ax3.tick_params(axis='x',labelcolor='red')
@@ -1308,9 +1412,10 @@ class solverClass:
 		ax2.set_ylim(-90,64)
 		ax2.set_yticks(np.linspace(-40,40,3))
 
+		y_bc = np.linspace(0,solver.sourceBCendCoord,len(self.SourceMean)) #adjust y for the perhaps not 1.0 in length boundary source
 		ax3 = ax.twiny()
-		ax3.plot(0.3*np.array(self.SourceMean),y,color="red", label="Source")
-		ax3.fill_betweenx(y, 0.3*((np.array(self.SourceMean) + 1.96*np.array(self.sourceVariance))),
+		ax3.plot(0.3*np.array(self.SourceMean),y_bc,color="red", label="Source")
+		ax3.fill_betweenx(y_bc, 0.3*((np.array(self.SourceMean) + 1.96*np.array(self.sourceVariance))),
 			0.3*((np.array(self.SourceMean) - 1.96*np.array(self.sourceVariance))), color='red', alpha=0.15)
 		ax3.set_xlabel(r"$\rho \omega^2 \bar{U}$",color='red', loc="left")
 		ax3.tick_params(axis='x',labelcolor='red')
@@ -1373,12 +1478,12 @@ class solverClass:
 				ax3d2.view_init(elev=10., azim=i)
 			#
 			#plt.show()
-		plot3dMSE(1,'pdf')
-		frames = []
-		for i in range(0,360,1):
-			frame = plot3dMSE(i,'gif')
-			frames.append(frame)
-		gif.save(frames, '3DMSE_conflict.gif', duration=3.5, unit="s", between="startend")
+		# plot3dMSE(1,'pdf')
+		# frames = []
+		# for i in range(0,360,1):
+		# 	frame = plot3dMSE(i,'gif')
+		# 	frames.append(frame)
+		# gif.save(frames, '3DMSE_conflict.gif', duration=3.5, unit="s", between="startend")
 
 
 		print("MSE's:")
@@ -1465,7 +1570,7 @@ mean = np.zeros((solver.a+1,solver.b+1))
 #X,Y,Z = solver.x0.vector().get_local(), solver.x1.vector().get_local(), solver.U_mean.get_local()
 X,Y,Z = solver.x0.vector().get_local(), solver.x1.vector().get_local(), solver.u_sample.vector().get_local()
 pertub = solver.addPertubation()
-X,Y,Z = solver.x0.vector().get_local(), solver.x1.vector().get_local(), (solver.u_sample.vector().get_local() * pertub.vector().get_local()) #WITH PERTUBATION
+#X,Y,Z = solver.x0.vector().get_local(), solver.x1.vector().get_local(), (solver.u_sample.vector().get_local() * pertub.vector().get_local()) #WITH PERTUBATION
 for i in range((solver.a+1)*(solver.b+1)):
 	a,b = int(solver.a*X[i]),int(solver.b*Y[i])
 	mean[a,b] = Z[i]
@@ -1530,11 +1635,11 @@ for r in range(rows):
 			#solver.y_points.append([a_list[newPoint[0]]/solver.a,b_list[newPoint[1]]/solver.b])
 			#solver.y_values.append(mean[a_list[newPoint[0]],b_list[newPoint[1]]])
 			solver.y_points.append([a_list[i1]/solver.a,b_list[i2]/solver.b])
-			solver.y_values.append(mean[a_list[i1],b_list[i2]]*2.5)
+			solver.y_values.append(mean[a_list[i1],b_list[i2]]*0.75)
 		except:
 			print("no varField available!")
 			solver.y_points.append([a_list[i1]/solver.a,b_list[i2]/solver.b])
-			solver.y_values.append(mean[a_list[i1],b_list[i2]]*2.5)
+			solver.y_values.append(mean[a_list[i1],b_list[i2]]*0.75)
 		#solver.y_points.append([a_list[i1]/solver.a,b_list[i2]/solver.b])
 		#solver.y_values.append(mean[a_list[i1],b_list[i2]]*0.75)
 		
@@ -1543,7 +1648,7 @@ for r in range(rows):
 	#solver.y_values.append(0)
 
 	#for i in np.linspace(1,300,columns,dtype=int):
-	for i in [1,100,1000,40,10000][0:columns]:
+	for i in [10,100,1000,40,10000][0:columns]:
 		#add noise:
 		y_values_list = []
 		solver.no = i
@@ -1641,7 +1746,16 @@ plt.close(figMean)
 
 solver.plotSolution()
 solver.plotSolutionPosterior()
-solver.sampleDiscrepancy()
+#solver.sampleDiscrepancy()
+
+# frames = []
+# for i in np.linspace(0.05,1.0,100):
+# 	frame = solver.plotSourceBCvariants(i)
+# 	frames.append(frame)
+# #frames = frames + frames.reverse()[1:]
+# gif.save(frames, 'SourceVar.gif', duration=5, unit="s", between="startend")
+# solver.plotSourceBCvariants(1)
+solver.plotFreqHelper()
 
 ## stuff for the interactive jupyter notebooks:
 

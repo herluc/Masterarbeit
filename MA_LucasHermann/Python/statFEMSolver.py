@@ -11,6 +11,7 @@ import numpy as np
 import scipy
 from scipy.stats import norm
 from scipy.linalg import cho_factor, cho_solve
+from scipy.signal import convolve2d
 np.random.seed(76)
 #
 #from numba import jit
@@ -21,7 +22,7 @@ class solverClass:
 		self.dom_a = 0.0 #domain boundaries
 		self.dom_b = 1.0
 
-		self.ne	= 30 #number of elements
+		self.ne	= 36 #number of elements
 		self.nMC = nMC #number of Monte Carlo points
 
 		self.mesh = IntervalMesh(self.ne,self.dom_a,self.dom_b) #define mesh
@@ -70,6 +71,20 @@ class solverClass:
 			mean = self.mean , cov=cov,
 			size=1)
 		return discrete_f
+
+
+	def sampleGreensFun(self,xa,xb):
+		#samples greens function for the poisson equation.
+		G = np.zeros((len(xa),len(xb)))
+		L = abs(self.dom_b - self.dom_a)
+		for i,x in enumerate(xa):
+			for j,xp in enumerate(xb):
+				if x>xp:
+					G[i,j] = xp*(1-x/L)
+				elif x<=xp:
+					G[i,j] = x*(1-xp/L)
+
+		self.G = G
 
 
 
@@ -139,6 +154,7 @@ class solverClass:
 		self.u = Function(self.V)
 		U = self.u.vector()
 		solve(A, U, b)
+		self.A = A
 		return U, A
 
 
@@ -325,6 +341,56 @@ class solverClass:
 
 
 
+	def get_z_GP(self,x_points,ny):
+		x_values_arr = np.transpose(self.coordinates)[0]
+		x_values = self.coordinates
+		#x_values = np.expand_dims(np.array(x_values),1)
+		self.z_mean = 0.2*np.sin(np.pi*x_values_arr) + 0.02*np.sin(7*np.pi*x_values_arr)
+		c_z = self.exponentiated_quadratic(x_values,
+			 x_values, lf=0.5, sigf=0.0225) #acc to cirak paper. sqrt(0.0225)=0.15
+		sigf=0.15
+		lf=0.5
+		sqdist = scipy.spatial.distance.cdist(x_values, x_values, 'sqeuclidean')
+		c_z=0.0225* np.exp(-2 * sqdist)
+		self.c_z = c_z
+		C_z = np.zeros((self.ne+1,self.ne+1))
+		for i in range(self.ne+1):
+			for j in range(self.ne+1):
+				C_z[i,j] = self.integratedTestF[i] * c_z[i,j] * self.integratedTestF[j]
+		ident = np.identity(len(self.coordinates))
+		A=self.A
+		#self.bc.apply(A)
+		A = A.array()
+		A_inv = np.linalg.inv(A)  ##needs to be choleskied!
+		#A_inv = np.linalg.solve(A,ident)
+		C_z = np.dot( np.dot(A_inv,C_z), np.transpose(A_inv))
+		self.C_z = C_z
+
+
+		self.zGP = np.random.multivariate_normal(
+			mean = self.z_mean, cov=self.C_z + ident*2.5e-5,
+			size=ny)
+
+		C_zDiag = np.sqrt(np.diagonal(self.C_z))
+		z=plt.figure()
+		plt.plot(x_values, self.z_mean, linestyle='-', color = 'black',lw = 1.0,label='mean')
+		#plt.plot(solver.coordinates, np.transpose(U_mean_verbose), linestyle='-.', color = 'red',lw = 1.0)
+		#plt.plot(x_values_arr, np.transpose(self.zGP), linestyle='-',lw = 0.4)
+		plt.fill_between(x_values_arr, self.z_mean+1.96*C_zDiag, self.z_mean-1.96*C_zDiag, color='blue', alpha=0.15,label=r'$2\sigma$')
+		#plt.plot(x_values, self.z_mean-1.96*C_zDiag, linestyle='-.',color = 'green',lw = 1.0,label='sig')
+		#plt.plot(x_values, self.z_mean+1.96*C_zDiag, linestyle='-.',color = 'green',lw = 1.0)
+		plt.ylabel("$z(x)$")
+		plt.xlabel("$x$")
+		plt.grid()
+		plt.legend()
+		z.savefig("z_sampled.pdf", bbox_inches='tight')
+		#f.savefig("sqex_f_sampled.pdf", bbox_inches='tight')
+		plt.show()
+
+
+
+
+
 
 	def getP(self,y_points):
 		y_points = y_points#[0.4,0.933333]
@@ -499,9 +565,9 @@ class solverClass:
 		y_values = np.array(y_values)
 		logpostList = []
 
-		ld_s = np.log(np.logspace(-5,0.0001,5000,base=np.exp(1)))
-		sigd_s = np.log(np.logspace(-8,0.8,5000,base=np.exp(1)))
-		rho_s = np.log(np.logspace(-0.8,1,5000,base=np.exp(1)))
+		ld_s = np.log(np.logspace(-5,0.0001,9000,base=np.exp(1)))
+		sigd_s = np.log(np.logspace(-8,0.8,9000,base=np.exp(1)))
+		rho_s = np.log(np.logspace(-0.8,1,9000,base=np.exp(1)))
 		#print("l,sig,rho:")
 		#print(ld_s)
 		#print(sigd_s)
@@ -532,6 +598,9 @@ class solverClass:
 		print(smallest)
 		print("rho,sig,l")
 		print(np.exp(rho_s[smallest]),np.exp(sigd_s[smallest]),np.exp(ld_s[smallest]))
+		with open("data1D.txt", "a") as myfile:
+			myfile.write('rho,sig,l: '+str(np.exp(rho_s[smallest]))+','+str(np.exp(sigd_s[smallest]))+','+str(np.exp(ld_s[smallest]))+'\n')
+
 		rho_est = rho_s[smallest]
 		sigd_est = sigd_s[smallest]
 		ld_est = ld_s[smallest]
@@ -792,13 +861,35 @@ y_points = [solver.coordinates.tolist()[i] for i in idx][1:-1]
 #y_values = solver.create_fake_data(y_points,y_values)
 ###### multiple observations
 y_values_list = []
-solver.no = 3
+solver.no = 1
 for i in range(solver.no):
 	noise = np.random.normal(0,2.5e-3,len(y_values))
 	y_values_list.append(y_values + noise)
 solver.yVectors = y_values_list
 
 ############################
+
+
+#with observations GP z(x)
+solver.no=100
+n_sens = 30
+solver.get_z_GP([0.1,0.4,0.6],solver.no)
+idx = np.round(np.linspace(2, len(solver.zGP[0])-3, n_sens)).astype(int)
+#idx=[18]
+y_points = [solver.coordinates.tolist()[i] for i in idx]#[1:-1]
+
+y_values_list = []
+for i,sample in enumerate(solver.zGP):
+	y_values_prior = [sample[i] for i in idx]#[1:-1]
+	#noise = np.random.normal(0,2.5e-2,len(y_values_prior))
+	y_values_list.append(y_values_prior)
+solver.yVectors = y_values_list
+with open("data1D.txt", "w") as myfile:
+	myfile.write('n:sens: '+str(n_sens)+', n_o: '+str(solver.no)+'\n')
+
+###########################
+
+
 
 
 solver.y_points = y_points
@@ -835,7 +926,7 @@ plt.fill_between(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)+1.9
 plt.plot(solver.coordinates, np.transpose(u_mean_y), linestyle='-', color = 'black',lw = 1.8,label='Posterior mean')
 #plt.scatter(solver.y_points, solver.y_values,label='observations')
 for obs in y_values_list:
-	plt.scatter(solver.y_points, obs,s=12, color = 'blue',alpha=0.7)
+	plt.scatter(solver.y_points, obs,s=5, color = 'red',alpha=0.6)
 
 #plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)-1.96*np.array(sigL), linestyle='-',color = 'red',lw = 1.0,label='2sig MC')
 #plt.plot(np.transpose(solver.coordinates)[0], np.array(muL)+1.96*np.array(sigL), linestyle='-',color = 'red',lw = 1.0)
@@ -852,6 +943,7 @@ plt.ylabel("p")
 f.savefig("Result.pdf", bbox_inches='tight')
 #solver.estimateHyperpar(y_points, y_values)
 solver.samplef()
+#solver.get_z_GP([0.1,0.4,0.6],30)
 
 #plt.pause(0.01) # Pause for interval seconds.
 #input("hit[enter] to end.")

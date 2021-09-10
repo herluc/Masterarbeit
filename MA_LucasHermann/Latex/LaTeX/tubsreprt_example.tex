@@ -176,14 +176,13 @@ To increase the accuracy of an FEM model, statFEM is is used in a vibroacoustics
 %\textcolor{tubsSecondary}{Dies ist ein Text in \texttt{tubsSecondary}.}
 %\textcolor{tubsViolet}{Dies ist ein Text in \texttt{tubsViolet}.}
 %\textcolor{tubsGreenDark}{Dies ist ein Text in \texttt{tubsGreenDark}.}\bigskip
-
-
-A model is only able to describe reality up to a certain degree. It usually consists of a set of equations and corresponding parameters which can be tweaked in order to make it behave as closely to the desired functionality as possible or to match data from measurements. Uncertainty in the parameters can be propagated to the solution, leading to a probability density for the solution which assigns probabilities to different possible outcomes. However, as this is a valid approach, as soon as the real problem behaves in a more complex manner than the model is able to describe, the orocedure is reaching its limits. The headroom given by the probability densities in the parameters just isn't enough to tweak them in a way that makes the model describe reality accurately. There is now a gap between model and reality which has to be filled.
+A core discipline in engineering is numerical simulation. It is needed in basic research and in the design process of any product to reduce the amount of practical experiments which are costly and time-consuming. In a numerical simulation, the relevant processes of reality are abstracted by a mathematical model, which a computer is able to solve. \cite{Weisberg2015} However, a model is only able to describe reality up to a certain degree. It usually consists of a set of equations and corresponding parameters which can be tweaked in order to make it behave as closely to the desired functionality as possible or to match data from measurements. Uncertainty in the parameters can be propagated to the solution, leading to a probability density for the solution which assigns probabilities to different possible outcomes. However, as this is a valid approach, as soon as the real problem behaves in a more complex manner than the model is able to describe, the procedure is reaching its limits. The real behavior of the problem is not considered in the solution space of the model anymore.%The headroom given by the probability densities in the parameters just isn't enough to tweak them in a way that makes the model describe reality accurately. 
+There is now a gap between model and reality which has to be filled.
 
 A common approach to form a model in engineering is the Finite Element Method (FEM). At the base of it stands a partial differential equation (PDE), which is a model of reality itself. The PDE is simplified using so-called ansatz functions which have weights that are tweaked in order to get the most accurate picture of reality. Traditionally, the FEM is purely deterministic but, nevertheless, it is rather simple to form a Bayesian approach to FEM, in which the parameters and the solution are not scalars but random variables which have an underlying probability distribution. 
-Recently, a method, called statFEM, was developed, which also allows for bridging the gap between a Bayesian FEM model and reality. This is in principle done by assuming the discrepancy between model and reality to behave in terms of a Gaussian Process (GP). A GP can be, unlike a probability distribution over a parameter, considered as a probability distribution over a whole function. Since there are no parameters left in the FEM model to tweak, this is the only way to go: The most suitable function to fill the model discrepancy gap has to be found without building another parameterized model. The GP is based on measurement data: By comparing the FEM model with observed data and then updating it in a Bayesian manner, a distribution over functions can be found, which makes the now updated FEM model behave more closely to reality.
+Recently, a method, called statFEM, was developed \cite{girolami2021}, which also allows for bridging the gap between a Bayesian FEM model and reality. This is in principle done by assuming the discrepancy between model and reality to behave in terms of a Gaussian Process (GP). A GP can be, unlike a probability distribution over a parameter, considered as a probability distribution over a whole function. Since there are no parameters left in the FEM model to tweak, this is the only way to go: The most suitable function to fill the model discrepancy gap has to be found without building another parameterized model. The GP is based on measurement data: By comparing the FEM model with observed data and then updating it in a Bayesian manner, a distribution over functions can be found, which makes the now updated FEM model behave more closely to reality.
 
-In this thesis, statFEM is applied to the field of vibroacoustics. The physical problem under consideration is an acoustical cavity which is excited by a plate at its boundary. The behavior of the fluid inside the cavity is described by the Helmholtz equation and depends strongly on the chosen boundary conditions. Obviously, there is a lot of uncertainty involved in the modeling of the boundary conditions: It is not possible to completely describe the behavior of the vibrating plate or the partially absorbing walls of the cavity. Nevertheless, it is possible to measure the sound pressure inside the cavity: Assuming the sound field to behave in terms of a GP makes it possible to form a more accurate posterior solution using the measured data and the prior in form of the potentially under-complex or simply wrong FEM solution.
+In this thesis, a statFEM approach for the field of vibroacoustics is formulated. The physical problem under consideration is an acoustical cavity which is excited by a plate at its boundary. The behavior of the fluid inside the cavity is described by the Helmholtz equation and depends strongly on the chosen boundary conditions. Obviously, there is a lot of uncertainty involved in the modeling of the boundary conditions: It is not possible to completely describe the behavior of the vibrating plate or the partially absorbing walls of the cavity. Nevertheless, it is possible to measure the sound pressure inside the cavity: Assuming the sound field to behave in terms of a GP makes it possible to form a posterior solution with reduced model error and uncertainty using the measured data and the prior in form of the FEM solution. The statFEM approach is therefore, in order to reduce uncertainty, able to fuse an FEM simulation with measured data and also to give an approximation of the mentioned gap between model and reality.
 
 In the first chapters, the theory behind GPs, the FEM and statFEM is explained thoroughly. Then, the methods are explained and validated using the textbook-example of the Poisson equation before they are applied to the more complex vibroacoustics problem. The behavior of the new model is explained and discussed in detail and information on possible use cases and limitations are given.
 
@@ -193,6 +192,9 @@ This thesis is based on two pillars: Solving the governing equation for acoustic
 
 An acoustic field is represented in time domain by the wave equation. It returns the acoustical pressure at a point in space $x$ for a time variable $t$.
 The Helmholtz equation describes the wave equation in a time-independent manner, i.e. in frequency domain. It has a dependency on the frequency, so the goal is to solve the Helmholtz equation for a range of frequencies in order to obtain a frequency response plot which gives insight on the modal behavior of the system.
+
+\paragraph{Literature Review}
+\cite{langtangen2019} and \cite{larson2013} give a thorough explanation about the theoretical basis of the Finite Element Method. \cite{langtangen2016} gives details about the implementation of the FEM in Python using FEniCS. On a more abstract level, \cite{Lanczos1986} gives insight on variational formulations of PDEs which are essential for the FEM. For an explanation of FEM with a focus on acoustics, \cite{atalla2015} provides information and examples tailored to acoustics. \cite{moser2005} is a comprehensive standard reference for acoustics. 
 
 \section{Wave Equation and Helmholtz Equation}
 In a typical vibroacoustic problem, for example an interior structural acoustic coupling problem \cite{atalla2015}, there are usually two coupled domains: At first, there is some kind of solid medium which emits sound. The movement of that solid can be described within the field of elastodynamics using for instance (a) Bernoulli or Timoshenko beam theory for 1D beam-like structures, (b) Kirchhoff or Reissner-Mindlin plate theory for 2D plate-like structures. The focus of this thesis is another: As soon as the sound is emitted from the solid, the wave equation is used to describe the motions of sound waves through an acoustic medium such as air. 
@@ -656,7 +658,10 @@ Solving the system for a range of frequencies and averaging the absolute pressur
 
 
 \chapter{Gaussian Processes and the Statistical Finite Element Method}
-In this chapter, an introduction to Gaussian Processes and, building on it, statFEM is given.
+In this chapter, an introduction to Gaussian Processes and, building on it, statFEM is given. 
+
+\paragraph{Literature Review} Regarding Gaussian Processes and the underlying probability theory, \cite{murphy2012} is a comprehensive and modern reference to get a good overview of the subject. It is an especially good choice to read for learning about probability theory and Bayesian Inference. The subject of kernels is described in much detail, also because it is an important building block in the big field of Machine Learning and not only GPs. For a thorough explanation of GPs themselves, \cite{rasmussen2006} is the best choice and the standard reference on the subject. statFEM was first introduced in \cite{girolami2021}. \cite{Duffin2020} modifies statFEM to work in a time-dependent context and provides a detailed mathematical derivation of the method. A first practical application is documented in \cite{Febrianto2021}: Sensor data from a railway bridge is fused with an FEM model of the bridge. Besides GPs, statFEM builds up upon the statistical generating model derived in \cite{kennedy2001}. statFEM focuses on finding an approximation of the model error, opposed to the well-established stochastic FEM \cite{Stefanou2009} which focuses on propagating uncertainty in the PDE parameters through a discretized model. A recently developed method to improve the capabilities of the FEM as a prior in Bayesian inversion, in the context of the stochastic FEM, is presented in \cite{Abdulle2021}. 
+Another approach on approximating a posterior by providing a prior and conditioning it on measurements, hence very similar to statFEM, can be found in the area of model order reduction: Gappy POD, or Gappy proper orthogonal decomposition, first derived in \cite{Everson1995} and well explained in \cite{StevenL.Brunton2019}, is an adaptation of the well known Karhunen-Loeve transform. \cite{Rao2001} \cite{Loeve1994}
 
 \section{Basic Probability Theory}
 The statistical Finite Element Method (statFEM) is based on Gaussian Processes (GPs) and Bayesian inference. To be able to work with both, some basic understanding of probability theory is necessary.
@@ -1845,11 +1850,24 @@ Sample: Normal distribution times std dev. GP with n points is basically a multi
 
 For the observations made in a later step it is assumed that there is some measurement noise. This is modeled as an added variance $\sigma_{n}^2$ on the diagonal of the prior covariance matrix. An additional effect of this added noise is the improved numerical stability of the covariance matrix which is important for computing the Cholesky decomposition.
 
+The observations have been taken on samples of a GP $z(x) \sim \mathcal{GP}(\bar{z}(x),A^{-1}c_z(x,x')A^{-T})$ which uses the harmonic function
+\begin{equation}
+\bar{z}(x) = 0.2\sin(\pi x) + 0.02\sin(\pi x)
+\end{equation}
+as a mean and a Matern kernel with the hyperparameters $l_z=0.5$ and $\sigma_z = 0.15$ as covariance function. Figure \ref{fig:zGP} shows that the mean and therefore also the variance band is not as smooth as the prior: Amodel discrepancy error is present.
+\begin{figure}[!ht]
+\includegraphics[width=0.6\textwidth]{pics/z_GP.pdf}
+\centering
+\caption{}
+\label{fig:zGP}
+\end{figure}
+%
+
 
 \subsection{FEM Prior}
 The mean, $2\sigma$ confidence bands and realisations of the FEM prior are visible in Figure \ref{fig:FEMGP1D}. As expected, the general shape of the solutions follows the smooth behaviour of the Laplacian. The variance becomes larger the further away from the Dirichlet zero-boundary conditions.
 \begin{figure}[!ht]
-\includegraphics[width=0.75\textwidth]{pics/1DFEMprior.pdf}
+\includegraphics[width=0.65\textwidth]{pics/1DFEMprior.pdf}
 \centering
 \caption{FEM Prior for the 1D example. The mean and confidence band as well as samples drawn from the GP are shown. As the boundary conditions imply, both mean and variance are zero on the boundary of the domain.}
 \label{fig:FEMGP1D}
@@ -1859,8 +1877,9 @@ The mean, $2\sigma$ confidence bands and realisations of the FEM prior are visib
 
 
 
+
 \subsection{Posterior}
-For the posterior, at first one single sensor location was introduced at whcih one single measurement has been taken. The point has been picked arbitrarily and a measurement noise has been introduced. Already it is visible that the general shape of the FEM prior remains but itis scaled to the data. Also, the variance becomes smaller as there now is evidence on the true solution.
+For the posterior, at first one single sensor location was introduced at which one single measurement has been taken. The point has been picked arbitrarily and a measurement noise has been introduced. Already it is visible that the general shape of the FEM prior remains but itis scaled to the data. Also, the variance becomes smaller as there now is evidence on the true solution.
 %
 \begin{figure}[!ht]
 
@@ -1868,24 +1887,31 @@ For the posterior, at first one single sensor location was introduced at whcih o
 
 	\begin{subfigure}[t]{.5\textwidth}
 	\centering
-	\includegraphics[width=1\linewidth]{pics/1DPost_1P1O.pdf}
+	\includegraphics[width=1\linewidth]{../../Python/Results/1D/Model_Error/1o_1s/Result.pdf}
 	\caption{One observation at one sensor location. Shape of FEM Prior remains but scaling and variance differ.}	
 	\label{fig:OneSensor}
 	\end{subfigure}%
 	%\hfill
 	\begin{subfigure}[t]{.5\textwidth}
 	\centering
-	\includegraphics[width=1\linewidth]{pics/1DPost_4P1O.pdf}
-	\caption{Per observation point 1 individual observation was taken with a standard deviation of $2.5e-3$. }	
+	\includegraphics[width=1\linewidth]{../../Python/Results/1D/Model_Error/1o_4s/Result.pdf}
+	\caption{Per observation point 1 individual observation was taken with a standard deviation of $2.5e-5$. }	
 	\label{fig:4p10}
 	\end{subfigure}
 	
 	\begin{subfigure}[t]{.5\textwidth}
 	\centering
-	\includegraphics[width=1\linewidth]{pics/1DPost_4P20O.pdf}
-	\caption{Per observation point 20 individual observations were taken with a standard deviation of $2.5e-3$. }	
+	\includegraphics[width=1\linewidth]{../../Python/Results/1D/Model_Error/20o_4s/Result.pdf}
+	\caption{Per observation point 20 individual observations were taken with a standard deviation of $2.5e-5$. }	
 	\label{fig:DataCloseToCI2}
-	\end{subfigure}%#	
+	\end{subfigure}%
+	%\hfill
+	\begin{subfigure}[t]{.5\textwidth}
+	\centering
+	\includegraphics[width=1\linewidth]{../../Python/Results/1D/Model_Error/100o_30s/Result.pdf}
+	\caption{Per observation point 100 individual observations were taken with a standard deviation of $2.5e-5$. }	
+	\label{fig:DataCloseToCI2}
+	\end{subfigure}
 
 \caption{The posterior for different measurement scenarios. The more sensor locations are introduced and the more observations are taken, the smaller the variance gets.}	
 	
@@ -1951,6 +1977,43 @@ To generate a posterior, the prior needs to be conditioned on measured data. In 
 That ground truth can be created in different ways. Here, it is based on the FEM prior: The prior is modified using some predifined parameters which are then to be estimated by statFEM. Scaling the prior GP by a certain factor $\rho$ leads to a new GP without any model error. Superimposing the prior with a function or another GP leads to a new GP with some model error.
 
 From the generated ground truth, observations have to be taken. Here, two methods have been applied to do so: The first one is to choose the sensor locations randomly in the domain. Another method is an "active learning" approach: The first sensor location is chosen randomly. After calculating the posterior GP, the next sensor location is placed at the point of the highest variance. This should lead to a quicker convergence to a low level of variance.
+
+
+\paragraph{FEM setup}
+Table \ref{tab:FEMSetup} shows the parameters used to setup the FEM mesh.  
+\begin{table}[]
+\centering
+\caption{The parameters used to setup the FEM mesh.}
+\label{tab:FEMSetup}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$n_a$ & $n_b$ & basis function type & basis function degree & domain               \\ \midrule
+24    & 24    & Lagrange            & 1                     & square, $1\times 1$m \\ \bottomrule
+\end{tabular}
+\end{table}
+The material parameters are defined in Table \ref{tab:MatSetup}.
+\begin{table}[]
+\centering
+\caption{The material and frequency constants in the PDE have been set to these values. The frequency was varied in one chapter but kept constant in most parts of the thesis.}
+\label{tab:MatSetup}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+$\rho_0${[}kg/m**3{]} & $c${[}m/s{]} & $f${[}Hz{]} \\ \midrule
+1.2                   & 340          & 500         \\ \bottomrule
+\end{tabular}
+\end{table}
+The numbers of elements in each direction $n_a$ and $n_b$ have been chosen to be $24\times 24$ because the used workstation was only able to compute the problem up to this amount of elements in an acceptable time. As a thumb rule, 6 nodes per wave length $\lambda$ are usually used to be able to properly resolve the solution. \cite{Marburga} With an edge length of the domain of $1m$, 24 nodes can resolve 4 wave lengths of $0.25m$ each. Therefore, for the maximum accurately resolved frequency there holds 
+\begin{equation}
+f = \frac{c}{\lambda} = \frac{340m/s}{0.25m} = 1360Hz \;,
+\end{equation}
+hence all examples in this thesis are going to be solved for frequencies less than $1360Hz$.
+The final mesh can be seen in Figure \ref{fig:meshFEM}.
+\begin{figure}[!ht]
+\includegraphics[width=0.5\textwidth]{pics/mesh.pdf}
+\centering
+\caption{The chosen mesh consists of 24 elements per dimension. Linear basis functions are chosen whcih results in three nodes per element.}
+\label{fig:meshFEM}
+\end{figure}
 
 
 \paragraph{Experimental Design}
@@ -2099,7 +2162,7 @@ Figure \ref{fig:75proc_no_d3d} shows ten sampled points in space and the FEM pri
 \begin{figure}[!ht]
 \includegraphics[width=1\textwidth]{../../Python/Results/2D/75procent_no_d/3dMSE.pdf}
 \centering
-\caption{See the \href{https://github.com/herluc/herluc.github.io/blob/main/3DMSE.gif}{Animation} to see the differences better. With observations on a 75\% scaling of the FEM prior and no other introduced model error, the posterior is able to match the data with an MSE of $0.0$. }
+\caption{See the \href{https://github.com/herluc/Masterarbeit/blob/master/MA_LucasHermann/Python/Results/2D/75procent_no_d/3DMSE.gif}{Animation} to see the differences better. With observations on a 75\% scaling of the FEM prior and no other introduced model error, the posterior is able to match the data with an MSE of $0.0$. }
 \label{fig:75proc_no_d3d}
 \end{figure}
 
@@ -2169,9 +2232,30 @@ As already shown for the 1D example, as soon as data is observed far outside the
 \begin{figure}[!ht]
 \includegraphics[width=1\textwidth]{../../Python/Results/2D/prior_data_conflict/3dMSE.pdf}
 \centering
-\caption{See the \href{https://github.com/herluc/herluc.github.io/blob/main/3DMSE.gif}{Animation} to see the differences better. With observations on a 75\% scaling of the FEM prior and no other introduced model error, the posterior is able to match the data with an MSE of $0.0$. }
+\caption{See the \href{https://github.com/herluc/Masterarbeit/blob/master/MA_LucasHermann/Python/Results/2D/prior_data_conflict/3DMSE_conflict.gif}{Animation} to see the differences better. If data is observed far outside the confidence intervals of the prior, the prosedure is not able to match the posterior perfectly to the data. More sensor locations and more observations are necessary to improve the result.}
 \label{fig:3dPriorDataConf}
 \end{figure}
+%
+Figure \ref{fig:PriorDataConfPOST} shows the FEM prior compared to the posterior. Obviously, a high scaling factor was found, but also the variance didn't get as low as for other examples in which there was no prior-data conflict. This is in agreement with the results of the 1D example and therefore expected.
+%
+\begin{figure}[!ht]
+\includegraphics[width=.8\textwidth]{../../Python/Results/2D/prior_data_conflict/SolutionCustomPosterior.pdf}
+\centering
+\caption{}
+\label{fig:PriorDataConfPOST}
+\end{figure}
+The approximated hyperparameters can be found in Table \ref{tab:PriorDataConf}.
+%
+\begin{table}[!ht]
+\centering
+\caption{For the prior-data conflict, a comparatively high scaling factor $\rho$ is found. The standard deviation hyperparameter for the model inadequacy term $d$ is also higher than in other examples.}
+\label{tab:PriorDataConf}
+\begin{tabular}{@{}llcc@{}}
+\toprule
+                                                                & $\rho$ & $\sigma_d$ & $l_d$ \\ \midrule
+\begin{tabular}[c]{@{}l@{}}$n_p = 20$,\\ $n_o = 1$\end{tabular} & 1.405  & 17.505     & 0.167 \\ \bottomrule
+\end{tabular}
+\end{table}
 
 
 
@@ -2194,7 +2278,16 @@ The variance field, on the other hand, does not change significantly, see Figure
 With the FEM prior, data can now be introduced to form the posterior.
 
 
-\chapter{Conclusion and Discussion}
+\chapter{Discussion and Conclusion}
+After a review of the used method and its theoretical foundation, i.e. first of all Gaussian Process regression, a statFEM approach for vibroacoustics was developed and numerical experiments were carried out to prove that the software which was programmed for this thesis works. 
+
+At first, the simple text-book example of solving the Poisson equation in a 1D domain was treated. The same parameters as in \cite{girolami2021} were chosen and its results could be replicated: The source term was modeled as a GP and through a first Bayesian inference step the FEM prior GP could be formed. A second Bayesian inference step then lead to the posterior GP: The prior was conditioned on artificial measurement data. as in the reference, observing more data on more sensor locations lead to a more accurate representation of the data as well as to a smaller variance. Additionally, the limits of the method were examined by choosing measurement data which has either been observed only on a part of the domain or far outside the prior confidence bands. For the former, the method was able to form a plausible posterior with small variance in the region with data and larger variance in the other parts of the domain. The latter demonstrated a prior-data conflict: An accurate representation of the data would by very costly from a numerical point of view.
+
+The same experiments have been conducted for a more complex, 2D Helmholtz equation example. The numerical setup is a first approximation of an interior structural acoustic coupling problem. In such a problem, there is some kind of two-dimensional structure, like a plate, which emits sound into a three-dimensional cavity. Without loss of generality, that problem was reduced to a 2D problem in this thesis which basically resembles a cross sectional view of the cavity and the plate. Hence, there is a 1D sound emitter on the boundary of a 2D domain in which the sound is radiated and reflected. The 1D emitter was completely modeled as a GP with a Matern kernel function:  Beam- and/or plate-theory wasn't used here.  As in the 1D example, an FEM prior was formed using the source GP which was, contrary to the 1D example, defined in a boundary condition. It was possible to condition the prior on artificial measurement data: The correct scaling factors were approximated and artificial model error could be resolved. Again, a prior-data conflict could be provoked, which was expected. 
+
+Due to the promising results, statFEM appears to be a useful method to incorporate sound pressure measurements into a given FEM analysis of a vibroacoustic problem. However, further research should be conducted: A more realistic source GP has to be found. Dirichlet kernel functions appear promising because they are derived using a fourier expansion which makes them inherently based on harmonic functions, by which the mode shapes of vibrating plates are usually modeled. Also, it could be possible to model a complete fluid/structure coupling problem in which the material or geometrical parameters of, for instance, a radiating plate can be modeled as a GP. Another very important step towards a more realistic model is to introduce impedance boundary conditions. Those, or respectively their parameters, should also be modeled as GPs. 
+
+statFEM for vibroacoustics could be useful for current research: Lately, universities conduct research on new kinds of airplanes. This involves big and complex FEM models which are often reduced to the bare minimum of information. That model-to-reality mismatch could be reduced by taking a rather small amount of measurements in a real environment to condition the FEM model on. 
 
 
 

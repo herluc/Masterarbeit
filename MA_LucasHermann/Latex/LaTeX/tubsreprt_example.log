@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.7)  7 SEP 2021 12:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.7)  10 SEP 2021 21:37
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -3312,6 +3312,12 @@ LaTeX Warning: Unused global option(s):
 LaTeX Warning: Label `fig:Matern1_2' multiply defined.
 
 
+LaTeX Warning: Label `fig:DataCloseToCI2' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:DataCloseToCI2' multiply defined.
+
+
 LaTeX Warning: Label `fig:OneSensor' multiply defined.
 
 )
@@ -3516,7 +3522,7 @@ LaTeX Font Info:    Try loading font information for LY1+txtt on input line 139
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ly1txtt.fd
 File: tytxtt.fd 2000/12/15 v3.1
 )
-<./Deckblatt/2099_StA_Name_Deckblatt.pdf, id=139, 597.50829pt x 845.0471pt>
+<./Deckblatt/2099_StA_Name_Deckblatt.pdf, id=143, 597.50829pt x 845.0471pt>
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf  used on input
@@ -3527,7 +3533,7 @@ File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf  used on input
  line 143.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-<./Deckblatt/2099_StA_Name_Deckblatt.pdf, id=142, page=1, 597.50829pt x 845.047
+<./Deckblatt/2099_StA_Name_Deckblatt.pdf, id=146, page=1, 597.50829pt x 845.047
 1pt>
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf, page 1>
@@ -3640,30 +3646,30 @@ chapter 2.
 LaTeX Font Info:    Font shape `LY1/NexusProSans/bx/n' in size <18> not availab
 le
 (Font)              Font shape `LY1/NexusProSans/b/n' tried instead on input li
-ne 197.
+ne 199.
 LaTeX Font Info:    Font shape `LY1/NexusProSans-lnum/bx/n' in size <18> not av
 ailable
 (Font)              Font shape `LY1/NexusProSans-lnum/b/n' tried instead on inp
-ut line 197.
+ut line 199.
 [6
 
 
 ] [7]
-Overfull \hbox (7.40388pt too wide) in paragraph at lines 290--292
+Overfull \hbox (7.40388pt too wide) in paragraph at lines 292--294
 \LY1/NexusProSans/m/n/10 with $\OML/zplm/m/it/10 ^^L$ \LY1/NexusProSans/m/n/10 
 the spe-cific nor-mal-ized acous-tic ad-mit-tance. The Robin bound-ary con-di-t
 ion is also called impedance
  []
 
-<pics/BCsExample.pdf, id=273, 121.37044pt x 116.0345pt>
+<pics/BCsExample.pdf, id=292, 121.37044pt x 116.0345pt>
 File: pics/BCsExample.pdf Graphic file (type pdf)
 <use pics/BCsExample.pdf>
-Package pdftex.def Info: pics/BCsExample.pdf  used on input line 299.
+Package pdftex.def Info: pics/BCsExample.pdf  used on input line 301.
 (pdftex.def)             Requested size: 167.29968pt x 159.9578pt.
-<pics/BCsThesis1.pdf, id=274, 123.52951pt x 116.0345pt>
+<pics/BCsThesis1.pdf, id=293, 123.52951pt x 116.0345pt>
 File: pics/BCsThesis1.pdf Graphic file (type pdf)
 <use pics/BCsThesis1.pdf>
-Package pdftex.def Info: pics/BCsThesis1.pdf  used on input line 308.
+Package pdftex.def Info: pics/BCsThesis1.pdf  used on input line 310.
 (pdftex.def)             Requested size: 167.29968pt x 157.16565pt.
 \openout5 = `tubsreprt_example.pyg'.
 
@@ -3688,22 +3694,22 @@ C0D9EE67FD8EB5.pygtex) [9 <./pics/BCsExample.pdf> <./pics/BCsThesis1.pdf>]
 LaTeX Font Info:    Font shape `LY1/NexusProSans/bx/n' in size <14> not availab
 le
 (Font)              Font shape `LY1/NexusProSans/b/n' tried instead on input li
-ne 368.
+ne 370.
 LaTeX Font Info:    Font shape `LY1/NexusProSans-lnum/bx/n' in size <14> not av
 ailable
 (Font)              Font shape `LY1/NexusProSans-lnum/b/n' tried instead on inp
-ut line 368.
+ut line 370.
 
 [10]
-<pics/1dDomain.pdf, id=343, 230.42686pt x 66.40509pt>
+<pics/1dDomain.pdf, id=360, 230.42686pt x 66.40509pt>
 File: pics/1dDomain.pdf Graphic file (type pdf)
 <use pics/1dDomain.pdf>
-Package pdftex.def Info: pics/1dDomain.pdf  used on input line 431.
+Package pdftex.def Info: pics/1dDomain.pdf  used on input line 433.
 (pdftex.def)             Requested size: 250.9559pt x 72.32233pt.
-<pics/2dDomain.pdf, id=344, 142.04065pt x 142.30766pt>
+<pics/2dDomain.pdf, id=361, 142.04065pt x 142.30766pt>
 File: pics/2dDomain.pdf Graphic file (type pdf)
 <use pics/2dDomain.pdf>
-Package pdftex.def Info: pics/2dDomain.pdf  used on input line 441.
+Package pdftex.def Info: pics/2dDomain.pdf  used on input line 443.
 (pdftex.def)             Requested size: 167.29968pt x 167.62407pt.
  [11]
 \openout5 = `tubsreprt_example.pyg'.
@@ -3732,14 +3738,14 @@ C0D9EE67FD8EB5.pygtex)
 
 (./_minted-tubsreprt_example/3E69A0F873FF73D028F4E944017BB9E34919F94676096CAB56
 C0D9EE67FD8EB5.pygtex)
-<pics/frf.pdf, id=425, 430.0065pt x 197.2971pt>
+<pics/frf.pdf, id=442, 430.0065pt x 197.2971pt>
 File: pics/frf.pdf Graphic file (type pdf)
 <use pics/frf.pdf>
-Package pdftex.def Info: pics/frf.pdf  used on input line 646.
+Package pdftex.def Info: pics/frf.pdf  used on input line 648.
 (pdftex.def)             Requested size: 376.42747pt x 172.71582pt.
  [15] [16 <./pics/frf.pdf>]
 chapter 3.
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 675
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 680
 .
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
 File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
@@ -3747,126 +3753,132 @@ File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
 
 
 ]
-<pics/Gaussians.pdf, id=466, 366.11778pt x 339.66899pt>
+<pics/Gaussians.pdf, id=504, 366.11778pt x 339.66899pt>
 File: pics/Gaussians.pdf Graphic file (type pdf)
 <use pics/Gaussians.pdf>
-Package pdftex.def Info: pics/Gaussians.pdf  used on input line 718.
+Package pdftex.def Info: pics/Gaussians.pdf  used on input line 723.
 (pdftex.def)             Requested size: 250.9559pt x 232.82733pt.
- [18 <./pics/Gaussians.pdf>] [19]
-<pics/GPvsReg.pdf, id=516, 867.24pt x 289.08pt>
+ [18] [19 <./pics/Gaussians.pdf>]
+<pics/GPvsReg.pdf, id=552, 867.24pt x 289.08pt>
 File: pics/GPvsReg.pdf Graphic file (type pdf)
 <use pics/GPvsReg.pdf>
-Package pdftex.def Info: pics/GPvsReg.pdf  used on input line 798.
+Package pdftex.def Info: pics/GPvsReg.pdf  used on input line 803.
 (pdftex.def)             Requested size: 460.08371pt x 153.36163pt.
 
-Overfull \hbox (41.82811pt too wide) in paragraph at lines 798--799
+Overfull \hbox (41.82811pt too wide) in paragraph at lines 803--804
  [] 
  []
 
-[20 <./pics/GPvsReg.pdf>]
-<pics/bivarGP.pdf, id=569, 578.16pt x 433.62pt>
+[20]
+<pics/bivarGP.pdf, id=568, 578.16pt x 433.62pt>
 File: pics/bivarGP.pdf Graphic file (type pdf)
 <use pics/bivarGP.pdf>
-Package pdftex.def Info: pics/bivarGP.pdf  used on input line 810.
+Package pdftex.def Info: pics/bivarGP.pdf  used on input line 815.
 (pdftex.def)             Requested size: 418.2556pt x 313.68826pt.
-<pics/multivarGP.pdf, id=571, 648.26193pt x 213.19649pt>
+<pics/multivarGP.pdf, id=570, 648.26193pt x 213.19649pt>
 File: pics/multivarGP.pdf Graphic file (type pdf)
 <use pics/multivarGP.pdf>
-Package pdftex.def Info: pics/multivarGP.pdf  used on input line 819.
+Package pdftex.def Info: pics/multivarGP.pdf  used on input line 824.
 (pdftex.def)             Requested size: 418.2556pt x 137.55458pt.
- [21 <./pics/bivarGP.pdf>] [22 <./pics/multivarGP.pdf>]
-<pics/Gaussians3dCut.pdf, id=649, 297.75192pt x 281.85298pt>
+ [21 <./pics/GPvsReg.pdf>]
+
+LaTeX Warning: Text page 22 contains only floats.
+
+
+Overfull \vbox (3.2557pt too high) has occurred while \output is active []
+
+
+[22 <./pics/bivarGP.pdf> <./pics/multivarGP.pdf
+
+pdfTeX warning: pdflatex (file ./pics/multivarGP.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+>]
+<pics/Gaussians3dCut.pdf, id=684, 297.75192pt x 281.85298pt>
 File: pics/Gaussians3dCut.pdf Graphic file (type pdf)
 <use pics/Gaussians3dCut.pdf>
-Package pdftex.def Info: pics/Gaussians3dCut.pdf  used on input line 867.
+Package pdftex.def Info: pics/Gaussians3dCut.pdf  used on input line 872.
 (pdftex.def)             Requested size: 250.9559pt x 237.55482pt.
- [23 <./pics/Gaussians3dCut.pdf>]
-<pics/LinearKernel.pdf, id=677, 320.8788pt x 194.4063pt>
+ [23] [24 <./pics/Gaussians3dCut.pdf>]
+<pics/LinearKernel.pdf, id=723, 320.8788pt x 194.4063pt>
 File: pics/LinearKernel.pdf Graphic file (type pdf)
 <use pics/LinearKernel.pdf>
-Package pdftex.def Info: pics/LinearKernel.pdf  used on input line 915.
+Package pdftex.def Info: pics/LinearKernel.pdf  used on input line 920.
 (pdftex.def)             Requested size: 250.9559pt x 152.04268pt.
- [24]
+
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-<pics/sqexp_f_sampled.pdf, id=693, 389.32858pt x 268.985pt>
+) [25 <./pics/LinearKernel.pdf>]
+<pics/sqexp_f_sampled.pdf, id=754, 389.32858pt x 268.985pt>
 File: pics/sqexp_f_sampled.pdf Graphic file (type pdf)
 <use pics/sqexp_f_sampled.pdf>
-Package pdftex.def Info: pics/sqexp_f_sampled.pdf  used on input line 943.
+Package pdftex.def Info: pics/sqexp_f_sampled.pdf  used on input line 948.
 (pdftex.def)             Requested size: 250.9559pt x 173.38931pt.
-<pics/PeriodicKernel.pdf, id=697, 284.02109pt x 176.33879pt>
+<pics/PeriodicKernel.pdf, id=758, 284.02109pt x 176.33879pt>
 File: pics/PeriodicKernel.pdf Graphic file (type pdf)
 <use pics/PeriodicKernel.pdf>
-Package pdftex.def Info: pics/PeriodicKernel.pdf  used on input line 959.
+Package pdftex.def Info: pics/PeriodicKernel.pdf  used on input line 964.
 (pdftex.def)             Requested size: 250.9559pt x 155.81091pt.
 
-Overfull \hbox (0.9385pt too wide) in paragraph at lines 971--972
+Overfull \hbox (1.7885pt too wide) in paragraph at lines 976--977
 [] []\LY1/NexusProSans/b/n/10.95 Matern Ker-nel Func-tions[][] \LY1/NexusProSan
-s/m/n/10 [[][][]15[][]] The squared ex-po-nen-tial ker-nel is in-finitely dif-f
+s/m/n/10 [[][][]18[][]] The squared ex-po-nen-tial ker-nel is in-finitely dif-f
 er-en-tiable, which means
  []
 
-[25 <./pics/LinearKernel.pdf>] [26 <./pics/sqexp_f_sampled.pdf> <./pics/Periodi
-cKernel.pdf
-
-pdfTeX warning: pdflatex (file ./pics/PeriodicKernel.pdf): PDF inclusion: multi
-ple pdfs with page group included in a single page
->]
-<pics/matern1_2_f_sampled.pdf, id=767, 389.32858pt x 265.86464pt>
+[26 <./pics/sqexp_f_sampled.pdf>]
+<pics/matern1_2_f_sampled.pdf, id=795, 389.32858pt x 265.86464pt>
 File: pics/matern1_2_f_sampled.pdf Graphic file (type pdf)
 <use pics/matern1_2_f_sampled.pdf>
-Package pdftex.def Info: pics/matern1_2_f_sampled.pdf  used on input line 994.
+Package pdftex.def Info: pics/matern1_2_f_sampled.pdf  used on input line 999.
 (pdftex.def)             Requested size: 250.9559pt x 171.37791pt.
-<pics/matern3_2_f_sampled.pdf, id=768, 384.32858pt x 265.86464pt>
+<pics/matern3_2_f_sampled.pdf, id=796, 384.32858pt x 265.86464pt>
 File: pics/matern3_2_f_sampled.pdf Graphic file (type pdf)
 <use pics/matern3_2_f_sampled.pdf>
-Package pdftex.def Info: pics/matern3_2_f_sampled.pdf  used on input line 1004.
+Package pdftex.def Info: pics/matern3_2_f_sampled.pdf  used on input line 1009.
 
 (pdftex.def)             Requested size: 250.9559pt x 173.60509pt.
-<pics/matern5_2_f_sampled.pdf, id=769, 384.32858pt x 265.86464pt>
+<pics/matern5_2_f_sampled.pdf, id=797, 384.32858pt x 265.86464pt>
 File: pics/matern5_2_f_sampled.pdf Graphic file (type pdf)
 <use pics/matern5_2_f_sampled.pdf>
-Package pdftex.def Info: pics/matern5_2_f_sampled.pdf  used on input line 1014.
+Package pdftex.def Info: pics/matern5_2_f_sampled.pdf  used on input line 1019.
 
 (pdftex.def)             Requested size: 250.9559pt x 173.60509pt.
-<pics/CovMats.pdf, id=770, 346.89601pt x 346.89601pt>
+<pics/CovMats.pdf, id=798, 346.89601pt x 346.89601pt>
 File: pics/CovMats.pdf Graphic file (type pdf)
 <use pics/CovMats.pdf>
-Package pdftex.def Info: pics/CovMats.pdf  used on input line 1026.
+Package pdftex.def Info: pics/CovMats.pdf  used on input line 1031.
 (pdftex.def)             Requested size: 250.9559pt x 250.9559pt.
- [27 <./pics/matern1_2_f_sampled.pdf>] [28 <./pics/matern3_2_f_sampled.pdf> <./
-pics/matern5_2_f_sampled.pdf
+ [27 <./pics/PeriodicKernel.pdf>] [28 <./pics/matern1_2_f_sampled.pdf> <./pics/
+matern3_2_f_sampled.pdf
 
-pdfTeX warning: pdflatex (file ./pics/matern5_2_f_sampled.pdf): PDF inclusion: 
+pdfTeX warning: pdflatex (file ./pics/matern3_2_f_sampled.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
+>] [29 <./pics/matern5_2_f_sampled.pdf> <./pics/CovMats.pdf
+
+pdfTeX warning: pdflatex (file ./pics/CovMats.pdf): PDF inclusion: multiple pdf
+s with page group included in a single page
 >]
 \openout5 = `tubsreprt_example.pyg'.
 
 
 (./_minted-tubsreprt_example/572FC33881192738CFE863B89BF87FFD4919F94676096CAB56
-C0D9EE67FD8EB5.pygtex) [29 <./pics/CovMats.pdf>]
-<pics/GPExpl.pdf, id=829, 867.24pt x 289.08pt>
+C0D9EE67FD8EB5.pygtex) [30]
+<pics/GPExpl.pdf, id=876, 867.24pt x 289.08pt>
 File: pics/GPExpl.pdf Graphic file (type pdf)
 <use pics/GPExpl.pdf>
-Package pdftex.def Info: pics/GPExpl.pdf  used on input line 1119.
+Package pdftex.def Info: pics/GPExpl.pdf  used on input line 1124.
 (pdftex.def)             Requested size: 460.08371pt x 153.36163pt.
 
-Overfull \hbox (41.82811pt too wide) in paragraph at lines 1119--1120
+Overfull \hbox (41.82811pt too wide) in paragraph at lines 1124--1125
  [] 
  []
 
-[30]
-<pics/CovPosterior.pdf, id=842, 396.0396pt x 199.4652pt>
+<pics/CovPosterior.pdf, id=879, 396.0396pt x 199.4652pt>
 File: pics/CovPosterior.pdf Graphic file (type pdf)
 <use pics/CovPosterior.pdf>
-Package pdftex.def Info: pics/CovPosterior.pdf  used on input line 1131.
+Package pdftex.def Info: pics/CovPosterior.pdf  used on input line 1136.
 (pdftex.def)             Requested size: 250.9559pt x 126.3942pt.
- [31 <./pics/GPExpl.pdf> <./pics/CovPosterior.pdf
-
-pdfTeX warning: pdflatex (file ./pics/CovPosterior.pdf): PDF inclusion: multipl
-e pdfs with page group included in a single page
->] [32]
+[31 <./pics/GPExpl.pdf>] [32 <./pics/CovPosterior.pdf>]
 \openout6 = `tubsreprt_example.pyg'.
 
 
@@ -3881,18 +3893,18 @@ C0D9EE67FD8EB5.pygtex) [33]
 
 
 (./_minted-tubsreprt_example/8F71197D32440058870392EB615C42784919F94676096CAB56
-C0D9EE67FD8EB5.pygtex)
-Overfull \hbox (2.46733pt too wide) in paragraph at lines 1285--1287
-\LY1/NexusProSans/m/n/10 [[][][]5[][], p. 1428] states that the ex-pec-ta-tion 
-op-er-a-tor $\U/fplmbb/m/n/10 E$ \LY1/NexusProSans/m/n/10 is lin-ear for in-de-
-pen-dent ran-dom vari-ables $\OML/zplm/m/it/10 X[]\OT1/ppl/m/n/10 , \OML/zplm/m
-/it/10 X[]\OT1/ppl/m/n/10 , ..., \OML/zplm/m/it/10 X[]$
+C0D9EE67FD8EB5.pygtex) [34]
+Overfull \hbox (7.91731pt too wide) in paragraph at lines 1290--1292
+\LY1/NexusProSans/m/n/10 [[][][]10[][], p. 1428] states that the ex-pec-ta-tion
+ op-er-a-tor $\U/fplmbb/m/n/10 E$ \LY1/NexusProSans/m/n/10 is lin-ear for in-de
+-pen-dent ran-dom vari-ables $\OML/zplm/m/it/10 X[]\OT1/ppl/m/n/10 , \OML/zplm/
+m/it/10 X[]\OT1/ppl/m/n/10 , ..., \OML/zplm/m/it/10 X[]$
  []
 
-[34]
+[35]
 \openout5 = `tubsreprt_example.pyg'.
 
- [35]
+
 (./_minted-tubsreprt_example/0708711679AF536F33FAA14CCAFD932D4919F94676096CAB56
 C0D9EE67FD8EB5.pygtex) [36]
 \openout5 = `tubsreprt_example.pyg'.
@@ -3904,81 +3916,123 @@ C0D9EE67FD8EB5.pygtex)
 
 
 (./_minted-tubsreprt_example/11DC5E93A93CE1F6690578A10164E3FC4919F94676096CAB56
-C0D9EE67FD8EB5.pygtex) [37] [38]
-<pics/MCerrorConv.pdf, id=1039, 397.78694pt x 271.19795pt>
+C0D9EE67FD8EB5.pygtex) [37] [38] [39]
+<pics/MCerrorConv.pdf, id=1087, 397.78694pt x 271.19795pt>
 File: pics/MCerrorConv.pdf Graphic file (type pdf)
 <use pics/MCerrorConv.pdf>
-Package pdftex.def Info: pics/MCerrorConv.pdf  used on input line 1671.
+Package pdftex.def Info: pics/MCerrorConv.pdf  used on input line 1676.
 (pdftex.def)             Requested size: 250.9559pt x 171.09148pt.
- [39 <./pics/MCerrorConv.pdf>] [40]
-<pics/RandomHyperParSearch.pdf, id=1114, 462.52798pt x 346.89601pt>
+ [40 <./pics/MCerrorConv.pdf>] [41]
+<pics/RandomHyperParSearch.pdf, id=1165, 462.52798pt x 346.89601pt>
 File: pics/RandomHyperParSearch.pdf Graphic file (type pdf)
 <use pics/RandomHyperParSearch.pdf>
-Package pdftex.def Info: pics/RandomHyperParSearch.pdf  used on input line 1770
+Package pdftex.def Info: pics/RandomHyperParSearch.pdf  used on input line 1775
 .
 (pdftex.def)             Requested size: 418.2556pt x 313.70679pt.
- [41]
-[42 <./pics/RandomHyperParSearch.pdf>] [43]
+
+[42] [43 <./pics/RandomHyperParSearch.pdf>]
 chapter 4.
 [44
 
 
 ]
-<pics/1DFEMprior.pdf, id=1179, 394.60638pt x 265.86464pt>
+<pics/z_GP.pdf, id=1216, 285.46649pt x 190.0701pt>
+File: pics/z_GP.pdf Graphic file (type pdf)
+<use pics/z_GP.pdf>
+Package pdftex.def Info: pics/z_GP.pdf  used on input line 1859.
+(pdftex.def)             Requested size: 250.9559pt x 167.09686pt.
+<pics/1DFEMprior.pdf, id=1218, 394.60638pt x 265.86464pt>
 File: pics/1DFEMprior.pdf Graphic file (type pdf)
 <use pics/1DFEMprior.pdf>
-Package pdftex.def Info: pics/1DFEMprior.pdf  used on input line 1852.
-(pdftex.def)             Requested size: 313.6917pt x 211.35326pt.
-<pics/1DPost_1P1O.pdf, id=1180, 394.60638pt x 265.86464pt>
-File: pics/1DPost_1P1O.pdf Graphic file (type pdf)
-<use pics/1DPost_1P1O.pdf>
-Package pdftex.def Info: pics/1DPost_1P1O.pdf  used on input line 1871.
-(pdftex.def)             Requested size: 209.12779pt x 140.89946pt.
-<pics/1DPost_4P1O.pdf, id=1181, 394.60638pt x 265.86464pt>
-File: pics/1DPost_4P1O.pdf Graphic file (type pdf)
-<use pics/1DPost_4P1O.pdf>
-Package pdftex.def Info: pics/1DPost_4P1O.pdf  used on input line 1878.
-(pdftex.def)             Requested size: 209.12779pt x 140.89946pt.
-<pics/1DPost_4P20O.pdf, id=1182, 394.60638pt x 265.86464pt>
-File: pics/1DPost_4P20O.pdf Graphic file (type pdf)
-<use pics/1DPost_4P20O.pdf>
-Package pdftex.def Info: pics/1DPost_4P20O.pdf  used on input line 1885.
-(pdftex.def)             Requested size: 209.12779pt x 140.89946pt.
- [45 <./pics/1DFEMprior.pdf>]
-<../../Python/Results/1D/no_d_scaled_40proc.pdf, id=1203, 277.58784pt x 182.392
+Package pdftex.def Info: pics/1DFEMprior.pdf  used on input line 1870.
+(pdftex.def)             Requested size: 271.86359pt x 183.17093pt.
+<../../Python/Results/1D/Model_Error/1o_1s/Result.pdf, id=1219, 277.58784pt x 1
+82.39276pt>
+File: ../../Python/Results/1D/Model_Error/1o_1s/Result.pdf Graphic file (type p
+df)
+<use ../../Python/Results/1D/Model_Error/1o_1s/Result.pdf>
+Package pdftex.def Info: ../../Python/Results/1D/Model_Error/1o_1s/Result.pdf  
+used on input line 1890.
+(pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
+<../../Python/Results/1D/Model_Error/1o_4s/Result.pdf, id=1220, 277.58784pt x 1
+82.39276pt>
+File: ../../Python/Results/1D/Model_Error/1o_4s/Result.pdf Graphic file (type p
+df)
+<use ../../Python/Results/1D/Model_Error/1o_4s/Result.pdf>
+Package pdftex.def Info: ../../Python/Results/1D/Model_Error/1o_4s/Result.pdf  
+used on input line 1897.
+(pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
+<../../Python/Results/1D/Model_Error/20o_4s/Result.pdf, id=1221, 277.58784pt x 
+182.39276pt>
+File: ../../Python/Results/1D/Model_Error/20o_4s/Result.pdf Graphic file (type 
+pdf)
+<use ../../Python/Results/1D/Model_Error/20o_4s/Result.pdf>
+Package pdftex.def Info: ../../Python/Results/1D/Model_Error/20o_4s/Result.pdf 
+ used on input line 1904.
+(pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
+<../../Python/Results/1D/Model_Error/100o_30s/Result.pdf, id=1222, 277.58784pt 
+x 182.39276pt>
+File: ../../Python/Results/1D/Model_Error/100o_30s/Result.pdf Graphic file (typ
+e pdf)
+<use ../../Python/Results/1D/Model_Error/100o_30s/Result.pdf>
+Package pdftex.def Info: ../../Python/Results/1D/Model_Error/100o_30s/Result.pd
+f  used on input line 1911.
+(pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
+ [45 <./pics/z_GP.pdf>]
+<../../Python/Results/1D/no_d_scaled_40proc.pdf, id=1246, 277.58784pt x 182.392
 76pt>
 File: ../../Python/Results/1D/no_d_scaled_40proc.pdf Graphic file (type pdf)
 <use ../../Python/Results/1D/no_d_scaled_40proc.pdf>
 Package pdftex.def Info: ../../Python/Results/1D/no_d_scaled_40proc.pdf  used o
-n input line 1904.
+n input line 1930.
 (pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
-<../../Python/Results/1D/d_scaled40proc.pdf, id=1204, 277.58784pt x 182.39276pt
+<../../Python/Results/1D/d_scaled40proc.pdf, id=1247, 277.58784pt x 182.39276pt
 >
 File: ../../Python/Results/1D/d_scaled40proc.pdf Graphic file (type pdf)
 <use ../../Python/Results/1D/d_scaled40proc.pdf>
 Package pdftex.def Info: ../../Python/Results/1D/d_scaled40proc.pdf  used on in
-put line 1910.
+put line 1936.
 (pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
- [46 <./pics/1DPost_1P1O.pdf> <./pics/1DPost_4P1O.pdf
-
-pdfTeX warning: pdflatex (file ./pics/1DPost_4P1O.pdf): PDF inclusion: multiple
- pdfs with page group included in a single page
-> <./pics/1DPost_4P20O.pdf
-
-pdfTeX warning: pdflatex (file ./pics/1DPost_4P20O.pdf): PDF inclusion: multipl
-e pdfs with page group included in a single page
->]
-<pics/1DPost_RightSide.pdf, id=1266, 394.60638pt x 265.86464pt>
+<pics/1DPost_RightSide.pdf, id=1249, 394.60638pt x 265.86464pt>
 File: pics/1DPost_RightSide.pdf Graphic file (type pdf)
 <use pics/1DPost_RightSide.pdf>
-Package pdftex.def Info: pics/1DPost_RightSide.pdf  used on input line 1931.
+Package pdftex.def Info: pics/1DPost_RightSide.pdf  used on input line 1957.
 (pdftex.def)             Requested size: 209.12779pt x 140.89946pt.
-<pics/DataPriorMismatch.pdf, id=1267, 376.70247pt x 252.96072pt>
+<pics/DataPriorMismatch.pdf, id=1250, 376.70247pt x 252.96072pt>
 File: pics/DataPriorMismatch.pdf Graphic file (type pdf)
 <use pics/DataPriorMismatch.pdf>
-Package pdftex.def Info: pics/DataPriorMismatch.pdf  used on input line 1937.
+Package pdftex.def Info: pics/DataPriorMismatch.pdf  used on input line 1963.
 (pdftex.def)             Requested size: 209.12779pt x 140.43732pt.
- [47 <../../Python/Results/1D/no_d_scaled_40proc.pdf> <../../Python/Results/1D/
+ [46 <./pics/1DFEMprior.pdf>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 1984.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 1995.
+
+[47 <../../Python/Results/1D/Model_Error/1o_1s/Result.pdf> <../../Python/Result
+s/1D/Model_Error/1o_4s/Result.pdf
+
+pdfTeX warning: pdflatex (file ../../Python/Results/1D/Model_Error/1o_4s/Result
+.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../../Python/Results/1D/Model_Error/20o_4s/Result.pdf
+
+pdfTeX warning: pdflatex (file ../../Python/Results/1D/Model_Error/20o_4s/Resul
+t.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../../Python/Results/1D/Model_Error/100o_30s/Result.pdf
+
+pdfTeX warning: pdflatex (file ../../Python/Results/1D/Model_Error/100o_30s/Res
+ult.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
+e
+>]
+<pics/mesh.pdf, id=1440, 250.7769pt x 239.21371pt>
+File: pics/mesh.pdf Graphic file (type pdf)
+<use pics/mesh.pdf>
+Package pdftex.def Info: pics/mesh.pdf  used on input line 2012.
+(pdftex.def)             Requested size: 209.12779pt x 199.49269pt.
+ [48 <../../Python/Results/1D/no_d_scaled_40proc.pdf> <../../Python/Results/1D/
 d_scaled40proc.pdf
 
 pdfTeX warning: pdflatex (file ../../Python/Results/1D/d_scaled40proc.pdf): PDF
@@ -3991,168 +4045,181 @@ tiple pdfs with page group included in a single page
 
 pdfTeX warning: pdflatex (file ./pics/DataPriorMismatch.pdf): PDF inclusion: mu
 ltiple pdfs with page group included in a single page
->] [48]
-<pics/NeumannBC.pdf, id=1381, 351.95491pt x 210.30571pt>
+>] [49 <./pics/mesh.pdf>]
+<pics/NeumannBC.pdf, id=1571, 351.95491pt x 210.30571pt>
 File: pics/NeumannBC.pdf Graphic file (type pdf)
 <use pics/NeumannBC.pdf>
-Package pdftex.def Info: pics/NeumannBC.pdf  used on input line 1988.
+Package pdftex.def Info: pics/NeumannBC.pdf  used on input line 2051.
 (pdftex.def)             Requested size: 334.60574pt x 199.94652pt.
-<pics/SolutionCustom2D.pdf, id=1382, 374.11987pt x 305.78654pt>
+<pics/SolutionCustom2D.pdf, id=1572, 374.11987pt x 305.78654pt>
 File: pics/SolutionCustom2D.pdf Graphic file (type pdf)
 <use pics/SolutionCustom2D.pdf>
-Package pdftex.def Info: pics/SolutionCustom2D.pdf  used on input line 1995.
+Package pdftex.def Info: pics/SolutionCustom2D.pdf  used on input line 2058.
 (pdftex.def)             Requested size: 334.60574pt x 273.50694pt.
-<pics/VarField.pdf, id=1384, 365.3544pt x 313.85518pt>
+<pics/VarField.pdf, id=1574, 365.3544pt x 313.85518pt>
 File: pics/VarField.pdf Graphic file (type pdf)
 <use pics/VarField.pdf>
-Package pdftex.def Info: pics/VarField.pdf  used on input line 2004.
+Package pdftex.def Info: pics/VarField.pdf  used on input line 2067.
 (pdftex.def)             Requested size: 250.9559pt x 215.58333pt.
- [49 <./pics/NeumannBC.pdf>]
-<../../Python/Results/2D/100procent_no_d/VarField_Posterior.pdf, id=1413, 404.9
+ [50 <./pics/NeumannBC.pdf>]
+<../../Python/Results/2D/100procent_no_d/VarField_Posterior.pdf, id=1601, 404.9
 9539pt x 306.0233pt>
 File: ../../Python/Results/2D/100procent_no_d/VarField_Posterior.pdf Graphic fi
 le (type pdf)
 <use ../../Python/Results/2D/100procent_no_d/VarField_Posterior.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/100procent_no_d/VarField_Poste
-rior.pdf  used on input line 2040.
+rior.pdf  used on input line 2103.
 (pdftex.def)             Requested size: 376.42747pt x 284.45396pt.
+ [51 <./pics/SolutionCustom2D.pdf>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 2111.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 2048.
+               Default added (so using `tbp') on input line 2127.
 
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 2064.
-
-[50 <./pics/SolutionCustom2D.pdf>]
-<../../Python/Results/2D/75procent_no_d/SolutionCustomPosterior.pdf, id=1446, 3
+[52 <./pics/VarField.pdf>]
+<../../Python/Results/2D/75procent_no_d/SolutionCustomPosterior.pdf, id=1648, 3
 76.87225pt x 300.8112pt>
 File: ../../Python/Results/2D/75procent_no_d/SolutionCustomPosterior.pdf Graphi
 c file (type pdf)
 <use ../../Python/Results/2D/75procent_no_d/SolutionCustomPosterior.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/75procent_no_d/SolutionCustomP
-osterior.pdf  used on input line 2080.
+osterior.pdf  used on input line 2143.
 (pdftex.def)             Requested size: 334.60574pt x 267.09229pt.
-<../../Python/Results/2D/75procent_no_d/VarField_Posterior.pdf, id=1448, 404.99
+<../../Python/Results/2D/75procent_no_d/VarField_Posterior.pdf, id=1650, 404.99
 539pt x 306.0233pt>
 File: ../../Python/Results/2D/75procent_no_d/VarField_Posterior.pdf Graphic fil
 e (type pdf)
 <use ../../Python/Results/2D/75procent_no_d/VarField_Posterior.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/75procent_no_d/VarField_Poster
-ior.pdf  used on input line 2091.
+ior.pdf  used on input line 2154.
 (pdftex.def)             Requested size: 376.42747pt x 284.45396pt.
-<../../Python/Results/2D/75procent_no_d/3dMSE.pdf, id=1450, 567.05467pt x 280.6
+<../../Python/Results/2D/75procent_no_d/3dMSE.pdf, id=1652, 567.05467pt x 280.6
 0323pt>
 File: ../../Python/Results/2D/75procent_no_d/3dMSE.pdf Graphic file (type pdf)
 <use ../../Python/Results/2D/75procent_no_d/3dMSE.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/75procent_no_d/3dMSE.pdf  used
- on input line 2100.
+ on input line 2163.
 (pdftex.def)             Requested size: 418.2556pt x 206.97519pt.
- [51 <./pics/VarField.pdf>]
-<pics/ObsPattern.pdf, id=1470, 571.65572pt x 148.1535pt>
+ [53 <../../Python/Results/2D/100procent_no_d/VarField_Posterior.pdf>]
+<pics/ObsPattern.pdf, id=1700, 571.65572pt x 148.1535pt>
 File: pics/ObsPattern.pdf Graphic file (type pdf)
 <use pics/ObsPattern.pdf>
-Package pdftex.def Info: pics/ObsPattern.pdf  used on input line 2114.
+Package pdftex.def Info: pics/ObsPattern.pdf  used on input line 2177.
 (pdftex.def)             Requested size: 418.2556pt x 108.40208pt.
- [52 <../../Python/Results/2D/100procent_no_d/VarField_Posterior.pdf>]
-<pics/3dTest.pdf, id=1514, 565.62054pt x 280.36899pt>
+ [54 <../../Python/Results/2D/75procent_no_d/SolutionCustomPosterior.pdf>]
+<pics/3dTest.pdf, id=1753, 565.62054pt x 280.36899pt>
 File: pics/3dTest.pdf Graphic file (type pdf)
 <use pics/3dTest.pdf>
-Package pdftex.def Info: pics/3dTest.pdf  used on input line 2127.
+Package pdftex.def Info: pics/3dTest.pdf  used on input line 2190.
 (pdftex.def)             Requested size: 418.2556pt x 207.32861pt.
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 2133.
+LaTeX Warning: Command \l invalid in math mode on input line 2196.
 
 Missing character: There is no ê in font pplr7t!
-<../../Python/Results/2D/100procent_d/VarField_Posterior.pdf, id=1518, 397.7957
+<../../Python/Results/2D/100procent_d/VarField_Posterior.pdf, id=1757, 397.7957
 6pt x 304.8747pt>
 File: ../../Python/Results/2D/100procent_d/VarField_Posterior.pdf Graphic file 
 (type pdf)
 <use ../../Python/Results/2D/100procent_d/VarField_Posterior.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/100procent_d/VarField_Posterio
-r.pdf  used on input line 2152.
+r.pdf  used on input line 2215.
 (pdftex.def)             Requested size: 376.42747pt x 288.50351pt.
-<../../Python/Results/2D/100procent_d/VarField_PosteriorMoreSensors.pdf, id=152
-0, 402.79576pt x 304.8747pt>
+<../../Python/Results/2D/100procent_d/VarField_PosteriorMoreSensors.pdf, id=175
+9, 402.79576pt x 304.8747pt>
 File: ../../Python/Results/2D/100procent_d/VarField_PosteriorMoreSensors.pdf Gr
 aphic file (type pdf)
 <use ../../Python/Results/2D/100procent_d/VarField_PosteriorMoreSensors.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/100procent_d/VarField_Posterio
-rMoreSensors.pdf  used on input line 2159.
+rMoreSensors.pdf  used on input line 2222.
 (pdftex.def)             Requested size: 376.42747pt x 284.92612pt.
-[53 <../../Python/Results/2D/75procent_no_d/SolutionCustomPosterior.pdf>]
-[54 <../../Python/Results/2D/75procent_no_d/VarField_Posterior.pdf>]
+[55 <../../Python/Results/2D/75procent_no_d/VarField_Posterior.pdf>]
 
-LaTeX Warning: Reference `fig:3dPriorDataConf' on page 55 undefined on input li
-ne 2167.
+LaTeX Warning: Text page 56 contains only floats.
 
-<../../Python/Results/2D/prior_data_conflict/3dMSE.pdf, id=1615, 567.05467pt x 
+
+Overfull \vbox (1.67467pt too high) has occurred while \output is active []
+
+
+[56 <../../Python/Results/2D/75procent_no_d/3dMSE.pdf> <./pics/ObsPattern.pdf
+
+pdfTeX warning: pdflatex (file ./pics/ObsPattern.pdf): PDF inclusion: multiple 
+pdfs with page group included in a single page
+>]
+<../../Python/Results/2D/prior_data_conflict/3dMSE.pdf, id=1841, 567.05467pt x 
 280.60323pt>
 File: ../../Python/Results/2D/prior_data_conflict/3dMSE.pdf Graphic file (type 
 pdf)
 <use ../../Python/Results/2D/prior_data_conflict/3dMSE.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/prior_data_conflict/3dMSE.pdf 
- used on input line 2170.
+ used on input line 2233.
 (pdftex.def)             Requested size: 418.2556pt x 206.97519pt.
-[55 <../../Python/Results/2D/75procent_no_d/3dMSE.pdf> <./pics/ObsPattern.pdf
-
-pdfTeX warning: pdflatex (file ./pics/ObsPattern.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
->]
-
-LaTeX Warning: Text page 56 contains only floats.
-
-[56 <./pics/3dTest.pdf> <../../Python/Results/2D/100procent_d/VarField_Posterio
-r.pdf
-
-pdfTeX warning: pdflatex (file ../../Python/Results/2D/100procent_d/VarField_Po
-sterior.pdf): PDF inclusion: multiple pdfs with page group included in a single
- page
->]
-<../../Python/SolutionCustomFlatSource320.pdf, id=1701, 374.11987pt x 281.85298
+<../../Python/Results/2D/prior_data_conflict/SolutionCustomPosterior.pdf, id=18
+45, 381.89769pt x 305.78654pt>
+File: ../../Python/Results/2D/prior_data_conflict/SolutionCustomPosterior.pdf G
+raphic file (type pdf)
+<use ../../Python/Results/2D/prior_data_conflict/SolutionCustomPosterior.pdf>
+Package pdftex.def Info: ../../Python/Results/2D/prior_data_conflict/SolutionCu
+stomPosterior.pdf  used on input line 2242.
+(pdftex.def)             Requested size: 334.60574pt x 267.93117pt.
+<../../Python/SolutionCustomFlatSource320.pdf, id=1848, 374.11987pt x 281.85298
 pt>
 File: ../../Python/SolutionCustomFlatSource320.pdf Graphic file (type pdf)
 <use ../../Python/SolutionCustomFlatSource320.pdf>
 Package pdftex.def Info: ../../Python/SolutionCustomFlatSource320.pdf  used on 
-input line 2181.
+input line 2265.
 (pdftex.def)             Requested size: 334.60574pt x 252.09987pt.
-<../../Python/VarFieldFlatSource320.pdf, id=1703, 370.3544pt x 313.85518pt>
+<../../Python/VarFieldFlatSource320.pdf, id=1850, 370.3544pt x 313.85518pt>
 File: ../../Python/VarFieldFlatSource320.pdf Graphic file (type pdf)
 <use ../../Python/VarFieldFlatSource320.pdf>
 Package pdftex.def Info: ../../Python/VarFieldFlatSource320.pdf  used on input 
-line 2189.
+line 2273.
 (pdftex.def)             Requested size: 292.77763pt x 248.11526pt.
- [57 <../../Python/Results/2D/100procent_d/VarField_PosteriorMoreSensors.pdf>] 
-[58 <../../Python/Results/2D/prior_data_conflict/3dMSE.pdf> <../../Python/Solut
-ionCustomFlatSource320.pdf
+ [57 <./pics/3dTest.pdf>] [58 <../../Python/Results/2D/100procent_d/VarField_Po
+sterior.pdf>] [59 <../../Python/Results/2D/100procent_d/VarField_PosteriorMoreS
+ensors.pdf> <../../Python/Results/2D/prior_data_conflict/3dMSE.pdf
+
+pdfTeX warning: pdflatex (file ../../Python/Results/2D/prior_data_conflict/3dMS
+E.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [60 <../../Python/Results/2D/prior_data_conflict/SolutionCustomPosterior.pdf
+> <../../Python/SolutionCustomFlatSource320.pdf
 
 pdfTeX warning: pdflatex (file ../../Python/SolutionCustomFlatSource320.pdf): P
 DF inclusion: multiple pdfs with page group included in a single page
->] [59 <../../Python/VarFieldFlatSource320.pdf>]
+>] [61 <../../Python/VarFieldFlatSource320.pdf>]
 chapter 5.
-[60
+[62
 
 
 ]
-Overfull \hbox (12.05037pt too wide) in paragraph at lines 2202--2202
+Overfull \hbox (12.17082pt too wide) in paragraph at lines 2295--2295
 []\LY1/NexusProSans/m/n/10.95 M. Mˆser, \LY1/NexusProSans/m/it/10.95 Tech-nis-c
 he Akustik\LY1/NexusProSans/m/n/10.95 , 6., erw. und ak-tu-al-isierte Aufl, ser
 . VDI-[Buch]. Berlin: Springer,
  []
 
+[63
 
-Overfull \hbox (15.1792pt too wide) in paragraph at lines 2202--2202
+
+]
+Overfull \hbox (15.29965pt too wide) in paragraph at lines 2295--2295
 []\LY1/NexusProSans/m/n/10.95 MathWorks. (). Con-di-tion num-ber of a ma-trix, 
 [On-line]. Avail-able: [][]$\LY1/txtt/m/n/10.95 https : / / de . mathworks .
  []
 
-[61
+[64]
+Overfull \hbox (1.78574pt too wide) in paragraph at lines 2295--2295
+[]\LY1/NexusProSans/m/n/10.95 M. Lo-eve, \LY1/NexusProSans/m/it/10.95 Prob-a-bi
+l-ity The-ory II\LY1/NexusProSans/m/n/10.95 . Springer New York, Aug. 12, 1994,
+ 436 pp., \LY1/NexusProSans/m/sc/10.95 isbn\LY1/NexusProSans/m/n/10.95 : 038790
+2627.
+ []
 
 
-]
-Overfull \hbox (26.63164pt too wide) in paragraph at lines 2202--2202
+Overfull \hbox (26.75209pt too wide) in paragraph at lines 2295--2295
 \LY1/txtt/m/n/10.95 distill . 00017$[][]\LY1/NexusProSans/m/n/10.95 . [On-line]
 . Avail-able: [][]$\LY1/txtt/m/n/10.95 https : / / distill . pub / 2019 / visua
 l -[] exploration -[]
@@ -4160,39 +4227,30 @@ l -[] exploration -[]
 
 
 Package biblatex Warning: No driver for entry type 'software'.
-(biblatex)                Using fallback driver on input line 2201.
+(biblatex)                Using fallback driver on input line 2294.
 
 
-Overfull \hbox (175.88339pt too wide) in paragraph at lines 2202--2202
+Overfull \hbox (176.00385pt too wide) in paragraph at lines 2295--2295
 \LY1/NexusProSans/m/n/10.95 Avail-able: [][]$\LY1/txtt/m/n/10.95 https : / / gi
 thub . com / adamian / adamian . github . io / blob / 1074c865911e2f83f29c52043
 f254c08446b4755 /
  []
 
 
-Overfull \hbox (50.16866pt too wide) in paragraph at lines 2202--2202
+Overfull \hbox (50.28911pt too wide) in paragraph at lines 2295--2295
 \LY1/NexusProSans/m/n/10.95 line]. Avail-able: [][]$\LY1/txtt/m/n/10.95 https :
  / / public . ebookcentral . proquest . com / choice / publicfullrecord .
  []
 
-[62] [63]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2217.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2217.
+[65] [66]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2310.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2310.
  (./tubsreprt_example.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2217.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2217.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2310.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2310.
 
-
-
-Package rerunfilecheck Warning: File `tubsreprt_example.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `tubsreprt_example.out':
-(rerunfilecheck)             Before: 2616F17B3B40D3714DA70CD515439115;2621
-(rerunfilecheck)             After:  CD7A7783421407D1A37094C845DF75B3;2697.
-
-LaTeX Warning: There were undefined references.
+Package rerunfilecheck Info: File `tubsreprt_example.out' has not changed.
+(rerunfilecheck)             Checksum: 5A0F2C9B11C9A7C3DFC380F51F6DC6E2;2697.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -4204,53 +4262,47 @@ Package logreq Info: Writing requests to 'tubsreprt_example.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 52136 strings out of 494757
- 1063743 string characters out of 6175786
- 1767354 words of memory out of 5000000
- 54171 multiletter control sequences out of 15000+600000
- 763293 words of font info for 289 fonts, out of 8000000 for 9000
+ 52221 strings out of 494757
+ 1066761 string characters out of 6175786
+ 1783412 words of memory out of 5000000
+ 54228 multiletter control sequences out of 15000+600000
+ 763550 words of font info for 290 fonts, out of 8000000 for 9000
  85 hyphenation exceptions out of 8191
  65i,23n,106p,10460b,3572s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{figure.caption.292} has been referenced but does 
-not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter.293} has been referenced but does not exist
-, replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/share/te
-xmf/fonts/enc/dvips/Fontshop/a_molob5.enc}{/usr/local/share/texmf/fonts/enc/dvi
-ps/Fontshop/a_hsis74.enc}{/usr/local/share/texmf/fonts/enc/dvips/Fontshop/a_blk
-lr2.enc}{/usr/local/share/texmf/fonts/enc/dvips/Fontshop/a_cbf6z5.enc}</usr/loc
-al/share/texmf/fonts/type1/Nexus/NexusSansPro-Bold.pfb></usr/local/share/texmf/
-fonts/type1/Nexus/NexusSansPro-Italic.pfb></usr/local/share/texmf/fonts/type1/N
-exus/NexusSansPro-Regular.pfb></usr/local/share/texmf/fonts/type1/Nexus/NexusSe
-rifPro-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mat
-hpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fpl
-mbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/txfonts/tcxtt.pfb></usr/local/share/texmf/fonts/type1/urw/arial/ua1b8a.p
-fb></usr/local/share/texmf/fonts/type1/urw/arial/ua1r8a.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatin
-o/uplri8a.pfb>
-Output written on tubsreprt_example.pdf (63 pages, 7077720 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/share/
+texmf/fonts/enc/dvips/Fontshop/a_molob5.enc}{/usr/local/share/texmf/fonts/enc/d
+vips/Fontshop/a_hsis74.enc}{/usr/local/share/texmf/fonts/enc/dvips/Fontshop/a_b
+lklr2.enc}{/usr/local/share/texmf/fonts/enc/dvips/Fontshop/a_cbf6z5.enc}</usr/l
+ocal/share/texmf/fonts/type1/Nexus/NexusSansPro-Bold.pfb></usr/local/share/texm
+f/fonts/type1/Nexus/NexusSansPro-Italic.pfb></usr/local/share/texmf/fonts/type1
+/Nexus/NexusSansPro-Regular.pfb></usr/local/share/texmf/fonts/type1/Nexus/Nexus
+SerifPro-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+mi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/m
+athpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/f
+plmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/txfonts/tcxtt.pfb></usr/local/share/texmf/fonts/type1/urw/arial/ua1b8a
+.pfb></usr/local/share/texmf/fonts/type1/urw/arial/ua1r8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palat
+ino/uplri8a.pfb>
+Output written on tubsreprt_example.pdf (66 pages, 7226460 bytes).
 PDF statistics:
- 2075 PDF objects out of 2487 (max. 8388607)
- 1633 compressed objects within 17 object streams
- 392 named destinations out of 1000 (max. 500000)
- 512 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2342 PDF objects out of 2487 (max. 8388607)
+ 1791 compressed objects within 18 object streams
+ 415 named destinations out of 1000 (max. 500000)
+ 540 words of extra memory for PDF output out of 10000 (max. 10000000)
 
