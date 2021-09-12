@@ -12,66 +12,68 @@
 \contentsline {subsection}{\numberline {2.2.3}Approximation and Building Element Matrices}{13}{subsection.40}
 \contentsline {paragraph}{\nonumberline Lagrange Polynomials}{13}{section*.42}
 \contentsline {subsection}{\numberline {2.2.4}Solving and Convergence}{15}{subsection.56}
-\contentsline {chapter}{\numberline {3}Gaussian Processes and the Statistical Finite Element Method}{17}{chapter.58}
-\contentsline {paragraph}{\nonumberline Literature Review}{17}{section*.59}
-\contentsline {section}{\numberline {3.1}Basic Probability Theory}{17}{section.60}
-\contentsline {subsection}{\numberline {3.1.1}Random Variables and Distributions}{17}{subsection.61}
-\contentsline {subsection}{\numberline {3.1.2}Bayesian Inference}{18}{subsection.69}
-\contentsline {section}{\numberline {3.2}Gaussian Process Regression}{19}{section.71}
-\contentsline {subsection}{\numberline {3.2.1}Linear Regression}{19}{subsection.72}
-\contentsline {subsection}{\numberline {3.2.2}Gaussian Processes}{20}{subsection.78}
-\contentsline {paragraph}{\nonumberline Marginalization and Conditioning}{21}{section*.82}
-\contentsline {subsection}{\numberline {3.2.3}Kernel Functions}{23}{subsection.88}
-\contentsline {paragraph}{\nonumberline Stationarity}{24}{section*.90}
-\contentsline {paragraph}{\nonumberline Positive Definiteness}{24}{section*.91}
-\contentsline {paragraph}{\nonumberline The Characteristic Length Scale}{25}{section*.92}
-\contentsline {paragraph}{\nonumberline Linear Kernel Functions}{25}{section*.93}
-\contentsline {paragraph}{\nonumberline Squared Exponential Kernel Functions}{25}{section*.96}
-\contentsline {paragraph}{\nonumberline Periodic Kernel Functions}{26}{section*.104}
-\contentsline {paragraph}{\nonumberline Dirichlet Kernel Functions}{26}{section*.107}
-\contentsline {paragraph}{\nonumberline Matern Kernel Functions}{26}{section*.108}
-\contentsline {paragraph}{\nonumberline Combination of Different Kernel Functions}{27}{section*.117}
-\contentsline {subsection}{\numberline {3.2.4}Bayesian Inference}{27}{subsection.119}
-\contentsline {paragraph}{\nonumberline Prior}{28}{section*.120}
-\contentsline {paragraph}{\nonumberline Occam's Razor}{30}{section*.122}
-\contentsline {paragraph}{\nonumberline Posterior after observation}{30}{section*.123}
-\contentsline {section}{\numberline {3.3}The Statistical Finite Element Method}{31}{section.129}
-\contentsline {paragraph}{\nonumberline The Statistical Generating Model}{32}{section*.130}
-\contentsline {paragraph}{\nonumberline Basic statFEM procedure}{33}{section*.134}
-\contentsline {subsection}{\numberline {3.3.1}Posterior of the FEM Forward Model}{33}{subsection.135}
-\contentsline {paragraph}{\nonumberline Assembling the FEM System Matrix}{33}{section*.136}
-\contentsline {paragraph}{\nonumberline Generate and Sample From Source Term GP}{34}{section*.146}
-\contentsline {paragraph}{\nonumberline Generate and sample from the diffusion coefficient GP}{35}{section*.147}
-\contentsline {paragraph}{\nonumberline Computing the FEM Prior}{35}{section*.149}
-\contentsline {paragraph}{\nonumberline Find Prior Mean and Variance}{36}{section*.180}
-\contentsline {paragraph}{\nonumberline The Projection Matrix $P$}{36}{section*.182}
-\contentsline {paragraph}{\nonumberline Calculate $C_e$}{37}{section*.203}
-\contentsline {paragraph}{\nonumberline Calculate $C_d$}{37}{section*.204}
-\contentsline {subsection}{\numberline {3.3.2}Inference of the Posterior Density}{38}{subsection.205}
-\contentsline {subsection}{\numberline {3.3.3}Probabilistic FEM Prior}{39}{subsection.219}
-\contentsline {subsection}{\numberline {3.3.4}Estimation of Hyperparameters}{40}{subsection.229}
-\contentsline {paragraph}{\nonumberline Non-identifiability}{41}{section*.236}
-\contentsline {paragraph}{\nonumberline Cholesky Decompositon}{41}{section*.237}
-\contentsline {subsubsection}{\nonumberline Minimization of the Negative log-Likelihood}{42}{section*.246}
-\contentsline {paragraph}{\nonumberline Random Sampling in the Parameter Space}{42}{section*.247}
-\contentsline {paragraph}{\nonumberline MCMC}{42}{section*.249}
-\contentsline {paragraph}{\nonumberline L-BGFS}{42}{section*.251}
-\contentsline {chapter}{\numberline {4}A statFEM Approach for Vibroacoustics}{44}{chapter.252}
-\contentsline {section}{\numberline {4.1}Simple 1D example}{44}{section.253}
-\contentsline {paragraph}{\nonumberline Choice of PDE}{44}{section*.254}
-\contentsline {paragraph}{\nonumberline Construction of the GP}{44}{section*.257}
-\contentsline {subsection}{\numberline {4.1.1}FEM Prior}{45}{subsection.261}
-\contentsline {subsection}{\numberline {4.1.2}Posterior}{46}{subsection.263}
-\contentsline {section}{\numberline {4.2}2D Vibroacoustics Example}{46}{section.267}
-\contentsline {paragraph}{\nonumberline Generating Fake Data}{47}{section*.268}
-\contentsline {paragraph}{\nonumberline FEM setup}{48}{section*.269}
-\contentsline {paragraph}{\nonumberline Experimental Design}{49}{section*.274}
-\contentsline {subsection}{\numberline {4.2.1}FEM prior}{50}{subsection.275}
-\contentsline {subsection}{\numberline {4.2.2}Posterior, observations on prior sample}{50}{subsection.281}
-\contentsline {paragraph}{\nonumberline Hypothesis}{51}{section*.282}
-\contentsline {paragraph}{\nonumberline Without Model Error}{51}{section*.283}
-\contentsline {subsection}{\numberline {4.2.3}Posterior, observations on scaled prior sample}{53}{subsection.286}
-\contentsline {subsection}{\numberline {4.2.4}Posterior, observations on altered prior sample}{53}{subsection.291}
-\contentsline {subsection}{\numberline {4.2.5}Prior-Data Conflict}{57}{subsection.299}
-\contentsline {subsection}{\numberline {4.2.6}Variations in the Neumann BC}{58}{subsection.303}
-\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{62}{chapter.306}
+\contentsline {chapter}{\numberline {3}Gaussian Processes and the Statistical Finite Element Method}{17}{chapter.59}
+\contentsline {paragraph}{\nonumberline Literature Review}{17}{section*.60}
+\contentsline {section}{\numberline {3.1}Basic Probability Theory}{17}{section.61}
+\contentsline {subsection}{\numberline {3.1.1}Random Variables and Distributions}{17}{subsection.62}
+\contentsline {subsection}{\numberline {3.1.2}Bayesian Inference}{18}{subsection.70}
+\contentsline {section}{\numberline {3.2}Gaussian Process Regression}{19}{section.72}
+\contentsline {subsection}{\numberline {3.2.1}Linear Regression}{19}{subsection.73}
+\contentsline {subsection}{\numberline {3.2.2}Gaussian Processes}{20}{subsection.79}
+\contentsline {paragraph}{\nonumberline Marginalization and Conditioning}{21}{section*.83}
+\contentsline {subsection}{\numberline {3.2.3}Kernel Functions}{23}{subsection.89}
+\contentsline {paragraph}{\nonumberline Stationarity}{24}{section*.91}
+\contentsline {paragraph}{\nonumberline Positive Definiteness}{24}{section*.92}
+\contentsline {paragraph}{\nonumberline The Characteristic Length Scale}{25}{section*.93}
+\contentsline {paragraph}{\nonumberline Linear Kernel Functions}{25}{section*.94}
+\contentsline {paragraph}{\nonumberline Squared Exponential Kernel Functions}{25}{section*.97}
+\contentsline {paragraph}{\nonumberline Periodic Kernel Functions}{26}{section*.105}
+\contentsline {paragraph}{\nonumberline Dirichlet Kernel Functions}{26}{section*.108}
+\contentsline {paragraph}{\nonumberline Matern Kernel Functions}{26}{section*.109}
+\contentsline {paragraph}{\nonumberline Combination of Different Kernel Functions}{27}{section*.118}
+\contentsline {subsection}{\numberline {3.2.4}Bayesian Inference}{27}{subsection.120}
+\contentsline {paragraph}{\nonumberline Prior}{28}{section*.121}
+\contentsline {paragraph}{\nonumberline Occam's Razor}{30}{section*.123}
+\contentsline {paragraph}{\nonumberline Posterior after observation}{30}{section*.124}
+\contentsline {section}{\numberline {3.3}The Statistical Finite Element Method}{31}{section.130}
+\contentsline {paragraph}{\nonumberline The Statistical Generating Model}{32}{section*.131}
+\contentsline {paragraph}{\nonumberline Basic statFEM procedure}{33}{section*.135}
+\contentsline {subsection}{\numberline {3.3.1}Posterior of the FEM Forward Model}{33}{subsection.136}
+\contentsline {paragraph}{\nonumberline Assembling the FEM System Matrix}{33}{section*.137}
+\contentsline {paragraph}{\nonumberline Generate and Sample From Source Term GP}{34}{section*.147}
+\contentsline {paragraph}{\nonumberline Generate and sample from the diffusion coefficient GP}{35}{section*.148}
+\contentsline {paragraph}{\nonumberline Computing the FEM Prior}{35}{section*.150}
+\contentsline {paragraph}{\nonumberline Find Prior Mean and Variance}{36}{section*.181}
+\contentsline {paragraph}{\nonumberline The Projection Matrix $P$}{36}{section*.183}
+\contentsline {paragraph}{\nonumberline Calculate $C_e$}{37}{section*.204}
+\contentsline {paragraph}{\nonumberline Calculate $C_d$}{37}{section*.205}
+\contentsline {subsection}{\numberline {3.3.2}Inference of the Posterior Density}{38}{subsection.206}
+\contentsline {subsection}{\numberline {3.3.3}Probabilistic FEM Prior}{39}{subsection.220}
+\contentsline {subsection}{\numberline {3.3.4}Estimation of Hyperparameters}{40}{subsection.230}
+\contentsline {paragraph}{\nonumberline Non-identifiability}{41}{section*.237}
+\contentsline {paragraph}{\nonumberline Cholesky Decompositon}{41}{section*.238}
+\contentsline {subsubsection}{\nonumberline Minimization of the Negative log-Likelihood}{42}{section*.247}
+\contentsline {paragraph}{\nonumberline Random Sampling in the Parameter Space}{42}{section*.248}
+\contentsline {paragraph}{\nonumberline MCMC}{42}{section*.250}
+\contentsline {paragraph}{\nonumberline L-BGFS}{42}{section*.252}
+\contentsline {chapter}{\numberline {4}A statFEM Approach for Vibroacoustics}{44}{chapter.253}
+\contentsline {section}{\numberline {4.1}Simple 1D example}{44}{section.254}
+\contentsline {paragraph}{\nonumberline Choice of PDE}{44}{section*.255}
+\contentsline {paragraph}{\nonumberline Construction of the GP}{44}{section*.258}
+\contentsline {subsection}{\numberline {4.1.1}FEM Prior}{45}{subsection.262}
+\contentsline {subsection}{\numberline {4.1.2}Posterior}{46}{subsection.264}
+\contentsline {section}{\numberline {4.2}2D Vibroacoustics Example}{46}{section.268}
+\contentsline {paragraph}{\nonumberline Generating Fake Data}{47}{section*.269}
+\contentsline {paragraph}{\nonumberline FEM setup}{48}{section*.270}
+\contentsline {paragraph}{\nonumberline Experimental Design}{49}{section*.275}
+\contentsline {subsection}{\numberline {4.2.1}FEM prior}{50}{subsection.276}
+\contentsline {subsection}{\numberline {4.2.2}Posterior, observations on prior sample}{50}{subsection.282}
+\contentsline {paragraph}{\nonumberline Hypothesis}{51}{section*.283}
+\contentsline {paragraph}{\nonumberline Without Model Error}{51}{section*.284}
+\contentsline {subsection}{\numberline {4.2.3}Posterior, observations on scaled prior sample}{53}{subsection.287}
+\contentsline {subsection}{\numberline {4.2.4}Posterior, observations on altered prior sample}{53}{subsection.292}
+\contentsline {subsection}{\numberline {4.2.5}Prior-Data Conflict}{57}{subsection.300}
+\contentsline {subsection}{\numberline {4.2.6}Variations in the Neumann BC}{58}{subsection.304}
+\contentsline {chapter}{\numberline {5}Discussion and Conclusion}{62}{chapter.307}
+\contentsline {chapter}{\numberline {A}Additional Plots}{63}{Appendix.308}
+\contentsline {chapter}{\numberline {B}Code}{64}{Appendix.312}

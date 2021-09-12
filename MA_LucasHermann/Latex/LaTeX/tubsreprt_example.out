@@ -6,29 +6,31 @@
 \BOOKMARK [2][]{subsection.36}{2.2.2 Discretization}{section.27}% 6
 \BOOKMARK [2][]{subsection.40}{2.2.3 Approximation and Building Element Matrices}{section.27}% 7
 \BOOKMARK [2][]{subsection.56}{2.2.4 Solving and Convergence}{section.27}% 8
-\BOOKMARK [0][]{chapter.58}{3 Gaussian Processes and the Statistical Finite Element Method}{}% 9
-\BOOKMARK [1][]{section.60}{3.1 Basic Probability Theory}{chapter.58}% 10
-\BOOKMARK [2][]{subsection.61}{3.1.1 Random Variables and Distributions}{section.60}% 11
-\BOOKMARK [2][]{subsection.69}{3.1.2 Bayesian Inference}{section.60}% 12
-\BOOKMARK [1][]{section.71}{3.2 Gaussian Process Regression}{chapter.58}% 13
-\BOOKMARK [2][]{subsection.72}{3.2.1 Linear Regression}{section.71}% 14
-\BOOKMARK [2][]{subsection.78}{3.2.2 Gaussian Processes}{section.71}% 15
-\BOOKMARK [2][]{subsection.88}{3.2.3 Kernel Functions}{section.71}% 16
-\BOOKMARK [2][]{subsection.119}{3.2.4 Bayesian Inference}{section.71}% 17
-\BOOKMARK [1][]{section.129}{3.3 The Statistical Finite Element Method}{chapter.58}% 18
-\BOOKMARK [2][]{subsection.135}{3.3.1 Posterior of the FEM Forward Model}{section.129}% 19
-\BOOKMARK [2][]{subsection.205}{3.3.2 Inference of the Posterior Density}{section.129}% 20
-\BOOKMARK [2][]{subsection.219}{3.3.3 Probabilistic FEM Prior}{section.129}% 21
-\BOOKMARK [2][]{subsection.229}{3.3.4 Estimation of Hyperparameters}{section.129}% 22
-\BOOKMARK [0][]{chapter.252}{4 A statFEM Approach for Vibroacoustics}{}% 23
-\BOOKMARK [1][]{section.253}{4.1 Simple 1D example}{chapter.252}% 24
-\BOOKMARK [2][]{subsection.261}{4.1.1 FEM Prior}{section.253}% 25
-\BOOKMARK [2][]{subsection.263}{4.1.2 Posterior}{section.253}% 26
-\BOOKMARK [1][]{section.267}{4.2 2D Vibroacoustics Example}{chapter.252}% 27
-\BOOKMARK [2][]{subsection.275}{4.2.1 FEM prior}{section.267}% 28
-\BOOKMARK [2][]{subsection.281}{4.2.2 Posterior, observations on prior sample}{section.267}% 29
-\BOOKMARK [2][]{subsection.286}{4.2.3 Posterior, observations on scaled prior sample}{section.267}% 30
-\BOOKMARK [2][]{subsection.291}{4.2.4 Posterior, observations on altered prior sample}{section.267}% 31
-\BOOKMARK [2][]{subsection.299}{4.2.5 Prior-Data Conflict}{section.267}% 32
-\BOOKMARK [2][]{subsection.303}{4.2.6 Variations in the Neumann BC}{section.267}% 33
-\BOOKMARK [0][]{chapter.306}{5 Discussion and Conclusion}{}% 34
+\BOOKMARK [0][]{chapter.59}{3 Gaussian Processes and the Statistical Finite Element Method}{}% 9
+\BOOKMARK [1][]{section.61}{3.1 Basic Probability Theory}{chapter.59}% 10
+\BOOKMARK [2][]{subsection.62}{3.1.1 Random Variables and Distributions}{section.61}% 11
+\BOOKMARK [2][]{subsection.70}{3.1.2 Bayesian Inference}{section.61}% 12
+\BOOKMARK [1][]{section.72}{3.2 Gaussian Process Regression}{chapter.59}% 13
+\BOOKMARK [2][]{subsection.73}{3.2.1 Linear Regression}{section.72}% 14
+\BOOKMARK [2][]{subsection.79}{3.2.2 Gaussian Processes}{section.72}% 15
+\BOOKMARK [2][]{subsection.89}{3.2.3 Kernel Functions}{section.72}% 16
+\BOOKMARK [2][]{subsection.120}{3.2.4 Bayesian Inference}{section.72}% 17
+\BOOKMARK [1][]{section.130}{3.3 The Statistical Finite Element Method}{chapter.59}% 18
+\BOOKMARK [2][]{subsection.136}{3.3.1 Posterior of the FEM Forward Model}{section.130}% 19
+\BOOKMARK [2][]{subsection.206}{3.3.2 Inference of the Posterior Density}{section.130}% 20
+\BOOKMARK [2][]{subsection.220}{3.3.3 Probabilistic FEM Prior}{section.130}% 21
+\BOOKMARK [2][]{subsection.230}{3.3.4 Estimation of Hyperparameters}{section.130}% 22
+\BOOKMARK [0][]{chapter.253}{4 A statFEM Approach for Vibroacoustics}{}% 23
+\BOOKMARK [1][]{section.254}{4.1 Simple 1D example}{chapter.253}% 24
+\BOOKMARK [2][]{subsection.262}{4.1.1 FEM Prior}{section.254}% 25
+\BOOKMARK [2][]{subsection.264}{4.1.2 Posterior}{section.254}% 26
+\BOOKMARK [1][]{section.268}{4.2 2D Vibroacoustics Example}{chapter.253}% 27
+\BOOKMARK [2][]{subsection.276}{4.2.1 FEM prior}{section.268}% 28
+\BOOKMARK [2][]{subsection.282}{4.2.2 Posterior, observations on prior sample}{section.268}% 29
+\BOOKMARK [2][]{subsection.287}{4.2.3 Posterior, observations on scaled prior sample}{section.268}% 30
+\BOOKMARK [2][]{subsection.292}{4.2.4 Posterior, observations on altered prior sample}{section.268}% 31
+\BOOKMARK [2][]{subsection.300}{4.2.5 Prior-Data Conflict}{section.268}% 32
+\BOOKMARK [2][]{subsection.304}{4.2.6 Variations in the Neumann BC}{section.268}% 33
+\BOOKMARK [0][]{chapter.307}{5 Discussion and Conclusion}{}% 34
+\BOOKMARK [0][]{Appendix.308}{A Additional Plots}{}% 35
+\BOOKMARK [0][]{Appendix.312}{B Code}{}% 36

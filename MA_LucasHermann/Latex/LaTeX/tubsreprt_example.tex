@@ -14,7 +14,7 @@
 \usepackage[backend=biber,style=ieee,backref=true]{biblatex}
 
 \addbibresource{Library.bib}
-
+\usepackage[title]{appendix}
 \usepackage{siunitx}
 \sisetup{load-configurations = abbreviations,output-exponent-marker=\ensuremath{\mathrm{e}}}  
   
@@ -650,7 +650,15 @@ Solving the system for a range of frequencies and averaging the absolute pressur
 \label{fig:frf}
 \end{center}
 \end{figure}
-
+%
+Figure \ref{fig:Eigen243} shows the mean and variance for the second eigenfrequency at $243Hz$. A symmetric pattern is clearly visible in both mean and variance. The higher the absolute pressure in the mean, the higher the variance. Hence, both mean and variance share the locations of zero mean, rspectively variance. Plots for the first and third eigenfrequencies can be found in Appendix ?!?!?!, an animation with a frequency sweep, therefore showing also the behavior of the domain in non-eigenfrequency regions, can be found online.
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{pics/Freq243}
+\caption{The mean and variance for the second eigenfrequency of the 2D field.}
+\label{fig:Eigen243}
+\end{center}
+\end{figure}
 
 
 
@@ -2290,6 +2298,36 @@ Due to the promising results, statFEM appears to be a useful method to incorpora
 statFEM for vibroacoustics could be useful for current research: Lately, universities conduct research on new kinds of airplanes. This involves big and complex FEM models which are often reduced to the bare minimum of information. That model-to-reality mismatch could be reduced by taking a rather small amount of measurements in a real environment to condition the FEM model on. 
 
 
+\appendix
+\renewcommand{\thesection}{\Alph{section}.\arabic{section}}
+\setcounter{section}{0}
+\begin{appendices}
+
+\chapter{Additional Plots}
+
+\section*{Eigenfrequencies}
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{pics/Freq170}
+\caption{The mean and variance for the first eigenfrequency of the 2D field.}
+\label{fig:Eigen170}
+\end{center}
+\end{figure}
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{pics/Freq342}
+\caption{The mean and variance for the third eigenfrequency of the 2D field.}
+\label{fig:Eigen342}
+\end{center}
+\end{figure}
+
+
+
+\chapter{Code}
+
+
+\end{appendices}
 
 \printbibliography
 

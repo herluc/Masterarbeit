@@ -317,6 +317,7 @@ class solverClass:
 	def plotFreqHelper(self):
 		@gif.frame
 		def plotFreqVariation(i):
+			i = 342
 			self.f = i
 			c = 340
 			self.Z = self.rho * c
@@ -327,8 +328,7 @@ class solverClass:
 			solver.doFEM()
 			solver.get_U_mean()
 			solver.get_C_u()
-
-			fig = plt.figure(figsize=plt.figaspect(0.5))
+			fig = plt.figure(figsize=(8, 3))
 			## plot the mean prior
 			###############################################################
 			meanVar = np.sqrt((np.array(self.u.vector().get_local())**2).sum())
@@ -338,11 +338,10 @@ class solverClass:
 			plt.colorbar(c)
 			plt.xlabel('$x$')
 			plt.ylabel('$y$')
-			plt.title('mean, '+r'$freq$='+str(i)+r'$Hz$')
+			plt.title('mean, '+r'$freq$='+str(round(i,1))+r'$Hz$')
 			#c.set_clim(vmin=0, vmax=2.5)
 			plt.text(0.2,0.2, r"$l_2:$ "+str(round(meanVar,2)),bbox=dict(boxstyle="round",alpha=0.5))
-			#fig.savefig("VarField.pdf", bbox_inches='tight')
-			#plt.show()
+			plt.tight_layout()
 			##################################################################
 
 
@@ -355,11 +354,12 @@ class solverClass:
 			plt.colorbar(c)
 			plt.xlabel('$x$')
 			plt.ylabel('$y$')
-			plt.title('variance, '+r'$freq$='+str(i)+r'$Hz$')
+			plt.title('variance, '+r'$freq$='+str(round(i,1))+r'$Hz$')
 			#c.set_clim(vmin=0, vmax=2.5)
 			plt.text(0.2,0.2, r"$l_2:$ "+str(round(meanVar,2)),bbox=dict(boxstyle="round",alpha=0.5))
-			#fig.savefig("VarField.pdf", bbox_inches='tight')
-			#plt.show()
+			fig.savefig("Freq342.pdf", bbox_inches='tight')
+			plt.tight_layout()
+			plt.show()
 			##################################################################
 		frames = []
 		for i in np.linspace(100,600,100):
