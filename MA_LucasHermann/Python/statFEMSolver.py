@@ -57,9 +57,9 @@ class solverClass:
 	def matern_log(self, xa, xb, l, sig):
 		""" expects input parameters as log(par). """
 		r = scipy.spatial.distance.cdist(xa, xb, 'euclidean')
-		return np.exp(2*sig) * np.exp(-1 * scipy.spatial.distance.cdist(xa, xb, 'euclidean') * np.exp(-1*l)) #nu = 1/2
+		#return np.exp(2*sig) * np.exp(-1 * scipy.spatial.distance.cdist(xa, xb, 'euclidean') * np.exp(-1*l)) #nu = 1/2
 		#return np.exp(2*sig) * ((1 + np.sqrt(3) * r *np.exp(-1*l)) *  np.exp(-1 * np.sqrt(3) * r * np.exp(-1*l))   ) # nu = 3/2
-		#return np.exp(2*sig) * ((1 + np.sqrt(5) * r *np.exp(-1*l) +  5*r*r/3*np.exp(-1*l)*np.exp(-1*l)  ) *  np.exp(-1 * np.sqrt(5) * r * np.exp(-1*l))   ) # nu = 5/2
+		return np.exp(2*sig) * ((1 + np.sqrt(5) * r *np.exp(-1*l) +  5*r*r/3*np.exp(-1*l)*np.exp(-1*l)  ) *  np.exp(-1 * np.sqrt(5) * r * np.exp(-1*l))   ) # nu = 5/2
 
 
 
@@ -259,20 +259,22 @@ class solverClass:
 		f_mean = (np.pi)**2*(1/5)*np.ones(self.ne+1)
 		fGP = np.random.multivariate_normal(
 			mean = f_mean, cov=self.c_f,
-			size=10)
-		f = plt.figure(figsize=(6, 4), dpi=100)
-		plt.plot(self.coordinates, np.transpose(f_mean), linestyle='-', color = 'black',lw = 1.0)
+			size=4)
+		f = plt.figure(figsize=(4, 2.5), dpi=100)
+		plt.plot(self.coordinates, np.transpose(f_mean), linestyle='-', color = 'black')
 		#plt.plot(solver.coordinates, np.transpose(U_mean_verbose), linestyle='-.', color = 'red',lw = 1.0)
-		plt.plot(self.coordinates, np.transpose(fGP), linestyle='-',lw = 0.4)
+		plt.plot(self.coordinates, np.transpose(fGP))#, linestyle='-',lw = 0.4)
 		C_fDiag = np.sqrt(np.diagonal(self.c_f))
-		plt.plot(np.transpose(solver.coordinates)[0], np.transpose(f_mean)-1.96*C_fDiag, linestyle='-.',color = 'green',lw = 1.0,label='2sig')
-		plt.plot(np.transpose(solver.coordinates)[0], np.transpose(f_mean)+1.96*C_fDiag, linestyle='-.',color = 'green',lw = 1.0)
+		#plt.plot(np.transpose(solver.coordinates)[0], np.transpose(f_mean)-1.96*C_fDiag, linestyle='-.',color = 'green',lw = 1.0,label='2sig')
+		#plt.plot(np.transpose(solver.coordinates)[0], np.transpose(f_mean)+1.96*C_fDiag, linestyle='-.',color = 'green',lw = 1.0)
+		plt.fill_between(np.transpose(solver.coordinates)[0], np.transpose(f_mean)+1.96*C_fDiag, np.transpose(f_mean)-1.96*C_fDiag,color = 'green',alpha=0.3,label='$2\sigma$')
 		plt.ylabel("$f(x)$")
 		plt.xlabel("$x$")
 		plt.grid()
 		#plt.legend()
-		f.savefig("matern1_2_f_sampled.pdf", bbox_inches='tight')
-		#f.savefig("sqex_f_sampled.pdf", bbox_inches='tight')
+		plt.tight_layout()
+		#f.savefig("matern5_2_f_sampled.pdf", bbox_inches='tight')
+		f.savefig("sqexp_f_sampled.pdf", bbox_inches='tight')
 		plt.show()
 
 
@@ -346,6 +348,7 @@ class solverClass:
 		x_values = self.coordinates
 		#x_values = np.expand_dims(np.array(x_values),1)
 		self.z_mean = 0.2*np.sin(np.pi*x_values_arr) + 0.02*np.sin(7*np.pi*x_values_arr)
+		#self.z_mean = 3*0.2*np.sin(np.pi*x_values_arr) + 3*0.02*np.sin(7*np.pi*x_values_arr)
 		c_z = self.exponentiated_quadratic(x_values,
 			 x_values, lf=0.5, sigf=0.0225) #acc to cirak paper. sqrt(0.0225)=0.15
 		sigf=0.15
@@ -372,14 +375,22 @@ class solverClass:
 			size=ny)
 
 		C_zDiag = np.sqrt(np.diagonal(self.C_z))
+
+
+		priorSamples=self.samplePrior()
+
+
 		z=plt.figure()
-		plt.plot(x_values, self.z_mean, linestyle='-', color = 'black',lw = 1.0,label='mean')
-		#plt.plot(solver.coordinates, np.transpose(U_mean_verbose), linestyle='-.', color = 'red',lw = 1.0)
-		#plt.plot(x_values_arr, np.transpose(self.zGP), linestyle='-',lw = 0.4)
-		plt.fill_between(x_values_arr, self.z_mean+1.96*C_zDiag, self.z_mean-1.96*C_zDiag, color='blue', alpha=0.15,label=r'$2\sigma$')
-		#plt.plot(x_values, self.z_mean-1.96*C_zDiag, linestyle='-.',color = 'green',lw = 1.0,label='sig')
-		#plt.plot(x_values, self.z_mean+1.96*C_zDiag, linestyle='-.',color = 'green',lw = 1.0)
-		plt.ylabel("$z(x)$")
+		plt.plot(x_values, self.z_mean, linestyle='-', color = 'black',lw = 1.0,label='mean z')
+		plt.fill_between(x_values_arr, self.z_mean+1.96*C_zDiag, self.z_mean-1.96*C_zDiag, color='blue', alpha=0.15,label='$2\sigma$ z')
+		plt.plot(solver.coordinates, np.transpose(self.zGP[0:5]), linestyle='-',lw = 0.6,color='blue', alpha=0.55)
+
+
+		plt.plot(self.coordinates, np.transpose(self.U_meanPRIOR), linestyle='-', color = 'green',lw = 1.8,label='mean FEM prior')
+		plt.fill_between(np.transpose(self.coordinates)[0], np.array(self.muLPRIOR)+1.96*self.C_uDiag, np.array(self.muLPRIOR)-1.96*self.C_uDiag,color = 'green',alpha=0.3,label='$2\sigma$ FEM prior')
+		plt.plot(solver.coordinates, np.transpose(priorSamples[0:5]), linestyle='-',lw = 0.6,color='green', alpha=0.55)
+		
+		plt.ylabel("$z(x)$"+"/"+"$p(x)$")
 		plt.xlabel("$x$")
 		plt.grid()
 		plt.legend()
@@ -626,6 +637,7 @@ class solverClass:
 		samples = self.doMCMC([rho_est,sigd_est,ld_est])
 		print('MCMC: ',samples)
 		#return result.x
+		self.rho_est = np.exp(rho_est)
 
 		return rho_est,sigd_est,ld_est
 		#return rho_est,sigd_est,0.2
@@ -715,6 +727,7 @@ class solverClass:
 		C_u = self.get_C_u()
 		C_u_inv = np.linalg.inv(C_u)
 		C_d = self.get_C_d(y_points,ld=ld,sigd=sigd)
+		self.C_d_total = self.get_C_d(self.coordinates,ld=ld,sigd=sigd)
 
 		P_T = np.transpose(P)
 		rho = np.exp(rho)
@@ -735,9 +748,24 @@ class solverClass:
 		posteriorGP = np.random.multivariate_normal(
 			mean = u_mean_y, cov=C_u_y,
 			size=self.nMC)
+		self.u_y_mean = u_mean_y
+		self.C_u_y = C_u_y
 		return u_mean_y,posteriorGP
 
 
+
+
+	def estimateTrueResponse(self):
+		self.zy_mean = self.u_y_mean
+		self.C_zy = self.rho_est*self.rho_est *self.C_u_y   + self.C_d_total
+		self.C_zy_yDiag = np.sqrt(np.diagonal(self.C_zy))
+		u = Function(self.V)
+		u.vector().set_local(self.zy_mean)
+		#self.zy_mean = u
+
+		u_sig = Function(self.V)
+		u_sig.vector().set_local(self.C_zy_yDiag.tolist())
+		self.zy_sig = u_sig
 
 
 
@@ -814,12 +842,14 @@ for i in range(solver.ne+1):
 	muL.append(mu)
 	DeltaL.append(Delta)
 error_mean = U_mean - np.array(muL)
+solver.U_meanPRIOR = U_mean
+solver.muLPRIOR = muL
 
 
 
 #print(priorSamples[0])
 #print(len(priorSamples[0]))
-n_obs = 9+2
+n_obs = 10+2
 idx = np.round(np.linspace(0, len(priorSamples[0])-1, n_obs)).astype(int)
 y_values_prior = [priorSamples[0][i] for i in idx]
 y_values=[0.02393523,0.04423292, 0.06159137, 0.08335314, 0.09902092, 0.11984335,
@@ -832,7 +862,7 @@ y_values=[0.02393523,0.04423292, 0.06159137, 0.08335314, 0.09902092, 0.11984335,
 
 #y_values = np.array(y_values)# + noise
 y_values = y_values_prior[1:-1]
-y_values = [x*1.32 for x in y_values]
+y_values = [x*3 for x in y_values]
 
 #noise = np.random.normal(0,1e-2,len(y_values))
 #y_values = y_values + noise
@@ -855,8 +885,8 @@ y_points = [solver.coordinates.tolist()[i] for i in idx][1:-1]
 #y_points = [0.1,0.3,0.5,0.7,0.9]
 #y_values = [x-0.1 for x in y_values]
 
-#y_values = y_values[5:]
-#y_points = y_points[5:]
+# y_values = y_values[15:]
+# y_points = y_points[15:]
 
 #y_values = solver.create_fake_data(y_points,y_values)
 ###### multiple observations
@@ -870,22 +900,22 @@ solver.yVectors = y_values_list
 ############################
 
 
-#with observations GP z(x)
+###with observations GP z(x)
 solver.no=100
 n_sens = 30
 solver.get_z_GP([0.1,0.4,0.6],solver.no)
 idx = np.round(np.linspace(2, len(solver.zGP[0])-3, n_sens)).astype(int)
 #idx=[18]
-y_points = [solver.coordinates.tolist()[i] for i in idx]#[1:-1]
+y_points = [solver.coordinates.tolist()[i] for i in idx]#[15:]
 
 y_values_list = []
 for i,sample in enumerate(solver.zGP):
-	y_values_prior = [sample[i] for i in idx]#[1:-1]
+	y_values_prior = [sample[i] for i in idx]#[15:]
 	#noise = np.random.normal(0,2.5e-2,len(y_values_prior))
 	y_values_list.append(y_values_prior)
 solver.yVectors = y_values_list
 with open("data1D.txt", "w") as myfile:
-	myfile.write('n:sens: '+str(n_sens)+', n_o: '+str(solver.no)+'\n')
+	myfile.write('n_sens: '+str(n_sens)+', n_o: '+str(solver.no)+'\n')
 
 ###########################
 
@@ -904,7 +934,7 @@ error_var = np.square(np.array(solver.C_u_yDiag)) - np.square(np.array(sigL))
 
 
 
-
+solver.estimateTrueResponse()
 
 
 
@@ -918,12 +948,14 @@ plt.fill_between(np.transpose(solver.coordinates)[0], np.array(muL)+1.96*solver.
 #plt.plot(np.transpose(solver.coordinates)[0], np.array(muL), linestyle='-.',color = 'black',lw = 3.0, label='Mean MC')
 #plt.plot(np.transpose(solver.coordinates)[0], error_var, linestyle='-.',color = 'green',lw = 2.0, label='Mean error')
 #plt.plot(solver.coordinates, np.transpose(posterior_samples[10:150]), linestyle='-',lw = 0.2,color='black', alpha=0.4)
-#plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)-1.96*solver.C_u_yDiag, linestyle='-.',color = 'green',lw = 1.0,label='2sig')
-#plt.plot(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)+1.96*solver.C_u_yDiag, linestyle='-.',color = 'green',lw = 1.0)
-plt.fill_between(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)+1.96*solver.C_u_yDiag, np.transpose(u_mean_y)-1.96*solver.C_u_yDiag,color = 'black',alpha=0.3,label='$2\sigma$ Posterior')
+
+#plt.fill_between(np.transpose(solver.coordinates)[0], np.transpose(u_mean_y)+1.96*solver.C_u_yDiag, np.transpose(u_mean_y)-1.96*solver.C_u_yDiag,color = 'black',alpha=0.3,label='$2\sigma$ Posterior')
+#plt.plot(solver.coordinates, np.transpose(u_mean_y), linestyle='-', color = 'black',lw = 1.8,label='Posterior mean')
+
+plt.fill_between(np.transpose(solver.coordinates)[0], np.transpose(solver.zy_mean)+1.96*solver.C_zy_yDiag, np.transpose(solver.zy_mean)-1.96*solver.C_zy_yDiag,color = 'black',alpha=0.3,label='estimated z(x)')
+plt.plot(solver.coordinates, np.transpose(solver.zy_mean), linestyle='-', color = 'black',lw = 1.8,label='Posterior mean')
 
 
-plt.plot(solver.coordinates, np.transpose(u_mean_y), linestyle='-', color = 'black',lw = 1.8,label='Posterior mean')
 #plt.scatter(solver.y_points, solver.y_values,label='observations')
 for obs in y_values_list:
 	plt.scatter(solver.y_points, obs,s=5, color = 'red',alpha=0.6)

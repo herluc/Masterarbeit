@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.7)  12 SEP 2021 16:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2021.6.7)  25 SEP 2021 00:05
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -596,11 +596,6 @@ File: standard.bbx 2017/12/19 v3.10 biblatex bibliography style (PK/JW/AB)
 \c@bbx:relatedcount=\count298
 \c@bbx:relatedtotal=\count299
 ))))
-Package biblatex Info: Trying to load citation style 'ieee'...
-Package biblatex Info: ... file 'ieee.cbx' found.
-
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex-ieee/ieee.cbx
-File: ieee.cbx 2017/03/27 v1.2d biblatex citation style
 Package biblatex Info: Trying to load citation style 'numeric-comp'...
 Package biblatex Info: ... file 'numeric-comp.cbx' found.
 
@@ -620,15 +615,26 @@ Package biblatex Info: Redefining '\cites'.
 Package biblatex Info: Redefining '\parencites'.
 Package biblatex Info: Redefining '\smartcites'.
 )
-Package biblatex Info: Redefining '\cite'.
-Package biblatex Info: Redefining '\cites'.
-)
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+(/usr/share/texlive/texmf-dist/tex/latex/nomencl/nomencl.sty
+Package: nomencl 2005/09/22 v4.2 Nomenclature package (LN)
+\nomlabelwidth=\dimen126
+\nom@tempdim=\dimen127
+\nomitemsep=\skip108
+)
+\@nomenclaturefile=\write5
+\openout5 = `tubsreprt_example.nlo'.
+
+
+Writing nomenclature file tubsreprt_example.nlo
 (/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
 \c@@pps=\count302
@@ -653,18 +659,18 @@ Package: expl3 2018/02/21 L3 programming layer (code)
 \l__iow_line_target_int=\count314
 \l__iow_one_indent_int=\count315
 \l__iow_indent_int=\count316
-\c_zero_dim=\dimen126
-\c_max_dim=\dimen127
-\l_tmpa_dim=\dimen128
-\l_tmpb_dim=\dimen129
-\g_tmpa_dim=\dimen130
-\g_tmpb_dim=\dimen131
-\c_zero_skip=\skip108
-\c_max_skip=\skip109
-\l_tmpa_skip=\skip110
-\l_tmpb_skip=\skip111
-\g_tmpa_skip=\skip112
-\g_tmpb_skip=\skip113
+\c_zero_dim=\dimen128
+\c_max_dim=\dimen129
+\l_tmpa_dim=\dimen130
+\l_tmpb_dim=\dimen131
+\g_tmpa_dim=\dimen132
+\g_tmpb_dim=\dimen133
+\c_zero_skip=\skip109
+\c_max_skip=\skip110
+\l_tmpa_skip=\skip111
+\l_tmpb_skip=\skip112
+\g_tmpa_skip=\skip113
+\g_tmpb_skip=\skip114
 \c_zero_muskip=\muskip11
 \c_max_muskip=\muskip12
 \l_tmpa_muskip=\muskip13
@@ -747,23 +753,23 @@ Package: expl3 2018/02/21 L3 programming layer (code)
 \l_tmpb_box=\box35
 \g_tmpa_box=\box36
 \g_tmpb_box=\box37
-\l__box_top_dim=\dimen132
-\l__box_bottom_dim=\dimen133
-\l__box_left_dim=\dimen134
-\l__box_right_dim=\dimen135
-\l__box_top_new_dim=\dimen136
-\l__box_bottom_new_dim=\dimen137
-\l__box_left_new_dim=\dimen138
-\l__box_right_new_dim=\dimen139
+\l__box_top_dim=\dimen134
+\l__box_bottom_dim=\dimen135
+\l__box_left_dim=\dimen136
+\l__box_right_dim=\dimen137
+\l__box_top_new_dim=\dimen138
+\l__box_bottom_new_dim=\dimen139
+\l__box_left_new_dim=\dimen140
+\l__box_right_new_dim=\dimen141
 \l__box_internal_box=\box38
 \l__coffin_internal_box=\box39
-\l__coffin_internal_dim=\dimen140
-\l__coffin_offset_x_dim=\dimen141
-\l__coffin_offset_y_dim=\dimen142
-\l__coffin_x_dim=\dimen143
-\l__coffin_y_dim=\dimen144
-\l__coffin_x_prime_dim=\dimen145
-\l__coffin_y_prime_dim=\dimen146
+\l__coffin_internal_dim=\dimen142
+\l__coffin_offset_x_dim=\dimen143
+\l__coffin_offset_y_dim=\dimen144
+\l__coffin_x_dim=\dimen145
+\l__coffin_y_dim=\dimen146
+\l__coffin_x_prime_dim=\dimen147
+\l__coffin_y_prime_dim=\dimen148
 \c_empty_coffin=\box40
 \l__coffin_aligned_coffin=\box41
 \l__coffin_aligned_internal_coffin=\box42
@@ -772,16 +778,16 @@ Package: expl3 2018/02/21 L3 programming layer (code)
 \l__coffin_display_coffin=\box45
 \l__coffin_display_coord_coffin=\box46
 \l__coffin_display_pole_coffin=\box47
-\l__coffin_display_offset_dim=\dimen147
-\l__coffin_display_x_dim=\dimen148
-\l__coffin_display_y_dim=\dimen149
-\l__coffin_bounding_shift_dim=\dimen150
-\l__coffin_left_corner_dim=\dimen151
-\l__coffin_right_corner_dim=\dimen152
-\l__coffin_bottom_corner_dim=\dimen153
-\l__coffin_top_corner_dim=\dimen154
-\l__coffin_scaled_total_height_dim=\dimen155
-\l__coffin_scaled_width_dim=\dimen156
+\l__coffin_display_offset_dim=\dimen149
+\l__coffin_display_x_dim=\dimen150
+\l__coffin_display_y_dim=\dimen151
+\l__coffin_bounding_shift_dim=\dimen152
+\l__coffin_left_corner_dim=\dimen153
+\l__coffin_right_corner_dim=\dimen154
+\l__coffin_bottom_corner_dim=\dimen155
+\l__coffin_top_corner_dim=\dimen156
+\l__coffin_scaled_total_height_dim=\dimen157
+\l__coffin_scaled_width_dim=\dimen158
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
@@ -804,21 +810,21 @@ Package: amstext 2000/06/29 v2.01 AMS text
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
-\ex@=\dimen157
+\ex@=\dimen159
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen158
-\extrarowheight=\dimen159
+\col@sep=\dimen160
+\extrarowheight=\dimen161
 \NC@list=\toks19
-\extratabsurround=\skip114
-\backup@length=\skip115
+\extratabsurround=\skip115
+\backup@length=\skip116
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
 Package: l3keys2e 2018/02/21 LaTeX2e option processing using LaTeX3 keys
 )
 \l__siunitx_tmp_box=\box49
-\l__siunitx_tmp_dim=\dimen160
+\l__siunitx_tmp_dim=\dimen162
 \l__siunitx_tmp_int=\count394
 \l__siunitx_number_mantissa_length_int=\count395
 \l__siunitx_number_uncert_length_int=\count396
@@ -831,8 +837,8 @@ Package: l3keys2e 2018/02/21 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_group_min_int=\count403
 \l__siunitx_angle_marker_box=\box50
 \l__siunitx_angle_unit_box=\box51
-\l__siunitx_angle_marker_dim=\dimen161
-\l__siunitx_angle_unit_dim=\dimen162
+\l__siunitx_angle_marker_dim=\dimen163
+\l__siunitx_angle_unit_dim=\dimen164
 \l__siunitx_unit_int=\count404
 \l__siunitx_unit_denominator_int=\count405
 \l__siunitx_unit_numerator_int=\count406
@@ -840,23 +846,23 @@ Package: l3keys2e 2018/02/21 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_unit_prefix_base_int=\count408
 \l__siunitx_unit_prefix_gram_int=\count409
 \l__siunitx_number_product_int=\count410
-\c__siunitx_one_fill_skip=\skip116
-\l__siunitx_table_unit_align_skip=\skip117
-\l__siunitx_table_exponent_dim=\dimen163
-\l__siunitx_table_integer_dim=\dimen164
-\l__siunitx_table_mantissa_dim=\dimen165
-\l__siunitx_table_marker_dim=\dimen166
-\l__siunitx_table_result_dim=\dimen167
-\l__siunitx_table_uncert_dim=\dimen168
-\l__siunitx_table_fill_pre_dim=\dimen169
-\l__siunitx_table_fill_post_dim=\dimen170
-\l__siunitx_table_fill_mid_dim=\dimen171
+\c__siunitx_one_fill_skip=\skip117
+\l__siunitx_table_unit_align_skip=\skip118
+\l__siunitx_table_exponent_dim=\dimen165
+\l__siunitx_table_integer_dim=\dimen166
+\l__siunitx_table_mantissa_dim=\dimen167
+\l__siunitx_table_marker_dim=\dimen168
+\l__siunitx_table_result_dim=\dimen169
+\l__siunitx_table_uncert_dim=\dimen170
+\l__siunitx_table_fill_pre_dim=\dimen171
+\l__siunitx_table_fill_post_dim=\dimen172
+\l__siunitx_table_fill_mid_dim=\dimen173
 \l__siunitx_table_pre_box=\box52
 \l__siunitx_table_post_box=\box53
 \l__siunitx_table_mantissa_box=\box54
 \l__siunitx_table_result_box=\box55
-\l__siunitx_table_number_align_skip=\skip118
-\l__siunitx_table_text_align_skip=\skip119
+\l__siunitx_table_number_align_skip=\skip119
+\l__siunitx_table_text_align_skip=\skip120
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
@@ -982,14 +988,14 @@ Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
 \lst@gtempboxa=\box56
 \lst@token=\toks20
 \lst@length=\count412
-\lst@currlwidth=\dimen172
+\lst@currlwidth=\dimen174
 \lst@column=\count413
 \lst@pos=\count414
-\lst@lostspace=\dimen173
-\lst@width=\dimen174
+\lst@lostspace=\dimen175
+\lst@width=\dimen176
 \lst@newlines=\count415
 \lst@lineno=\count416
-\lst@maxwidth=\dimen175
+\lst@maxwidth=\dimen177
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
@@ -1019,7 +1025,7 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \FV@TabBox=\box58
 \c@FancyVerbLine=\count420
 \FV@StepNumber=\count421
-\FV@OutFile=\write5
+\FV@OutFile=\write6
 )
 (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
@@ -1112,36 +1118,36 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \linenopenalty=\count422
 \output=\toks21
 \linenoprevgraf=\count423
-\linenumbersep=\dimen176
-\linenumberwidth=\dimen177
+\linenumbersep=\dimen178
+\linenumberwidth=\dimen179
 \c@linenumber=\count424
 \c@pagewiselinenumber=\count425
 \c@LN@truepage=\count426
 \c@internallinenumber=\count427
 \c@internallinenumbers=\count428
-\quotelinenumbersep=\dimen178
-\bframerule=\dimen179
-\bframesep=\dimen180
+\quotelinenumbersep=\dimen180
+\bframerule=\dimen181
+\bframesep=\dimen182
 \bframebox=\box59
 LaTeX Info: Redefining \\ on input line 3056.
 )
 \c@FV@TrueTabGroupLevel=\count429
 \c@FV@TrueTabCounter=\count430
 \FV@TabBox@Group=\box60
-\FV@TmpLength=\skip120
+\FV@TmpLength=\skip121
 \c@FV@HighlightLinesStart=\count431
 \c@FV@HighlightLinesStop=\count432
 \FV@LoopCount=\count433
 \FV@NCharsBox=\box61
-\FV@BreakIndent=\dimen181
+\FV@BreakIndent=\dimen183
 \FV@BreakIndentNChars=\count434
-\FV@BreakSymbolSepLeft=\dimen182
+\FV@BreakSymbolSepLeft=\dimen184
 \FV@BreakSymbolSepLeftNChars=\count435
-\FV@BreakSymbolSepRight=\dimen183
+\FV@BreakSymbolSepRight=\dimen185
 \FV@BreakSymbolSepRightNChars=\count436
-\FV@BreakSymbolIndentLeft=\dimen184
+\FV@BreakSymbolIndentLeft=\dimen186
 \FV@BreakSymbolIndentLeftNChars=\count437
-\FV@BreakSymbolIndentRight=\dimen185
+\FV@BreakSymbolIndentRight=\dimen187
 \FV@BreakSymbolIndentRightNChars=\count438
 \c@FancyVerbLineBreakLast=\count439
 \FV@LineBox=\box62
@@ -1166,11 +1172,11 @@ runsystem(rm -- "tubsreprt_example.w18")...executed.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip121
-\fb@frw=\dimen186
-\fb@frh=\dimen187
-\FrameRule=\dimen188
-\FrameSep=\dimen189
+\OuterFrameSep=\skip122
+\fb@frw=\dimen188
+\fb@frh=\dimen189
+\FrameRule=\dimen190
+\FrameSep=\dimen191
 )
 (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
@@ -1182,7 +1188,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 )
 \minted@appexistsfile=\read4
 \minted@bgbox=\box66
-\minted@code=\write6
+\minted@code=\write7
 \c@minted@FancyVerbLineTemp=\count441
 \c@minted@pygmentizecounter=\count442
 \@float@every@listing=\toks24
@@ -1193,42 +1199,42 @@ runsystem(mkdir -p _minted-tubsreprt_example)...executed.
 
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2016/04/27 v1.618033 publication quality tables
-\heavyrulewidth=\dimen190
-\lightrulewidth=\dimen191
-\cmidrulewidth=\dimen192
-\belowrulesep=\dimen193
-\belowbottomsep=\dimen194
-\aboverulesep=\dimen195
-\abovetopsep=\dimen196
-\cmidrulesep=\dimen197
-\cmidrulekern=\dimen198
-\defaultaddspace=\dimen199
+\heavyrulewidth=\dimen192
+\lightrulewidth=\dimen193
+\cmidrulewidth=\dimen194
+\belowrulesep=\dimen195
+\belowbottomsep=\dimen196
+\aboverulesep=\dimen197
+\abovetopsep=\dimen198
+\cmidrulesep=\dimen199
+\cmidrulekern=\dimen256
+\defaultaddspace=\dimen257
 \@cmidla=\count444
 \@cmidlb=\count445
-\@aboverulesep=\dimen256
-\@belowrulesep=\dimen257
+\@aboverulesep=\dimen258
+\@belowrulesep=\dimen259
 \@thisruleclass=\count446
 \@lastruleclass=\count447
-\@thisrulewidth=\dimen258
+\@thisrulewidth=\dimen260
 )
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
-\multirow@colwidth=\skip122
+\multirow@colwidth=\skip123
 \multirow@cntb=\count448
-\multirow@dima=\skip123
-\bigstrutjot=\dimen259
+\multirow@dima=\skip124
+\bigstrutjot=\dimen261
 )
 (/usr/share/texlive/texmf-dist/tex/latex/physics/physics.sty
 Package: physics 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
-\@mathmargin=\skip124
+\@mathmargin=\skip125
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen260
+\pmbraise@=\dimen262
 )
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
@@ -1245,7 +1251,7 @@ LaTeX Info: Redefining \dots on input line 475.
 LaTeX Info: Redefining \cdots on input line 596.
 \Mathstrutbox@=\box67
 \strutbox@=\box68
-\big@size=\dimen261
+\big@size=\dimen263
 LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \macc@depth=\count454
@@ -1258,15 +1264,15 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \column@=\count459
 \maxfields@=\count460
 \andhelp@=\toks26
-\eqnshift@=\dimen262
-\alignsep@=\dimen263
-\tagshift@=\dimen264
-\tagwidth@=\dimen265
-\totwidth@=\dimen266
-\lineht@=\dimen267
+\eqnshift@=\dimen264
+\alignsep@=\dimen265
+\tagshift@=\dimen266
+\tagwidth@=\dimen267
+\totwidth@=\dimen268
+\lineht@=\dimen269
 \@envbody=\toks27
-\multlinegap=\skip125
-\multlinetaggap=\skip126
+\multlinegap=\skip126
+\multlinetaggap=\skip127
 \mathdisplay@stack=\toks28
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
@@ -2243,13 +2249,13 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen268
-\captionmargin@=\dimen269
-\captionwidth=\dimen270
-\caption@tempdima=\dimen271
-\caption@indent=\dimen272
-\caption@parindent=\dimen273
-\caption@hangindent=\dimen274
+\captionmargin=\dimen270
+\captionmargin@=\dimen271
+\captionwidth=\dimen272
+\caption@tempdima=\dimen273
+\caption@indent=\dimen274
+\caption@parindent=\dimen275
+\caption@hangindent=\dimen276
 )
 Package caption Info: KOMA-Script document class.
 \c@ContinuedFloat=\count461
@@ -2264,8 +2270,8 @@ Package caption Info: listings package is loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks29
-\pgfutil@tempdima=\dimen275
-\pgfutil@tempdimb=\dimen276
+\pgfutil@tempdima=\dimen277
+\pgfutil@tempdimb=\dimen278
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
@@ -2288,15 +2294,15 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 ex
 \pgfkeys@tmptoks=\toks32
 ))
-\pgf@x=\dimen277
-\pgf@y=\dimen278
-\pgf@xa=\dimen279
-\pgf@ya=\dimen280
-\pgf@xb=\dimen281
-\pgf@yb=\dimen282
-\pgf@xc=\dimen283
-\pgf@yc=\dimen284
-\w@pgf@writea=\write7
+\pgf@x=\dimen279
+\pgf@y=\dimen280
+\pgf@xa=\dimen281
+\pgf@ya=\dimen282
+\pgf@xb=\dimen283
+\pgf@yb=\dimen284
+\pgf@xc=\dimen285
+\pgf@yc=\dimen286
+\w@pgf@writea=\write8
 \r@pgf@reada=\read5
 \c@pgf@counta=\count464
 \c@pgf@countb=\count465
@@ -2334,7 +2340,7 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen285
+\pgfmath@dimen=\dimen287
 \pgfmath@count=\count470
 \pgfmath@box=\box70
 \pgfmath@toks=\toks36
@@ -2364,32 +2370,32 @@ thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
-\pgf@picminx=\dimen286
-\pgf@picmaxx=\dimen287
-\pgf@picminy=\dimen288
-\pgf@picmaxy=\dimen289
-\pgf@pathminx=\dimen290
-\pgf@pathmaxx=\dimen291
-\pgf@pathminy=\dimen292
-\pgf@pathmaxy=\dimen293
-\pgf@xx=\dimen294
-\pgf@xy=\dimen295
-\pgf@yx=\dimen296
-\pgf@yy=\dimen297
-\pgf@zx=\dimen298
-\pgf@zy=\dimen299
+\pgf@picminx=\dimen288
+\pgf@picmaxx=\dimen289
+\pgf@picminy=\dimen290
+\pgf@picmaxy=\dimen291
+\pgf@pathminx=\dimen292
+\pgf@pathmaxx=\dimen293
+\pgf@pathminy=\dimen294
+\pgf@pathmaxy=\dimen295
+\pgf@xx=\dimen296
+\pgf@xy=\dimen297
+\pgf@yx=\dimen298
+\pgf@yy=\dimen299
+\pgf@zx=\dimen300
+\pgf@zy=\dimen301
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
 code.tex
 File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
-\pgf@path@lastx=\dimen300
-\pgf@path@lasty=\dimen301
+\pgf@path@lastx=\dimen302
+\pgf@path@lasty=\dimen303
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
 .tex
 File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
-\pgf@shorten@end@additional=\dimen302
-\pgf@shorten@start@additional=\dimen303
+\pgf@shorten@end@additional=\dimen304
+\pgf@shorten@start@additional=\dimen305
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
@@ -2402,14 +2408,14 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
 File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
-\pgflinewidth=\dimen304
+\pgflinewidth=\dimen306
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
 s.code.tex
 File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
-\pgf@pt@x=\dimen305
-\pgf@pt@y=\dimen306
-\pgf@pt@temp=\dimen307
+\pgf@pt@x=\dimen307
+\pgf@pt@y=\dimen308
+\pgf@pt@temp=\dimen309
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -2425,11 +2431,11 @@ File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
 x
 File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
-\pgfarrowsep=\dimen308
+\pgfarrowsep=\dimen310
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
-\pgf@max=\dimen309
+\pgf@max=\dimen311
 \pgf@sys@shading@range@num=\count473
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
@@ -2461,8 +2467,8 @@ File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen310
-\pgf@nodesepend=\dimen311
+\pgf@nodesepstart=\dimen312
+\pgf@nodesepend=\dimen313
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
@@ -2476,8 +2482,8 @@ Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen312
-\pgffor@skip=\dimen313
+\pgffor@iter=\dimen314
+\pgffor@skip=\dimen315
 \pgffor@stack=\toks39
 \pgffor@toks=\toks40
 ))
@@ -2488,14 +2494,14 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 .code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \pgf@plot@mark@count=\count474
-\pgfplotmarksize=\dimen314
+\pgfplotmarksize=\dimen316
 )
-\tikz@lastx=\dimen315
-\tikz@lasty=\dimen316
-\tikz@lastxsaved=\dimen317
-\tikz@lastysaved=\dimen318
-\tikzleveldistance=\dimen319
-\tikzsiblingdistance=\dimen320
+\tikz@lastx=\dimen317
+\tikz@lasty=\dimen318
+\tikz@lastxsaved=\dimen319
+\tikz@lastysaved=\dimen320
+\tikzleveldistance=\dimen321
+\tikzsiblingdistance=\dimen322
 \tikz@figbox=\box76
 \tikz@figbox@bg=\box77
 \tikz@tempbox=\box78
@@ -2530,7 +2536,7 @@ File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
 tex
 File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
-\arrowsize=\dimen321
+\arrowsize=\dimen323
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryshapes.code.tex
@@ -3149,7 +3155,7 @@ Language: ngermanb 2016/11/02 v2.9 German support for babel (new orthography)
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2018/02/14 3.18 Babel common definitions
 \babel@savecnt=\count483
-\U@D=\dimen322
+\U@D=\dimen324
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@dirlevel=\count484
@@ -3168,8 +3174,8 @@ Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pdfpages.sty
 Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
-\AM@pagewidth=\dimen323
-\AM@pageheight=\dimen324
+\AM@pagewidth=\dimen325
+\AM@pageheight=\dimen326
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
@@ -3218,7 +3224,7 @@ Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
 Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen325
+\@linkdim=\dimen327
 \Hy@linkcounter=\count487
 \Hy@pagecounter=\count488
 
@@ -3248,10 +3254,10 @@ Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4762.
 \c@Hy@tempcnt=\count490
 LaTeX Info: Redefining \url on input line 5115.
-\XeTeXLinkMargin=\dimen326
+\XeTeXLinkMargin=\dimen328
 \Fld@menulength=\count491
-\Field@Width=\dimen327
-\Fld@charsize=\dimen328
+\Field@Width=\dimen329
+\Fld@charsize=\dimen330
 Package hyperref Info: Hyper figures OFF on input line 6369.
 Package hyperref Info: Link nesting OFF on input line 6374.
 Package hyperref Info: Hyper index ON on input line 6377.
@@ -3277,7 +3283,7 @@ Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip127
+\Hy@SectionHShift=\skip128
 )
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty
 Package: hypcap 2016/05/16 v1.12 Adjusting the anchors of captions (HO)
@@ -3315,45 +3321,36 @@ LaTeX Warning: Unused global option(s):
 
 (./tubsreprt_example.aux
 
-LaTeX Warning: Label `fig:Matern1_2' multiply defined.
-
-
-LaTeX Warning: Label `fig:DataCloseToCI2' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:DataCloseToCI2' multiply defined.
-
-
-LaTeX Warning: Label `fig:OneSensor' multiply defined.
+LaTeX Warning: Label `fig:ModelError1D' multiply defined.
 
 )
 \openout1 = `tubsreprt_example.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 139.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 139.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 152.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 152.
 
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 139.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 139.
-LaTeX Font Info:    ... okay on input line 139.
+LaTeX Font Info:    ... okay on input line 152.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 152.
+LaTeX Font Info:    ... okay on input line 152.
 LaTeX Font Info:    Try loading font information for LY1+NexusProSans on input 
-line 139.
+line 152.
 
 (/usr/local/share/texmf/tex/latex/tubs/LY1NexusProSans.fd
 File: LY1NexusProSans.fd Fontshop NexusProSans font definitions
@@ -3361,13 +3358,13 @@ File: LY1NexusProSans.fd Fontshop NexusProSans font definitions
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count499
-\scratchdimen=\dimen329
+\scratchdimen=\dimen331
 \scratchbox=\box108
 \nofMPsegments=\count500
 \nofMParguments=\count501
 \everyMPshowfont=\toks45
 \MPscratchCnt=\count502
-\MPscratchDim=\dimen330
+\MPscratchDim=\dimen332
 \MPnumerator=\count503
 \makeMPintoPDFobject=\count504
 \everyMPtoPDFconversion=\toks46
@@ -3434,6 +3431,12 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'tubsreprt_example.bbl' found.
  (./tubsreprt_example.bbl
 
+Package biblatex Warning: Biber reported the following issues
+(biblatex)                with 'MacKay1991':
+(biblatex)                - Entry 'MacKay1991' (Library.bib): Invalid format 'D
+ecember 10, 1991' of date field 'date' - ignoring.
+
+
 Package biblatex Warning: The following entry could not be found
 (biblatex)                in the database:
 (biblatex)                Bayarri
@@ -3448,8 +3451,8 @@ Package biblatex Warning: The following entry could not be found
 (biblatex)                LaTeX afterwards.
 
 )
-Package biblatex Info: Reference section=0 on input line 139.
-Package biblatex Info: Reference segment=0 on input line 139.
+Package biblatex Info: Reference section=0 on input line 152.
+Package biblatex Info: Reference segment=0 on input line 152.
 
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
 -English.dict
@@ -3472,7 +3475,7 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-Package hyperref Info: Link coloring ON on input line 139.
+Package hyperref Info: Link coloring ON on input line 152.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -3482,47 +3485,47 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count506
 )
-LaTeX Info: Redefining \ref on input line 139.
-LaTeX Info: Redefining \pageref on input line 139.
-LaTeX Info: Redefining \nameref on input line 139.
+LaTeX Info: Redefining \ref on input line 152.
+LaTeX Info: Redefining \pageref on input line 152.
+LaTeX Info: Redefining \nameref on input line 152.
 
 (./tubsreprt_example.out) (./tubsreprt_example.out)
-\@outlinefile=\write8
-\openout8 = `tubsreprt_example.out'.
+\@outlinefile=\write9
+\openout9 = `tubsreprt_example.out'.
 
 \c__siunitx_mathsf_int=\count507
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 139.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 152.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 139
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 152
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlzplm.fd
 File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 139
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 152
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omszplm.fd
 File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
 )
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 139
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 152
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxzplm.fd
 File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
 )
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 139
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 152
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
 \c__siunitx_mathtt_int=\count508
-LaTeX Font Info:    Try loading font information for LY1+txtt on input line 139
+LaTeX Font Info:    Try loading font information for LY1+txtt on input line 152
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ly1txtt.fd
@@ -3532,39 +3535,39 @@ File: tytxtt.fd 2000/12/15 v3.1
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf  used on input
- line 143.
+ line 156.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf  used on input
- line 143.
+ line 156.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 <./Deckblatt/2099_StA_Name_Deckblatt.pdf, id=154, page=1, 597.50829pt x 845.047
 1pt>
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf, page 1>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf , page1 used o
-n input line 143.
+n input line 156.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf, page 1>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf , page1 used o
-n input line 143.
+n input line 156.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf, page 1>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf , page1 used o
-n input line 143.
+n input line 156.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf, page 1>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf , page1 used o
-n input line 143.
+n input line 156.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: ./Deckblatt/2099_StA_Name_Deckblatt.pdf Graphic file (type pdf)
 <use ./Deckblatt/2099_StA_Name_Deckblatt.pdf, page 1>
 Package pdftex.def Info: ./Deckblatt/2099_StA_Name_Deckblatt.pdf , page1 used o
-n input line 143.
+n input line 156.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [1
 
@@ -3573,26 +3576,15 @@ p/pdftex.map}>]
 LaTeX Font Info:    Font shape `LY1/NexusProSans/bx/n' in size <10.95> not avai
 lable
 (Font)              Font shape `LY1/NexusProSans/b/n' tried instead on input li
-ne 145.
+ne 158.
 LaTeX Font Info:    Font shape `LY1/NexusProSans/bx/n' in size <36> not availab
 le
 (Font)              Font shape `LY1/NexusProSans/b/n' tried instead on input li
-ne 145.
+ne 158.
 LaTeX Font Info:    Font shape `LY1/NexusProSans/bx/n' in size <27> not availab
 le
 (Font)              Font shape `LY1/NexusProSans/b/n' tried instead on input li
-ne 145.
-
-Overfull \hbox (14.30142pt too wide) in paragraph at lines 146--152
-\LY1/NexusProSans/m/n/10.95 Mas-ter-ar-beit mit dem Ti-tel ``<<Ti-tel>>'' selb-
-st‰ndig und ohne Be-nutzung an-derer als der angegebe-
- []
-
-
-Overfull \hbox (1.33444pt too wide) in paragraph at lines 146--152
-\LY1/NexusProSans/m/n/10.95 nen Hil-f-s-mit-tel ange-fer-tigt habe. Alle Stelle
-n, die wˆrtlich oder sinn- gem‰^^Y aus verˆf-fentlichten
- []
+ne 158.
 
 [2
 
@@ -3601,7 +3593,7 @@ n, die wˆrtlich oder sinn- gem‰^^Y aus verˆf-fentlichten
 LaTeX Font Info:    Font shape `LY1/NexusProSans/bx/n' in size <10> not availab
 le
 (Font)              Font shape `LY1/NexusProSans/b/n' tried instead on input li
-ne 168.
+ne 180.
  [3
 
 
@@ -3617,10 +3609,34 @@ ailable
 (Font)              Font shape `LY1/NexusProSans-lnum/b/n' tried instead on inp
 ut line 3.
 )
-\tf@toc=\write9
-\openout9 = `tubsreprt_example.toc'.
+\tf@toc=\write10
+\openout10 = `tubsreprt_example.toc'.
 
  [4
+
+
+]
+(./tubsreprt_example.lof [5
+
+
+])
+\tf@lof=\write11
+\openout11 = `tubsreprt_example.lof'.
+
+ [6] (./tubsreprt_example.lot)
+\tf@lot=\write12
+\openout12 = `tubsreprt_example.lot'.
+
+
+(./tubsreprt_example.nls [7
+
+
+]
+LaTeX Font Info:    Font shape `LY1/NexusProSans/bx/n' in size <18> not availab
+le
+(Font)              Font shape `LY1/NexusProSans/b/n' tried instead on input li
+ne 3.
+) [8
 
 
 ]
@@ -3643,45 +3659,77 @@ Class scrbook Warning: \float@addtolists detected!
 LaTeX Font Info:    Font shape `LY1/NexusProSans-lnum/bx/n' in size <27> not av
 ailable
 (Font)              Font shape `LY1/NexusProSans-lnum/b/n' tried instead on inp
-ut line 174.
-[5
+ut line 215.
+[9
 
 
-]
+] [10]
 chapter 2.
-LaTeX Font Info:    Font shape `LY1/NexusProSans/bx/n' in size <18> not availab
-le
-(Font)              Font shape `LY1/NexusProSans/b/n' tried instead on input li
-ne 199.
 LaTeX Font Info:    Font shape `LY1/NexusProSans-lnum/bx/n' in size <18> not av
 ailable
 (Font)              Font shape `LY1/NexusProSans-lnum/b/n' tried instead on inp
-ut line 199.
-[6
+ut line 247.
+[11
 
 
-] [7]
-Overfull \hbox (7.40388pt too wide) in paragraph at lines 292--294
+]
+
+LaTeX Warning: Command \" invalid in math mode on input line 275.
+
+
+LaTeX Warning: Command \" invalid in math mode on input line 275.
+
+Missing character: There is no ‰ in font pplr7t!
+Missing character: There is no ¸ in font pplr7t!
+[12]
+Overfull \hbox (7.40388pt too wide) in paragraph at lines 346--348
 \LY1/NexusProSans/m/n/10 with $\OML/zplm/m/it/10 ^^L$ \LY1/NexusProSans/m/n/10 
 the spe-cific nor-mal-ized acous-tic ad-mit-tance. The Robin bound-ary con-di-t
 ion is also called impedance
  []
 
-<pics/BCsExample.pdf, id=302, 121.37044pt x 116.0345pt>
-File: pics/BCsExample.pdf Graphic file (type pdf)
-<use pics/BCsExample.pdf>
-Package pdftex.def Info: pics/BCsExample.pdf  used on input line 301.
-(pdftex.def)             Requested size: 167.29968pt x 159.9578pt.
-<pics/BCsThesis1.pdf, id=303, 123.52951pt x 116.0345pt>
+<pics/BCsThesis1.pdf, id=490, 123.52951pt x 116.0345pt>
 File: pics/BCsThesis1.pdf Graphic file (type pdf)
 <use pics/BCsThesis1.pdf>
-Package pdftex.def Info: pics/BCsThesis1.pdf  used on input line 310.
+Package pdftex.def Info: pics/BCsThesis1.pdf  used on input line 365.
 (pdftex.def)             Requested size: 167.29968pt x 157.16565pt.
-\openout5 = `tubsreprt_example.pyg'.
+LaTeX Font Info:    Try loading font information for U+fplmbb on input line 373
+.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
+File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
+) [13]
+LaTeX Font Info:    Font shape `LY1/NexusProSans/bx/n' in size <14> not availab
+le
+(Font)              Font shape `LY1/NexusProSans/b/n' tried instead on input li
+ne 394.
+LaTeX Font Info:    Font shape `LY1/NexusProSans-lnum/bx/n' in size <14> not av
+ailable
+(Font)              Font shape `LY1/NexusProSans-lnum/b/n' tried instead on inp
+ut line 394.
+ [14 <./pics/BCsThesis1.pdf>] [15]
+<pics/1dDomainNew.pdf, id=555, 230.42686pt x 66.40509pt>
+File: pics/1dDomainNew.pdf Graphic file (type pdf)
+<use pics/1dDomainNew.pdf>
+Package pdftex.def Info: pics/1dDomainNew.pdf  used on input line 456.
+(pdftex.def)             Requested size: 250.9559pt x 72.32233pt.
+<pics/2dDomain.pdf, id=556, 142.04065pt x 142.30766pt>
+File: pics/2dDomain.pdf Graphic file (type pdf)
+<use pics/2dDomain.pdf>
+Package pdftex.def Info: pics/2dDomain.pdf  used on input line 466.
+(pdftex.def)             Requested size: 167.29968pt x 167.62407pt.
+Package placeins Info: Must dump some floats on input line 474.
+ [16
+Package placeins Info: Float barrier, from input line 474, processed on page 16
+, lands on page 16. 
+ <./pics/1dDomainNew.pdf>]
+Package placeins Info: Check again: on input line 474.
+Package placeins Info: No floats held, on input line 474.
+\openout6 = `tubsreprt_example.pyg'.
+
 
 (./_minted-tubsreprt_example/default-pyg-prefix.pygstyle)
 (./_minted-tubsreprt_example/default.pygstyle)
-(./_minted-tubsreprt_example/E8F0F0B0D3211E13EE6BBA47A6A76A084919F94676096CAB56
+(./_minted-tubsreprt_example/A8677A45C70A44F5E9B8CF0DD11273B84919F94676096CAB56
 C0D9EE67FD8EB5.pygtex
 LaTeX Font Info:    Try loading font information for LY1+NexusProSerif on input
  line 2.
@@ -3690,346 +3738,295 @@ LaTeX Font Info:    Try loading font information for LY1+NexusProSerif on input
 File: LY1NexusProSerif.fd Fontshop NexusProSerif font definitions
 )
 LaTeX Font Info:    Font shape `LY1/txtt/m/it' in size <9> not available
-(Font)              Font shape `LY1/txtt/m/sl' tried instead on input line 5.
+(Font)              Font shape `LY1/txtt/m/sl' tried instead on input line 2.
 )
-\openout5 = `tubsreprt_example.pyg'.
-
- [8]
-(./_minted-tubsreprt_example/4F5E25E415FD3903B5540297FD4D99E94919F94676096CAB56
-C0D9EE67FD8EB5.pygtex) [9 <./pics/BCsExample.pdf> <./pics/BCsThesis1.pdf>]
-LaTeX Font Info:    Font shape `LY1/NexusProSans/bx/n' in size <14> not availab
-le
-(Font)              Font shape `LY1/NexusProSans/b/n' tried instead on input li
-ne 370.
-LaTeX Font Info:    Font shape `LY1/NexusProSans-lnum/bx/n' in size <14> not av
-ailable
-(Font)              Font shape `LY1/NexusProSans-lnum/b/n' tried instead on inp
-ut line 370.
-
-[10]
-<pics/1dDomain.pdf, id=370, 230.42686pt x 66.40509pt>
-File: pics/1dDomain.pdf Graphic file (type pdf)
-<use pics/1dDomain.pdf>
-Package pdftex.def Info: pics/1dDomain.pdf  used on input line 433.
-(pdftex.def)             Requested size: 250.9559pt x 72.32233pt.
-<pics/2dDomain.pdf, id=371, 142.04065pt x 142.30766pt>
-File: pics/2dDomain.pdf Graphic file (type pdf)
-<use pics/2dDomain.pdf>
-Package pdftex.def Info: pics/2dDomain.pdf  used on input line 443.
-(pdftex.def)             Requested size: 167.29968pt x 167.62407pt.
- [11]
-\openout5 = `tubsreprt_example.pyg'.
+\openout6 = `tubsreprt_example.pyg'.
 
 
-(./_minted-tubsreprt_example/E98B375D4B33A5A7E28F370F7231F83D4919F94676096CAB56
-C0D9EE67FD8EB5.pygtex)
-\openout5 = `tubsreprt_example.pyg'.
-
-
-(./_minted-tubsreprt_example/D7DA64A03C3D6E00B7B501E6F755EA0A4919F94676096CAB56
-C0D9EE67FD8EB5.pygtex) [12 <./pics/1dDomain.pdf> <./pics/2dDomain.pdf>]
-[13] [14]
-\openout5 = `tubsreprt_example.pyg'.
+(./_minted-tubsreprt_example/111639C9EC59948FFB73ABC085CEE83E4919F94676096CAB56
+C0D9EE67FD8EB5.pygtex) [17
+Package placeins Info: Float barrier, from input line 474, processed on page 17
+, lands on page 17. 
+ <./pics/2dDomain.pdf>] [18]
+\openout6 = `tubsreprt_example.pyg'.
 
 
 (./_minted-tubsreprt_example/B9A80D549FC2AA1F35FBB6875C55A7AF4919F94676096CAB56
-C0D9EE67FD8EB5.pygtex)
-\openout5 = `tubsreprt_example.pyg'.
+C0D9EE67FD8EB5.pygtex) [19]
+\openout6 = `tubsreprt_example.pyg'.
 
 
 (./_minted-tubsreprt_example/D6E2688FA448FCAE7560F1A2327F427B4919F94676096CAB56
 C0D9EE67FD8EB5.pygtex)
-\openout5 = `tubsreprt_example.pyg'.
+\openout6 = `tubsreprt_example.pyg'.
+
+
+(./_minted-tubsreprt_example/639CE05812CDCF0F866E33F2D7FD11E74919F94676096CAB56
+C0D9EE67FD8EB5.pygtex)
+\openout6 = `tubsreprt_example.pyg'.
+
+
+(./_minted-tubsreprt_example/4C1E0812D8AC60E23A9C21AFD58123734919F94676096CAB56
+C0D9EE67FD8EB5.pygtex)
+Package placeins Info: No floats held, on input line 687.
+ [20
+Package placeins Info: Float barrier, from input line 687, processed on page 20
+, lands on page 20. 
+]
+\openout6 = `tubsreprt_example.pyg'.
 
 
 (./_minted-tubsreprt_example/3E69A0F873FF73D028F4E944017BB9E34919F94676096CAB56
 C0D9EE67FD8EB5.pygtex)
-<pics/frf.pdf, id=452, 430.0065pt x 197.2971pt>
+Package placeins Info: No floats held, on input line 712.
+<pics/frf.pdf, id=653, 430.0065pt x 197.2971pt>
 File: pics/frf.pdf Graphic file (type pdf)
 <use pics/frf.pdf>
-Package pdftex.def Info: pics/frf.pdf  used on input line 648.
+Package pdftex.def Info: pics/frf.pdf  used on input line 716.
 (pdftex.def)             Requested size: 376.42747pt x 172.71582pt.
-<pics/Freq243.pdf, id=454, 515.78482pt x 213.5907pt>
+<pics/Freq243.pdf, id=656, 515.78482pt x 213.5907pt>
 File: pics/Freq243.pdf Graphic file (type pdf)
 <use pics/Freq243.pdf>
-Package pdftex.def Info: pics/Freq243.pdf  used on input line 657.
+Package pdftex.def Info: pics/Freq243.pdf  used on input line 725.
 (pdftex.def)             Requested size: 376.42747pt x 155.88078pt.
- [15] [16 <./pics/frf.pdf> <./pics/Freq243.pdf
-
-pdfTeX warning: pdflatex (file ./pics/Freq243.pdf): PDF inclusion: multiple pdf
-s with page group included in a single page
->]
+ [21
+Package placeins Info: Float barrier, from input line 712, processed on page 21
+, lands on page 21. 
+ <./pics/frf.pdf>] [22 <./pics/Freq243.pdf>]
 chapter 3.
-LaTeX Font Info:    Try loading font information for U+fplmbb on input line 688
-.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ufplmbb.fd
-File: ufplmbb.fd 2003/10/30 Fontinst v1.914 font definitions for U/fplmbb.
-) [17
+[23
 
 
 ]
-<pics/Gaussians.pdf, id=545, 366.11778pt x 339.66899pt>
+<pics/Gaussians.pdf, id=721, 378.75134pt x 339.66899pt>
 File: pics/Gaussians.pdf Graphic file (type pdf)
 <use pics/Gaussians.pdf>
-Package pdftex.def Info: pics/Gaussians.pdf  used on input line 731.
-(pdftex.def)             Requested size: 250.9559pt x 232.82733pt.
- [18] [19 <./pics/Gaussians.pdf>]
-<pics/GPvsReg.pdf, id=592, 867.24pt x 289.08pt>
+Package pdftex.def Info: pics/Gaussians.pdf  used on input line 799.
+(pdftex.def)             Requested size: 250.9559pt x 225.05814pt.
+ [24 <./pics/Gaussians.pdf>] [25]
+<pics/GPvsReg.pdf, id=766, 508.7808pt x 197.2971pt>
 File: pics/GPvsReg.pdf Graphic file (type pdf)
 <use pics/GPvsReg.pdf>
-Package pdftex.def Info: pics/GPvsReg.pdf  used on input line 811.
-(pdftex.def)             Requested size: 460.08371pt x 153.36163pt.
-
-Overfull \hbox (41.82811pt too wide) in paragraph at lines 811--812
- [] 
- []
-
-[20]
-<pics/bivarGP.pdf, id=608, 578.16pt x 433.62pt>
+Package pdftex.def Info: pics/GPvsReg.pdf  used on input line 882.
+(pdftex.def)             Requested size: 418.2556pt x 162.20012pt.
+<pics/bivarGP.pdf, id=772, 509.50351pt x 393.14879pt>
 File: pics/bivarGP.pdf Graphic file (type pdf)
 <use pics/bivarGP.pdf>
-Package pdftex.def Info: pics/bivarGP.pdf  used on input line 823.
-(pdftex.def)             Requested size: 418.2556pt x 313.68826pt.
-<pics/multivarGP.pdf, id=610, 648.26193pt x 213.19649pt>
+Package pdftex.def Info: pics/bivarGP.pdf  used on input line 894.
+(pdftex.def)             Requested size: 418.2556pt x 322.73802pt.
+<pics/multivarGP.pdf, id=774, 495.04951pt x 172.7253pt>
 File: pics/multivarGP.pdf Graphic file (type pdf)
 <use pics/multivarGP.pdf>
-Package pdftex.def Info: pics/multivarGP.pdf  used on input line 832.
-(pdftex.def)             Requested size: 418.2556pt x 137.55458pt.
- [21 <./pics/GPvsReg.pdf>]
-
-LaTeX Warning: Text page 22 contains only floats.
-
-
-Overfull \vbox (3.2557pt too high) has occurred while \output is active []
-
-
-[22 <./pics/bivarGP.pdf> <./pics/multivarGP.pdf
-
-pdfTeX warning: pdflatex (file ./pics/multivarGP.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
->]
-<pics/Gaussians3dCut.pdf, id=721, 297.75192pt x 281.85298pt>
+Package pdftex.def Info: pics/multivarGP.pdf  used on input line 903.
+(pdftex.def)             Requested size: 418.2556pt x 145.93427pt.
+ [26] [27 <./pics/GPvsReg.pdf>]
+<pics/Gaussians3dCut.pdf, id=815, 297.75192pt x 281.85298pt>
 File: pics/Gaussians3dCut.pdf Graphic file (type pdf)
 <use pics/Gaussians3dCut.pdf>
-Package pdftex.def Info: pics/Gaussians3dCut.pdf  used on input line 880.
+Package pdftex.def Info: pics/Gaussians3dCut.pdf  used on input line 950.
 (pdftex.def)             Requested size: 250.9559pt x 237.55482pt.
- [23] [24 <./pics/Gaussians3dCut.pdf>]
-<pics/LinearKernel.pdf, id=761, 320.8788pt x 194.4063pt>
+ [28 <./pics/bivarGP.pdf>] [29 <./pics/multivarGP.pdf> <./pics/Gaussians3dCut.p
+df
+
+pdfTeX warning: pdflatex (file ./pics/Gaussians3dCut.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+>] [30]
+<pics/LinearKernel.pdf, id=920, 320.8788pt x 194.4063pt>
 File: pics/LinearKernel.pdf Graphic file (type pdf)
 <use pics/LinearKernel.pdf>
-Package pdftex.def Info: pics/LinearKernel.pdf  used on input line 928.
+Package pdftex.def Info: pics/LinearKernel.pdf  used on input line 1005.
 (pdftex.def)             Requested size: 250.9559pt x 152.04268pt.
-
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-) [25 <./pics/LinearKernel.pdf>]
-<pics/sqexp_f_sampled.pdf, id=791, 389.32858pt x 268.985pt>
+<pics/sqexp_f_sampled.pdf, id=922, 281.85298pt x 173.448pt>
 File: pics/sqexp_f_sampled.pdf Graphic file (type pdf)
 <use pics/sqexp_f_sampled.pdf>
-Package pdftex.def Info: pics/sqexp_f_sampled.pdf  used on input line 956.
-(pdftex.def)             Requested size: 250.9559pt x 173.38931pt.
-<pics/PeriodicKernel.pdf, id=795, 284.02109pt x 176.33879pt>
+Package pdftex.def Info: pics/sqexp_f_sampled.pdf  used on input line 1023.
+(pdftex.def)             Requested size: 250.9559pt x 154.43704pt.
+<pics/PeriodicKernel.pdf, id=926, 284.02109pt x 176.33879pt>
 File: pics/PeriodicKernel.pdf Graphic file (type pdf)
 <use pics/PeriodicKernel.pdf>
-Package pdftex.def Info: pics/PeriodicKernel.pdf  used on input line 972.
-(pdftex.def)             Requested size: 250.9559pt x 155.81091pt.
+Package pdftex.def Info: pics/PeriodicKernel.pdf  used on input line 1039.
+(pdftex.def)             Requested size: 230.04185pt x 142.82555pt.
+ [31 <./pics/LinearKernel.pdf>] [32 <./pics/sqexp_f_sampled.pdf> <./pics/Period
+icKernel.pdf
 
-Overfull \hbox (1.7885pt too wide) in paragraph at lines 984--985
-[] []\LY1/NexusProSans/b/n/10.95 Matern Ker-nel Func-tions[][] \LY1/NexusProSan
-s/m/n/10 [[][][]18[][]] The squared ex-po-nen-tial ker-nel is in-finitely dif-f
-er-en-tiable, which means
- []
-
-[26 <./pics/sqexp_f_sampled.pdf>]
-<pics/matern1_2_f_sampled.pdf, id=832, 389.32858pt x 265.86464pt>
+pdfTeX warning: pdflatex (file ./pics/PeriodicKernel.pdf): PDF inclusion: multi
+ple pdfs with page group included in a single page
+>]
+<pics/matern1_2_f_sampled.pdf, id=987, 281.85298pt x 173.448pt>
 File: pics/matern1_2_f_sampled.pdf Graphic file (type pdf)
 <use pics/matern1_2_f_sampled.pdf>
-Package pdftex.def Info: pics/matern1_2_f_sampled.pdf  used on input line 1007.
+Package pdftex.def Info: pics/matern1_2_f_sampled.pdf  used on input line 1071.
 
-(pdftex.def)             Requested size: 250.9559pt x 171.37791pt.
-<pics/matern3_2_f_sampled.pdf, id=833, 384.32858pt x 265.86464pt>
+(pdftex.def)             Requested size: 250.9559pt x 154.43704pt.
+<pics/matern3_2_f_sampled.pdf, id=988, 281.85298pt x 173.448pt>
 File: pics/matern3_2_f_sampled.pdf Graphic file (type pdf)
 <use pics/matern3_2_f_sampled.pdf>
-Package pdftex.def Info: pics/matern3_2_f_sampled.pdf  used on input line 1017.
+Package pdftex.def Info: pics/matern3_2_f_sampled.pdf  used on input line 1081.
 
-(pdftex.def)             Requested size: 250.9559pt x 173.60509pt.
-<pics/matern5_2_f_sampled.pdf, id=834, 384.32858pt x 265.86464pt>
+(pdftex.def)             Requested size: 250.9559pt x 154.43704pt.
+<pics/matern5_2_f_sampled.pdf, id=989, 281.85298pt x 173.448pt>
 File: pics/matern5_2_f_sampled.pdf Graphic file (type pdf)
 <use pics/matern5_2_f_sampled.pdf>
-Package pdftex.def Info: pics/matern5_2_f_sampled.pdf  used on input line 1027.
+Package pdftex.def Info: pics/matern5_2_f_sampled.pdf  used on input line 1091.
 
-(pdftex.def)             Requested size: 250.9559pt x 173.60509pt.
-<pics/CovMats.pdf, id=835, 346.89601pt x 346.89601pt>
+(pdftex.def)             Requested size: 250.9559pt x 154.43704pt.
+<pics/CovMats.pdf, id=990, 346.89601pt x 346.89601pt>
 File: pics/CovMats.pdf Graphic file (type pdf)
 <use pics/CovMats.pdf>
-Package pdftex.def Info: pics/CovMats.pdf  used on input line 1039.
+Package pdftex.def Info: pics/CovMats.pdf  used on input line 1103.
 (pdftex.def)             Requested size: 250.9559pt x 250.9559pt.
- [27 <./pics/PeriodicKernel.pdf>] [28 <./pics/matern1_2_f_sampled.pdf> <./pics/
-matern3_2_f_sampled.pdf
+ [33 <./pics/matern1_2_f_sampled.pdf>] [34 <./pics/matern3_2_f_sampled.pdf> <./
+pics/matern5_2_f_sampled.pdf
 
-pdfTeX warning: pdflatex (file ./pics/matern3_2_f_sampled.pdf): PDF inclusion: 
+pdfTeX warning: pdflatex (file ./pics/matern5_2_f_sampled.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
->] [29 <./pics/matern5_2_f_sampled.pdf> <./pics/CovMats.pdf
-
-pdfTeX warning: pdflatex (file ./pics/CovMats.pdf): PDF inclusion: multiple pdf
-s with page group included in a single page
->]
-\openout5 = `tubsreprt_example.pyg'.
-
-
-(./_minted-tubsreprt_example/572FC33881192738CFE863B89BF87FFD4919F94676096CAB56
-C0D9EE67FD8EB5.pygtex) [30]
-<pics/GPExpl.pdf, id=913, 867.24pt x 289.08pt>
+>] [35 <./pics/CovMats.pdf>]
+<pics/GPExpl.pdf, id=1052, 505.89pt x 180.675pt>
 File: pics/GPExpl.pdf Graphic file (type pdf)
 <use pics/GPExpl.pdf>
-Package pdftex.def Info: pics/GPExpl.pdf  used on input line 1132.
-(pdftex.def)             Requested size: 460.08371pt x 153.36163pt.
-
-Overfull \hbox (41.82811pt too wide) in paragraph at lines 1132--1133
- [] 
- []
-
-<pics/CovPosterior.pdf, id=916, 396.0396pt x 199.4652pt>
+Package pdftex.def Info: pics/GPExpl.pdf  used on input line 1176.
+(pdftex.def)             Requested size: 418.2556pt x 149.3785pt.
+<pics/CovPosterior.pdf, id=1055, 396.0396pt x 199.4652pt>
 File: pics/CovPosterior.pdf Graphic file (type pdf)
 <use pics/CovPosterior.pdf>
-Package pdftex.def Info: pics/CovPosterior.pdf  used on input line 1144.
+Package pdftex.def Info: pics/CovPosterior.pdf  used on input line 1188.
 (pdftex.def)             Requested size: 250.9559pt x 126.3942pt.
-[31 <./pics/GPExpl.pdf>] [32 <./pics/CovPosterior.pdf>]
-\openout6 = `tubsreprt_example.pyg'.
+ [36] [37 <./pics/GPExpl.pdf> <./pics/CovPosterior.pdf
+
+pdfTeX warning: pdflatex (file ./pics/CovPosterior.pdf): PDF inclusion: multipl
+e pdfs with page group included in a single page
+>] [38] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+\openout7 = `tubsreprt_example.pyg'.
 
 
 (./_minted-tubsreprt_example/A00BD5E9986F5A94ECAB00F4C690CD6D4919F94676096CAB56
 C0D9EE67FD8EB5.pygtex)
-\openout5 = `tubsreprt_example.pyg'.
-
-
-(./_minted-tubsreprt_example/ECF558AC2E711FD116EF39EF3D9617714919F94676096CAB56
-C0D9EE67FD8EB5.pygtex) [33]
-\openout5 = `tubsreprt_example.pyg'.
+\openout6 = `tubsreprt_example.pyg'.
 
 
 (./_minted-tubsreprt_example/8F71197D32440058870392EB615C42784919F94676096CAB56
-C0D9EE67FD8EB5.pygtex) [34]
-Overfull \hbox (7.91731pt too wide) in paragraph at lines 1298--1300
-\LY1/NexusProSans/m/n/10 [[][][]10[][], p. 1428] states that the ex-pec-ta-tion
+C0D9EE67FD8EB5.pygtex) [39]
+Overfull \hbox (6.91731pt too wide) in paragraph at lines 1301--1303
+\LY1/NexusProSans/m/n/10 [[][][]21[][], p. 1428] states that the ex-pec-ta-tion
  op-er-a-tor $\U/fplmbb/m/n/10 E$ \LY1/NexusProSans/m/n/10 is lin-ear for in-de
 -pen-dent ran-dom vari-ables $\OML/zplm/m/it/10 X[]\OT1/ppl/m/n/10 , \OML/zplm/
 m/it/10 X[]\OT1/ppl/m/n/10 , ..., \OML/zplm/m/it/10 X[]$
  []
 
-[35]
-\openout5 = `tubsreprt_example.pyg'.
-
-
-(./_minted-tubsreprt_example/0708711679AF536F33FAA14CCAFD932D4919F94676096CAB56
-C0D9EE67FD8EB5.pygtex) [36]
-\openout5 = `tubsreprt_example.pyg'.
+[40]
+<pics/MCerrorConv.pdf, id=1157, 397.78694pt x 271.19795pt>
+File: pics/MCerrorConv.pdf Graphic file (type pdf)
+<use pics/MCerrorConv.pdf>
+Package pdftex.def Info: pics/MCerrorConv.pdf  used on input line 1372.
+(pdftex.def)             Requested size: 250.9559pt x 171.09148pt.
+ [41 <./pics/MCerrorConv.pdf>] [42]
+\openout6 = `tubsreprt_example.pyg'.
 
 
 (./_minted-tubsreprt_example/966314A1EC01560B3B6EF7ECFF8646514919F94676096CAB56
 C0D9EE67FD8EB5.pygtex)
-\openout5 = `tubsreprt_example.pyg'.
+\openout6 = `tubsreprt_example.pyg'.
 
 
 (./_minted-tubsreprt_example/11DC5E93A93CE1F6690578A10164E3FC4919F94676096CAB56
-C0D9EE67FD8EB5.pygtex) [37] [38] [39]
-<pics/MCerrorConv.pdf, id=1125, 397.78694pt x 271.19795pt>
-File: pics/MCerrorConv.pdf Graphic file (type pdf)
-<use pics/MCerrorConv.pdf>
-Package pdftex.def Info: pics/MCerrorConv.pdf  used on input line 1684.
-(pdftex.def)             Requested size: 250.9559pt x 171.09148pt.
- [40 <./pics/MCerrorConv.pdf>] [41]
-<pics/RandomHyperParSearch.pdf, id=1200, 462.52798pt x 346.89601pt>
+C0D9EE67FD8EB5.pygtex) [43] [44] [45]
+Overfull \hbox (0.22974pt too wide) in paragraph at lines 1716--1718
+[] []\LY1/NexusProSans/b/n/10.95 Non-identifiability[][] \LY1/NexusProSans/m/n/
+10 pri-ors need to be in-for-ma-tive, p12 stat-FEM [[]] MCMC can lead to wrong
+ []
+
+[46]
+<pics/RandomHyperParSearch.pdf, id=1341, 462.52798pt x 346.89601pt>
 File: pics/RandomHyperParSearch.pdf Graphic file (type pdf)
 <use pics/RandomHyperParSearch.pdf>
-Package pdftex.def Info: pics/RandomHyperParSearch.pdf  used on input line 1783
+Package pdftex.def Info: pics/RandomHyperParSearch.pdf  used on input line 1764
 .
-(pdftex.def)             Requested size: 418.2556pt x 313.70679pt.
-
-[42] [43 <./pics/RandomHyperParSearch.pdf>]
+(pdftex.def)             Requested size: 376.42747pt x 282.33398pt.
+Package placeins Info: Must dump some floats on input line 1770.
+ [47
+Package placeins Info: Float barrier, from input line 1770, processed on page 4
+7, lands on page 47. 
+]
+Package placeins Info: Check again: on input line 1770.
+Package placeins Info: No floats held, on input line 1770.
+ [48
+Package placeins Info: Float barrier, from input line 1770, processed on page 4
+8, lands on page 48. 
+ <./pics/RandomHyperParSearch.pdf>] [49]
 chapter 4.
-[44
+[50
 
 
 ]
-<pics/z_GP.pdf, id=1252, 285.46649pt x 190.0701pt>
-File: pics/z_GP.pdf Graphic file (type pdf)
-<use pics/z_GP.pdf>
-Package pdftex.def Info: pics/z_GP.pdf  used on input line 1867.
-(pdftex.def)             Requested size: 250.9559pt x 167.09686pt.
-<pics/1DFEMprior.pdf, id=1254, 394.60638pt x 265.86464pt>
-File: pics/1DFEMprior.pdf Graphic file (type pdf)
-<use pics/1DFEMprior.pdf>
-Package pdftex.def Info: pics/1DFEMprior.pdf  used on input line 1878.
-(pdftex.def)             Requested size: 271.86359pt x 183.17093pt.
-<../../Python/Results/1D/Model_Error/1o_1s/Result.pdf, id=1255, 277.58784pt x 1
+<pics/FEMprior_Z.pdf, id=1407, 416.99791pt x 260.17201pt>
+File: pics/FEMprior_Z.pdf Graphic file (type pdf)
+<use pics/FEMprior_Z.pdf>
+Package pdftex.def Info: pics/FEMprior_Z.pdf  used on input line 1858.
+(pdftex.def)             Requested size: 334.60574pt x 208.77702pt.
+ [51 <./pics/FEMprior_Z.pdf>]
+Package placeins Info: No floats held, on input line 1891.
+<../../Python/Results/1D/Model_Error/1o_1s/Result.pdf, id=1428, 277.58784pt x 1
 82.39276pt>
 File: ../../Python/Results/1D/Model_Error/1o_1s/Result.pdf Graphic file (type p
 df)
 <use ../../Python/Results/1D/Model_Error/1o_1s/Result.pdf>
 Package pdftex.def Info: ../../Python/Results/1D/Model_Error/1o_1s/Result.pdf  
-used on input line 1898.
+used on input line 1901.
 (pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
-<../../Python/Results/1D/Model_Error/1o_4s/Result.pdf, id=1256, 277.58784pt x 1
+<../../Python/Results/1D/Model_Error/1o_4s/Result.pdf, id=1429, 277.58784pt x 1
 82.39276pt>
 File: ../../Python/Results/1D/Model_Error/1o_4s/Result.pdf Graphic file (type p
 df)
 <use ../../Python/Results/1D/Model_Error/1o_4s/Result.pdf>
 Package pdftex.def Info: ../../Python/Results/1D/Model_Error/1o_4s/Result.pdf  
-used on input line 1905.
+used on input line 1908.
 (pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
-<../../Python/Results/1D/Model_Error/20o_4s/Result.pdf, id=1257, 277.58784pt x 
+<../../Python/Results/1D/Model_Error/20o_4s/Result.pdf, id=1430, 277.58784pt x 
 182.39276pt>
 File: ../../Python/Results/1D/Model_Error/20o_4s/Result.pdf Graphic file (type 
 pdf)
 <use ../../Python/Results/1D/Model_Error/20o_4s/Result.pdf>
 Package pdftex.def Info: ../../Python/Results/1D/Model_Error/20o_4s/Result.pdf 
- used on input line 1912.
+ used on input line 1915.
 (pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
-<../../Python/Results/1D/Model_Error/100o_30s/Result.pdf, id=1258, 277.58784pt 
+<../../Python/Results/1D/Model_Error/100o_30s/Result.pdf, id=1431, 277.58784pt 
 x 182.39276pt>
 File: ../../Python/Results/1D/Model_Error/100o_30s/Result.pdf Graphic file (typ
 e pdf)
 <use ../../Python/Results/1D/Model_Error/100o_30s/Result.pdf>
 Package pdftex.def Info: ../../Python/Results/1D/Model_Error/100o_30s/Result.pd
-f  used on input line 1919.
+f  used on input line 1922.
 (pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
- [45 <./pics/z_GP.pdf>]
-<../../Python/Results/1D/no_d_scaled_40proc.pdf, id=1281, 277.58784pt x 182.392
+<../../Python/Results/1D/no_d_scaled_40proc.pdf, id=1444, 277.58784pt x 182.392
 76pt>
 File: ../../Python/Results/1D/no_d_scaled_40proc.pdf Graphic file (type pdf)
 <use ../../Python/Results/1D/no_d_scaled_40proc.pdf>
 Package pdftex.def Info: ../../Python/Results/1D/no_d_scaled_40proc.pdf  used o
-n input line 1938.
+n input line 1941.
 (pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
-<../../Python/Results/1D/d_scaled40proc.pdf, id=1282, 277.58784pt x 182.39276pt
+<../../Python/Results/1D/d_scaled40proc.pdf, id=1445, 277.58784pt x 182.39276pt
 >
 File: ../../Python/Results/1D/d_scaled40proc.pdf Graphic file (type pdf)
 <use ../../Python/Results/1D/d_scaled40proc.pdf>
 Package pdftex.def Info: ../../Python/Results/1D/d_scaled40proc.pdf  used on in
-put line 1944.
+put line 1947.
 (pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
-<pics/1DPost_RightSide.pdf, id=1284, 394.60638pt x 265.86464pt>
-File: pics/1DPost_RightSide.pdf Graphic file (type pdf)
-<use pics/1DPost_RightSide.pdf>
-Package pdftex.def Info: pics/1DPost_RightSide.pdf  used on input line 1965.
-(pdftex.def)             Requested size: 209.12779pt x 140.89946pt.
-<pics/DataPriorMismatch.pdf, id=1285, 376.70247pt x 252.96072pt>
-File: pics/DataPriorMismatch.pdf Graphic file (type pdf)
-<use pics/DataPriorMismatch.pdf>
-Package pdftex.def Info: pics/DataPriorMismatch.pdf  used on input line 1971.
-(pdftex.def)             Requested size: 209.12779pt x 140.43732pt.
- [46 <./pics/1DFEMprior.pdf>]
+ [52
+Package placeins Info: Float barrier, from input line 1891, processed on page 5
+2, lands on page 52. 
+]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 1992.
+               Default added (so using `tbp') on input line 1961.
 
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 2003.
-
-[47 <../../Python/Results/1D/Model_Error/1o_1s/Result.pdf> <../../Python/Result
-s/1D/Model_Error/1o_4s/Result.pdf
+Package placeins Info: Must dump some floats on input line 1984.
+[53
+Package placeins Info: Float barrier, from input line 1984, processed on page 5
+3, lands on page 53. 
+ <../../Python/Results/1D/Model_Error/1o_1s/Result.pdf> <../../Python/Results/1
+D/Model_Error/1o_4s/Result.pdf
 
 pdfTeX warning: pdflatex (file ../../Python/Results/1D/Model_Error/1o_4s/Result
 .pdf): PDF inclusion: multiple pdfs with page group included in a single page
@@ -4043,186 +4040,401 @@ pdfTeX warning: pdflatex (file ../../Python/Results/1D/Model_Error/100o_30s/Res
 ult.pdf): PDF inclusion: multiple pdfs with page group included in a single pag
 e
 >]
-<pics/mesh.pdf, id=1476, 250.7769pt x 239.21371pt>
-File: pics/mesh.pdf Graphic file (type pdf)
-<use pics/mesh.pdf>
-Package pdftex.def Info: pics/mesh.pdf  used on input line 2020.
-(pdftex.def)             Requested size: 209.12779pt x 199.49269pt.
- [48 <../../Python/Results/1D/no_d_scaled_40proc.pdf> <../../Python/Results/1D/
-d_scaled40proc.pdf
+Package placeins Info: Check again: on input line 1984.
+Package placeins Info: No floats held, on input line 1984.
+<../../Python/Results/1D/Model_Error/100o_30s/ResultZ.pdf, id=1627, 277.58784pt
+ x 182.39276pt>
+File: ../../Python/Results/1D/Model_Error/100o_30s/ResultZ.pdf Graphic file (ty
+pe pdf)
+<use ../../Python/Results/1D/Model_Error/100o_30s/ResultZ.pdf>
+Package pdftex.def Info: ../../Python/Results/1D/Model_Error/100o_30s/ResultZ.p
+df  used on input line 1989.
+(pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
+Package placeins Info: Must dump some floats on input line 1998.
+ [54
+Package placeins Info: Float barrier, from input line 1984, processed on page 5
+4, lands on page 54. 
+Package placeins Info: Float barrier, from input line 1998, processed on page 5
+4, lands on page 54. 
+ <../../Python/Results/1D/no_d_scaled_40proc.pdf> <../../Python/Results/1D/d_sc
+aled40proc.pdf
 
 pdfTeX warning: pdflatex (file ../../Python/Results/1D/d_scaled40proc.pdf): PDF
  inclusion: multiple pdfs with page group included in a single page
-> <./pics/1DPost_RightSide.pdf
+>]
+Package placeins Info: Check again: on input line 1998.
+Package placeins Info: No floats held, on input line 1998.
+<../../Python/Results/1D/HalfSide/Model_Error/5o_15s/Result.pdf, id=1662, 277.5
+8784pt x 182.39276pt>
+File: ../../Python/Results/1D/HalfSide/Model_Error/5o_15s/Result.pdf Graphic fi
+le (type pdf)
+<use ../../Python/Results/1D/HalfSide/Model_Error/5o_15s/Result.pdf>
+Package pdftex.def Info: ../../Python/Results/1D/HalfSide/Model_Error/5o_15s/Re
+sult.pdf  used on input line 2006.
+(pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
+<../../Python/Results/1D/HalfSide/Model_Error/100o_15s/Result.pdf, id=1663, 277
+.58784pt x 182.39276pt>
+File: ../../Python/Results/1D/HalfSide/Model_Error/100o_15s/Result.pdf Graphic 
+file (type pdf)
+<use ../../Python/Results/1D/HalfSide/Model_Error/100o_15s/Result.pdf>
+Package pdftex.def Info: ../../Python/Results/1D/HalfSide/Model_Error/100o_15s/
+Result.pdf  used on input line 2012.
+(pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
+<../../Python/Results/1D/HalfSide/No_Model_Error/5o_15s/Result.pdf, id=1664, 27
+7.58784pt x 182.39276pt>
+File: ../../Python/Results/1D/HalfSide/No_Model_Error/5o_15s/Result.pdf Graphic
+ file (type pdf)
+<use ../../Python/Results/1D/HalfSide/No_Model_Error/5o_15s/Result.pdf>
+Package pdftex.def Info: ../../Python/Results/1D/HalfSide/No_Model_Error/5o_15s
+/Result.pdf  used on input line 2020.
+(pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
+<../../Python/Results/1D/HalfSide/No_Model_Error/100o_15s/Result.pdf, id=1665, 
+277.58784pt x 182.39276pt>
+File: ../../Python/Results/1D/HalfSide/No_Model_Error/100o_15s/Result.pdf Graph
+ic file (type pdf)
+<use ../../Python/Results/1D/HalfSide/No_Model_Error/100o_15s/Result.pdf>
+Package pdftex.def Info: ../../Python/Results/1D/HalfSide/No_Model_Error/100o_1
+5s/Result.pdf  used on input line 2026.
+(pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
+Package placeins Info: Must dump some floats on input line 2036.
+ [55
+Package placeins Info: Float barrier, from input line 1998, processed on page 5
+5, lands on page 55. 
+Package placeins Info: Float barrier, from input line 2036, processed on page 5
+5, lands on page 55. 
+ <../../Python/Results/1D/Model_Error/100o_30s/ResultZ.pdf>]
+Package placeins Info: Check again: on input line 2036.
+Package placeins Info: No floats held, on input line 2036.
+<../../Python/Results/1D/PriorDataConflict/Model_Error/30s_5o/Result.pdf, id=17
+90, 277.58784pt x 182.39276pt>
+File: ../../Python/Results/1D/PriorDataConflict/Model_Error/30s_5o/Result.pdf G
+raphic file (type pdf)
+<use ../../Python/Results/1D/PriorDataConflict/Model_Error/30s_5o/Result.pdf>
+Package pdftex.def Info: ../../Python/Results/1D/PriorDataConflict/Model_Error/
+30s_5o/Result.pdf  used on input line 2049.
+(pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
+<../../Python/Results/1D/PriorDataConflict/Model_Error/30s_100o/Result.pdf, id=
+1791, 277.58784pt x 182.39276pt>
+File: ../../Python/Results/1D/PriorDataConflict/Model_Error/30s_100o/Result.pdf
+ Graphic file (type pdf)
+<use ../../Python/Results/1D/PriorDataConflict/Model_Error/30s_100o/Result.pdf>
 
-pdfTeX warning: pdflatex (file ./pics/1DPost_RightSide.pdf): PDF inclusion: mul
-tiple pdfs with page group included in a single page
-> <./pics/DataPriorMismatch.pdf
+Package pdftex.def Info: ../../Python/Results/1D/PriorDataConflict/Model_Error/
+30s_100o/Result.pdf  used on input line 2055.
+(pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
+<../../Python/Results/1D/PriorDataConflict/No_Model_Error/Result.pdf, id=1792, 
+277.58784pt x 182.39276pt>
+File: ../../Python/Results/1D/PriorDataConflict/No_Model_Error/Result.pdf Graph
+ic file (type pdf)
+<use ../../Python/Results/1D/PriorDataConflict/No_Model_Error/Result.pdf>
+Package pdftex.def Info: ../../Python/Results/1D/PriorDataConflict/No_Model_Err
+or/Result.pdf  used on input line 2063.
+(pdftex.def)             Requested size: 209.12779pt x 137.41206pt.
+ [56
+Package placeins Info: Float barrier, from input line 2036, processed on page 5
+6, lands on page 56. 
+ <../../Python/Results/1D/HalfSide/Model_Error/5o_15s/Result.pdf> <../../Python
+/Results/1D/HalfSide/Model_Error/100o_15s/Result.pdf
 
-pdfTeX warning: pdflatex (file ./pics/DataPriorMismatch.pdf): PDF inclusion: mu
-ltiple pdfs with page group included in a single page
->] [49 <./pics/mesh.pdf>]
-<pics/NeumannBC.pdf, id=1606, 351.95491pt x 210.30571pt>
+pdfTeX warning: pdflatex (file ../../Python/Results/1D/HalfSide/Model_Error/100
+o_15s/Result.pdf): PDF inclusion: multiple pdfs with page group included in a s
+ingle page
+> <../../Python/Results/1D/HalfSide/No_Model_Error/5o_15s/Result.pdf
+
+pdfTeX warning: pdflatex (file ../../Python/Results/1D/HalfSide/No_Model_Error/
+5o_15s/Result.pdf): PDF inclusion: multiple pdfs with page group included in a 
+single page
+> <../../Python/Results/1D/HalfSide/No_Model_Error/100o_15s/Result.pdf
+
+pdfTeX warning: pdflatex (file ../../Python/Results/1D/HalfSide/No_Model_Error/
+100o_15s/Result.pdf): PDF inclusion: multiple pdfs with page group included in 
+a single page
+>]
+Package placeins Info: No floats held, on input line 2072.
+Package placeins Info: Must dump some floats on input line 2086.
+ [57
+Package placeins Info: Float barrier, from input line 2072, processed on page 5
+7, lands on page 57. 
+Package placeins Info: Float barrier, from input line 2086, processed on page 5
+7, lands on page 57. 
+ <../../Python/Results/1D/PriorDataConflict/Model_Error/30s_5o/Result.pdf> <../
+../Python/Results/1D/PriorDataConflict/Model_Error/30s_100o/Result.pdf
+
+pdfTeX warning: pdflatex (file ../../Python/Results/1D/PriorDataConflict/Model_
+Error/30s_100o/Result.pdf): PDF inclusion: multiple pdfs with page group includ
+ed in a single page
+> <../../Python/Results/1D/PriorDataConflict/No_Model_Error/Result.pdf
+
+pdfTeX warning: pdflatex (file ../../Python/Results/1D/PriorDataConflict/No_Mod
+el_Error/Result.pdf): PDF inclusion: multiple pdfs with page group included in 
+a single page
+>]
+Package placeins Info: Check again: on input line 2086.
+Package placeins Info: No floats held, on input line 2086.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 2105.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 2116.
+
+[58
+Package placeins Info: Float barrier, from input line 2086, processed on page 5
+8, lands on page 58. 
+]
+<pics/mesh.pdf, id=2207, 250.7769pt x 239.21371pt>
+File: pics/mesh.pdf Graphic file (type pdf)
+<use pics/mesh.pdf>
+Package pdftex.def Info: pics/mesh.pdf  used on input line 2133.
+(pdftex.def)             Requested size: 209.12779pt x 199.49269pt.
+ [59 <./pics/mesh.pdf>]
+<pics/NeumannBC.pdf, id=2228, 351.95491pt x 210.30571pt>
 File: pics/NeumannBC.pdf Graphic file (type pdf)
 <use pics/NeumannBC.pdf>
-Package pdftex.def Info: pics/NeumannBC.pdf  used on input line 2059.
-(pdftex.def)             Requested size: 334.60574pt x 199.94652pt.
-<pics/SolutionCustom2D.pdf, id=1607, 374.11987pt x 305.78654pt>
+Package pdftex.def Info: pics/NeumannBC.pdf  used on input line 2173.
+(pdftex.def)             Requested size: 292.77763pt x 174.9516pt.
+<pics/SolutionCustom2D.pdf, id=2229, 384.15738pt x 305.78654pt>
 File: pics/SolutionCustom2D.pdf Graphic file (type pdf)
 <use pics/SolutionCustom2D.pdf>
-Package pdftex.def Info: pics/SolutionCustom2D.pdf  used on input line 2066.
-(pdftex.def)             Requested size: 334.60574pt x 273.50694pt.
-<pics/VarField.pdf, id=1609, 365.3544pt x 313.85518pt>
+Package pdftex.def Info: pics/SolutionCustom2D.pdf  used on input line 2180.
+(pdftex.def)             Requested size: 355.5198pt x 282.9881pt.
+<pics/VarField.pdf, id=2231, 365.3544pt x 313.85518pt>
 File: pics/VarField.pdf Graphic file (type pdf)
 <use pics/VarField.pdf>
-Package pdftex.def Info: pics/VarField.pdf  used on input line 2075.
-(pdftex.def)             Requested size: 250.9559pt x 215.58333pt.
- [50 <./pics/NeumannBC.pdf>]
-<../../Python/Results/2D/100procent_no_d/VarField_Posterior.pdf, id=1637, 404.9
+Package pdftex.def Info: pics/VarField.pdf  used on input line 2189.
+(pdftex.def)             Requested size: 292.77763pt x 251.5107pt.
+ [60 <./pics/NeumannBC.pdf>] [61 <./pics/SolutionCustom2D.pdf>]
+<../../Python/Results/2D/100procent_no_d/VarField_Posterior.pdf, id=2283, 404.9
 9539pt x 306.0233pt>
 File: ../../Python/Results/2D/100procent_no_d/VarField_Posterior.pdf Graphic fi
 le (type pdf)
 <use ../../Python/Results/2D/100procent_no_d/VarField_Posterior.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/100procent_no_d/VarField_Poste
-rior.pdf  used on input line 2111.
+rior.pdf  used on input line 2225.
 (pdftex.def)             Requested size: 376.42747pt x 284.45396pt.
- [51 <./pics/SolutionCustom2D.pdf>]
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 2119.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 2135.
+               Default added (so using `tbp') on input line 2233.
 
-[52 <./pics/VarField.pdf>]
-<../../Python/Results/2D/75procent_no_d/SolutionCustomPosterior.pdf, id=1683, 3
-76.87225pt x 300.8112pt>
+Package placeins Info: Must dump some floats on input line 2245.
+[62
+Package placeins Info: Float barrier, from input line 2245, processed on page 6
+2, lands on page 62. 
+ <./pics/VarField.pdf>]
+Package placeins Info: Check again: on input line 2245.
+
+
+Package placeins Warning: Some floats are stuck, on input line 2245.
+
+[63 <../../Python/Results/2D/100procent_no_d/VarField_Posterior.pdf>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 2251.
+
+<../../Python/Results/2D/75procent_no_d/SolutionCustomPosterior.pdf, id=2345, 3
+91.32625pt x 300.8112pt>
 File: ../../Python/Results/2D/75procent_no_d/SolutionCustomPosterior.pdf Graphi
 c file (type pdf)
 <use ../../Python/Results/2D/75procent_no_d/SolutionCustomPosterior.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/75procent_no_d/SolutionCustomP
-osterior.pdf  used on input line 2151.
-(pdftex.def)             Requested size: 334.60574pt x 267.09229pt.
-<../../Python/Results/2D/75procent_no_d/VarField_Posterior.pdf, id=1685, 404.99
+osterior.pdf  used on input line 2267.
+(pdftex.def)             Requested size: 334.60574pt x 257.2146pt.
+<../../Python/Results/2D/75procent_no_d/VarField_Posterior.pdf, id=2347, 404.99
 539pt x 306.0233pt>
 File: ../../Python/Results/2D/75procent_no_d/VarField_Posterior.pdf Graphic fil
 e (type pdf)
 <use ../../Python/Results/2D/75procent_no_d/VarField_Posterior.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/75procent_no_d/VarField_Poster
-ior.pdf  used on input line 2162.
+ior.pdf  used on input line 2278.
 (pdftex.def)             Requested size: 376.42747pt x 284.45396pt.
-<../../Python/Results/2D/75procent_no_d/3dMSE.pdf, id=1687, 567.05467pt x 280.6
+<../../Python/Results/2D/75procent_no_d/3dMSE.pdf, id=2349, 567.05467pt x 280.6
 0323pt>
 File: ../../Python/Results/2D/75procent_no_d/3dMSE.pdf Graphic file (type pdf)
 <use ../../Python/Results/2D/75procent_no_d/3dMSE.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/75procent_no_d/3dMSE.pdf  used
- on input line 2171.
+ on input line 2287.
 (pdftex.def)             Requested size: 418.2556pt x 206.97519pt.
- [53 <../../Python/Results/2D/100procent_no_d/VarField_Posterior.pdf>]
-<pics/ObsPattern.pdf, id=1735, 571.65572pt x 148.1535pt>
+Package placeins Info: Must dump some floats on input line 2293.
+[64
+Package placeins Info: Float barrier, from input line 2245, processed on page 6
+3, lands on page 64. 
+
+Package placeins Info: Float barrier, from input line 2293, processed on page 6
+4, lands on page 64. 
+ <../../Python/Results/2D/75procent_no_d/SolutionCustomPosterior.pdf>]
+Package placeins Info: Check again: on input line 2293.
+
+
+Package placeins Warning: Some floats are stuck, on input line 2293.
+
+[65 <../../Python/Results/2D/75procent_no_d/VarField_Posterior.pdf> <../../Pyth
+on/Results/2D/75procent_no_d/3dMSE.pdf
+
+pdfTeX warning: pdflatex (file ../../Python/Results/2D/75procent_no_d/3dMSE.pdf
+): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+<pics/ObsPattern.pdf, id=2465, 571.65572pt x 148.1535pt>
 File: pics/ObsPattern.pdf Graphic file (type pdf)
 <use pics/ObsPattern.pdf>
-Package pdftex.def Info: pics/ObsPattern.pdf  used on input line 2185.
+Package pdftex.def Info: pics/ObsPattern.pdf  used on input line 2303.
 (pdftex.def)             Requested size: 418.2556pt x 108.40208pt.
- [54 <../../Python/Results/2D/75procent_no_d/SolutionCustomPosterior.pdf>]
-<pics/3dTest.pdf, id=1788, 565.62054pt x 280.36899pt>
+<pics/3dTest.pdf, id=2467, 565.62054pt x 280.36899pt>
 File: pics/3dTest.pdf Graphic file (type pdf)
 <use pics/3dTest.pdf>
-Package pdftex.def Info: pics/3dTest.pdf  used on input line 2198.
+Package pdftex.def Info: pics/3dTest.pdf  used on input line 2316.
 (pdftex.def)             Requested size: 418.2556pt x 207.32861pt.
-
-
-LaTeX Warning: Command \l invalid in math mode on input line 2204.
-
-Missing character: There is no ê in font pplr7t!
-<../../Python/Results/2D/100procent_d/VarField_Posterior.pdf, id=1792, 397.7957
+<../../Python/Results/2D/100procent_d/VarField_Posterior.pdf, id=2471, 397.7957
 6pt x 304.8747pt>
 File: ../../Python/Results/2D/100procent_d/VarField_Posterior.pdf Graphic file 
 (type pdf)
 <use ../../Python/Results/2D/100procent_d/VarField_Posterior.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/100procent_d/VarField_Posterio
-r.pdf  used on input line 2223.
+r.pdf  used on input line 2341.
 (pdftex.def)             Requested size: 376.42747pt x 288.50351pt.
-<../../Python/Results/2D/100procent_d/VarField_PosteriorMoreSensors.pdf, id=179
-4, 402.79576pt x 304.8747pt>
+<../../Python/Results/2D/100procent_d/VarField_PosteriorMoreSensors.pdf, id=247
+3, 402.79576pt x 304.8747pt>
 File: ../../Python/Results/2D/100procent_d/VarField_PosteriorMoreSensors.pdf Gr
 aphic file (type pdf)
 <use ../../Python/Results/2D/100procent_d/VarField_PosteriorMoreSensors.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/100procent_d/VarField_Posterio
-rMoreSensors.pdf  used on input line 2230.
+rMoreSensors.pdf  used on input line 2348.
 (pdftex.def)             Requested size: 376.42747pt x 284.92612pt.
-[55 <../../Python/Results/2D/75procent_no_d/VarField_Posterior.pdf>]
+ [66
+Package placeins Info: Float barrier, from input line 2293, processed on page 6
+5, lands on page 66. 
 
-LaTeX Warning: Text page 56 contains only floats.
-
-
-Overfull \vbox (1.67467pt too high) has occurred while \output is active []
-
-
-[56 <../../Python/Results/2D/75procent_no_d/3dMSE.pdf> <./pics/ObsPattern.pdf
-
-pdfTeX warning: pdflatex (file ./pics/ObsPattern.pdf): PDF inclusion: multiple 
-pdfs with page group included in a single page
->]
-<../../Python/Results/2D/prior_data_conflict/3dMSE.pdf, id=1876, 567.05467pt x 
+ <./pics/ObsPattern.pdf>] [67 <./pics/3dTest.pdf>]
+Package placeins Info: Must dump some floats on input line 2354.
+ [68
+Package placeins Info: Float barrier, from input line 2354, processed on page 6
+8, lands on page 68. 
+ <../../Python/Results/2D/100procent_d/VarField_Posterior.pdf>]
+Package placeins Info: Check again: on input line 2354.
+Package placeins Info: No floats held, on input line 2354.
+<../../Python/Results/2D/100procent_d/SolutionCustomPosterior.pdf, id=2550, 385
+.52507pt x 306.20064pt>
+File: ../../Python/Results/2D/100procent_d/SolutionCustomPosterior.pdf Graphic 
+file (type pdf)
+<use ../../Python/Results/2D/100procent_d/SolutionCustomPosterior.pdf>
+Package pdftex.def Info: ../../Python/Results/2D/100procent_d/SolutionCustomPos
+terior.pdf  used on input line 2362.
+(pdftex.def)             Requested size: 313.6917pt x 249.16116pt.
+Package placeins Info: Must dump some floats on input line 2367.
+ [69
+Package placeins Info: Float barrier, from input line 2354, processed on page 6
+9, lands on page 69. 
+Package placeins Info: Float barrier, from input line 2367, processed on page 6
+9, lands on page 69. 
+ <../../Python/Results/2D/100procent_d/VarField_PosteriorMoreSensors.pdf>]
+Package placeins Info: Check again: on input line 2367.
+Package placeins Info: No floats held, on input line 2367.
+<../../Python/Results/2D/prior_data_conflict/3dMSE.pdf, id=2583, 567.05467pt x 
 280.60323pt>
 File: ../../Python/Results/2D/prior_data_conflict/3dMSE.pdf Graphic file (type 
 pdf)
 <use ../../Python/Results/2D/prior_data_conflict/3dMSE.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/prior_data_conflict/3dMSE.pdf 
- used on input line 2241.
+ used on input line 2373.
 (pdftex.def)             Requested size: 418.2556pt x 206.97519pt.
-<../../Python/Results/2D/prior_data_conflict/SolutionCustomPosterior.pdf, id=18
-80, 381.89769pt x 305.78654pt>
+<../../Python/Results/2D/prior_data_conflict/SolutionCustomPosterior.pdf, id=25
+88, 381.89769pt x 305.78654pt>
 File: ../../Python/Results/2D/prior_data_conflict/SolutionCustomPosterior.pdf G
 raphic file (type pdf)
 <use ../../Python/Results/2D/prior_data_conflict/SolutionCustomPosterior.pdf>
 Package pdftex.def Info: ../../Python/Results/2D/prior_data_conflict/SolutionCu
-stomPosterior.pdf  used on input line 2250.
+stomPosterior.pdf  used on input line 2382.
 (pdftex.def)             Requested size: 334.60574pt x 267.93117pt.
-<../../Python/SolutionCustomFlatSource320.pdf, id=1883, 374.11987pt x 281.85298
-pt>
-File: ../../Python/SolutionCustomFlatSource320.pdf Graphic file (type pdf)
-<use ../../Python/SolutionCustomFlatSource320.pdf>
-Package pdftex.def Info: ../../Python/SolutionCustomFlatSource320.pdf  used on 
-input line 2273.
-(pdftex.def)             Requested size: 334.60574pt x 252.09987pt.
-<../../Python/VarFieldFlatSource320.pdf, id=1885, 370.3544pt x 313.85518pt>
-File: ../../Python/VarFieldFlatSource320.pdf Graphic file (type pdf)
-<use ../../Python/VarFieldFlatSource320.pdf>
-Package pdftex.def Info: ../../Python/VarFieldFlatSource320.pdf  used on input 
-line 2281.
-(pdftex.def)             Requested size: 292.77763pt x 248.11526pt.
- [57 <./pics/3dTest.pdf>] [58 <../../Python/Results/2D/100procent_d/VarField_Po
-sterior.pdf>] [59 <../../Python/Results/2D/100procent_d/VarField_PosteriorMoreS
-ensors.pdf> <../../Python/Results/2D/prior_data_conflict/3dMSE.pdf
+Package placeins Info: Must dump some floats on input line 2399.
+ [70
+Package placeins Info: Float barrier, from input line 2367, processed on page 7
+0, lands on page 70. 
+Package placeins Info: Float barrier, from input line 2399, processed on page 7
+0, lands on page 70. 
+ <../../Python/Results/2D/100procent_d/SolutionCustomPosterior.pdf>]
+Package placeins Info: Check again: on input line 2399.
+Package placeins Info: No floats held, on input line 2399.
+<../../Python/Results/2D/HalfSide/3/HalfSide.pdf, id=2619, 467.5869pt x 204.524
+1pt>
+File: ../../Python/Results/2D/HalfSide/3/HalfSide.pdf Graphic file (type pdf)
+<use ../../Python/Results/2D/HalfSide/3/HalfSide.pdf>
+Package pdftex.def Info: ../../Python/Results/2D/HalfSide/3/HalfSide.pdf  used 
+on input line 2404.
+(pdftex.def)             Requested size: 418.2556pt x 182.95273pt.
+ [71
+Package placeins Info: Float barrier, from input line 2399, processed on page 7
+1, lands on page 71. 
+ <../../Python/Results/2D/prior_data_conflict/3dMSE.pdf> <../../Python/Results/
+2D/prior_data_conflict/SolutionCustomPosterior.pdf
 
-pdfTeX warning: pdflatex (file ../../Python/Results/2D/prior_data_conflict/3dMS
-E.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] [60 <../../Python/Results/2D/prior_data_conflict/SolutionCustomPosterior.pdf
-> <../../Python/SolutionCustomFlatSource320.pdf
+pdfTeX warning: pdflatex (file ../../Python/Results/2D/prior_data_conflict/Solu
+tionCustomPosterior.pdf): PDF inclusion: multiple pdfs with page group included
+ in a single page
+>]
+<../../Python/Results/2D/HalfSide/4/VarField_Posterior.pdf, id=2663, 412.83327p
+t x 304.8747pt>
+File: ../../Python/Results/2D/HalfSide/4/VarField_Posterior.pdf Graphic file (t
+ype pdf)
+<use ../../Python/Results/2D/HalfSide/4/VarField_Posterior.pdf>
+Package pdftex.def Info: ../../Python/Results/2D/HalfSide/4/VarField_Posterior.
+pdf  used on input line 2413.
+(pdftex.def)             Requested size: 418.2556pt x 308.89326pt.
+Package placeins Info: Must dump some floats on input line 2438.
+ [72
+Package placeins Info: Float barrier, from input line 2438, processed on page 7
+2, lands on page 72. 
+ <../../Python/Results/2D/HalfSide/3/HalfSide.pdf>]
+Package placeins Info: Check again: on input line 2438.
+Package placeins Info: No floats held, on input line 2438.
 
-pdfTeX warning: pdflatex (file ../../Python/SolutionCustomFlatSource320.pdf): P
-DF inclusion: multiple pdfs with page group included in a single page
->] [61 <../../Python/VarFieldFlatSource320.pdf>]
+
+LaTeX Warning: Reference `fig:FEMGPFlat320' on page 73 undefined on input line 
+2441.
+
+<../../Python/Results/2D/VaryingSource/y_1/MeanVar.pdf, id=2682, 527.57097pt x 
+205.9695pt>
+File: ../../Python/Results/2D/VaryingSource/y_1/MeanVar.pdf Graphic file (type 
+pdf)
+<use ../../Python/Results/2D/VaryingSource/y_1/MeanVar.pdf>
+Package pdftex.def Info: ../../Python/Results/2D/VaryingSource/y_1/MeanVar.pdf 
+ used on input line 2443.
+(pdftex.def)             Requested size: 418.2556pt x 163.29239pt.
+<../../Python/Results/2D/VaryingSource/y_005/MeanVar.pdf, id=2683, 521.78943pt 
+x 206.6922pt>
+File: ../../Python/Results/2D/VaryingSource/y_005/MeanVar.pdf Graphic file (typ
+e pdf)
+<use ../../Python/Results/2D/VaryingSource/y_005/MeanVar.pdf>
+Package pdftex.def Info: ../../Python/Results/2D/VaryingSource/y_005/MeanVar.pd
+f  used on input line 2451.
+(pdftex.def)             Requested size: 418.2556pt x 165.68198pt.
+[73
+Package placeins Info: Float barrier, from input line 2438, processed on page 7
+3, lands on page 73. 
+ <../../Python/Results/2D/HalfSide/4/VarField_Posterior.pdf> <../../Python/Resu
+lts/2D/VaryingSource/y_1/MeanVar.pdf
+
+pdfTeX warning: pdflatex (file ../../Python/Results/2D/VaryingSource/y_1/MeanVa
+r.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>] [74 <../../Python/Results/2D/VaryingSource/y_005/MeanVar.pdf>]
 chapter 5.
-[62
+[75
 
 
 ]
 chapter A.
-<pics/Freq170.pdf, id=2055, 516.6876pt x 213.5907pt>
+<pics/Freq170.pdf, id=2798, 516.6876pt x 213.5907pt>
 File: pics/Freq170.pdf Graphic file (type pdf)
 <use pics/Freq170.pdf>
-Package pdftex.def Info: pics/Freq170.pdf  used on input line 2311.
+Package pdftex.def Info: pics/Freq170.pdf  used on input line 2482.
 (pdftex.def)             Requested size: 376.42747pt x 155.6168pt.
-<pics/Freq342.pdf, id=2056, 512.09038pt x 213.5907pt>
+<pics/Freq342.pdf, id=2799, 512.09038pt x 213.5907pt>
 File: pics/Freq342.pdf Graphic file (type pdf)
 <use pics/Freq342.pdf>
-Package pdftex.def Info: pics/Freq342.pdf  used on input line 2319.
+Package pdftex.def Info: pics/Freq342.pdf  used on input line 2490.
 (pdftex.def)             Requested size: 376.42747pt x 157.0117pt.
-[63
+[76
 
 
  <./pics/Freq170.pdf> <./pics/Freq342.pdf
@@ -4231,35 +4443,43 @@ pdfTeX warning: pdflatex (file ./pics/Freq342.pdf): PDF inclusion: multiple pdf
 s with page group included in a single page
 >]
 chapter B.
-[64
+\openout6 = `tubsreprt_example.pyg'.
 
 
-]
-Overfull \hbox (12.17082pt too wide) in paragraph at lines 2333--2333
+(./_minted-tubsreprt_example/29A2F8FFDE95D531799B15744FE6613E4919F94676096CAB56
+C0D9EE67FD8EB5.pygtex)
+Underfull \vbox (badness 1521) detected at line 2555
+ []
+
+[77
+
+
+] [78]
+Overfull \hbox (12.17082pt too wide) in paragraph at lines 2561--2561
 []\LY1/NexusProSans/m/n/10.95 M. Mˆser, \LY1/NexusProSans/m/it/10.95 Tech-nis-c
 he Akustik\LY1/NexusProSans/m/n/10.95 , 6., erw. und ak-tu-al-isierte Aufl, ser
 . VDI-[Buch]. Berlin: Springer,
  []
 
-[65
+[79
 
 
 ]
-Overfull \hbox (15.29965pt too wide) in paragraph at lines 2333--2333
-[]\LY1/NexusProSans/m/n/10.95 MathWorks. (). Con-di-tion num-ber of a ma-trix, 
-[On-line]. Avail-able: [][]$\LY1/txtt/m/n/10.95 https : / / de . mathworks .
- []
-
-[66]
-Overfull \hbox (1.78574pt too wide) in paragraph at lines 2333--2333
+Overfull \hbox (1.78574pt too wide) in paragraph at lines 2561--2561
 []\LY1/NexusProSans/m/n/10.95 M. Lo-eve, \LY1/NexusProSans/m/it/10.95 Prob-a-bi
 l-ity The-ory II\LY1/NexusProSans/m/n/10.95 . Springer New York, Aug. 12, 1994,
  436 pp., \LY1/NexusProSans/m/sc/10.95 isbn\LY1/NexusProSans/m/n/10.95 : 038790
 2627.
  []
 
+[80]
+Overfull \hbox (15.29965pt too wide) in paragraph at lines 2561--2561
+[]\LY1/NexusProSans/m/n/10.95 MathWorks. (). Con-di-tion num-ber of a ma-trix, 
+[On-line]. Avail-able: [][]$\LY1/txtt/m/n/10.95 https : / / de . mathworks .
+ []
 
-Overfull \hbox (26.75209pt too wide) in paragraph at lines 2333--2333
+
+Overfull \hbox (26.75209pt too wide) in paragraph at lines 2561--2561
 \LY1/txtt/m/n/10.95 distill . 00017$[][]\LY1/NexusProSans/m/n/10.95 . [On-line]
 . Avail-able: [][]$\LY1/txtt/m/n/10.95 https : / / distill . pub / 2019 / visua
 l -[] exploration -[]
@@ -4267,37 +4487,34 @@ l -[] exploration -[]
 
 
 Package biblatex Warning: No driver for entry type 'software'.
-(biblatex)                Using fallback driver on input line 2332.
+(biblatex)                Using fallback driver on input line 2560.
 
 
-Overfull \hbox (176.00385pt too wide) in paragraph at lines 2333--2333
+Overfull \hbox (176.00385pt too wide) in paragraph at lines 2561--2561
 \LY1/NexusProSans/m/n/10.95 Avail-able: [][]$\LY1/txtt/m/n/10.95 https : / / gi
 thub . com / adamian / adamian . github . io / blob / 1074c865911e2f83f29c52043
 f254c08446b4755 /
  []
 
-
-Overfull \hbox (50.28911pt too wide) in paragraph at lines 2333--2333
+[81]
+Overfull \hbox (50.28911pt too wide) in paragraph at lines 2561--2561
 \LY1/NexusProSans/m/n/10.95 line]. Avail-able: [][]$\LY1/txtt/m/n/10.95 https :
  / / public . ebookcentral . proquest . com / choice / publicfullrecord .
  []
 
-[67] [68]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2348.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2348.
+[82]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2576.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2576.
  (./tubsreprt_example.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2348.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2348.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2576.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2576.
+
+Package rerunfilecheck Info: File `tubsreprt_example.out' has not changed.
+(rerunfilecheck)             Checksum: 78B11E74048ECA6376705E0572F6A0C7;2809.
 
 
+LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Warning: File `tubsreprt_example.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `tubsreprt_example.out':
-(rerunfilecheck)             Before: 2C8DE070E61818310A9AEC6B84C6F53B;2793
-(rerunfilecheck)             After:  D11EB463C4C0EAD0737995E5C8D918E1;2797.
 
 LaTeX Warning: There were multiply-defined labels.
 
@@ -4308,53 +4525,49 @@ Package logreq Info: Writing requests to 'tubsreprt_example.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 52346 strings out of 494757
- 1068734 string characters out of 6175786
- 1786111 words of memory out of 5000000
- 54337 multiletter control sequences out of 15000+600000
- 763550 words of font info for 290 fonts, out of 8000000 for 9000
+ 52571 strings out of 494757
+ 1074420 string characters out of 6175786
+ 1780076 words of memory out of 5000000
+ 54502 multiletter control sequences out of 15000+600000
+ 768240 words of font info for 293 fonts, out of 8000000 for 9000
  85 hyphenation exceptions out of 8191
  65i,23n,106p,10460b,3572s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{chapter*.312} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{chapter*.308} has been referenced but does not exis
-t, replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/share/te
-xmf/fonts/enc/dvips/Fontshop/a_molob5.enc}{/usr/local/share/texmf/fonts/enc/dvi
-ps/Fontshop/a_hsis74.enc}{/usr/local/share/texmf/fonts/enc/dvips/Fontshop/a_blk
-lr2.enc}{/usr/local/share/texmf/fonts/enc/dvips/Fontshop/a_cbf6z5.enc}</usr/loc
-al/share/texmf/fonts/type1/Nexus/NexusSansPro-Bold.pfb></usr/local/share/texmf/
-fonts/type1/Nexus/NexusSansPro-Italic.pfb></usr/local/share/texmf/fonts/type1/N
-exus/NexusSansPro-Regular.pfb></usr/local/share/texmf/fonts/type1/Nexus/NexusSe
-rifPro-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mat
-hpazo/fplmbb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fpl
-mbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/txfonts/tcxtt.pfb></usr/local/share/texmf/fonts/type1/urw/arial/ua1b8a.p
-fb></usr/local/share/texmf/fonts/type1/urw/arial/ua1r8a.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/urw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatin
-o/uplri8a.pfb>
-Output written on tubsreprt_example.pdf (68 pages, 7689740 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/local/share/
+texmf/fonts/enc/dvips/Fontshop/a_molob5.enc}{/usr/local/share/texmf/fonts/enc/d
+vips/Fontshop/a_blklr2.enc}{/usr/local/share/texmf/fonts/enc/dvips/Fontshop/a_h
+sis74.enc}{/usr/local/share/texmf/fonts/enc/dvips/Fontshop/a_cbf6z5.enc}</usr/l
+ocal/share/texmf/fonts/type1/Nexus/NexusSansPro-Bold.pfb></usr/local/share/texm
+f/fonts/type1/Nexus/NexusSansPro-Italic.pfb></usr/local/share/texmf/fonts/type1
+/Nexus/NexusSansPro-Regular.pfb></usr/local/share/texmf/fonts/type1/Nexus/Nexus
+SerifPro-Regular.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpa
+zo/fplmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmbb.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmbi.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/txfonts/t1xbtt.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfont
+s/tcxtt.pfb></usr/local/share/texmf/fonts/type1/urw/arial/ua1b8a.pfb></usr/loca
+l/share/texmf/fonts/type1/urw/arial/ua1r8a.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/palatino/uplbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino
+/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb
+>
+Output written on tubsreprt_example.pdf (82 pages, 9623798 bytes).
 PDF statistics:
- 2440 PDF objects out of 2487 (max. 8388607)
- 1883 compressed objects within 19 object streams
- 425 named destinations out of 1000 (max. 500000)
- 571 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3226 PDF objects out of 3580 (max. 8388607)
+ 2300 compressed objects within 23 object streams
+ 466 named destinations out of 1000 (max. 500000)
+ 606 words of extra memory for PDF output out of 10000 (max. 10000000)
 

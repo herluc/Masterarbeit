@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+plt.rc('text', usetex=True)
+plt.rc('text.latex', preamble=r'\usepackage{amsmath}\usepackage[utf8]{inputenc}')
 from scipy import spatial
 from sklearn import linear_model
 from sklearn.gaussian_process import GaussianProcessRegressor
@@ -40,7 +42,7 @@ s2 = np.diag(K_ss)
 stdv = np.sqrt(s2)
 
 # Now let's plot the 3 sampled functions.
-f=plt.figure(figsize=(12,4))
+f=plt.figure(figsize=(7,2.5))
 ax1 = plt.subplot(1,2,1)
 plt.plot(Xtest, f_prior)
 plt.gca().fill_between(Xtest.flat, 0-1.96*stdv, 0+1.96*stdv, color="green",alpha=0.2)
@@ -49,6 +51,7 @@ plt.gca().fill_between(Xtest.flat, 0-1.96*stdv, 0+1.96*stdv, color="green",alpha
 plt.grid()
 plt.xlabel('x')
 plt.ylabel('correlated output f(x)')
+plt.tight_layout()
 #plt.show()
 
 
@@ -86,6 +89,7 @@ plt.plot(Xtest, mu, lw=2,color='black')
 plt.xlabel('x')
 plt.ylabel('correlated output f(x)')
 plt.grid()
+plt.tight_layout()
 plt.show()
 
 
@@ -106,7 +110,8 @@ z = np.polyfit(X_train, F, 2)
 p = np.poly1d(z)
 
 
-f=plt.figure(figsize=(12,4))
+
+f=plt.figure(figsize=(7,2.5))
 ax1 = plt.subplot(1,2,2)
 plt.scatter(X_train,F)
 plt.plot(X,p(X),color='blue',alpha=0.6,lw=3,label='deg. 2 poly. regression')
@@ -124,6 +129,8 @@ plt.plot(X, y_pred_gaussian[:,0], color="green",ls='--',lw=3,label='GP regressio
 plt.plot(X,pHighlyNonlin(X),color='black',lw=0.7,label='ground truth')
 plt.grid()
 plt.title('y=sin(8*x) + 2*x**2 +(0.5*x)')
+plt.xlabel('x')
+plt.ylabel('f(x)')
 plt.legend()
 
 ax2 = plt.subplot(1,2,1)
@@ -146,6 +153,9 @@ plt.plot(X,pLin(X),color='black',lw=0.7,label='ground truth')
 plt.title('y=0.5x')
 plt.grid()
 plt.legend()
+plt.tight_layout()
+plt.xlabel('x')
+plt.ylabel('f(x)')
 plt.show()
 
 

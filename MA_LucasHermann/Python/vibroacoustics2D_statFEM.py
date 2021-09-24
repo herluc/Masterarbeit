@@ -52,7 +52,8 @@ class solverClass:
 		plt.show()
 		#parameters for acoustic medium, air:
 		self.rho = 1.2
-		self.f = 500
+		self.f = 243
+		self.f=500
 		c = 340
 		self.Z = self.rho * c
 		self.omega = 2* np.pi * self.f
@@ -60,7 +61,7 @@ class solverClass:
 		self.g = self.rho * self.omega**2 # part of the boundary term for the variational problem. Displacement u is introduced below
 		with open("data.txt", "w") as myfile:
 			myfile.write('freq:'+str(self.f)+'mesh:'+str(self.a)+','+str(self.b)+'\n')
-		self.sourceBCendCoord = 0.05
+		self.sourceBCendCoord = 1.0#0.05
 		factor = Params.factor # fetching from Params class
 		# class MyExpression0(UserExpression):
 		# 	## old class. remove asap
@@ -270,6 +271,49 @@ class solverClass:
 		return C_u
 		#return c_u
 
+
+
+	def plotVarComp(self):
+
+
+		fig = plt.figure(figsize=plt.figaspect(0.5))
+		## plot the variance prior
+		###############################################################
+		meanVar = np.sqrt((np.array(self.prior_var.vector().get_local())**2).sum())
+		plt.subplot(1,2,1)
+		c=plot(self.prior_var)
+		c=plot(self.prior_var)
+		plt.colorbar(c)
+		plt.xlabel('$x$')
+		plt.ylabel('$y$')
+		plt.title('variance prior')
+		#c.set_clim(vmin=0, vmax=2.5)
+		#plt.text(0.2,0.2, r"$l_2:$ "+str(round(meanVar,2)),bbox=dict(boxstyle="round",alpha=0.5))
+		
+		
+		#fig.savefig("VarField.pdf", bbox_inches='tight')
+		#plt.show()
+		##################################################################
+
+		meanVar = np.sqrt((np.array(self.u.vector().get_local())**2).sum())
+		plt.subplot(1,2,2)
+		c=plot(solver.postList[-1])
+		c=plot(solver.postList[-1])
+		plt.scatter(np.transpose(self.y_points)[0],np.transpose(self.y_points)[1],color="black")
+
+		plt.colorbar(c)
+		plt.xlabel('$x$')
+		plt.ylabel('$y$')
+		plt.title('variance posterior')
+		#c.set_clim(vmin=0, vmax=2.5)
+		#plt.text(0.2,0.2, r"$l_2:$ "+str(round(meanVar,2)),bbox=dict(boxstyle="round",alpha=0.5))
+		fig.savefig("VarComp.pdf", bbox_inches='tight')
+		plt.show()
+		##################################################################
+
+
+
+
 	
 	@gif.frame
 	def plotSourceBCvariants(self,i):
@@ -278,7 +322,7 @@ class solverClass:
 		solver.get_U_mean()
 		solver.get_C_u()
 
-		fig = plt.figure(figsize=plt.figaspect(0.5))
+		fig = plt.figure(figsize=(8, 3))
 		## plot the mean prior
 		###############################################################
 		meanVar = np.sqrt((np.array(self.u.vector().get_local())**2).sum())
@@ -291,6 +335,7 @@ class solverClass:
 		plt.title('mean, '+r'$bc_l$='+str(i))
 		#c.set_clim(vmin=0, vmax=2.5)
 		plt.text(0.2,0.2, r"$l_2:$ "+str(round(meanVar,2)),bbox=dict(boxstyle="round",alpha=0.5))
+		plt.tight_layout()
 		#fig.savefig("VarField.pdf", bbox_inches='tight')
 		#plt.show()
 		##################################################################
@@ -308,8 +353,9 @@ class solverClass:
 		plt.title('variance, '+r'$bc_l$='+str(i))
 		#c.set_clim(vmin=0, vmax=2.5)
 		plt.text(0.2,0.2, r"$l_2:$ "+str(round(meanVar,2)),bbox=dict(boxstyle="round",alpha=0.5))
+		plt.tight_layout()
 		#fig.savefig("VarField.pdf", bbox_inches='tight')
-		#plt.show()
+		plt.show()
 		##################################################################
 
 
@@ -969,7 +1015,7 @@ class solverClass:
 		#samples = self.doMCMC([rho_est,sigd_est,ld_est])
 		#print('MCMC: ',np.exp(samples))
 		#return result.x
-
+		self.rho_est = np.exp(rho_est)
 		return rho_est,sigd_est,ld_est
 		#return rho_est,sigd_est,0.2
 
@@ -1045,7 +1091,8 @@ class solverClass:
 
 		C_u = self.get_C_u()
 		C_u_inv = np.linalg.inv(C_u)
-		C_d = self.get_C_d(y_points,ld=ld,sigd=sigd)
+		C_d = self.get_C_d(y_points,ld=ld,sigd=sigd) #only for training points
+		self.C_d_total = self.get_C_d(self.dof_coordinates,ld=ld,sigd=sigd) #for all points. this is for estimateTrueResponse.
 
 		P_T = np.transpose(P)
 		rho = np.exp(rho)
@@ -1070,6 +1117,7 @@ class solverClass:
 			mean = u_mean_y, cov=C_u_y,
 			size=self.nMC,tol=1e-6)
 		self.posteriorGP = posteriorGP
+		self.C_u_y = C_u_y
 
 		C_u_yDiag = np.sqrt(np.diagonal(C_u_y))
 		u_y_sig = Function(self.V)
@@ -1126,6 +1174,33 @@ class solverClass:
 
 
 
+	def estimateTrueResponse(self):
+		self.zy_mean = self.rho_est *  self.u_y_mean.vector().get_local()
+		self.zy_mean = self.u_y_mean.vector().get_local()
+		self.C_zy = self.rho_est*self.rho_est *self.C_u_y   + self.C_d_total
+		self.C_zy_yDiag = np.sqrt(np.diagonal(self.C_zy))
+		u = Function(self.V)
+		u.vector().set_local(self.zy_mean)
+		u_mean = u
+
+		u_sig = Function(self.V)
+		u_sig.vector().set_local(self.C_zy_yDiag.tolist())
+		
+
+
+		X = 0; Y = 1; Z = 0
+		u_box = st.BoxField.dolfin_function2BoxField(u_mean,self.mesh,(self.a,self.b),uniform_mesh=True)
+		start = (0.0,0.7)
+		x,umeanval,y_fixed,snapped = u_box.gridline(start, direction = X)
+		self.zy_mean_cut = umeanval
+
+		u_box = st.BoxField.dolfin_function2BoxField(u_sig,self.mesh,(self.a,self.b),uniform_mesh=True)
+		x,usigval,y_fixed,snapped = u_box.gridline(start, direction = X)
+		self.zy_sig_cut = usigval
+
+
+
+
 	def doActiveLearning(self,varField):
 
 		X,Y,Z = self.x0.vector().get_local(), self.x1.vector().get_local(), varField.vector().get_local()
@@ -1158,6 +1233,17 @@ class solverClass:
 		plt.show()
 		return pertV
 
+
+
+	def plot_z_vs_Post(self):
+		ax2.plot(x,np.array(self.U_mean_post_cut),color="black", label="posterior")
+		ax2.fill_between(x, (np.array(self.U_mean_post_cut) + 1.96*np.array(self.sig_cutPost)), (np.array(self.U_mean_post_cut) - 1.96*np.array(self.sig_cutPost)), color='black', alpha=0.4)
+
+		X = 0; Y = 1; Z = 0
+		u_box = st.BoxField.dolfin_function2BoxField(self.u_y_mean,self.mesh,(self.a,self.b),uniform_mesh=True)
+		start = (0.0,0.7)
+		x,umeanval,y_fixed,snapped = u_box.gridline(start, direction = X)
+		z_mean_cut = umeanval
 
 
 	def plotSolution(self):
@@ -1226,6 +1312,7 @@ class solverClass:
 		#ax.set_zlabel("$z$")
 		#ax.view_init(24,-70)
 		cbar = fig4.colorbar(cset2, ax=ax,  pad=0.14)
+		cbar.set_label("mean pressure [Pa]", rotation=270,labelpad = 10)
 
 		ax2 = ax.twinx()
 		ax2.plot(x,np.array(self.U_mean_cut),color="green", label="FEM prior")
@@ -1390,6 +1477,7 @@ class solverClass:
 		#ax.set_zlabel("$z$")
 		#ax.view_init(24,-70)
 		cbar = fig4.colorbar(cset2, ax=ax,  pad=0.14)
+		cbar.set_label("mean pressure [Pa]", rotation=270,labelpad = 10)
 
 		ax2 = ax.twinx()
 		ax2.plot(x,np.array(self.U_mean_cut),color="green", label="FEM prior")
@@ -1398,8 +1486,13 @@ class solverClass:
 		#ax2.plot(x,(np.array(self.U_mean_cut) + 1.96*np.array(sigL)),color='green', ls = "--",label="MC simulation")
 		#ax2.plot(x,(np.array(self.U_mean_cut) - 1.96*np.array(sigL)),color='green', ls = "--")
 
-		ax2.plot(x,np.array(self.U_mean_post_cut),color="black", label="posterior")
-		ax2.fill_between(x, (np.array(self.U_mean_post_cut) + 1.96*np.array(self.sig_cutPost)), (np.array(self.U_mean_post_cut) - 1.96*np.array(self.sig_cutPost)), color='black', alpha=0.4)
+		#ax2.plot(x,np.array(self.U_mean_post_cut),color="black", label="posterior")
+		#ax2.fill_between(x, (np.array(self.U_mean_post_cut) + 1.96*np.array(self.sig_cutPost)), (np.array(self.U_mean_post_cut) - 1.96*np.array(self.sig_cutPost)), color='black', alpha=0.4)
+
+		ax2.plot(x,np.array(self.zy_mean_cut),color="black", label="estimated z(x)")
+		ax2.fill_between(x, (np.array(self.zy_mean_cut) + 1.96*np.array(self.zy_sig_cut)), (np.array(self.zy_mean_cut) - 1.96*np.array(self.zy_sig_cut)), color='black', alpha=0.4)
+
+
 		# ax2.plot(x,(np.array(self.U_mean_post_cut) + 1.96*np.array(sigL)),color='black', ls = "--",label="MC simulation")
 		# ax2.plot(x,(np.array(self.U_mean_post_cut) - 1.96*np.array(sigL)),color='black', ls = "--")
 
@@ -1570,12 +1663,16 @@ mean = np.zeros((solver.a+1,solver.b+1))
 #X,Y,Z = solver.x0.vector().get_local(), solver.x1.vector().get_local(), solver.U_mean.get_local()
 X,Y,Z = solver.x0.vector().get_local(), solver.x1.vector().get_local(), solver.u_sample.vector().get_local()
 pertub = solver.addPertubation()
-#X,Y,Z = solver.x0.vector().get_local(), solver.x1.vector().get_local(), (solver.u_sample.vector().get_local() * pertub.vector().get_local()) #WITH PERTUBATION
+X,Y,Z = solver.x0.vector().get_local(), solver.x1.vector().get_local(), (solver.u_sample.vector().get_local() * pertub.vector().get_local()) #WITH PERTUBATION
 for i in range((solver.a+1)*(solver.b+1)):
 	a,b = int(solver.a*X[i]),int(solver.b*Y[i])
 	mean[a,b] = Z[i]
 a_list = np.linspace(0,solver.a,solver.a+1,dtype=int)
 b_list = np.linspace(0,solver.b,solver.b+1,dtype=int)
+
+#b_list[0:16]=b_list[9:]
+#a_list = np.linspace(12,24,dtype=int)
+
 
 figRescaling = plt.figure()
 
@@ -1617,7 +1714,7 @@ sp_i = 0
 for r in range(rows):
 #for r in [30]:
 
-	for i in range(20):
+	for i in range(10):
 		#solver.y_points.append(np.random.random_sample((2,)))
 		#solver.y_values.append(np.random.random_sample()*15)
 		#solver.y_values.append(0)
@@ -1635,11 +1732,11 @@ for r in range(rows):
 			#solver.y_points.append([a_list[newPoint[0]]/solver.a,b_list[newPoint[1]]/solver.b])
 			#solver.y_values.append(mean[a_list[newPoint[0]],b_list[newPoint[1]]])
 			solver.y_points.append([a_list[i1]/solver.a,b_list[i2]/solver.b])
-			solver.y_values.append(mean[a_list[i1],b_list[i2]]*0.75)
+			solver.y_values.append(mean[a_list[i1],b_list[i2]]*1)
 		except:
 			print("no varField available!")
 			solver.y_points.append([a_list[i1]/solver.a,b_list[i2]/solver.b])
-			solver.y_values.append(mean[a_list[i1],b_list[i2]]*0.75)
+			solver.y_values.append(mean[a_list[i1],b_list[i2]]*1)
 		#solver.y_points.append([a_list[i1]/solver.a,b_list[i2]/solver.b])
 		#solver.y_values.append(mean[a_list[i1],b_list[i2]]*0.75)
 		
@@ -1707,8 +1804,10 @@ figPost.subplots_adjust(bottom=0.1,top=0.9,left=0.1,right=0.8, wspace=0.4,hspace
 figMean.subplots_adjust(bottom=0.1,top=0.9,left=0.1,right=0.8, wspace=0.4,hspace=0.2)
 cb_ax = figMean.add_axes([0.83,0.1,0.02,0.8])
 cbar = figMean.colorbar(e,cb_ax)
+cbar.set_label("mean pressure [Pa]", rotation=270,labelpad = 10)
 cb_ax = figPost.add_axes([0.83,0.1,0.02,0.8])
 cbar = figPost.colorbar(d,cb_ax)
+cbar.set_label("variance", rotation=270,labelpad = 10)
 figPost.savefig("VarField_Posterior.pdf", bbox_inches='tight')
 figMean.savefig("MeanField_Posterior.pdf", bbox_inches='tight')
 plt.show()
@@ -1743,10 +1842,11 @@ plt.close(figMean)
 # plt.show()
 # plt.close(figMean)
 
-
+solver.estimateTrueResponse()
 solver.plotSolution()
 solver.plotSolutionPosterior()
 #solver.sampleDiscrepancy()
+
 
 # frames = []
 # for i in np.linspace(0.05,1.0,100):
@@ -1754,8 +1854,13 @@ solver.plotSolutionPosterior()
 # 	frames.append(frame)
 # #frames = frames + frames.reverse()[1:]
 # gif.save(frames, 'SourceVar.gif', duration=5, unit="s", between="startend")
-# solver.plotSourceBCvariants(1)
-solver.plotFreqHelper()
+solver.plotSourceBCvariants(0.05)
+
+
+#solver.plotFreqHelper()
+
+solver.plotVarComp()
+
 
 ## stuff for the interactive jupyter notebooks:
 

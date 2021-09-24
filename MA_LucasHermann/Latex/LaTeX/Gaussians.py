@@ -76,6 +76,8 @@ def multivariate_gaussian(pos, mu, Sigma):
         plt.plot(samples[i,0],samples[i,1],'-o',ms=5,color=colors[i])
     plt.xlabel('dim. 1')
     plt.ylabel('dim. 2')
+    plt.ylim(-2.5,2.5)
+    plt.xlim(-2.5,2.5)
     plt.grid()
 
     ax3 = plt.subplot(2,2,2)
@@ -88,6 +90,7 @@ def multivariate_gaussian(pos, mu, Sigma):
         plt.plot(t,samples[i,:],'-o',ms=5,color=colors[i])
     plt.gca().set_title('Strong correlation')
     plt.ylim(-2,2)
+    
     plt.xlabel('dimension')
     plt.ylabel('sampled value')
     plt.grid()
@@ -105,6 +108,9 @@ def multivariate_gaussian(pos, mu, Sigma):
         plt.plot(samples[i,0],samples[i,1],'-o',ms=5,color=colors[i])
     plt.xlabel('dim. 1')
     plt.ylabel('dim. 2')
+    plt.ylim(-2.5,2.5)
+    plt.xlim(-2.5,2.5)
+    plt.grid()
     plt.show()
 
 
@@ -115,6 +121,7 @@ def multivariate_gaussian(pos, mu, Sigma):
     ax1 = plt.subplot(1,2,1)
     mu = np.array([0,0,0,0,0,0])
     D = mu.shape[0]
+    D = 6
     samples = np.zeros((5,D))
 
     tmp = np.sort(random.rand(D))[:,None]
@@ -127,6 +134,8 @@ def multivariate_gaussian(pos, mu, Sigma):
     plt.plot(tmp,np.diagonal(Sigma),'-o',ms=5,color='black',alpha=0.5)
     plt.plot(tmp,-np.diagonal(Sigma),'-o',ms=5,color='black',alpha=0.5)
     plt.gca().set_title('6 dimensions')
+    plt.xlabel('dim/6')
+    plt.ylabel('sampled value')
     plt.grid()
 
 
@@ -146,6 +155,8 @@ def multivariate_gaussian(pos, mu, Sigma):
     plt.plot(tmp,np.diagonal(Sigma),color='black',alpha=0.5,label='Variance')
     plt.plot(tmp,-np.diagonal(Sigma),color='black',alpha=0.5)
     plt.gca().set_title('100 dimensions')
+    plt.xlabel('dim/100')
+    plt.ylabel('sampled value')
     plt.grid()
 
 
@@ -186,7 +197,7 @@ ax.set_zticks(np.linspace(0,0.15,5))
 ax.view_init(21,-45)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$y$')
-ax.set_zlabel("$z$")
+ax.set_zlabel("$f(x,y)$")
 plt.tight_layout()
 
 fig.savefig("Gaussians.pdf", bbox_inches='tight')
@@ -226,8 +237,8 @@ ax.set_zlim(0,0.08)
 #ax.set_ylim(0,4)
 ax.set_xlabel('$x$')
 ax.set_ylabel('$y$')
-ax.set_zlabel("$z$")
+ax.set_zlabel("$f(x,y)$")
 ax.view_init(24,-70)
 plt.tight_layout()
-fig4.savefig("Gaussians3dCut.pdf", bbox_inches='tight')
+#   fig4.savefig("Gaussians3dCut.pdf", bbox_inches='tight')
 plt.show()

@@ -1,0 +1,27 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{MCMC}]\begingroup Markov Chain Monte Carlo\nomeqref {\relax 0.0}
+		\nompageref{8}
+
+ \nomgroup{N}
+
+  \item [{$\Delta x$}]\begingroup length of a gas volume in x direction\nomeqref {\relax 0.0}
+		\nompageref{8}
+  \item [{$\dot{v}$}]\begingroup temporal derivative of v\nomeqref {\relax 0.0}
+		\nompageref{8}
+  \item [{$\nabla$}]\begingroup nabla operator\nomeqref {\relax 0.0}
+		\nompageref{8}
+  \item [{$\rho$}]\begingroup density [kg/m**3]\nomeqref {\relax 0.0}
+		\nompageref{8}
+  \item [{$m$}]\begingroup mass of a gas volume\nomeqref {\relax 0.0}
+		\nompageref{8}
+  \item [{$p$}]\begingroup sound pressure [Pa]\nomeqref {\relax 0.0}
+		\nompageref{8}
+  \item [{$S$}]\begingroup surface area\nomeqref {\relax 0.0}
+		\nompageref{8}
+  \item [{$t$}]\begingroup time [s]\nomeqref {\relax 0.0}\nompageref{8}
+  \item [{$v$}]\begingroup velocity\nomeqref {\relax 0.0}\nompageref{8}
+
+\end{thenomenclature}

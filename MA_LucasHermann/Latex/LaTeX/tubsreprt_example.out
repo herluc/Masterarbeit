@@ -1,36 +1,36 @@
-\BOOKMARK [0][]{chapter.4}{1 Introduction}{}% 1
-\BOOKMARK [0][]{chapter.5}{2 FEM Solution of the Helmholtz Equation}{}% 2
-\BOOKMARK [1][]{section.7}{2.1 Wave Equation and Helmholtz Equation}{chapter.5}% 3
-\BOOKMARK [1][]{section.27}{2.2 The Classical Finite Element Method}{chapter.5}% 4
-\BOOKMARK [2][]{subsection.28}{2.2.1 Integral and Weak Formulation}{section.27}% 5
-\BOOKMARK [2][]{subsection.36}{2.2.2 Discretization}{section.27}% 6
-\BOOKMARK [2][]{subsection.40}{2.2.3 Approximation and Building Element Matrices}{section.27}% 7
-\BOOKMARK [2][]{subsection.56}{2.2.4 Solving and Convergence}{section.27}% 8
-\BOOKMARK [0][]{chapter.59}{3 Gaussian Processes and the Statistical Finite Element Method}{}% 9
-\BOOKMARK [1][]{section.61}{3.1 Basic Probability Theory}{chapter.59}% 10
-\BOOKMARK [2][]{subsection.62}{3.1.1 Random Variables and Distributions}{section.61}% 11
-\BOOKMARK [2][]{subsection.70}{3.1.2 Bayesian Inference}{section.61}% 12
-\BOOKMARK [1][]{section.72}{3.2 Gaussian Process Regression}{chapter.59}% 13
-\BOOKMARK [2][]{subsection.73}{3.2.1 Linear Regression}{section.72}% 14
-\BOOKMARK [2][]{subsection.79}{3.2.2 Gaussian Processes}{section.72}% 15
-\BOOKMARK [2][]{subsection.89}{3.2.3 Kernel Functions}{section.72}% 16
-\BOOKMARK [2][]{subsection.120}{3.2.4 Bayesian Inference}{section.72}% 17
-\BOOKMARK [1][]{section.130}{3.3 The Statistical Finite Element Method}{chapter.59}% 18
+\BOOKMARK [0][]{chapter.7}{1 Introduction}{}% 1
+\BOOKMARK [0][]{chapter.9}{2 FEM Solution of the Helmholtz Equation}{}% 2
+\BOOKMARK [1][]{section.10}{2.1 Wave Equation and Helmholtz Equation}{chapter.9}% 3
+\BOOKMARK [1][]{section.32}{2.2 The Classical Finite Element Method}{chapter.9}% 4
+\BOOKMARK [2][]{subsection.33}{2.2.1 Integral and Weak Formulation}{section.32}% 5
+\BOOKMARK [2][]{subsection.42}{2.2.2 Discretization}{section.32}% 6
+\BOOKMARK [2][]{subsection.46}{2.2.3 Approximation and Building Element Matrices}{section.32}% 7
+\BOOKMARK [2][]{subsection.62}{2.2.4 Solving and Convergence}{section.32}% 8
+\BOOKMARK [0][]{chapter.65}{3 Gaussian Processes and the Statistical Finite Element Method}{}% 9
+\BOOKMARK [1][]{section.66}{3.1 Basic Probability Theory}{chapter.65}% 10
+\BOOKMARK [2][]{subsection.67}{3.1.1 Random Variables and Distributions}{section.66}% 11
+\BOOKMARK [2][]{subsection.75}{3.1.2 Bayesian Inference}{section.66}% 12
+\BOOKMARK [1][]{section.78}{3.2 Gaussian Process Regression}{chapter.65}% 13
+\BOOKMARK [2][]{subsection.79}{3.2.1 Linear Regression}{section.78}% 14
+\BOOKMARK [2][]{subsection.85}{3.2.2 Gaussian Processes}{section.78}% 15
+\BOOKMARK [2][]{subsection.95}{3.2.3 Kernel Functions}{section.78}% 16
+\BOOKMARK [2][]{subsection.120}{3.2.4 Bayesian Inference}{section.78}% 17
+\BOOKMARK [1][]{section.130}{3.3 The Statistical Finite Element Method}{chapter.65}% 18
 \BOOKMARK [2][]{subsection.136}{3.3.1 Posterior of the FEM Forward Model}{section.130}% 19
-\BOOKMARK [2][]{subsection.206}{3.3.2 Inference of the Posterior Density}{section.130}% 20
-\BOOKMARK [2][]{subsection.220}{3.3.3 Probabilistic FEM Prior}{section.130}% 21
-\BOOKMARK [2][]{subsection.230}{3.3.4 Estimation of Hyperparameters}{section.130}% 22
-\BOOKMARK [0][]{chapter.253}{4 A statFEM Approach for Vibroacoustics}{}% 23
-\BOOKMARK [1][]{section.254}{4.1 Simple 1D example}{chapter.253}% 24
-\BOOKMARK [2][]{subsection.262}{4.1.1 FEM Prior}{section.254}% 25
-\BOOKMARK [2][]{subsection.264}{4.1.2 Posterior}{section.254}% 26
-\BOOKMARK [1][]{section.268}{4.2 2D Vibroacoustics Example}{chapter.253}% 27
-\BOOKMARK [2][]{subsection.276}{4.2.1 FEM prior}{section.268}% 28
-\BOOKMARK [2][]{subsection.282}{4.2.2 Posterior, observations on prior sample}{section.268}% 29
-\BOOKMARK [2][]{subsection.287}{4.2.3 Posterior, observations on scaled prior sample}{section.268}% 30
-\BOOKMARK [2][]{subsection.292}{4.2.4 Posterior, observations on altered prior sample}{section.268}% 31
-\BOOKMARK [2][]{subsection.300}{4.2.5 Prior-Data Conflict}{section.268}% 32
-\BOOKMARK [2][]{subsection.304}{4.2.6 Variations in the Neumann BC}{section.268}% 33
-\BOOKMARK [0][]{chapter.307}{5 Discussion and Conclusion}{}% 34
-\BOOKMARK [0][]{Appendix.308}{A Additional Plots}{}% 35
-\BOOKMARK [0][]{Appendix.312}{B Code}{}% 36
+\BOOKMARK [2][]{subsection.212}{3.3.2 Inference of the Posterior Density}{section.130}% 20
+\BOOKMARK [2][]{subsection.228}{3.3.3 Estimation of Hyperparameters}{section.130}% 21
+\BOOKMARK [0][]{chapter.257}{4 A statFEM Approach for Vibroacoustics}{}% 22
+\BOOKMARK [1][]{section.258}{4.1 Simple 1D example}{chapter.257}% 23
+\BOOKMARK [2][]{subsection.262}{4.1.1 FEM Prior}{section.258}% 24
+\BOOKMARK [2][]{subsection.266}{4.1.2 Posterior}{section.258}% 25
+\BOOKMARK [1][]{section.282}{4.2 2D Vibroacoustics Example}{chapter.257}% 26
+\BOOKMARK [2][]{subsection.291}{4.2.1 FEM prior}{section.282}% 27
+\BOOKMARK [2][]{subsection.297}{4.2.2 Posterior, observations on prior sample}{section.282}% 28
+\BOOKMARK [2][]{subsection.302}{4.2.3 Posterior, observations on scaled prior sample}{section.282}% 29
+\BOOKMARK [2][]{subsection.307}{4.2.4 Posterior, observations on altered prior sample}{section.282}% 30
+\BOOKMARK [2][]{subsection.317}{4.2.5 Prior-Data Conflict}{section.282}% 31
+\BOOKMARK [2][]{subsection.321}{4.2.6 Spatially Bounded Sensor Locations}{section.282}% 32
+\BOOKMARK [2][]{subsection.325}{4.2.7 Variations in the Neumann BC}{section.282}% 33
+\BOOKMARK [0][]{chapter.328}{5 Discussion and Conclusion}{}% 34
+\BOOKMARK [0][]{Appendix.329}{A Additional Plots}{}% 35
+\BOOKMARK [0][]{Appendix.333}{B Code}{}% 36

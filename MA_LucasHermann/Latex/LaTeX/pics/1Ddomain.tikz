@@ -69,5 +69,6 @@
 		\draw [style=green line] (38.center) to (18);
 		\draw [style=green line] (18) to (19);
 		\draw [style=blue line] (16) to (17);
+		\draw [style=blue line] (17) to (39.center);
 	\end{pgfonlayer}
 \end{tikzpicture}
