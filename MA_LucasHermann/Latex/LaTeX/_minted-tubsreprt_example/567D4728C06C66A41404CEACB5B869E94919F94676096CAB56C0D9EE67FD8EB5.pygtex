@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{u} \PYG{o}{=} \PYG{n}{Function}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{V}\PYG{p}{)}
+\PYG{n}{U} \PYG{o}{=} \PYG{n}{u}\PYG{o}{.}\PYG{n}{vector}\PYG{p}{()}
+\PYG{n}{solve}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{U}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)}
+\end{Verbatim}

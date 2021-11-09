@@ -2,57 +2,57 @@
 \babel@toc {english}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 2.1}{\ignorespaces BCs for the 2D Helmholtz equation example}}{14}{figure.caption.29}
-\contentsline {figure}{\numberline {\relax 2.2}{\ignorespaces FEM mesh of the 1D example}}{16}{figure.caption.44}
-\contentsline {figure}{\numberline {\relax 2.3}{\ignorespaces FEM mesh for a 2D example}}{17}{figure.caption.45}
-\contentsline {figure}{\numberline {\relax 2.4}{\ignorespaces Frequency Response Function for the 2D Helmholtz equation example}}{21}{figure.caption.63}
-\contentsline {figure}{\numberline {\relax 2.5}{\ignorespaces The mode shape of the second eigenfrequency of the 2D Helmholtz equation example}}{22}{figure.caption.64}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces BCs for the 2D Helmholtz equation example}}{17}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces FEM mesh of the 1D example}}{19}{figure.caption.45}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces FEM mesh for a 2D example}}{20}{figure.caption.46}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Frequency Response Function for the 2D Helmholtz equation example}}{24}{figure.caption.64}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces The mode shape of the second eigenfrequency of the 2D Helmholtz equation example}}{25}{figure.caption.65}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces A bivariate Gaussian distribution}}{24}{figure.caption.74}
-\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces GP regression versus Linear regression}}{27}{figure.caption.86}
-\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Visual explanation of the intuition behind GPs 1}}{28}{figure.caption.87}
-\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Visual explanation of the intuition behind GPs 2}}{29}{figure.caption.88}
-\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Conditioning of a Gaussian}}{29}{figure.caption.94}
-\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Samples from a GP with linear kernel}}{31}{figure.caption.102}
-\contentsline {figure}{\numberline {\relax 3.7}{\ignorespaces Samples from a GP with squared exponential kernel}}{32}{figure.caption.105}
-\contentsline {figure}{\numberline {\relax 3.8}{\ignorespaces Samples from a GP with a periodic kernel}}{32}{figure.caption.108}
-\contentsline {figure}{\numberline {\relax 3.9}{\ignorespaces Samples from a GP with a Mat\'ern kernel 1}}{33}{figure.caption.114}
-\contentsline {figure}{\numberline {\relax 3.10}{\ignorespaces Samples from a GP with a Mat\'ern kernel 2}}{34}{figure.caption.115}
-\contentsline {figure}{\numberline {\relax 3.11}{\ignorespaces Samples from a GP with a Mat\'ern kernel 3}}{34}{figure.caption.116}
-\contentsline {figure}{\numberline {\relax 3.12}{\ignorespaces Illustration of the covartiance matrices fpr different kernel functions}}{35}{figure.caption.117}
-\contentsline {figure}{\numberline {\relax 3.13}{\ignorespaces Illustration of GP conditioning}}{37}{figure.caption.127}
-\contentsline {figure}{\numberline {\relax 3.14}{\ignorespaces Covariance Matrix before and after conditioning}}{37}{figure.caption.128}
-\contentsline {figure}{\numberline {\relax 3.15}{\ignorespaces Convergence of the error norm of the FEM prior}}{41}{figure.caption.176}
-\contentsline {figure}{\numberline {\relax 3.16}{\ignorespaces Illustration of the constitution of the projection matrix P}}{42}{figure.caption.190}
-\contentsline {figure}{\numberline {\relax 3.17}{\ignorespaces Point cloud of the random search for the hyperparameters which yield the minimum negative log-likelihood}}{48}{figure.caption.247}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A bivariate Gaussian distribution}}{27}{figure.caption.75}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces GP regression versus Linear regression}}{30}{figure.caption.87}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Visual explanation of the intuition behind GPs 1}}{31}{figure.caption.88}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Visual explanation of the intuition behind GPs 2}}{32}{figure.caption.89}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Conditioning of a Gaussian}}{32}{figure.caption.95}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Samples from a GP with linear kernel}}{34}{figure.caption.103}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Samples from a GP with squared exponential kernel}}{35}{figure.caption.106}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Samples from a GP with a periodic kernel}}{35}{figure.caption.109}%
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Samples from a GP with a Mat\'ern kernel 1}}{36}{figure.caption.115}%
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Samples from a GP with a Mat\'ern kernel 2}}{37}{figure.caption.116}%
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Samples from a GP with a Mat\'ern kernel 3}}{37}{figure.caption.117}%
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Illustration of the covartiance matrices fpr different kernel functions}}{38}{figure.caption.118}%
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Illustration of GP conditioning}}{40}{figure.caption.128}%
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Covariance Matrix before and after conditioning}}{40}{figure.caption.129}%
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Convergence of the error norm of the FEM prior}}{44}{figure.caption.177}%
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Illustration of the constitution of the projection matrix P}}{45}{figure.caption.191}%
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Point cloud of the random search for the hyperparameters which yield the minimum negative log-likelihood}}{51}{figure.caption.248}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces FEM prior and ground truth GPs for the 1D example}}{51}{figure.caption.265}
-\contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces The posterior for the 1D example after introducing observations with a model error}}{53}{figure.caption.271}
-\contentsline {figure}{\numberline {\relax 4.3}{\ignorespaces Comparison of the influence of different amounts of model error on the posterior variance. Each dot represents a single observation.\relax }}{54}{figure.caption.272}
-\contentsline {figure}{\numberline {\relax 4.4}{\ignorespaces Estimating the true process for the 1D example}}{55}{figure.caption.275}
-\contentsline {figure}{\numberline {\relax 4.5}{\ignorespaces Posterior of the 1D example for observations only on one side of the domain}}{56}{figure.caption.277}
-\contentsline {figure}{\numberline {\relax 4.6}{\ignorespaces Posterior of the 1D example for observations far outside the FEM prior variance band}}{57}{figure.caption.279}
-\contentsline {figure}{\numberline {\relax 4.7}{\ignorespaces Mesh of the 2D example}}{59}{figure.caption.289}
-\contentsline {figure}{\numberline {\relax 4.8}{\ignorespaces Neumann source GP}}{60}{figure.caption.294}
-\contentsline {figure}{\numberline {\relax 4.9}{\ignorespaces Overview of the source and prior GP}}{61}{figure.caption.295}
-\contentsline {figure}{\numberline {\relax 4.10}{\ignorespaces Variance of the FEM prior at 500Hz}}{62}{figure.caption.296}
-\contentsline {figure}{\numberline {\relax 4.11}{\ignorespaces Posterior of the 2D Helmholtz equation example for different numbers of sensors and observations}}{63}{figure.caption.300}
-\contentsline {figure}{\numberline {\relax 4.12}{\ignorespaces Source, prior and posterior for the 2D example at 500Hz}}{64}{figure.caption.304}
-\contentsline {figure}{\numberline {\relax 4.13}{\ignorespaces Posterior of the 2D Helmholtz equation example for different numbers of sensors and observations for a 0.75x scaled prior as ground truth}}{65}{figure.caption.305}
-\contentsline {figure}{\numberline {\relax 4.14}{\ignorespaces Comparison of prior and posterior in a 3D view for the 0.75x scaling}}{65}{figure.caption.306}
-\contentsline {figure}{\numberline {\relax 4.15}{\ignorespaces Illustration of the ground truth with model error}}{66}{figure.caption.309}
-\contentsline {figure}{\numberline {\relax 4.16}{\ignorespaces Comparison of prior and posterior in a 3D view for the observations with model error}}{67}{figure.caption.311}
-\contentsline {figure}{\numberline {\relax 4.17}{\ignorespaces Introducing model error leads to a higher variance for a small number of sensor locations.\relax }}{68}{figure.caption.313}
-\contentsline {figure}{\numberline {\relax 4.18}{\ignorespaces Introducing more sensor locations, it is now visible that the variance goes down with more observations and more sensors, just as expected.\relax }}{69}{figure.caption.314}
-\contentsline {figure}{\numberline {\relax 4.19}{\ignorespaces The estimated true response for the 2D Helmholtz example with model error}}{70}{figure.caption.316}
-\contentsline {figure}{\numberline {\relax 4.20}{\ignorespaces Comparison of prior and posterior in a 3D view for the observations with a prior-data conflict}}{71}{figure.caption.318}
-\contentsline {figure}{\numberline {\relax 4.21}{\ignorespaces \relax }}{71}{figure.caption.319}
-\contentsline {figure}{\numberline {\relax 4.22}{\ignorespaces Prior and posterior variance compared for 500Hz and sensor locations only in the upper half of the domain. The variance becomes lower in the whole domain but especially in regions where sensors are placed. $n_p=20$, $n_o=10$\relax }}{72}{figure.caption.322}
-\contentsline {figure}{\numberline {\relax 4.23}{\ignorespaces Posterior variance for 500Hz and sensor locations only in the upper half of the domain. It is visible that the variance can still be lowered throughout the domain by increasing the number of sensors and observations.\relax }}{73}{figure.caption.323}
-\contentsline {figure}{\numberline {\relax 4.24}{\ignorespaces \relax }}{73}{figure.caption.326}
-\contentsline {figure}{\numberline {\relax 4.25}{\ignorespaces \relax }}{74}{figure.caption.327}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces FEM prior and ground truth GPs for the 1D example}}{55}{figure.caption.275}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces The posterior for the 1D example after introducing observations with a model error}}{57}{figure.caption.281}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparison of the influence of different amounts of model error on the posterior variance. Each dot represents a single observation.\relax }}{58}{figure.caption.282}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Estimating the true process for the 1D example}}{59}{figure.caption.285}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Posterior of the 1D example for observations only on one side of the domain}}{60}{figure.caption.287}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Posterior of the 1D example for observations far outside the FEM prior variance band}}{61}{figure.caption.290}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Mesh of the 2D example}}{63}{figure.caption.301}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Neumann source GP}}{65}{figure.caption.307}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Overview of the source and prior GP}}{65}{figure.caption.308}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Variance of the FEM prior at 500Hz}}{66}{figure.caption.309}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Posterior of the 2D Helmholtz equation example for different numbers of sensors and observations}}{68}{figure.caption.313}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Source, prior and posterior for the 2D example at 500Hz}}{69}{figure.caption.317}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Posterior of the 2D Helmholtz equation example for different numbers of sensors and observations for a 0.75x scaled prior as ground truth}}{70}{figure.caption.318}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Comparison of prior and posterior in a 3D view for the 0.75x scaling}}{70}{figure.caption.319}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Illustration of the ground truth with model error}}{71}{figure.caption.322}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Comparison of prior and posterior in a 3D view for the observations with model error}}{72}{figure.caption.324}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Introducing model error leads to a higher variance for a small number of sensor locations.\relax }}{73}{figure.caption.326}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Introducing more sensor locations, it is now visible that the variance goes down with more observations and more sensors, just as expected.\relax }}{74}{figure.caption.327}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces The estimated true response for the 2D Helmholtz example with model error}}{75}{figure.caption.329}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Comparison of prior and posterior in a 3D view for the observations with a prior-data conflict}}{76}{figure.caption.331}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces It is visible that a prior-data conflict is present. The posterior is scaled much larger than the prior and, even though observations have been taken, exhibits a large variance in the magnitude of the prior's variance.\relax }}{76}{figure.caption.332}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Prior and posterior variance compared for 500Hz and sensor locations only in the upper half of the domain. The variance becomes lower in the whole domain but especially in regions where sensors are placed. $n_p=20$, $n_o=10$\relax }}{77}{figure.caption.335}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Posterior variance for $500 \tmspace +\thinmuskip {.1667em}\mathrm {Hz}$ and sensor locations only in the upper half of the domain. It is visible that the variance can still be lowered throughout the domain by increasing the number of sensors and observations.\relax }}{78}{figure.caption.336}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Mean and variance for a constant boundary function over the whole left side of the domain. The problem reduces to a 1D problem.\relax }}{79}{figure.caption.339}%
+\contentsline {figure}{\numberline {4.25}{\ignorespaces If the constant boundary function is only applied on a very small fraction of the left side, it acts like a point source. The natural response of the cavity is visible. \relax }}{79}{figure.caption.340}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {\relax A.1}{\ignorespaces The mean and variance for the first eigenfrequency of the 2D field.\relax }}{76}{figure.caption.331}
-\contentsline {figure}{\numberline {\relax A.2}{\ignorespaces The mean and variance for the third eigenfrequency of the 2D field.\relax }}{76}{figure.caption.332}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces The mean and variance for the first eigenfrequency of the 2D field.\relax }}{81}{figure.caption.344}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces The mean and variance for the third eigenfrequency of the 2D field.\relax }}{81}{figure.caption.345}%
 \addvspace {10\p@ }

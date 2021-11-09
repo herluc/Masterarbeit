@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{U} \PYG{o}{=} \PYG{l+m+mf}{0.0001} \PYG{c+c1}{\PYGZsh{}Piston displacement}
+\PYG{n}{g} \PYG{o}{=} \PYG{n}{rho} \PYG{o}{*} \PYG{n}{omega}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{U}
+\PYG{n}{u} \PYG{o}{=} \PYG{n}{TrialFunction}\PYG{p}{(}\PYG{n}{V}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} test and trial function in the same function space}
+\PYG{n}{v} \PYG{o}{=} \PYG{n}{TestFunction}\PYG{p}{(}\PYG{n}{V}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{}variational Problem:	}
+\PYG{n}{a} \PYG{o}{=} \PYG{n}{inner}\PYG{p}{(}\PYG{n}{nabla\PYGZus{}grad}\PYG{p}{(}\PYG{n}{u}\PYG{p}{),} \PYG{n}{nabla\PYGZus{}grad}\PYG{p}{(}\PYG{n}{v}\PYG{p}{))}\PYG{o}{*}\PYG{n}{dx} \PYG{o}{\PYGZhy{}} \PYGZbs{}
+ \PYG{n}{k}\PYG{o}{**}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{inner}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{v}\PYG{p}{)}\PYG{o}{*}\PYG{n}{dx}
+\PYG{n}{L} \PYG{o}{=} \PYG{p}{(}\PYG{n}{v}\PYG{o}{*}\PYG{n}{g}\PYG{p}{)}\PYG{o}{*}\PYG{n}{ds}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{} 0 is the chosen boundary marker}
+\end{Verbatim}

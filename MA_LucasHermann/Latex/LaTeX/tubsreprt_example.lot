@@ -4,15 +4,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {\relax 4.1}{\ignorespaces The estimated hyperparameters for the different observations with model error. The more observations are taken, the higher the estimated model error becomes.\relax }}{54}{table.273}
-\contentsline {table}{\numberline {\relax 4.2}{\ignorespaces Adding a small nugget to the matrix which is inverted leads to a much lower condition number, which is good. Also, not using a squared exponential kernel but any Mat\'ern kernel leads to much lower condition numbers.\relax }}{58}{table.281}
-\contentsline {table}{\numberline {\relax 4.3}{\ignorespaces The parameters used to setup the FEM mesh.\relax }}{58}{table.286}
-\contentsline {table}{\numberline {\relax 4.4}{\ignorespaces The material and frequency constants in the PDE have been set to these values. The material inside the Helmholtz domain is considered to be air.\relax }}{59}{table.287}
-\contentsline {table}{\numberline {\relax 4.5}{\ignorespaces For a $100\%$ scaling and no introduced model error, $\rho $ is close to $1$ for every case, which is expected for a direct FEM prior sample as ground truth. The model error parameters are close to zero which is expected, because no model error was introduced.\relax }}{63}{table.301}
-\contentsline {table}{\numberline {\relax 4.6}{\ignorespaces For a $75\%$ scaling and no introduced model error, $\rho $ is close to $0.75$ for every case, which is expected for a $75 \%$ scales FEM prior sample as ground truth. The model error is close to zero.\relax }}{64}{table.303}
-\contentsline {table}{\numberline {\relax 4.7}{\ignorespaces Hyperparameters for the case of observed data with a model error. The solution is scaled by around 20\% and the hyperparameters describing the model inadequacy are not close to zero anymore.\relax }}{67}{table.312}
-\contentsline {table}{\numberline {\relax 4.8}{\ignorespaces For the prior-data conflict, a comparatively high scaling factor $\rho $ is found. The standard deviation hyperparameter for the model inadequacy term $d$ is also higher than in other examples.\relax }}{70}{table.320}
-\contentsline {table}{\numberline {\relax 4.9}{\ignorespaces Hyperparameters for the case of observed data on a scaled FEM prior, only measured in a fraction of the domain. \relax }}{72}{table.324}
+\contentsline {table}{\numberline {4.1}{\ignorespaces The estimated hyperparameters for the different observations with model error. The more observations are taken, the higher the estimated model error becomes.\relax }}{58}{table.283}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces The estimated hyperparameters for the different observations with spatially bounded sensor locations. \relax }}{59}{table.288}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces The estimated hyperparameters for the different observations far outside the FEM prior confidence interval. \relax }}{61}{table.291}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Adding a small nugget to the matrix which is inverted leads to a much lower condition number, which is good. Also, not using a squared exponential kernel but any Mat\'ern kernel leads to much lower condition numbers.\relax }}{62}{table.293}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces The parameters which are used to setup the 2D FEM mesh.\relax }}{63}{table.298}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces The material and frequency constants in the PDE have been set to these values. The material inside the Helmholtz domain is considered to be air.\relax }}{63}{table.299}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces For a $100\%$ scaling and no introduced model error, $\rho $ is close to $1$ for every case, which is expected for a direct FEM prior sample as ground truth. The model error parameters are close to zero which is expected because no model error was introduced.\relax }}{68}{table.314}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces For a $75\%$ scaling and no introduced model error, $\rho $ is close to $0.75$ for every case, which is expected for a $75 \%$ scales FEM prior sample as ground truth. The model error is close to zero.\relax }}{69}{table.316}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Hyperparameters for the case of observed data with a model error. The solution is scaled by around 20\% and the hyperparameters describing the model inadequacy are not close to zero anymore.\relax }}{72}{table.325}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces For the prior-data conflict, a comparatively high scaling factor $\rho $ is found. The standard deviation hyperparameter for the model inadequacy term $d$ is also higher than in other examples.\relax }}{75}{table.333}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Hyperparameters for the case of observed data on a scaled FEM prior, only measured in a fraction of the domain. \relax }}{77}{table.337}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

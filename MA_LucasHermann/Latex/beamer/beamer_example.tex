@@ -35,7 +35,7 @@
 \title{A Statistical Approach for the Fusion of
 Data and Finite Element Analysis in
 Vibroacoustics}
-\subtitle{Half-time report}
+\subtitle{Final Presentation}
 \author{Lucas Hermann}
 % Titelgrafik, automatisch beschnitten, Weitere Optionen: <scaled/cropx/cropy>
 %\titlegraphic[cropped]{\includegraphics{titlepicture.png}}
@@ -117,6 +117,14 @@ The goal of the thesis is:
 
 
 
+\subsection{FEM Solution}
+\begin{frame}{FEM Solution}
+
+	
+\end{frame}
+
+
+
 \subsection{Modeling data}
 \begin{frame}{Prerequisites: Data}
 
@@ -130,14 +138,14 @@ $\textcolor{DGTU}{\bm{z}}$: The true solution\\
 $\textcolor{olive}{\bm{e}}$: Measurement error\\
 $\rho \bm{P} \bm{u}$: Scaled projected FEM solution\\
 
-$\bm{d} \sim \mathcal{GP}(\bar{\bm{d}}, C_d)$: Model mismatch error
+$\bm{d} \sim \mathcal{GP}(\bar{\bm{d}}, \bm{C}_d)$: Model mismatch error
 \end{frame}
 
 
 \subsection{Gaussian Processes}
 \begin{frame}{Prerequisites: Gaussian Processes}
 \begin{block}{Gaussian Processes:}
-A GP $\bm{u} \sim \mathcal{GP}(\bar{\bm{u}},C_u)$ is a distribution of functions. It is defined by a mean $\bar{\bm{u}}$ and a covariance matrix $C_u$. It is basically just a multivariate Gaussian distribution.
+A GP $\bm{u} \sim \mathcal{GP}(\bar{\bm{u}},\bm{C}_u)$ is a distribution of functions. It is defined by a mean $\bar{\bm{u}}$ and a covariance matrix $\bm{C}_u$. It is basically just a multivariate Gaussian distribution.
 
 \end{block}
 \begin{figure}[h]
@@ -223,7 +231,7 @@ The uncertainty is in the source term: $f \sim \mathcal{GP}(\bar{f}, C_f)$
 The FEM solution serves as a prior and is modeled as a GP with a mean and variance. Arbitrarily many samples can be drawn from it.
       	\begin{figure}[h]
 		\begin{center}
-		\includegraphics[width=0.7\textwidth]{1DFEMprior}
+		\includegraphics[width=0.7\textwidth]{FEMprior_Z}
 		\end{center}
 		\end{figure}
 
@@ -352,34 +360,9 @@ Variance drops with increasing number of sensors and/or number of observations
   \partpage
 \end{frame}
 
-\begin{frame}{Status}
-
-\begin{itemize}
-\item I understood the basics and began documenting
-\item A 1D proof of concept works well
-\item The code for the Helmholtz solver works but needs some iterations:
-	\begin{itemize}
-	\item plausibility checks
-	\item numerical experiments
-	\item explore and find limits of the method
-	\end{itemize}
-\item documentation is at $\sim$ 50\%
-\item further work could be done, if there is time
-\end{itemize}
-
-	\end{frame}
 
 
 
-\begin{frame}{Timeline}
-
-      	\begin{figure}[h]
-		\begin{center}
-		\includegraphics[width=1\textwidth]{timeline}
-		\end{center}
-		\end{figure}
-
-	\end{frame}
 
 
 

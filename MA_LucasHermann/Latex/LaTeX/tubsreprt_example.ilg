@@ -7,8 +7,13 @@ Scanning style file /usr/share/texlive/texmf-dist/makeindex/nomencl/nomencl.ist.
 ** Input style error (file = /usr/share/texlive/texmf-dist/makeindex/nomencl/nomencl.ist, line = 72):
    -- Unknown specifier lethead_flag.
 ...done (10 attributes redefined, 3 ignored).
-Scanning input file tubsreprt_example.nlo....done (10 entries accepted, 0 rejected).
-Sorting entries....done (32 comparisons).
-Generating output file tubsreprt_example.nls....done (27 lines written, 0 warnings).
+Scanning input file tubsreprt_example.nlo....
+!! Input index error (file = tubsreprt_example.nlo, line = 57):
+   -- Extra `|' at position 15 of first argument.
+!! Input index error (file = tubsreprt_example.nlo, line = 58):
+   -- Extra `@' at position 20 of first argument.
+done (100 entries accepted, 2 rejected).
+Sorting entries....done (697 comparisons).
+Generating output file tubsreprt_example.nls....done (204 lines written, 0 warnings).
 Output written in tubsreprt_example.nls.
 Transcript written in tubsreprt_example.ilg.

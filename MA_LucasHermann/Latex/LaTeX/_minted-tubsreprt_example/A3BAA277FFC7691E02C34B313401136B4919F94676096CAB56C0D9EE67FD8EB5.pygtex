@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{a}\PYG{p}{,}\PYG{n}{b} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{2}
+\PYG{n}{mesh} \PYG{o}{=} \PYG{n}{UnitSquareMesh}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{a}\PYG{p}{,}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{b}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}define square 2D mesh}
+\end{Verbatim}

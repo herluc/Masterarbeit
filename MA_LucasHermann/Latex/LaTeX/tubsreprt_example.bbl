@@ -48,6 +48,82 @@
       \field{year}{2015}
       \field{dateera}{ce}
     \endentry
+    \entry{larson2013}{book}{}
+      \name{author}{2}{}{%
+        {{hash=132c5680e44e4bc421da52dba6f7548e}{%
+           family={Larson},
+           familyi={L\bibinitperiod},
+           given={Mats\bibnamedelima G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=b2fe390af27a5a19328a4a647e0595e9}{%
+           family={Bengzon},
+           familyi={B\bibinitperiod},
+           given={Fredrik},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{9745ed3942d815fa13a64d6fad957b9f}
+      \strng{fullhash}{9745ed3942d815fa13a64d6fad957b9f}
+      \strng{bibnamehash}{9745ed3942d815fa13a64d6fad957b9f}
+      \strng{authorbibnamehash}{9745ed3942d815fa13a64d6fad957b9f}
+      \strng{authornamehash}{9745ed3942d815fa13a64d6fad957b9f}
+      \strng{authorfullhash}{9745ed3942d815fa13a64d6fad957b9f}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Introducing the finite element method as a general computational method for solving partial differential equations approximately, this book goes on to cover important applications including diffusion and transport phenomena, solid and fluid mechanics and more.--}
+      \field{annotation}{OCLC: 841296692}
+      \field{langid}{english}
+      \field{number}{10}
+      \field{pagetotal}{385}
+      \field{series}{Texts in Computational Science and Engineering}
+      \field{shorttitle}{The Finite Element Method}
+      \field{title}{The Finite Element Method: Theory, Implementation, and Applications}
+      \field{year}{2013}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb /home/lucas/Zotero/storage/8ZFDIN7B/Larson and Bengzon - 2013 - The finite element method theory, implementation,.pdf
+      \endverb
+    \endentry
+    \entry{murphy2012}{book}{}
+      \name{author}{1}{}{%
+        {{hash=57a45a819d1ea44f0e40dfcdeeaa4140}{%
+           family={Murphy},
+           familyi={M\bibinitperiod},
+           given={Kevin\bibnamedelima P.},
+           giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{57a45a819d1ea44f0e40dfcdeeaa4140}
+      \strng{fullhash}{57a45a819d1ea44f0e40dfcdeeaa4140}
+      \strng{bibnamehash}{57a45a819d1ea44f0e40dfcdeeaa4140}
+      \strng{authorbibnamehash}{57a45a819d1ea44f0e40dfcdeeaa4140}
+      \strng{authornamehash}{57a45a819d1ea44f0e40dfcdeeaa4140}
+      \strng{authorfullhash}{57a45a819d1ea44f0e40dfcdeeaa4140}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{isbn}{978-0-262-01802-9}
+      \field{pagetotal}{1067}
+      \field{series}{Adaptive Computation and Machine Learning Series}
+      \field{shorttitle}{Machine Learning}
+      \field{title}{Machine Learning: A Probabilistic Perspective}
+      \field{year}{2012}
+      \field{dateera}{ce}
+      \keyw{Machine learning,Probabilities}
+    \endentry
     \entry{girolami2021}{article}{}
       \name{author}{4}{}{%
         {{hash=29d5a93ca5a81c990256c62b097f65bb}{%
@@ -77,8 +153,8 @@
       \strng{authorbibnamehash}{bd1d6d2fee3f5a3175aed1cf062765be}
       \strng{authornamehash}{bd1d6d2fee3f5a3175aed1cf062765be}
       \strng{authorfullhash}{bd1d6d2fee3f5a3175aed1cf062765be}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{00457825}
@@ -109,6 +185,75 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0045782520307180
       \endverb
     \endentry
+    \entry{rasmussen2006}{book}{}
+      \name{author}{2}{}{%
+        {{hash=d4a4e699c24e75fc39a3a354584c6dbf}{%
+           family={Rasmussen},
+           familyi={R\bibinitperiod},
+           given={Carl\bibnamedelima Edward},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=18d5a61e673f86e548c1ea8a7f124c00}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Christopher\bibnamedelimb K.\bibnamedelimi I.},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, Mass}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{580284ca6658c9a6ec11bab830a19345}
+      \strng{fullhash}{580284ca6658c9a6ec11bab830a19345}
+      \strng{bibnamehash}{580284ca6658c9a6ec11bab830a19345}
+      \strng{authorbibnamehash}{580284ca6658c9a6ec11bab830a19345}
+      \strng{authornamehash}{580284ca6658c9a6ec11bab830a19345}
+      \strng{authorfullhash}{580284ca6658c9a6ec11bab830a19345}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{annotation}{OCLC: ocm61285753}
+      \field{isbn}{978-0-262-18253-9}
+      \field{pagetotal}{248}
+      \field{series}{Adaptive Computation and Machine Learning}
+      \field{title}{Gaussian Processes for Machine Learning}
+      \field{year}{2006}
+      \field{dateera}{ce}
+      \keyw{Data processing,Gaussian processes,Machine learning,Mathematical models}
+    \endentry
+    \entry{atalla2015}{book}{}
+      \name{author}{2}{}{%
+        {{hash=89f545f7c44cb2119c6438eccd834357}{%
+           family={Atalla},
+           familyi={A\bibinitperiod},
+           given={Noureddine},
+           giveni={N\bibinitperiod}}}%
+        {{hash=0f1922f598d4553277a4d500c3ec5d31}{%
+           family={Sgard},
+           familyi={S\bibinitperiod},
+           given={Franck},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe0dc69997acd87706856b593486fd30}
+      \strng{fullhash}{fe0dc69997acd87706856b593486fd30}
+      \strng{bibnamehash}{fe0dc69997acd87706856b593486fd30}
+      \strng{authorbibnamehash}{fe0dc69997acd87706856b593486fd30}
+      \strng{authornamehash}{fe0dc69997acd87706856b593486fd30}
+      \strng{authorfullhash}{fe0dc69997acd87706856b593486fd30}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Finite Element and Boundary Methods in Structural Acoustics and Vibration provides a unique and in-depth presentation of the finite element method (FEM) and the boundary element method (BEM) in structural acoustics and vibrations. It illustrates the principles using a logical and progressive methodology which leads to a thorough understanding of their physical and mathematical principles and their implementation to solve a wide range of problems in structural acoustics and vibration.}
+      \field{annotation}{OCLC: 911263399}
+      \field{isbn}{978-1-4665-9287-2}
+      \field{langid}{english}
+      \field{title}{Finite Element and Boundary Methods in Structural Acoustics and Vibration}
+      \field{year}{2015}
+      \field{dateera}{ce}
+    \endentry
     \entry{langtangen2019}{book}{}
       \name{author}{2}{}{%
         {{hash=0967083410282320ed5fab09db692cfc}{%
@@ -128,8 +273,8 @@
       \strng{authorbibnamehash}{02e9c4fc2a4c3399077565a5ba737ca0}
       \strng{authornamehash}{02e9c4fc2a4c3399077565a5ba737ca0}
       \strng{authorfullhash}{02e9c4fc2a4c3399077565a5ba737ca0}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This textbook teaches finite element methods from a computational point of view. It focuses on how to develop flexible computer programs with Python, a programming language in which a combination of symbolic and numerical tools is used to achieve an explicit and practical derivation of finite element algorithms. The finite element library FEniCS is used throughout the book, but the content is provided in sufficient detail to ensure that students with less mathematical background or mixed programming-language experience will equally benefit. All program examples are available on the Internet}
@@ -139,49 +284,6 @@
       \field{title}{Introduction to {{Numerical Methods}} for {{Variational Problems}}}
       \field{year}{2019}
       \field{dateera}{ce}
-    \endentry
-    \entry{larson2013}{book}{}
-      \name{author}{2}{}{%
-        {{hash=132c5680e44e4bc421da52dba6f7548e}{%
-           family={Larson},
-           familyi={L\bibinitperiod},
-           given={Mats\bibnamedelima G.},
-           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-        {{hash=b2fe390af27a5a19328a4a647e0595e9}{%
-           family={Bengzon},
-           familyi={B\bibinitperiod},
-           given={Fredrik},
-           giveni={F\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Berlin Heidelberg}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{9745ed3942d815fa13a64d6fad957b9f}
-      \strng{fullhash}{9745ed3942d815fa13a64d6fad957b9f}
-      \strng{bibnamehash}{9745ed3942d815fa13a64d6fad957b9f}
-      \strng{authorbibnamehash}{9745ed3942d815fa13a64d6fad957b9f}
-      \strng{authornamehash}{9745ed3942d815fa13a64d6fad957b9f}
-      \strng{authorfullhash}{9745ed3942d815fa13a64d6fad957b9f}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{Introducing the finite element method as a general computational method for solving partial differential equations approximately, this book goes on to cover important applications including diffusion and transport phenomena, solid and fluid mechanics and more.--}
-      \field{annotation}{OCLC: 841296692}
-      \field{langid}{english}
-      \field{number}{10}
-      \field{pagetotal}{385}
-      \field{series}{Texts in Computational Science and Engineering}
-      \field{shorttitle}{The Finite Element Method}
-      \field{title}{The Finite Element Method: Theory, Implementation, and Applications}
-      \field{year}{2013}
-      \field{dateera}{ce}
-      \verb{file}
-      \verb /home/lucas/Zotero/storage/8ZFDIN7B/Larson and Bengzon - 2013 - The finite element method theory, implementation,.pdf
-      \endverb
     \endentry
     \entry{langtangen2016}{book}{}
       \name{author}{2}{}{%
@@ -208,8 +310,8 @@
       \strng{authorbibnamehash}{5a0bb39407afaacebcd711f7ab8b187c}
       \strng{authornamehash}{5a0bb39407afaacebcd711f7ab8b187c}
       \strng{authorfullhash}{5a0bb39407afaacebcd711f7ab8b187c}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -247,8 +349,8 @@
       \strng{authorbibnamehash}{566cbec89d411ac615d67809e3083f19}
       \strng{authornamehash}{566cbec89d411ac615d67809e3083f19}
       \strng{authorfullhash}{566cbec89d411ac615d67809e3083f19}
-      \field{sortinit}{6}
-      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{22}
@@ -264,37 +366,6 @@
       \verb{url}
       \verb https://www.ebook.de/de/product/1925571/cornelius_lanczos_the_variational_principles_of_mechanics.html
       \endverb
-    \endentry
-    \entry{atalla2015}{book}{}
-      \name{author}{2}{}{%
-        {{hash=89f545f7c44cb2119c6438eccd834357}{%
-           family={Atalla},
-           familyi={A\bibinitperiod},
-           given={Noureddine},
-           giveni={N\bibinitperiod}}}%
-        {{hash=0f1922f598d4553277a4d500c3ec5d31}{%
-           family={Sgard},
-           familyi={S\bibinitperiod},
-           given={Franck},
-           giveni={F\bibinitperiod}}}%
-      }
-      \strng{namehash}{fe0dc69997acd87706856b593486fd30}
-      \strng{fullhash}{fe0dc69997acd87706856b593486fd30}
-      \strng{bibnamehash}{fe0dc69997acd87706856b593486fd30}
-      \strng{authorbibnamehash}{fe0dc69997acd87706856b593486fd30}
-      \strng{authornamehash}{fe0dc69997acd87706856b593486fd30}
-      \strng{authorfullhash}{fe0dc69997acd87706856b593486fd30}
-      \field{sortinit}{7}
-      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Finite Element and Boundary Methods in Structural Acoustics and Vibration provides a unique and in-depth presentation of the finite element method (FEM) and the boundary element method (BEM) in structural acoustics and vibrations. It illustrates the principles using a logical and progressive methodology which leads to a thorough understanding of their physical and mathematical principles and their implementation to solve a wide range of problems in structural acoustics and vibration.}
-      \field{annotation}{OCLC: 911263399}
-      \field{isbn}{978-1-4665-9287-2}
-      \field{langid}{english}
-      \field{title}{Finite Element and Boundary Methods in Structural Acoustics and Vibration}
-      \field{year}{2015}
-      \field{dateera}{ce}
     \endentry
     \entry{moser2005}{book}{}
       \name{author}{1}{}{%
@@ -316,8 +387,8 @@
       \strng{authorbibnamehash}{b618872562545020d973d975915d0c7c}
       \strng{authornamehash}{b618872562545020d973d975915d0c7c}
       \strng{authorfullhash}{b618872562545020d973d975915d0c7c}
-      \field{sortinit}{8}
-      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Diese schon klassische Einführung ist in der Stoffauswahl und im Aufbau einzigartig und bewährt, ihre Themenauswahl widmet sich der Ingenieurausbildung. Vor allem wird Wert auf die wichtigsten Maßnahmen zur Beruhigung der Akustischen Umwelt gelegt. Alle Kapitel haben direkt und indirekt die Frage zum Gegenstand, wie die Lautstärke in den praktisch wichtigsten akustischen Umgebungen (in Gebäuden und im Freien) verringert werden kann. Den so genannten Maßnahmenkapiteln werden die Medienkapitel vorangestellt, die das erforderliche Grundlagenwissen über die Natur von Schall und Schwingungen vermitteln. Gegenüber der Vorauflage hat der Umfang um ein Fünftel zugenommen. Hervorzuheben ist ein neues Kapitel zu den Grundfragen und Tatsachen der "aktiven Lärmbekämpfung". Folgendes wurden u.a. zudem ergänzt:- die Betrachtung der Wellenausbreitung wurde auf bewegte Medien ausgedehnt- bei der Schallabsorption wird auch der schräge Schalleinfall diskutiert- die Hinweise auf die Normung wurden aktualisiert- am Ende jeden Kapitels wurde eine kurze und prägnante Zusammenfassung der wesentlichen Sachverhalte aufgenommen. TOC:Wahrnehmung von Schall.- Grundbegriffe der Wellenausbreitung .- Schallausbreitung und Schallabstrahlung.- Körperschall.- Elastische Isolation.- Schallabsorption.- Grundlagen der Raumakustik.- Schalldämmung.- Schalldämpfer.- Beugung.- Elektroakustische Wandler für Luftschall.- Grundlagen der aktiven Lärmbekämpfung. - Anhang A: Rechnen mit Pegeln.- Anhang B: Komplexe Zeiger.- Sachverzeichnis}
@@ -333,77 +404,6 @@
       \verb{file}
       \verb /home/lucas/Zotero/storage/IPKPA4TL/Möser - 2005 - Technische Akustik.pdf
       \endverb
-    \endentry
-    \entry{murphy2012}{book}{}
-      \name{author}{1}{}{%
-        {{hash=57a45a819d1ea44f0e40dfcdeeaa4140}{%
-           family={Murphy},
-           familyi={M\bibinitperiod},
-           given={Kevin\bibnamedelima P.},
-           giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Cambridge, MA}%
-      }
-      \list{publisher}{1}{%
-        {MIT Press}%
-      }
-      \strng{namehash}{57a45a819d1ea44f0e40dfcdeeaa4140}
-      \strng{fullhash}{57a45a819d1ea44f0e40dfcdeeaa4140}
-      \strng{bibnamehash}{57a45a819d1ea44f0e40dfcdeeaa4140}
-      \strng{authorbibnamehash}{57a45a819d1ea44f0e40dfcdeeaa4140}
-      \strng{authornamehash}{57a45a819d1ea44f0e40dfcdeeaa4140}
-      \strng{authorfullhash}{57a45a819d1ea44f0e40dfcdeeaa4140}
-      \field{sortinit}{9}
-      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{isbn}{978-0-262-01802-9}
-      \field{pagetotal}{1067}
-      \field{series}{Adaptive Computation and Machine Learning Series}
-      \field{shorttitle}{Machine Learning}
-      \field{title}{Machine Learning: A Probabilistic Perspective}
-      \field{year}{2012}
-      \field{dateera}{ce}
-      \keyw{Machine learning,Probabilities}
-    \endentry
-    \entry{rasmussen2006}{book}{}
-      \name{author}{2}{}{%
-        {{hash=d4a4e699c24e75fc39a3a354584c6dbf}{%
-           family={Rasmussen},
-           familyi={R\bibinitperiod},
-           given={Carl\bibnamedelima Edward},
-           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-        {{hash=18d5a61e673f86e548c1ea8a7f124c00}{%
-           family={Williams},
-           familyi={W\bibinitperiod},
-           given={Christopher\bibnamedelimb K.\bibnamedelimi I.},
-           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Cambridge, Mass}%
-      }
-      \list{publisher}{1}{%
-        {MIT Press}%
-      }
-      \strng{namehash}{580284ca6658c9a6ec11bab830a19345}
-      \strng{fullhash}{580284ca6658c9a6ec11bab830a19345}
-      \strng{bibnamehash}{580284ca6658c9a6ec11bab830a19345}
-      \strng{authorbibnamehash}{580284ca6658c9a6ec11bab830a19345}
-      \strng{authornamehash}{580284ca6658c9a6ec11bab830a19345}
-      \strng{authorfullhash}{580284ca6658c9a6ec11bab830a19345}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{annotation}{OCLC: ocm61285753}
-      \field{isbn}{978-0-262-18253-9}
-      \field{pagetotal}{248}
-      \field{series}{Adaptive Computation and Machine Learning}
-      \field{title}{Gaussian Processes for Machine Learning}
-      \field{year}{2006}
-      \field{dateera}{ce}
-      \keyw{Data processing,Gaussian processes,Machine learning,Mathematical models}
     \endentry
     \entry{Duffin2020}{article}{}
       \name{author}{4}{}{%
@@ -606,8 +606,8 @@
       \strng{authorbibnamehash}{75db1898ab79a17dc740b5863171fa46}
       \strng{authornamehash}{75db1898ab79a17dc740b5863171fa46}
       \strng{authorfullhash}{75db1898ab79a17dc740b5863171fa46}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We present a novel probabilistic finite element method (FEM) for the solution and uncertainty quantification of elliptic partial differential equations based on random meshes, which we call random mesh FEM (RM-FEM). Our methodology allows to introduce a probability measure on standard piecewise linear FEM. We present a posteriori error estimators based uniquely on probabilistic information. A series of numerical experiments illustrates the potential of the RM-FEM for error estimation and validates our analysis. We furthermore demonstrate how employing the RM-FEM enhances the quality of the solution of Bayesian inverse problems, thus allowing a better quantification of numerical errors in pipelines of computations.}
@@ -652,8 +652,8 @@
       \strng{authorbibnamehash}{a9aedf8f7a760cebc2dad98b672e8765}
       \strng{authornamehash}{a9aedf8f7a760cebc2dad98b672e8765}
       \strng{authorfullhash}{a9aedf8f7a760cebc2dad98b672e8765}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Optical Society of America A}
@@ -691,8 +691,8 @@
       \strng{authorbibnamehash}{b9f7528b64e3bf41f95eb0bc66a09bb5}
       \strng{authornamehash}{b9f7528b64e3bf41f95eb0bc66a09bb5}
       \strng{authorfullhash}{b9f7528b64e3bf41f95eb0bc66a09bb5}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{28}
@@ -729,8 +729,8 @@
       \strng{authorbibnamehash}{c875131003b1976c8d58cf0a400d59e2}
       \strng{authornamehash}{c875131003b1976c8d58cf0a400d59e2}
       \strng{authorfullhash}{c875131003b1976c8d58cf0a400d59e2}
-      \field{sortinit}{1}
-      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{chapter}{Karhunen-Loeve Transform}
@@ -774,6 +774,49 @@
       \verb https://www.ebook.de/de/product/3871164/m_loeve_probability_theory_ii.html
       \endverb
     \endentry
+    \entry{Gross2016}{book}{}
+      \name{author}{4}{}{%
+        {{hash=a0d0be62d77b5850a5d5816f3956fed9}{%
+           family={Gross},
+           familyi={G\bibinitperiod},
+           given={Dietmar},
+           giveni={D\bibinitperiod}}}%
+        {{hash=9564f662727662716fdd7847d12ad525}{%
+           family={Hauger},
+           familyi={H\bibinitperiod},
+           given={Werner},
+           giveni={W\bibinitperiod}}}%
+        {{hash=9225ae66dcb9458a85d6a981abc5cf3f}{%
+           family={Schröder},
+           familyi={S\bibinitperiod},
+           given={Jörg},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d4d382f694a6698d4872997eb22e87ba}{%
+           family={Wall},
+           familyi={W\bibinitperiod},
+           given={Wolfgang\bibnamedelima A.},
+           giveni={W\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin Heidelberg}%
+      }
+      \strng{namehash}{63ec78c6978fd59969c7131b14b1a291}
+      \strng{fullhash}{63ec78c6978fd59969c7131b14b1a291}
+      \strng{bibnamehash}{63ec78c6978fd59969c7131b14b1a291}
+      \strng{authorbibnamehash}{63ec78c6978fd59969c7131b14b1a291}
+      \strng{authornamehash}{63ec78c6978fd59969c7131b14b1a291}
+      \strng{authorfullhash}{63ec78c6978fd59969c7131b14b1a291}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Technische Mechanik 1}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.1007/978-3-662-49472-1
+      \endverb
+    \endentry
     \entry{westermann2015}{book}{}
       \name{author}{1}{}{%
         {{hash=fbf80a6ad28ff33b316d00a7ea2f849d}{%
@@ -794,8 +837,8 @@
       \strng{authorbibnamehash}{fbf80a6ad28ff33b316d00a7ea2f849d}
       \strng{authornamehash}{fbf80a6ad28ff33b316d00a7ea2f849d}
       \strng{authorfullhash}{fbf80a6ad28ff33b316d00a7ea2f849d}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{OCLC: 961399364}
@@ -850,8 +893,8 @@
       \strng{authorbibnamehash}{08fa4bea99ebad3e2c60e7d4b607253c}
       \strng{authornamehash}{08fa4bea99ebad3e2c60e7d4b607253c}
       \strng{authorfullhash}{08fa4bea99ebad3e2c60e7d4b607253c}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Dieses vierfarbige Lehrbuch bietet in einem Band ein lebendiges Bild der „gesamten“ Mathematik für Anwender. Angehende Ingenieure und Naturwissenschaftler finden hier die wichtigen Konzepte und Begriffe ausführlich und mit vielen Beispielen erklärt. Im Mittelpunkt stehen das Verständnis der Zusammenhänge und die Beherrschung der Rechentechniken. Herausragende Merkmale sind: durchgängig vierfarbiges Layout mit mehr als 1500 Abbildungen prägnant formulierte Kerngedanken bilden die Abschnittsüberschriften Selbsttests in kurzen Abständen ermöglichen Lernkontrolle während des Lesens farbige Merkkästen heben das Wichtigste hervor mehr als 100 Anwendungsboxen erläutern Themen wie „Geometrie hinter dem GPS“, „Pageranking bei Google“ oder „harmonischer Oszillator“ Vertiefungsboxen geben einen Ausblick auf weiterführende Themen Zusammenfassungen zu jedem Kapitel sowie Übersichtsboxen mehr als 750 Verständnisfragen, Rechenaufgaben und Anwendungsprobleme Inhaltlich spannt sich der Bogen von elementaren Grundlagen über die Analysis einer Veränderlichen, der linearen Algebra, der Analysis mehrer Veränderlicher bis hin zu fortgeschrittenen Themen der Analysis, die für die Anwendung besonders wichtig sind, wie partielle Differenzialgleichungen, Fourierreihen und Laplacetransformationen. Numerische Konzepte sind integraler Bestandteil der Kapitel. Der Wahrscheinlichkeitsrechnung und Statistik ist einer der sechs Teile des Buchs gewidmet. Auf der Website zum Buch (Matheweb) finden Sie Bonusmaterialien zu zahlreichen Kapiteln Hinweise, Lösungswege und Ergebnisse zu allen Aufgaben Zusatzmaterialien wie Maple-Worksheets zu verschiedenen Themen des Buchs die Möglichkeit, zu den Kapiteln Fragen zu stellen Das Buch wird allen Anwendern der Mathematik vom Beginn des Studiums über höhere Semester bis in die Berufspraxis hinein ein langjähriger verlässlicher Begleiter sein. Für die 3. Auflage ist es vollständig durchgesehen und in Details ergä nzt und didaktisch weiter verbessert worden. Stimmen zur 1. Auflage „Ein Lehrbuch, das Maßstäbe setzt!“ Prof. Dr. Bernd Simeon, TU Kaiserslautern „Endlich ein deutschsprachiges Mathematikbuch, das so richtig Spaß macht.“ Prof. Dr. Martin Pohl, Hochschule Regensburg „Ein komplett neues und einmaliges Konzept: optisch und didaktisch geschrieben mit der Anschaulichkeit eines Schulbuches; mathematisch jedoch immer exakt und auch anspruchsvolle Themen erfassend. Meine Kollege}
@@ -883,8 +926,8 @@
       \strng{authorbibnamehash}{4858289ffcb19e4a4e2acde2cffdc75a}
       \strng{authornamehash}{4858289ffcb19e4a4e2acde2cffdc75a}
       \strng{authorfullhash}{4858289ffcb19e4a4e2acde2cffdc75a}
-      \field{sortinit}{3}
-      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Computational Acoustics of Noise Propagation in Fluids - Finite and Boundary Element Methods}
@@ -919,8 +962,8 @@
       \strng{authorbibnamehash}{81da880c72e1444855baee97eeb6a759}
       \strng{authornamehash}{81da880c72e1444855baee97eeb6a759}
       \strng{authorfullhash}{81da880c72e1444855baee97eeb6a759}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{subtitle}{Finite Element Method}
@@ -945,8 +988,8 @@
       \strng{authorbibnamehash}{1f22cc55b37238105724321c14bfdd90}
       \strng{authornamehash}{1f22cc55b37238105724321c14bfdd90}
       \strng{authorfullhash}{1f22cc55b37238105724321c14bfdd90}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Several widely-used textbooks lead the reader to believe that solving a linear system of equations Ax = b by multiplying the vector b by a computed inverse inv(A) is inaccurate. Virtually all other textbooks on numerical analysis and numerical linear algebra advise against using computed inverses without stating whether this is accurate or not. In fact, under reasonable assumptions on how the inverse is computed, x = inv(A)*b is as accurate as the solution computed by the best backward-stable solvers. This fact is not new, but obviously obscure. We review the literature on the accuracy of this computation and present a self-contained numerical analysis of it.}
@@ -982,8 +1025,8 @@
       \strng{authorbibnamehash}{9df6079d00c90d36f08311cdc1003a57}
       \strng{authornamehash}{9df6079d00c90d36f08311cdc1003a57}
       \strng{authorfullhash}{9df6079d00c90d36f08311cdc1003a57}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{1}
@@ -1021,8 +1064,8 @@
       \strng{authorbibnamehash}{90c1befb6e4ba984194502f492a61ca5}
       \strng{authornamehash}{90c1befb6e4ba984194502f492a61ca5}
       \strng{authorfullhash}{90c1befb6e4ba984194502f492a61ca5}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9780898716139}
@@ -1057,8 +1100,8 @@
       \strng{authorbibnamehash}{ffcc4f42716f1ae36642c32e7c098663}
       \strng{authornamehash}{ffcc4f42716f1ae36642c32e7c098663}
       \strng{authorfullhash}{ffcc4f42716f1ae36642c32e7c098663}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{6}
@@ -1081,8 +1124,8 @@
       \strng{authorbibnamehash}{2d2b0d998977e6379aad61f1b56ac3c1}
       \strng{authornamehash}{2d2b0d998977e6379aad61f1b56ac3c1}
       \strng{authorfullhash}{2d2b0d998977e6379aad61f1b56ac3c1}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Condition Number of a Matrix}
@@ -1113,8 +1156,8 @@
       \strng{authorbibnamehash}{ceb3437ef5353118885f8e51a6db3c62}
       \strng{authornamehash}{ceb3437ef5353118885f8e51a6db3c62}
       \strng{authorfullhash}{ceb3437ef5353118885f8e51a6db3c62}
-      \field{sortinit}{4}
-      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{sortinit}{5}
+      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{0471058564}
@@ -1157,8 +1200,8 @@
       \strng{authorbibnamehash}{54182197e5a7d9d1e1ecc8db9e2dfa71}
       \strng{authornamehash}{54182197e5a7d9d1e1ecc8db9e2dfa71}
       \strng{authorfullhash}{54182197e5a7d9d1e1ecc8db9e2dfa71}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Nature Methods}
@@ -1191,8 +1234,8 @@
       \strng{authorbibnamehash}{da28a755c865268360d92a89f5d7501f}
       \strng{authornamehash}{da28a755c865268360d92a89f5d7501f}
       \strng{authorfullhash}{da28a755c865268360d92a89f5d7501f}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Advanced Lectures on Machine Learning}
@@ -1222,8 +1265,8 @@
       \strng{authorbibnamehash}{7d2f88e7e15d9806dc377ffba29843f8}
       \strng{authornamehash}{7d2f88e7e15d9806dc377ffba29843f8}
       \strng{authorfullhash}{7d2f88e7e15d9806dc377ffba29843f8}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{6}
+      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Bayesian Methodsfor Adaptive Models}
@@ -1254,8 +1297,8 @@
       \strng{authorbibnamehash}{4a743ca414e8d5c1b2a09169ddda1740}
       \strng{authornamehash}{4a743ca414e8d5c1b2a09169ddda1740}
       \strng{authorfullhash}{4a743ca414e8d5c1b2a09169ddda1740}
-      \field{sortinit}{5}
-      \field{sortinithash}{3c19c3776b658b3558e9e2e4840c01e2}
+      \field{sortinit}{7}
+      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{2}
@@ -1301,8 +1344,8 @@
       \strng{authorbibnamehash}{2aff45b384b41b5aa7b77885bc07d25a}
       \strng{authornamehash}{2aff45b384b41b5aa7b77885bc07d25a}
       \strng{authorfullhash}{2aff45b384b41b5aa7b77885bc07d25a}
-      \field{sortinit}{6}
-      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{21}
@@ -1355,8 +1398,8 @@
       \strng{authorbibnamehash}{3ac4cf0937ba13a39c2fb845cfc9d191}
       \strng{authornamehash}{3ac4cf0937ba13a39c2fb845cfc9d191}
       \strng{authorfullhash}{3ac4cf0937ba13a39c2fb845cfc9d191}
-      \field{sortinit}{6}
-      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Image Analysis}
@@ -1386,8 +1429,8 @@
       \strng{authorbibnamehash}{1558430b13e2ee9f7e8cfb4fede454b7}
       \strng{authornamehash}{1558430b13e2ee9f7e8cfb4fede454b7}
       \strng{authorfullhash}{1558430b13e2ee9f7e8cfb4fede454b7}
-      \field{sortinit}{6}
-      \field{sortinithash}{57e57fb8451e7fcfa45d1e069f6d3136}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of Applied Probability}
@@ -1420,8 +1463,8 @@
       \strng{authorbibnamehash}{f4d3ebe022d401618b507db373bcbbb5}
       \strng{authornamehash}{f4d3ebe022d401618b507db373bcbbb5}
       \strng{authorfullhash}{f4d3ebe022d401618b507db373bcbbb5}
-      \field{sortinit}{7}
-      \field{sortinithash}{c818dd9105a2852444fc9f5e145c294e}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Automatic Model Construction with Gaussian Processes}
@@ -1442,8 +1485,8 @@
       \strng{authorbibnamehash}{56fe4c00272b09dee790211156ab6e51}
       \strng{authornamehash}{56fe4c00272b09dee790211156ab6e51}
       \strng{authorfullhash}{56fe4c00272b09dee790211156ab6e51}
-      \field{sortinit}{8}
-      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{OCLC: 1184292315}
@@ -1483,8 +1526,8 @@
       \strng{authorbibnamehash}{444b4ea25da6b76c52ac64c48c66dda8}
       \strng{authornamehash}{444b4ea25da6b76c52ac64c48c66dda8}
       \strng{authorfullhash}{444b4ea25da6b76c52ac64c48c66dda8}
-      \field{sortinit}{8}
-      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{annotation}{OCLC: 1066182402}
@@ -1529,8 +1572,8 @@
       \strng{editorbibnamehash}{860693f51af0612f208d2fda5a0016f1}
       \strng{editornamehash}{860693f51af0612f208d2fda5a0016f1}
       \strng{editorfullhash}{860693f51af0612f208d2fda5a0016f1}
-      \field{sortinit}{8}
-      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{editor}
       \field{labeltitlesource}{shorttitle}
       \field{annotation}{OCLC: 935935300}
@@ -1563,8 +1606,8 @@
       \strng{authorbibnamehash}{66c49c02f2f916d08564ad707643f84b}
       \strng{authornamehash}{66c49c02f2f916d08564ad707643f84b}
       \strng{authorfullhash}{66c49c02f2f916d08564ad707643f84b}
-      \field{sortinit}{9}
-      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In these note we provide some important properties of the multivariate Gaussian, which are important building blocks for more sophisticated probabilistic models. We also illustrate how these properties can be used to derive the Kalman filter.}
@@ -1608,8 +1651,8 @@
       \strng{authorbibnamehash}{83fb9e1b9aa3c1a1618dfa5318df9dda}
       \strng{authornamehash}{83fb9e1b9aa3c1a1618dfa5318df9dda}
       \strng{authorfullhash}{83fb9e1b9aa3c1a1618dfa5318df9dda}
-      \field{sortinit}{9}
-      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-1-61197-538-3}
@@ -1786,6 +1829,217 @@
       \endverb
       \keyw{stat.ML,stat.CO}
     \endentry
+    \entry{Zhu1997}{article}{}
+      \name{author}{4}{}{%
+        {{hash=db29c9e94410252c9dd6938604f708b8}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Ciyou},
+           giveni={C\bibinitperiod}}}%
+        {{hash=27e5e510655acc3999ad0f5deba44966}{%
+           family={Byrd},
+           familyi={B\bibinitperiod},
+           given={Richard\bibnamedelima H.},
+           giveni={R\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=8c2f3741ab4369f5590e2e16412db71b}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Peihuang},
+           giveni={P\bibinitperiod}}}%
+        {{hash=88a342d927bf795b0d92af8a5613da31}{%
+           family={Nocedal},
+           familyi={N\bibinitperiod},
+           given={Jorge},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery ({ACM})}%
+      }
+      \strng{namehash}{39134a34c511e3599586eaa6de9b9a5f}
+      \strng{fullhash}{39134a34c511e3599586eaa6de9b9a5f}
+      \strng{bibnamehash}{39134a34c511e3599586eaa6de9b9a5f}
+      \strng{authorbibnamehash}{39134a34c511e3599586eaa6de9b9a5f}
+      \strng{authornamehash}{39134a34c511e3599586eaa6de9b9a5f}
+      \strng{authorfullhash}{39134a34c511e3599586eaa6de9b9a5f}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{{ACM} Transactions on Mathematical Software}
+      \field{month}{12}
+      \field{number}{4}
+      \field{title}{Algorithm 778: L-{BFGS}-B}
+      \field{volume}{23}
+      \field{year}{1997}
+      \field{dateera}{ce}
+      \field{pages}{550\bibrangedash 560}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1145/279232.279236
+      \endverb
+    \endentry
+    \entry{Straub2015}{article}{}
+      \name{author}{2}{}{%
+        {{hash=503aaac9358b5587f433ddd779a8422f}{%
+           family={Straub},
+           familyi={S\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=10ed6e5369e1ec0cd73fb107821a6cb3}{%
+           family={Papaioannou},
+           familyi={P\bibinitperiod},
+           given={Iason},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Society of Civil Engineers ({ASCE})}%
+      }
+      \strng{namehash}{f9fe330a4e0ad60c9d2ddb1a6b5a35c3}
+      \strng{fullhash}{f9fe330a4e0ad60c9d2ddb1a6b5a35c3}
+      \strng{bibnamehash}{f9fe330a4e0ad60c9d2ddb1a6b5a35c3}
+      \strng{authorbibnamehash}{f9fe330a4e0ad60c9d2ddb1a6b5a35c3}
+      \strng{authornamehash}{f9fe330a4e0ad60c9d2ddb1a6b5a35c3}
+      \strng{authorfullhash}{f9fe330a4e0ad60c9d2ddb1a6b5a35c3}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Engineering Mechanics}
+      \field{month}{3}
+      \field{number}{3}
+      \field{title}{Bayesian Updating with Structural Reliability Methods}
+      \field{volume}{141}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{pages}{04014134}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1061/(asce)em.1943-7889.0000839
+      \endverb
+    \endentry
+    \entry{Glynn1989}{article}{}
+      \name{author}{2}{}{%
+        {{hash=ae1ebf7b979cd60f674aaaffa20de552}{%
+           family={Glynn},
+           familyi={G\bibinitperiod},
+           given={Peter\bibnamedelima W.},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=6f4f57109bbc591c7c23c1a0798c5b47}{%
+           family={Iglehart},
+           familyi={I\bibinitperiod},
+           given={Donald\bibnamedelima L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Institute for Operations Research}%
+        {the Management Sciences ({INFORMS})}%
+      }
+      \strng{namehash}{0591c9b7c0ccbef9d6a15782009c915f}
+      \strng{fullhash}{0591c9b7c0ccbef9d6a15782009c915f}
+      \strng{bibnamehash}{0591c9b7c0ccbef9d6a15782009c915f}
+      \strng{authorbibnamehash}{0591c9b7c0ccbef9d6a15782009c915f}
+      \strng{authornamehash}{0591c9b7c0ccbef9d6a15782009c915f}
+      \strng{authorfullhash}{0591c9b7c0ccbef9d6a15782009c915f}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Management Science}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{Importance Sampling for Stochastic Simulations}
+      \field{volume}{35}
+      \field{year}{1989}
+      \field{dateera}{ce}
+      \field{pages}{1367\bibrangedash 1392}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1287/mnsc.35.11.1367
+      \endverb
+    \endentry
+    \entry{Au2001}{article}{}
+      \name{author}{2}{}{%
+        {{hash=aa6118b0126499f8c7bc6477ab7d17a3}{%
+           family={Au},
+           familyi={A\bibinitperiod},
+           given={Siu-Kui},
+           giveni={S\bibinithyphendelim K\bibinitperiod}}}%
+        {{hash=69b84cf7ffd3769db0290ae4a933606d}{%
+           family={Beck},
+           familyi={B\bibinitperiod},
+           given={James\bibnamedelima L.},
+           giveni={J\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier {BV}}%
+      }
+      \strng{namehash}{fb706666f8638c304af5cb52ebaf6f0e}
+      \strng{fullhash}{fb706666f8638c304af5cb52ebaf6f0e}
+      \strng{bibnamehash}{fb706666f8638c304af5cb52ebaf6f0e}
+      \strng{authorbibnamehash}{fb706666f8638c304af5cb52ebaf6f0e}
+      \strng{authornamehash}{fb706666f8638c304af5cb52ebaf6f0e}
+      \strng{authorfullhash}{fb706666f8638c304af5cb52ebaf6f0e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Probabilistic Engineering Mechanics}
+      \field{month}{10}
+      \field{number}{4}
+      \field{title}{Estimation of small failure probabilities in high dimensions by subset simulation}
+      \field{volume}{16}
+      \field{year}{2001}
+      \field{dateera}{ce}
+      \field{pages}{263\bibrangedash 277}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1016/s0266-8920(01)00019-4
+      \endverb
+    \endentry
+    \entry{Crestaux2009}{article}{}
+      \name{author}{3}{}{%
+        {{hash=49ed02beeb53ddea3e71579bc3b46751}{%
+           family={Crestaux},
+           familyi={C\bibinitperiod},
+           given={Thierry},
+           giveni={T\bibinitperiod}}}%
+        {{hash=a3badb06bb506a273d9f8edb768097ff}{%
+           family={Maitre},
+           familyi={M\bibinitperiod},
+           given={Olivier\bibnamedelima Le},
+           giveni={O\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=8db89e6d8e86a615ff6799ae9d2f49f2}{%
+           family={Martinez},
+           familyi={M\bibinitperiod},
+           given={Jean-Marc},
+           giveni={J\bibinithyphendelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier {BV}}%
+      }
+      \strng{namehash}{6299c82893c3e859c3d60f0b7fff91de}
+      \strng{fullhash}{6299c82893c3e859c3d60f0b7fff91de}
+      \strng{bibnamehash}{6299c82893c3e859c3d60f0b7fff91de}
+      \strng{authorbibnamehash}{6299c82893c3e859c3d60f0b7fff91de}
+      \strng{authornamehash}{6299c82893c3e859c3d60f0b7fff91de}
+      \strng{authorfullhash}{6299c82893c3e859c3d60f0b7fff91de}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Reliability Engineering {\&} System Safety}
+      \field{month}{7}
+      \field{number}{7}
+      \field{title}{Polynomial chaos expansion for sensitivity analysis}
+      \field{volume}{94}
+      \field{year}{2009}
+      \field{dateera}{ce}
+      \field{pages}{1161\bibrangedash 1172}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/j.ress.2008.10.008
+      \endverb
+    \endentry
     \entry{Shannon1949}{article}{}
       \name{author}{1}{}{%
         {{hash=2d052381acacf785c44cd631ce23224b}{%
@@ -1858,9 +2112,84 @@
       \verb 10.1214/06-ba129
       \endverb
     \endentry
+    \entry{Jeppsson}{unpublished}{}
+      \name{author}{1}{}{%
+        {{hash=910c3d0a9cab04c5c18313df8b336e5f}{%
+           family={Jeppsson},
+           familyi={J\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {KTH Stockholm}%
+      }
+      \strng{namehash}{910c3d0a9cab04c5c18313df8b336e5f}
+      \strng{fullhash}{910c3d0a9cab04c5c18313df8b336e5f}
+      \strng{bibnamehash}{910c3d0a9cab04c5c18313df8b336e5f}
+      \strng{authorbibnamehash}{910c3d0a9cab04c5c18313df8b336e5f}
+      \strng{authornamehash}{910c3d0a9cab04c5c18313df8b336e5f}
+      \strng{authorfullhash}{910c3d0a9cab04c5c18313df8b336e5f}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Reproducing Kernels}
+      \warn{\item Entry 'Jeppsson' (Library.bib): Invalid format 'May 2013' of date field 'date' - ignoring}
+    \endentry
+    \entry{Blech2020}{article}{}
+      \name{author}{5}{}{%
+        {{hash=9e3b3ac22192c828e804e0e2fda68420}{%
+           family={Blech},
+           familyi={B\bibinitperiod},
+           given={Christopher},
+           giveni={C\bibinitperiod}}}%
+        {{hash=22315b304d5910c0dc5cb25d48ba3a96}{%
+           family={Appel},
+           familyi={A\bibinitperiod},
+           given={Christina\bibnamedelima K.},
+           giveni={C\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=a93ed57168954623fd4a62341bd0a651}{%
+           family={Ewert},
+           familyi={E\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+        {{hash=4407e96b74090184350327e457ea7d86}{%
+           family={Delfs},
+           familyi={D\bibinitperiod},
+           given={Jan\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=ea3c12a1489bdb3eab0b0587d98d6017}{%
+           family={Langer},
+           familyi={L\bibinitperiod},
+           given={Sabine\bibnamedelima C.},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier {BV}}%
+      }
+      \strng{namehash}{2d4f997f2bcffd19fca8b7a5b691a8e1}
+      \strng{fullhash}{2d4f997f2bcffd19fca8b7a5b691a8e1}
+      \strng{bibnamehash}{2d4f997f2bcffd19fca8b7a5b691a8e1}
+      \strng{authorbibnamehash}{2d4f997f2bcffd19fca8b7a5b691a8e1}
+      \strng{authornamehash}{2d4f997f2bcffd19fca8b7a5b691a8e1}
+      \strng{authorfullhash}{2d4f997f2bcffd19fca8b7a5b691a8e1}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Sound and Vibration}
+      \field{month}{1}
+      \field{title}{Numerical prediction of passenger cabin noise due to jet noise by an ultra{–}high{–}bypass ratio engine}
+      \field{volume}{464}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{pages}{114960}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.jsv.2019.114960
+      \endverb
+    \endentry
   \enddatalist
-  \missing{Bayarri}
-  \missing{Eberly2000}
 \endrefsection
 \endinput
 

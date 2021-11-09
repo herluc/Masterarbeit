@@ -1,10 +1,102 @@
-\nomenclatureentry{N$m$@[{$m$}]\begingroup mass of a gas volume\nomeqref {\relax 0.0}|nompageref}{7}
-\nomenclatureentry{N$v$@[{$v$}]\begingroup velocity\nomeqref {\relax 0.0}|nompageref}{7}
-\nomenclatureentry{N$\dot{v}$@[{$\dot{v}$}]\begingroup temporal derivative of v\nomeqref {\relax 0.0}|nompageref}{7}
-\nomenclatureentry{N$p$@[{$p$}]\begingroup sound pressure [Pa]\nomeqref {\relax 0.0}|nompageref}{7}
-\nomenclatureentry{N$\Delta x$@[{$\Delta x$}]\begingroup length of a gas volume in x direction\nomeqref {\relax 0.0}|nompageref}{7}
-\nomenclatureentry{N$S$@[{$S$}]\begingroup surface area\nomeqref {\relax 0.0}|nompageref}{7}
-\nomenclatureentry{N$\rho$@[{$\rho$}]\begingroup density [kg/m**3]\nomeqref {\relax 0.0}|nompageref}{7}
-\nomenclatureentry{N$\nabla$@[{$\nabla$}]\begingroup nabla operator\nomeqref {\relax 0.0}|nompageref}{7}
-\nomenclatureentry{N$t$@[{$t$}]\begingroup time [s]\nomeqref {\relax 0.0}|nompageref}{7}
-\nomenclatureentry{AMCMC@[{MCMC}]\begingroup Markov Chain Monte Carlo\nomeqref {\relax 0.0}|nompageref}{7}
+\nomenclatureentry{N$\sim$@[{$\sim$}]\begingroup distributed according to\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\propto$@[{$\propto$}]\begingroup proportional to\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$m$@[{$m$}]\begingroup mass of a gas volume\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$v$@[{$v$}]\begingroup velocity\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\dot{v}$@[{$\dot{v}$}]\begingroup temporal derivative of v\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$p$@[{$p$}]\begingroup sound pressure [Pa]\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\Delta x$@[{$\Delta x$}]\begingroup length of a gas volume in x direction\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\Delta$@[{$\Delta$}]\begingroup Laplacian\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$t$@[{$t$}]\begingroup time [s]\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$n_e$@[{$n_e$}]\begingroup number of Finite Elements in a domain\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{K}^{(e)}$@[{$\bm{K}^{(e)}$}]\begingroup elemental matrix\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\omega$@[{$\omega$}]\begingroup angular frequency [rad]\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$c_0$@[{$c_0$}]\begingroup speed of sound [m/s]\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$f$@[{$f$}]\begingroup frequency [Hz]\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$k$@[{$k$}]\begingroup wave number [1/m]\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$S$@[{$S$}]\begingroup surface area\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\rho$@[{$\rho$}]\begingroup density [$\mathrm{kg/m^3}$]\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\nabla$@[{$\nabla$}]\begingroup nabla operator\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bar{p}(x)$@[{$\bar{p}(x)$}]\begingroup prescribed pressure at a Dirichlet boundary [Pa]\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\Omega$@[{$\Omega$}]\begingroup Calculation Domain\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\Omega_e$@[{$\Omega_e$}]\begingroup a single finte element as domain\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\Gamma_D$@[{$\Gamma_D$}]\begingroup Dirichlet boundary\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\Gamma_N$@[{$\Gamma_N$}]\begingroup Neumann boundary\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\Gamma_{N0}$@[{$\Gamma_{N0}$}]\begingroup homogeneous Neumann boundary\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\Gamma_R$@[{$\Gamma_R$}]\begingroup Robin boundary\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{U}$@[{$\bm{U}$}]\begingroup Displacement on a Neumann boundary [m]\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\vec{n}$@[{$\vec{n}$}]\begingroup normal direction at the boundary\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\beta$@[{$\beta$}]\begingroup specific normalized acoustic admittance [$\mathrm{(m^3/s)/Pa}$]\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\mu$@[{$\mu$}]\begingroup diffusion coefficient [$\mathrm{m^2/s}$]\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$f(x)$@[{$f(x)$}]\begingroup source term in the Poisson equation\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$e$@[{$e$}]\begingroup approximation error\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$p_e$@[{$p_e$}]\begingroup exact solution\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$R$@[{$R$}]\begingroup Residual\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$V,W$@[{$V,W$}]\begingroup Function spaces\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\phi_i$@[{$\phi_i$}]\begingroup FEM basis function\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$c_i$@[{$c_i$}]\begingroup coefficient of an FEM basis function\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$v$@[{$v$}]\begingroup test function\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\oint_{\Gamma}$@[{$\oint_{\Gamma}$}]\begingroup integral over the whole boundary\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\int_{\Gamma_N}$@[{$\int_{\Gamma_N}$}]\begingroup integral over a part of the boundary\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\mathcal{N}$@[{$\mathcal{N}$}]\begingroup distributed as a normal distribution\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\mathcal{U}$@[{$\mathcal{U}$}]\begingroup distributed as a uniform distribution\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\mathcal{GP}$@[{$\mathcal{GP}$}]\begingroup distributed as a Gaussian Process\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\delta_{ij}$@[{$\delta_{ij}$}]\begingroup Kronecker delta\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{\phi}$@[{$\bm{\phi}$}]\begingroup vector of all FEM basis functions\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\delta\hat{\bm{p}}$@[{$\delta\hat{\bm{p}}$}]\begingroup vector of arbitrary variations\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\hat{\bm{p}}$@[{$\hat{\bm{p}}$}]\begingroup vector of weight factors in the FEM\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{A}$@[{$\bm{A}$}]\begingroup FEM dynamic stiffness matrix or also system matrix\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{K}_1,\bm{K}_2$@[{$\bm{K}_1,\bm{K}_2$}]\begingroup elemental FEM system matrices\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{b}$@[{$\bm{b}$}]\begingroup FEM system of equations right hand side vector\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\mu$@[{$\mu$}]\begingroup mean of a normal distribution\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\sigma$@[{$\sigma$}]\begingroup standard deviation of a normal distribution\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$f_X(x)$@[{$f_X(x)$}]\begingroup probability density function of random variable X\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\mathbb{E}$@[{$\mathbb{E}$}]\begingroup expected value of a random variable\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\mathbb{V}$@[{$\mathbb{V}$}]\begingroup variance of a random variable\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\mathrm{cov}[X,Y]$@[{$\mathrm{cov}[X,Y]$}]\begingroup covariance of the random variables X and Y\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{\Sigma}$@[{$\bm{\Sigma}$}]\begingroup covariance matrix\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$|\bm{\Sigma}|$@[{$|\bm{\Sigma}|$}]\begingroup determinant of $\bm{\Sigma}$ \nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$f(\bm{u}|\bm{y})$@[{$f(\bm{u}|\bm{y})$}]\begingroup probability of random variable $\bm{u}$ conditioned on random variable $\bm{y}$\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\epsilon$@[{$\epsilon$}]\begingroup Gaussian error term\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{\Phi}(x)$@[{$\bm{\Phi}(x)$}]\begingroup vector of polynomial basis functions\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\mu$@[{$\mu$}]\begingroup mean of a normal distribution\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$k$@[{$k$}]\begingroup kernel function\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$l$@[{$l$}]\begingroup characteristic length scale of a kernel\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\Gamma(\nu)$@[{$\Gamma(\nu)$}]\begingroup Gamma function\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$K_{\nu}$@[{$K_{\nu}$}]\begingroup Bessel function\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{L}$@[{$\bm{L}$}]\begingroup lower triangular matrix\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{y}$@[{$\bm{y}$}]\begingroup vector of measurements\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{z}$@[{$\bm{z}$}]\begingroup true underlying process GP\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{e}$@[{$\bm{e}$}]\begingroup measurement error GP\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{d}$@[{$\bm{d}$}]\begingroup model discrepancy GP\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{f}$@[{$\bm{f}$}]\begingroup source term GP\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{P}$@[{$\bm{P}$}]\begingroup projection matrix\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{u}$@[{$\bm{u}$}]\begingroup FEM model solution GP\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\rho$@[{$\rho$}]\begingroup scaling parameter\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$n_y$@[{$n_y$}]\begingroup number of sensor locations\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$n_u$@[{$n_u$}]\begingroup number of test points\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{w}$@[{$\bm{w}$}]\begingroup vector of hyperparameters\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{C}_d$@[{$\bm{C}_d$}]\begingroup covariance matrix for the model discrepancy GP, similar for other GPs\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\mathcal{M}_j$@[{$\mathcal{M}_j$}]\begingroup model\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\sigma_d$@[{$\sigma_d$}]\begingroup scaling hyperparameter for $\bm{d}$, similar for other GPs\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$l_d$@[{$l_d$}]\begingroup length scale hyperparameter for $\bm{d}$, similar for other GPs\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{\kappa}$@[{$\bm{\kappa}$}]\begingroup diffusion coefficient GP\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\bm{\Psi}$@[{$\bm{\Psi}$}]\begingroup orthogonal basis function\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$s[\bm{\tilde{u}}$]@[{$s[\bm{\tilde{u}}$]}]\begingroup support of $\bm{\tilde{u}}$ \nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$c_f(x,x')$@[{$c_f(x,x')$}]\begingroup kernel function for the source term GP, similar for other GPs\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\odot$@[{$\odot$}]\begingroup element-wise multiplication\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$\mathbb{1}$@[{$\mathbb{1}$}]\begingroup identity matrix\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$n_p$@[{$n_p$}]\begingroup number of training points\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{N$n_o$@[{$n_o$}]\begingroup number of observations\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{ABC@[{BC}]\begingroup Boundary Condition\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{AFEM@[{FEM}]\begingroup Finite Element Method\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{AstatFEM@[{statFEM}]\begingroup statistical Finite Element Method\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{AGP@[{GP}]\begingroup Gaussian Process\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{AL-BFGS@[{L-BFGS}]\begingroup Limited-memory Broyden-Fletcher-Goldfarb-Shanno algorithm\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{ALU dec.@[{LU dec.}]\begingroup lower-upper decomposition\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{AMCMC@[{MCMC}]\begingroup Markov Chain Monte Carlo\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{AMLE@[{MLE}]\begingroup Maximum Likelihood Estimation\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{AML@[{ML}]\begingroup Machine Learning\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{AMSE@[{MSE}]\begingroup Mean Squared Error\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{APDE@[{PDE}]\begingroup Partial Differential Equation\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{APDF@[{PDF}]\begingroup Probability Density Function\nomeqref {0.0}|nompageref}{7}
+\nomenclatureentry{APOD@[{POD}]\begingroup Proper Orthogonal Decomposition\nomeqref {0.0}|nompageref}{7}

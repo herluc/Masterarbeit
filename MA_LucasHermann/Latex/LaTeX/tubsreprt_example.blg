@@ -1,19 +1,18 @@
 [0] Config.pm:302> INFO - This is Biber 2.9
 [0] Config.pm:305> INFO - Logfile is 'tubsreprt_example.blg'
-[32] biber:313> INFO - === Fr Sep 24, 2021, 16:56:17
-[51] Biber.pm:371> INFO - Reading 'tubsreprt_example.bcf'
-[117] Biber.pm:857> INFO - Found 50 citekeys in bib section 0
+[30] biber:313> INFO - === Do Sep 30, 2021, 00:46:57
+[50] Biber.pm:371> INFO - Reading 'tubsreprt_example.bcf'
+[117] Biber.pm:857> INFO - Found 56 citekeys in bib section 0
 [131] Biber.pm:3981> INFO - Processing section 0
 [141] Biber.pm:4154> INFO - Looking for bibtex format file 'Library.bib' for section 0
-[144] bibtex.pm:1468> INFO - LaTeX decoding ...
-[215] bibtex.pm:1294> INFO - Found BibTeX data source 'Library.bib'
-[398] Utils.pm:169> WARN - Entry 'MacKay1991' (Library.bib): Invalid format 'December 10, 1991' of date field 'date' - ignoring
-[474] Utils.pm:169> WARN - I didn't find a database entry for 'Eberly2000' (section 0)
-[474] Utils.pm:169> WARN - I didn't find a database entry for 'Bayarri' (section 0)
-[509] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[509] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[509] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[509] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
-[539] bbl.pm:617> INFO - Writing 'tubsreprt_example.bbl' with encoding 'UTF-8'
-[555] bbl.pm:720> INFO - Output to tubsreprt_example.bbl
-[555] Biber.pm:110> INFO - WARNINGS: 3
+[145] bibtex.pm:1468> INFO - LaTeX decoding ...
+[224] bibtex.pm:1294> INFO - Found BibTeX data source 'Library.bib'
+[413] Utils.pm:169> WARN - Entry 'MacKay1991' (Library.bib): Invalid format 'December 10, 1991' of date field 'date' - ignoring
+[518] Utils.pm:169> WARN - Entry 'Jeppsson' (Library.bib): Invalid format 'May 2013' of date field 'date' - ignoring
+[568] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[568] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[568] Biber.pm:3809> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[568] Biber.pm:3815> INFO - No sort tailoring available for locale 'en-US'
+[603] bbl.pm:617> INFO - Writing 'tubsreprt_example.bbl' with encoding 'UTF-8'
+[622] bbl.pm:720> INFO - Output to tubsreprt_example.bbl
+[622] Biber.pm:110> INFO - WARNINGS: 2

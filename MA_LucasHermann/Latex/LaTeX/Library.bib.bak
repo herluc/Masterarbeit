@@ -570,4 +570,93 @@
   title       = {Bayesian Methodsfor Adaptive Models},
 }
 
+@Article{Evans2006,
+  author       = {Michael Evans and Hadas Moshonov},
+  date         = {2006-12},
+  journaltitle = {Bayesian Analysis},
+  title        = {Checking for prior-data conflict},
+  doi          = {10.1214/06-ba129},
+  number       = {4},
+  volume       = {1},
+  publisher    = {Institute of Mathematical Statistics},
+}
+
+@Article{Straub2015,
+  author       = {Daniel Straub and Iason Papaioannou},
+  date         = {2015-03},
+  journaltitle = {Journal of Engineering Mechanics},
+  title        = {Bayesian Updating with Structural Reliability Methods},
+  doi          = {10.1061/(asce)em.1943-7889.0000839},
+  number       = {3},
+  pages        = {04014134},
+  volume       = {141},
+  publisher    = {American Society of Civil Engineers ({ASCE})},
+}
+
+@Article{Au2001,
+  author       = {Siu-Kui Au and James L. Beck},
+  date         = {2001-10},
+  journaltitle = {Probabilistic Engineering Mechanics},
+  title        = {Estimation of small failure probabilities in high dimensions by subset simulation},
+  doi          = {10.1016/s0266-8920(01)00019-4},
+  number       = {4},
+  pages        = {263--277},
+  volume       = {16},
+  publisher    = {Elsevier {BV}},
+}
+
+@Article{Glynn1989,
+  author       = {Peter W. Glynn and Donald L. Iglehart},
+  date         = {1989-11},
+  journaltitle = {Management Science},
+  title        = {Importance Sampling for Stochastic Simulations},
+  doi          = {10.1287/mnsc.35.11.1367},
+  number       = {11},
+  pages        = {1367--1392},
+  volume       = {35},
+  publisher    = {Institute for Operations Research and the Management Sciences ({INFORMS})},
+}
+
+@Article{Crestaux2009,
+  author       = {Thierry Crestaux and Olivier Le Maitre and Jean-Marc Martinez},
+  date         = {2009-07},
+  journaltitle = {Reliability Engineering {\&} System Safety},
+  title        = {Polynomial chaos expansion for sensitivity analysis},
+  doi          = {10.1016/j.ress.2008.10.008},
+  number       = {7},
+  pages        = {1161--1172},
+  volume       = {94},
+  publisher    = {Elsevier {BV}},
+}
+
+@Article{Zhu1997,
+  author       = {Ciyou Zhu and Richard H. Byrd and Peihuang Lu and Jorge Nocedal},
+  date         = {1997-12},
+  journaltitle = {{ACM} Transactions on Mathematical Software},
+  title        = {Algorithm 778: L-{BFGS}-B},
+  doi          = {10.1145/279232.279236},
+  number       = {4},
+  pages        = {550--560},
+  volume       = {23},
+  publisher    = {Association for Computing Machinery ({ACM})},
+}
+
+@Unpublished{Jeppsson,
+  author   = {Johannes Jeppsson},
+  date     = {May 2013},
+  title    = {Reproducing Kernels},
+  location = {KTH Stockholm},
+}
+
+@Article{Blech2020,
+  author       = {Christopher Blech and Christina K. Appel and Roland Ewert and Jan W. Delfs and Sabine C. Langer},
+  date         = {2020-01},
+  journaltitle = {Journal of Sound and Vibration},
+  title        = {Numerical prediction of passenger cabin noise due to jet noise by an ultra{\textendash}high{\textendash}bypass ratio engine},
+  doi          = {10.1016/j.jsv.2019.114960},
+  pages        = {114960},
+  volume       = {464},
+  publisher    = {Elsevier {BV}},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}

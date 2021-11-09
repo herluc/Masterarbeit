@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{boundaryDiri}\PYG{p}{(}\PYG{n}{x}\PYG{p}{):}
+	\PYG{k}{return} \PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]} \PYG{o}{\PYGZgt{}} \PYG{p}{(}\PYG{l+m+mf}{1.0} \PYG{o}{\PYGZhy{}} \PYG{n}{DOLFIN\PYGZus{}EPS}\PYG{p}{)} \PYG{o+ow}{and} \PYG{n}{x}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{\PYGZlt{}} \PYG{l+m+mf}{0.0} \PYG{o}{+} \PYG{n}{DOLFIN\PYGZus{}EPS}
+\PYG{n}{bcDir} \PYG{o}{=} \PYG{n}{DirichletBC}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{o}{.}\PYG{n}{V}\PYG{p}{,} \PYG{n}{Constant}\PYG{p}{(}\PYG{l+m+mf}{0.0}\PYG{p}{),} \PYG{n}{boundaryDiri}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}define the bc on the vector space}
+\PYG{n}{bcDir}\PYG{o}{.}\PYG{n}{apply}\PYG{p}{(}\PYG{n}{A}\PYG{p}{,} \PYG{n}{b}\PYG{p}{)} \PYG{o}{.}
+\end{Verbatim}

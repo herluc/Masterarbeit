@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{sample\PYGZus{}f}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{):}
+	\PYG{c+c1}{\PYGZsh{}matern covariance function:}
+	\PYG{n}{c\PYGZus{}f} \PYG{o}{=} \PYG{n}{matern\PYGZus{}log}\PYG{p}{(}\PYG{n}{coordinates}\PYG{p}{,}
+		\PYG{n}{coordinates}\PYG{p}{,} \PYG{n}{l}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{n}{lf}\PYG{p}{),} \PYG{n}{sig}\PYG{o}{=}\PYG{n}{np}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{n}{sigf}\PYG{p}{))}
+	\PYG{n}{f\PYGZus{}mean} \PYG{o}{=} \PYG{p}{(}\PYG{n}{np}\PYG{o}{.}\PYG{n}{pi}\PYG{p}{)}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{5}\PYG{p}{)}\PYG{o}{*}\PYG{n}{np}\PYG{o}{.}\PYG{n}{ones}\PYG{p}{(}\PYG{n}{ne}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}constant mean}
+	\PYG{c+c1}{\PYGZsh{}sampling:}
+	\PYG{n}{fGP} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{random}\PYG{o}{.}\PYG{n}{multivariate\PYGZus{}normal}\PYG{p}{(}
+		\PYG{n}{mean} \PYG{o}{=} \PYG{n}{f\PYGZus{}mean}\PYG{p}{,} \PYG{n}{cov}\PYG{o}{=}\PYG{n}{c\PYGZus{}f}\PYG{p}{,}
+		\PYG{n}{size}\PYG{o}{=}\PYG{l+m+mi}{10}\PYG{p}{)}
+\end{Verbatim}

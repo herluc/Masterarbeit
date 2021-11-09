@@ -1,15 +1,16 @@
 \babel@toc {english}{}
 \beamer@sectionintoc {1}{Objectives}{4}{1}{1}
 \beamer@sectionintoc {2}{Prerequisites}{7}{2}{2}
-\beamer@subsectionintoc {2}{1}{Modeling data}{7}{2}{2}
-\beamer@subsectionintoc {2}{2}{Gaussian Processes}{8}{2}{2}
-\beamer@subsectionintoc {2}{3}{Bayesian Inference}{10}{2}{2}
-\beamer@sectionintoc {3}{1D example}{13}{3}{3}
-\beamer@subsectionintoc {3}{1}{Setting}{13}{3}{3}
-\beamer@subsectionintoc {3}{2}{FEM solution}{14}{3}{3}
-\beamer@subsectionintoc {3}{3}{Inference}{15}{3}{3}
-\beamer@sectionintoc {4}{2D Helmholtz}{19}{3}{4}
-\beamer@subsectionintoc {4}{1}{Setting}{19}{3}{4}
-\beamer@subsectionintoc {4}{2}{FEM solution}{20}{3}{4}
-\beamer@subsectionintoc {4}{3}{Inference}{21}{3}{4}
-\beamer@sectionintoc {5}{Outlook}{24}{3}{5}
+\beamer@subsectionintoc {2}{1}{FEM Solution}{7}{2}{2}
+\beamer@subsectionintoc {2}{2}{Modeling data}{8}{2}{2}
+\beamer@subsectionintoc {2}{3}{Gaussian Processes}{9}{2}{2}
+\beamer@subsectionintoc {2}{4}{Bayesian Inference}{11}{2}{2}
+\beamer@sectionintoc {3}{1D example}{14}{3}{3}
+\beamer@subsectionintoc {3}{1}{Setting}{14}{3}{3}
+\beamer@subsectionintoc {3}{2}{FEM solution}{15}{3}{3}
+\beamer@subsectionintoc {3}{3}{Inference}{16}{3}{3}
+\beamer@sectionintoc {4}{2D Helmholtz}{20}{3}{4}
+\beamer@subsectionintoc {4}{1}{Setting}{20}{3}{4}
+\beamer@subsectionintoc {4}{2}{FEM solution}{21}{3}{4}
+\beamer@subsectionintoc {4}{3}{Inference}{22}{3}{4}
+\beamer@sectionintoc {5}{Outlook}{25}{3}{5}

@@ -2,26 +2,203 @@
 
  \nomgroup{A}
 
+  \item [{BC}]\begingroup Boundary Condition\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{FEM}]\begingroup Finite Element Method\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{GP}]\begingroup Gaussian Process\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{L-BFGS}]\begingroup Limited-memory Broyden-Fletcher-Goldfarb-Shanno algorithm\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{LU dec.}]\begingroup lower-upper decomposition\nomeqref {\relax 0.0}
+		\nompageref{7}
   \item [{MCMC}]\begingroup Markov Chain Monte Carlo\nomeqref {\relax 0.0}
-		\nompageref{8}
+		\nompageref{7}
+  \item [{ML}]\begingroup Machine Learning\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{MLE}]\begingroup Maximum Likelihood Estimation\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{MSE}]\begingroup Mean Squared Error\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{PDE}]\begingroup Partial Differential Equation\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{PDF}]\begingroup Probability Density Function\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{POD}]\begingroup Proper Orthogonal Decomposition\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{statFEM}]\begingroup statistical Finite Element Method\nomeqref {\relax 0.0}
+		\nompageref{7}
 
  \nomgroup{N}
 
+  \item [{$\bar{p}(x)$}]\begingroup prescribed pressure at a Dirichlet boundary [Pa]\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\beta$}]\begingroup specific normalized acoustic admittance [$\mathrm{(m^3/s)/Pa}$]\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{\kappa}$}]\begingroup diffusion coefficient GP\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{\phi}$}]\begingroup vector of all FEM basis functions\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{\Phi}(x)$}]\begingroup vector of polynomial basis functions\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{\Psi}$}]\begingroup orthogonal basis function\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{\Sigma}$}]\begingroup covariance matrix\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{A}$}]\begingroup FEM dynamic stiffness matrix or also system matrix\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{b}$}]\begingroup FEM system of equations right hand side vector\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{C}_d$}]\begingroup covariance matrix for the model discrepancy GP, similar for other GPs\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{d}$}]\begingroup model discrepancy GP\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{e}$}]\begingroup measurement error GP\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{f}$}]\begingroup source term GP\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{K}^{(e)}$}]\begingroup elemental matrix\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{K}_1,\bm{K}_2$}]\begingroup elemental FEM system matrices\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{L}$}]\begingroup lower triangular matrix\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{P}$}]\begingroup projection matrix\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{U}$}]\begingroup Displacement on a Neumann boundary [m]\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{u}$}]\begingroup FEM model solution GP\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{w}$}]\begingroup vector of hyperparameters\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{y}$}]\begingroup vector of measurements\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\bm{z}$}]\begingroup true underlying process GP\nomeqref {\relax 0.0}
+		\nompageref{7}
   \item [{$\Delta x$}]\begingroup length of a gas volume in x direction\nomeqref {\relax 0.0}
-		\nompageref{8}
+		\nompageref{7}
+  \item [{$\Delta$}]\begingroup Laplacian\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\delta\hat{\bm{p}}$}]\begingroup vector of arbitrary variations\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\delta_{ij}$}]\begingroup Kronecker delta\nomeqref {\relax 0.0}
+		\nompageref{7}
   \item [{$\dot{v}$}]\begingroup temporal derivative of v\nomeqref {\relax 0.0}
-		\nompageref{8}
+		\nompageref{7}
+  \item [{$\epsilon$}]\begingroup Gaussian error term\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\Gamma(\nu)$}]\begingroup Gamma function\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\Gamma_D$}]\begingroup Dirichlet boundary\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\Gamma_N$}]\begingroup Neumann boundary\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\Gamma_R$}]\begingroup Robin boundary\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\Gamma_{N0}$}]\begingroup homogeneous Neumann boundary\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\hat{\bm{p}}$}]\begingroup vector of weight factors in the FEM\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\int_{\Gamma_N}$}]\begingroup integral over a part of the boundary\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\mathbb{1}$}]\begingroup identity matrix\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\mathbb{E}$}]\begingroup expected value of a random variable\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\mathbb{V}$}]\begingroup variance of a random variable\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\mathcal{GP}$}]\begingroup distributed as a Gaussian Process\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\mathcal{M}_j$}]\begingroup model\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\mathcal{N}$}]\begingroup distributed as a normal distribution\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\mathcal{U}$}]\begingroup distributed as a uniform distribution\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\mathrm{cov}[X,Y]$}]\begingroup covariance of the random variables X and Y\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\mu$}]\begingroup diffusion coefficient [$\mathrm{m^2/s}$]\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\mu$}]\begingroup mean of a normal distribution\nomeqref {\relax 0.0}
+		\nompageref{7}
   \item [{$\nabla$}]\begingroup nabla operator\nomeqref {\relax 0.0}
-		\nompageref{8}
-  \item [{$\rho$}]\begingroup density [kg/m**3]\nomeqref {\relax 0.0}
-		\nompageref{8}
+		\nompageref{7}
+  \item [{$\odot$}]\begingroup element-wise multiplication\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\oint_{\Gamma}$}]\begingroup integral over the whole boundary\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\Omega$}]\begingroup Calculation Domain\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\omega$}]\begingroup angular frequency [rad]\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\Omega_e$}]\begingroup a single finte element as domain\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\phi_i$}]\begingroup FEM basis function\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\propto$}]\begingroup proportional to\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\rho$}]\begingroup density [$\mathrm{kg/m^3}$]\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\rho$}]\begingroup scaling parameter\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\sigma$}]\begingroup standard deviation of a normal distribution\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\sigma_d$}]\begingroup scaling hyperparameter for $\bm{d}$, similar for other GPs\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\sim$}]\begingroup distributed according to\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$\vec{n}$}]\begingroup normal direction at the boundary\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$c_0$}]\begingroup speed of sound [m/s]\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$c_f(x,x')$}]\begingroup kernel function for the source term GP, similar for other GPs\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$c_i$}]\begingroup coefficient of an FEM basis function\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$e$}]\begingroup approximation error\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$f$}]\begingroup frequency [Hz]\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$f(x)$}]\begingroup source term in the Poisson equation\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$f_X(x)$}]\begingroup probability density function of random variable X\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$k$}]\begingroup kernel function\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$k$}]\begingroup wave number [1/m]\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$K_{\nu}$}]\begingroup Bessel function\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$l$}]\begingroup characteristic length scale of a kernel\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$l_d$}]\begingroup length scale hyperparameter for $\bm{d}$, similar for other GPs\nomeqref {\relax 0.0}
+		\nompageref{7}
   \item [{$m$}]\begingroup mass of a gas volume\nomeqref {\relax 0.0}
-		\nompageref{8}
+		\nompageref{7}
+  \item [{$n_e$}]\begingroup number of Finite Elements in a domain\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$n_o$}]\begingroup number of observations\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$n_p$}]\begingroup number of training points\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$n_u$}]\begingroup number of test points\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$n_y$}]\begingroup number of sensor locations\nomeqref {\relax 0.0}
+		\nompageref{7}
   \item [{$p$}]\begingroup sound pressure [Pa]\nomeqref {\relax 0.0}
-		\nompageref{8}
+		\nompageref{7}
+  \item [{$p_e$}]\begingroup exact solution\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$R$}]\begingroup Residual\nomeqref {\relax 0.0}\nompageref{7}
   \item [{$S$}]\begingroup surface area\nomeqref {\relax 0.0}
-		\nompageref{8}
-  \item [{$t$}]\begingroup time [s]\nomeqref {\relax 0.0}\nompageref{8}
-  \item [{$v$}]\begingroup velocity\nomeqref {\relax 0.0}\nompageref{8}
+		\nompageref{7}
+  \item [{$s[\bm{\tilde{u}}$]}]\begingroup support of $\bm{\tilde{u}}$ \nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$t$}]\begingroup time [s]\nomeqref {\relax 0.0}\nompageref{7}
+  \item [{$v$}]\begingroup test function\nomeqref {\relax 0.0}
+		\nompageref{7}
+  \item [{$v$}]\begingroup velocity\nomeqref {\relax 0.0}\nompageref{7}
+  \item [{$V,W$}]\begingroup Function spaces\nomeqref {\relax 0.0}
+		\nompageref{7}
 
 \end{thenomenclature}

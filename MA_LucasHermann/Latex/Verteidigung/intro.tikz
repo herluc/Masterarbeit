@@ -1,0 +1,50 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-8, 1) {};
+		\node [style=none] (1) at (-4, 1) {};
+		\node [style=none] (2) at (-8, -1) {};
+		\node [style=none] (3) at (-4, -1) {};
+		\node [style=none] (8) at (-6, -0.5) {FEM prior};
+		\node [style=none] (9) at (-6, 0.25) {stochastic};
+		\node [style=none] (10) at (-3, 0) {};
+		\node [style=none] (11) at (3, 0) {};
+		\node [style=none] (15) at (3.75, 1) {};
+		\node [style=none] (16) at (9, 1) {};
+		\node [style=none] (17) at (3.75, -1) {};
+		\node [style=none] (18) at (9, -1) {};
+		\node [style=none] (19) at (6.25, 0) {model error and};
+		\node [style=none] (20) at (6.25, 0.75) {reduced};
+		\node [style=none] (21) at (6.25, -0.75) {};
+		\node [style=none] (22) at (6.25, -0.75) {uncertainty};
+		\node [style=none] (23) at (-2, 3) {};
+		\node [style=none] (24) at (-1.75, 1.25) {};
+		\node [style=none] (25) at (1.75, 1.25) {};
+		\node [style=none] (26) at (2, 3) {};
+		\node [style=none] (27) at (0, 2.5) {};
+		\node [style=none] (28) at (0, 2.5) {measured};
+		\node [style=none] (29) at (0, 1.75) {data};
+		\node [style=none] (30) at (0, 0.25) {};
+		\node [style=none] (31) at (0, 1) {};
+		\node [style=none] (32) at (0, -1) {statFEM};
+		\node [style=none] (33) at (0, -1.75) {(GP, Bayes...)};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow, bend left=15] (11.center) to (10.center);
+		\draw [style=box] (2.center)
+			 to (0.center)
+			 to [bend left] (1.center)
+			 to (3.center)
+			 to [bend left] cycle;
+		\draw [style=box] (17.center)
+			 to [bend left=15] (15.center)
+			 to [bend left] (16.center)
+			 to [bend left=15] (18.center)
+			 to [bend left] cycle;
+		\draw [style=new edge style 0] (25.center)
+			 to (26.center)
+			 to (23.center)
+			 to (24.center)
+			 to cycle;
+		\draw [style=arrow] (30.center) to (31.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
